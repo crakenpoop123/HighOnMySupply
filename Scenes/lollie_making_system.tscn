@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://dgtdq5wvdxjn8"]
+
+[ext_resource type="Script" uid="uid://ca4np7yme0sh8" path="res://Scripts/shitty_temp_char.gd" id="1_11tmj"]
+[ext_resource type="Script" uid="uid://bajshbxjergmi" path="res://Scripts/lollie_making_system.gd" id="1_mdsgg"]
+[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_rs4tb"]
+[ext_resource type="Texture2D" uid="uid://dhq42jv76ukei" path="res://Assets/roadtilemap.png" id="3_7w7pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdsgg"]
+texture = ExtResource("3_7w7pi")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_mdsgg")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 201.12186
+
+[node name="LollieMakingSystem" type="Node2D" unique_id=1693147495]
+script = ExtResource("1_mdsgg")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1600676715]
+position = Vector2(244.49982, 177.30182)
+scale = Vector2(37.914063, 29.655554)
+texture = ExtResource("1_rs4tb")
+
+[node name="ShittyTempChar" type="CharacterBody2D" parent="." unique_id=1937201670]
+script = ExtResource("1_11tmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShittyTempChar" unique_id=318199558]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShittyTempChar" unique_id=1766092073]
+texture = ExtResource("1_rs4tb")
+
+[node name="Camera2D" type="Camera2D" parent="ShittyTempChar" unique_id=1942595607]
+position_smoothing_enabled = true
+
+[node name="status" type="Sprite2D" parent="." unique_id=743427182]
+position = Vector2(-319, -213)
+texture = ExtResource("1_rs4tb")
+
+[node name="TestTileMap" type="TileMapLayer" parent="." unique_id=1268740346]
+tile_map_data = PackedByteArray("AAATAKAAAAAAAAEAAAAKAFAAAAAAAAEAAAAKAE8AAAAAAAEAAAAKAE4AAAAAAAEAAAAKAE0AAAAAAAEAAAAKAEwAAAAAAAEAAAAKAEsAAAAAAAEAAAAKAEoAAAAAAAEAAAALAE8AAAABAAEAAAALAE4AAAABAAEAAAALAE0AAAABAAEAAAALAEwAAAABAAEAAAALAEsAAAABAAEAAAALAEoAAAABAAEAAAALAFAAAAABAAEAAAAMAFAAAAABAAEAAAAMAE8AAAACAAEAAAAMAE4AAAADAAIAAAAMAE0AAAABAAEAAAAMAEwAAAABAAEAAAAMAEoAAAACAAEAAAAMAEsAAAACAAEAAAAKAFEAAAAAAAIAAAALAFEAAAABAAIAAAAMAFEAAAABAAIAAAANAFEAAAABAAIAAAAOAFEAAAABAAIAAAAPAFEAAAABAAIAAAAQAFEAAAABAAIAAAAQAFAAAAABAAEAAAAPAFAAAAADAAEAAAAOAFAAAAABAAAAAAANAFAAAAABAAAAAAARAFEAAAACAAIAAAARAFAAAAACAAEAAAARAE8AAAACAAEAAAARAE4AAAADAAIAAAARAE0AAAABAAEAAAARAEwAAAABAAEAAAARAEsAAAACAAEAAAARAEoAAAACAAEAAAAPAEoAAAAAAAEAAAAQAEoAAAABAAEAAAAPAEsAAAAAAAEAAAAQAEsAAAABAAEAAAAPAEwAAAADAAEAAAAQAEwAAAABAAEAAAAPAE0AAAABAAEAAAAQAE0AAAABAAEAAAAPAE4AAAADAAAAAAAQAE4AAAABAAEAAAAPAE8AAAAAAAEAAAAQAE8AAAABAAEAAAAMAEkAAAADAAIAAAAPAEkAAAADAAAAAAAOAEkAAAABAAIAAAANAEkAAAABAAIAAAAKAEcAAAAAAAAAAAARAEcAAAABAAAAAAARAEkAAAADAAIAAAARAEgAAAABAAEAAAAKAEkAAAAAAAEAAAAKAEgAAAAAAAEAAAALAEcAAAABAAAAAAAMAEcAAAABAAAAAAANAEcAAAABAAAAAAAOAEcAAAABAAAAAAAPAEcAAAABAAAAAAAQAEcAAAABAAAAAAAQAEkAAAABAAEAAAAQAEgAAAABAAEAAAAPAEgAAAABAAEAAAAOAEgAAAABAAEAAAANAEgAAAABAAEAAAAMAEgAAAABAAEAAAALAEkAAAABAAEAAAALAEgAAAABAAEAAAASAEcAAAABAAAAAAATAEcAAAABAAAAAAAUAEcAAAABAAAAAAAVAEcAAAABAAAAAAATAEkAAAABAAIAAAASAEkAAAABAAIAAAASAEgAAAABAAEAAAATAEgAAAABAAEAAAAUAEgAAAABAAEAAAAWAEcAAAACAAAAAAAWAEgAAAACAAEAAAAWAEkAAAACAAEAAAAWAEoAAAACAAEAAAAWAEsAAAACAAEAAAAWAEwAAAACAAEAAAAWAE0AAAACAAEAAAAWAE4AAAACAAIAAAAVAE4AAAABAAIAAAAUAE4AAAABAAIAAAATAE4AAAABAAIAAAASAE4AAAABAAIAAAAUAE0AAAABAAEAAAAUAEwAAAADAAEAAAAUAEsAAAAAAAEAAAAUAEoAAAAAAAEAAAAUAEkAAAADAAAAAAAVAEgAAAABAAEAAAAVAEkAAAABAAEAAAAVAEoAAAABAAEAAAAVAEsAAAABAAEAAAAVAEwAAAABAAEAAAAVAE0AAAABAAEAAAATAE0AAAABAAEAAAASAE0AAAABAAEAAAASAEwAAAABAAAAAAATAEwAAAABAAAAAAANAEwAAAABAAAAAAANAE0AAAABAAEAAAANAE4AAAABAAIAAAAOAE4AAAABAAIAAAAOAE0AAAABAAEAAAAOAEwAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Pot" type="Node2D" parent="." unique_id=224046563]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pot" unique_id=1604864584]
+modulate = Color(0.10747976, 0.10747973, 0.10747973, 1)
+position = Vector2(362, -113)
+texture = ExtResource("1_rs4tb")
+
+[node name="Area2D" type="Area2D" parent="Pot" unique_id=563285885]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pot/Area2D" unique_id=739641802]
+position = Vector2(365, -101)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="area_shape_entered" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_area_shape_exited"]
+[connection signal="body_entered" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_body_exited"]

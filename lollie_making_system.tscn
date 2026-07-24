@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dgtdq5wvdxjn8"]
-
-[node name="LollieMakingSystem" type="Node2D" unique_id=1693147495]
-
-[node name="ShittyTempChar" type="CharacterBody2D" parent="." unique_id=1937201670]
