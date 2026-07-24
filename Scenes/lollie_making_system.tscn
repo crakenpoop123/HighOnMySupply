@@ -71,7 +71,7 @@ texture = ExtResource("1_rs4tb")
 position = Vector2(365, -101)
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=752118289]
+[node name="Text" type="RichTextLabel" parent="." unique_id=752118289]
 offset_left = 253.0
 offset_top = -278.0
 offset_right = 499.0
