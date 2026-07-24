@@ -1,2 +1,2 @@
-# HighOnMySupply
-A game about MEDICINE, not d**gs. MEDICINE!
+# SugarHighOnMySupply
+A game about lollies, not d**gs. LOLLIES!
