@@ -1,5 +1,6 @@
 extends Node2D
 
+const COOKING_MENU = preload("res://Scenes/lolly_making_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,5 +11,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if $ShittyTempChar.in_pot_menu == true:
 		$Text.text = "Press E to close menu"
+		cooking_menu_inst()
 	else:
 		$Text.text = "Press E to start mixing ingrediants"
+
+func cooking_menu_inst():
+	var cooking_menu = COOKING_MENU.instantiate()
+	$Menus.add_child(cooking_menu)
