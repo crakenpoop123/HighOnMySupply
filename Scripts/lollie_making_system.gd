@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $ShittyTempChar.in_pot_menu == true:
+	if Globals.in_cooking_menu == true:
 		$Text.text = "Press E to close menu"
 		cooking_menu_inst()
 	else:
