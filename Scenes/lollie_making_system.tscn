@@ -71,6 +71,14 @@ texture = ExtResource("1_rs4tb")
 position = Vector2(365, -101)
 shape = SubResource("CircleShape2D_g4v7s")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=752118289]
+offset_left = 253.0
+offset_top = -278.0
+offset_right = 499.0
+offset_bottom = -174.0
+text = "Press E to start mixing ingrediants
+"
+
 [connection signal="area_shape_entered" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_area_shape_exited"]
 [connection signal="body_entered" from="Pot/Area2D" to="ShittyTempChar" method="_on_area_2d_body_entered"]
