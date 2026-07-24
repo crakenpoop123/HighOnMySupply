@@ -10,6 +10,7 @@ const SPEED = 300.0
 func _process(_delta: float) -> void:
 	if in_menu == true:
 		can_move = false
+		velocity.x = 0
 	else:
 		can_move = true
 	if Input.is_action_just_pressed("interact"):
@@ -36,10 +37,10 @@ func _physics_process(_delta: float) -> void:
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	near_pot = true
 	print(near_pot)
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	near_pot = false
 	print(near_pot)
