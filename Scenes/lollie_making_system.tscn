@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bajshbxjergmi" path="res://Scripts/lollie_making_system.gd" id="1_mdsgg"]
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_rs4tb"]
 [ext_resource type="Texture2D" uid="uid://dhq42jv76ukei" path="res://Assets/roadtilemap.png" id="3_7w7pi"]
+[ext_resource type="PackedScene" uid="uid://ok5e1ml3td6b" path="res://Scenes/lolly_making_menu.tscn" id="4_uxikq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
@@ -49,6 +50,8 @@ texture = ExtResource("1_rs4tb")
 
 [node name="Camera2D" type="Camera2D" parent="ShittyTempChar" unique_id=1942595607]
 position_smoothing_enabled = true
+
+[node name="LollyMakingMenu" parent="ShittyTempChar" unique_id=2108171630 instance=ExtResource("4_uxikq")]
 
 [node name="status" type="Sprite2D" parent="." unique_id=743427182]
 position = Vector2(-319, -213)

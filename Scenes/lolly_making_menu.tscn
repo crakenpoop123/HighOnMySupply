@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ok5e1ml3td6b"]
+
+[node name="LollyMakingMenu" type="CanvasLayer" unique_id=2108171630]
+
+[node name="Control" type="Control" parent="." unique_id=534958026]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=881228571]
+layout_mode = 0
+offset_left = -491.0
+offset_top = -243.0
+offset_right = 470.0
+offset_bottom = 81.0
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/HBoxContainer" unique_id=2012015419]
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
