@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
 var near_pot: bool = false
-var in_menu = false
 
 const SPEED = 300.0
 
 func _process(_delta: float) -> void:
-	if in_menu == true:
+	if Globals.in_menu == true:
 		Globals.can_move = false
 		velocity.x = 0
 	else:
@@ -14,12 +13,14 @@ func _process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("interact"):
 		print("trying to interact")
-		if near_pot == true:
-			Globals.in_cooking_menu = !Globals.in_cooking_menu
-			in_menu = Globals.in_cooking_menu # I'm sure there is probably issues with this line and the whole thing but oh well
-			print("in cooking menu")
-		else:
-			print("failed to interact with anything")
+		if Globals.in_menu == false:
+			if near_pot == true:
+				Globals.in_cooking_menu = true
+				Globals.in_menu = true
+				print("in cooking menu")
+				$"..".cooking_menu_inst()
+			else:
+				print("failed to interact with anything")
 		
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:

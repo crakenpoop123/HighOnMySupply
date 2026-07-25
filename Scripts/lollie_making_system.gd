@@ -8,13 +8,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Globals.in_cooking_menu == true:
-		$Text.text = "Press E to close menu"
-		cooking_menu_inst()
-	else:
-		$Text.text = "Press E to start mixing ingrediants"
+func _process(_delta: float) -> void:
+	$Text.text = "Press E to start mixing ingrediants"
 
 func cooking_menu_inst():
 	var cooking_menu = COOKING_MENU.instantiate()
 	$Menus.add_child(cooking_menu)
+	
