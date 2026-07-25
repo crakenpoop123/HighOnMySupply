@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$Text.text = "Press E to start mixing ingrediants"
-
+	
 func cooking_menu_inst():
 	var cooking_menu = COOKING_MENU.instantiate()
 	$Menus.add_child(cooking_menu)

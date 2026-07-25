@@ -8,10 +8,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$RichTextLabel.text = "Gummy worms stock: " + str(Globals.gummy_worm_stock)
 
 
 func _on_button_2_button_up() -> void:
 	self.queue_free()
 	Globals.in_menu = false
 	Globals.in_cooking_menu = false
+
+
+func _make_gummy_button() -> void:
+	Globals.gummy_worm_stock += 1

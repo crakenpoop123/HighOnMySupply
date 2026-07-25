@@ -44,4 +44,13 @@ offset_right = 510.0
 offset_bottom = -204.0
 text = "close menu"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=486043386]
+offset_left = 103.0
+offset_top = 545.0
+offset_right = 561.0
+offset_bottom = 566.0
+scale = Vector2(3.27, 3.27)
+text = "Gummy worms"
+
+[connection signal="button_up" from="Control/Button" to="." method="_make_gummy_button"]
 [connection signal="button_up" from="Control/Button2" to="." method="_on_button_2_button_up"]
