@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sugarhigh"
-run/main_scene="uid://ct7yrpktdn4ma"
+run/main_scene="uid://dgq8x6x3x4cbk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
