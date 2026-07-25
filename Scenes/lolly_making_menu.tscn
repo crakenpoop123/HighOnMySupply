@@ -47,8 +47,8 @@ text = "close menu"
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=486043386]
 offset_left = 103.0
 offset_top = 545.0
-offset_right = 561.0
-offset_bottom = 566.0
+offset_right = 561.104
+offset_bottom = 614.41895
 scale = Vector2(3.27, 3.27)
 text = "Gummy worms"
 
