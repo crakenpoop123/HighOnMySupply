@@ -1,2 +1,2 @@
 # SugarHighOnMySupply
-A game about lollies, not d**gs. LOLLIES!
+A game about lollies, not drugs. LOLLIES!
