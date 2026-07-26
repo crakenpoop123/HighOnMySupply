@@ -31,8 +31,9 @@ func _on_button_2_button_up() -> void:
 	menu -= 1
 
 func _make_gummy_button() -> void:
-	Globals.gummy_worm_stock += 1
-
+	if Globals.sugar >= 1:
+		Globals.gummy_worm_stock += 1
+		Globals.sugar -= 1
 
 func _on_button_button_up() -> void:
 	menu = 2
