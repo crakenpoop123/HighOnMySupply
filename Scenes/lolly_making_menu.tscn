@@ -49,6 +49,14 @@ offset_right = -156.0
 offset_bottom = -107.0
 text = "Make Gummy worm"
 
+[node name="Button2" type="Button" parent="Main/MainMenu" unique_id=311042788]
+layout_mode = 0
+offset_left = -132.0
+offset_top = -239.0
+offset_right = 151.0
+offset_bottom = -99.0
+text = "Make sugar"
+
 [node name="Gummy worm manufacturing" type="Control" parent="Main" unique_id=1710361508]
 anchors_preset = 0
 offset_left = -556.0
@@ -73,6 +81,23 @@ offset_bottom = 614.41895
 scale = Vector2(3.27, 3.27)
 text = "Gummy worms"
 
+[node name="Sugar" type="Control" parent="Main" unique_id=1737057060]
+anchors_preset = 0
+offset_left = -556.0
+offset_top = -304.0
+offset_right = -516.0
+offset_bottom = -264.0
+
+[node name="Button" type="Button" parent="Main/Sugar" unique_id=2111015190]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 68.0
+offset_right = 404.0
+offset_bottom = 202.0
+text = "Make Sugar"
+
 [connection signal="button_up" from="Main/BackButton" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="Main/MainMenu/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Main/MainMenu/Button2" to="." method="_make_sugar_button"]
 [connection signal="button_up" from="Main/Gummy worm manufacturing/Button" to="." method="_make_gummy_button"]
+[connection signal="button_up" from="Main/Sugar/Button" to="." method="_make_sugar_sugar_button"]
