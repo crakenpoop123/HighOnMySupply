@@ -20,11 +20,19 @@ func _process(_delta: float) -> void:
 		self.queue_free()
 		Globals.in_menu = false
 		Globals.in_cooking_menu = false
-		
-func _on_button_2_button_up() -> void:
-	menu = 0
+	elif menu == Menu.MENU_MENU:
+		$"Main/Gummy worm manufacturing".visible = false
+		$Main/MainMenu.visible = true
+	elif menu == Menu.GUMMY_WORM_MENU:
+		$"Main/Gummy worm manufacturing".visible = true
+		$Main/MainMenu.visible = false
 	
-
+func _on_button_2_button_up() -> void:
+	menu -= 1
 
 func _make_gummy_button() -> void:
 	Globals.gummy_worm_stock += 1
+
+
+func _on_button_button_up() -> void:
+	menu = 2
