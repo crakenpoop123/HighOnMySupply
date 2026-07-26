@@ -4,7 +4,8 @@ enum Menu {
 	MENU_MENU,
 	GUMMY_WORM_MENU
 }
-var menu
+
+var menu = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _process(_delta: float) -> void:
 		Globals.in_cooking_menu = false
 		
 func _on_button_2_button_up() -> void:
-	self.queue_free()
+	menu = 0
 	
 
 
