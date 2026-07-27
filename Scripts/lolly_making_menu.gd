@@ -35,7 +35,7 @@ func _process(_delta: float) -> void:
 		$Main/Sugar.visible = true
 		
 func _on_button_2_button_up() -> void:
-	menu -= 1
+	menu = 1
 
 func _make_gummy_button() -> void:
 	if Globals.sugar >= 1:
