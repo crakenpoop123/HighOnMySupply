@@ -22,6 +22,8 @@ func _process(_delta: float) -> void:
 				Globals.in_cooking_menu = true
 				Globals.in_menu = true
 				print("in cooking menu")
+				
+				# Open the cooking menu
 				$"..".cooking_menu_inst()
 			else:
 				print("failed to interact with anything")
@@ -45,7 +47,8 @@ func _physics_process(_delta: float) -> void:
 		target_speed = target_speed.normalized() * SPEED
 		
 		velocity += (target_speed - velocity) / movement_smoothing
-		
+	else: # Stop the player from drifting when they shouldn't move
+		target_speed = Vector2.ZERO
 	move_and_slide()
 
 
