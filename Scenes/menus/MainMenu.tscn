@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ct7yrpktdn4ma"]
 
-[ext_resource type="Script" uid="uid://8euw18457d04" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://8euw18457d04" path="res://Scripts/menus/main_menu.gd" id="1_tt5f1"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=729215485]
 script = ExtResource("1_tt5f1")
@@ -43,6 +43,6 @@ anchor_right = 0.762
 anchor_bottom = 0.24000001
 offset_right = 0.1579895
 offset_bottom = -0.16000366
-text = "lollie making"
+text = "lolly making"
 
 [connection signal="button_up" from="Main/Buttons/Button" to="." method="_on_button_button_up"]

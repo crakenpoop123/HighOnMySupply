@@ -12,8 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_up() -> void:
-	Globals.gummy_worm_stock += 1
-
-
-func _on_button_2_button_up() -> void:
-	get_tree().change_scene_to_file("res://Scenes/lollie_making_system.tscn")
+	get_tree().change_scene_to_file("res://Scenes/lolly_making/lolly_making_system.tscn")

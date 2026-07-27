@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ok5e1ml3td6b"]
 
-[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_mu2ov"]
-[ext_resource type="Script" uid="uid://chjejp3tnmrdm" path="res://Scripts/lolly_making_menu.gd" id="1_uuvu8"]
+[ext_resource type="Script" uid="uid://chjejp3tnmrdm" path="res://Scripts/lolly_making/lolly_making_menu.gd" id="1_15d6x"]
+[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="2_1rao7"]
 
 [node name="LollyMakingMenu" type="CanvasLayer" unique_id=2108171630]
-script = ExtResource("1_uuvu8")
+script = ExtResource("1_15d6x")
 
 [node name="Main" type="Control" parent="." unique_id=534958026]
 layout_mode = 3
@@ -26,7 +26,7 @@ offset_left = -549.0
 offset_top = -305.0
 offset_right = 588.0
 offset_bottom = 344.0
-texture = ExtResource("1_mu2ov")
+texture = ExtResource("2_1rao7")
 
 [node name="BackButton" type="Button" parent="Main" unique_id=893987059]
 layout_mode = 0

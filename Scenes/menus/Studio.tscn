@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dgq8x6x3x4cbk"]
 
-[ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://Scripts/studio.gd" id="1_le2k7"]
-[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_oydea"]
+[ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://Scripts/menus/studio.gd" id="1_oeoyy"]
+[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="2_57jmn"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=665983815]
-script = ExtResource("1_le2k7")
+script = ExtResource("1_oeoyy")
 
 [node name="Main" type="Control" parent="." unique_id=761685612]
 layout_mode = 3
@@ -26,7 +26,7 @@ offset_right = 133.11108
 offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_oydea")
+texture = ExtResource("2_57jmn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main" unique_id=359954901]
 layout_mode = 1

@@ -1,6 +1,6 @@
 extends Node2D
 
-const COOKING_MENU = preload("res://Scenes/lolly_making_menu.tscn")
+const COOKING_MENU = preload("res://Scenes/lolly_making/lolly_making_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
