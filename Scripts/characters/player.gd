@@ -12,6 +12,7 @@ func _process(_delta: float) -> void:
 	if Globals.in_menu == true:
 		Globals.can_move = false
 		velocity.x = 0
+		velocity.y = 0
 	else:
 		Globals.can_move = true
 		
