@@ -4,6 +4,10 @@ var near_pot: bool = false
 
 const SPEED = 300.0
 
+var target_speed = Vector2.ZERO
+var movement_smoothing = 5
+
+
 func _process(_delta: float) -> void:
 	if Globals.in_menu == true:
 		Globals.can_move = false
@@ -24,12 +28,24 @@ func _process(_delta: float) -> void:
 		
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:
-		var direction := Input.get_axis("move_left", "move_right")
-		if direction:
-			velocity.x = direction * SPEED
+		if Input.is_action_pressed("move_up"):
+			target_speed[1] = -SPEED
+		elif Input.is_action_pressed("move_down"):
+			target_speed[1] = SPEED
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-
+			target_speed[1] = 0
+		if Input.is_action_pressed("move_left"):
+			target_speed[0] = -SPEED
+		elif Input.is_action_pressed("move_right"):
+			target_speed[0] = SPEED
+		else:
+			target_speed[0] = 0
+		
+		# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
+		target_speed = target_speed.normalized() * SPEED
+		
+		velocity += (target_speed - velocity) / movement_smoothing
+		
 	move_and_slide()
 
 
