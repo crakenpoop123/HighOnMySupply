@@ -16,7 +16,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$Main/GummyManufacturing/GummyStock.text = "Gummy worms stock: " + str(Globals.gummy_worm_stock)
-	
+	$Main/SugarManufacturing/SugarStock.text = "Sugar stock: " + str(Globals.sugar)
 	if menu == Menu.CLOSE_MENU:
 		Globals.in_menu = false
 		Globals.in_cooking_menu = false

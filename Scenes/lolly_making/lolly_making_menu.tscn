@@ -88,6 +88,15 @@ offset_top = -304.0
 offset_right = -516.0
 offset_bottom = -264.0
 
+[node name="SugarStock" type="RichTextLabel" parent="Main/SugarManufacturing" unique_id=1876746860]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 545.0
+offset_right = 561.104
+offset_bottom = 614.41895
+scale = Vector2(3.27, 3.27)
+text = "Sugar"
+
 [node name="MakeSugar" type="Button" parent="Main/SugarManufacturing" unique_id=2111015190]
 layout_mode = 0
 offset_left = 166.0
