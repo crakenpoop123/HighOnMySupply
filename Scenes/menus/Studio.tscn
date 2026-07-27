@@ -45,7 +45,7 @@ scale = Vector2(6.07, 6.07)
 text = "THE VOICES"
 
 [node name="Timer" type="Timer" parent="." unique_id=1848453553]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 autostart = true
 
