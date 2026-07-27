@@ -7,6 +7,7 @@ var in_menu = false
 var gummy_worm_stock: int = 0
 var sugar = 0
 var gelatin = 0
+var money = 0
 
 
 # Save the scene using a PackedScene

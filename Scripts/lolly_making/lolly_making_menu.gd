@@ -4,7 +4,8 @@ enum Menu {
 	MENU_MENU,
 	GUMMY_WORM_MENU,
 	SUGAR_MAKING_MENU,
-	GELATIN_BUYING_MENU
+	GELATIN_BUYING_MENU,
+	temp_sell_gummy_worm
 }
 
 var menu = 1
@@ -19,6 +20,7 @@ func _process(_delta: float) -> void:
 	$Main/GummyManufacturing/GummyStock.text = "Gummy worms stock: " + str(Globals.gummy_worm_stock)
 	$Main/SugarManufacturing/SugarStock.text = "Sugar stock: " + str(Globals.sugar)
 	$Main/BuyGelatin/GelatinStock.text = "Gelatin stock: " + str(Globals.gelatin)
+	$Main/SellMenu/Money.text = "money: " + str(Globals.money)
 	
 	if menu == Menu.CLOSE_MENU:
 		Globals.in_menu = false
@@ -29,21 +31,31 @@ func _process(_delta: float) -> void:
 		$Main/MainMenu.visible = true
 		$Main/SugarManufacturing.visible = false
 		$Main/BuyGelatin.visible = false
+		$Main/SellMenu.visible = false
 	elif menu == Menu.GUMMY_WORM_MENU:
 		$"Main/GummyManufacturing".visible = true
 		$Main/MainMenu.visible = false
 		$Main/SugarManufacturing.visible = false
 		$Main/BuyGelatin.visible = false
+		$Main/SellMenu.visible = false
 	elif menu == Menu.SUGAR_MAKING_MENU:
 		$"Main/GummyManufacturing".visible = false
 		$Main/MainMenu.visible = false
 		$Main/SugarManufacturing.visible = true
 		$Main/BuyGelatin.visible = false
+		$Main/SellMenu.visible = false
 	elif menu == Menu.GELATIN_BUYING_MENU:
 		$"Main/GummyManufacturing".visible = false
 		$Main/MainMenu.visible = false
 		$Main/SugarManufacturing.visible = false
 		$Main/BuyGelatin.visible = true
+		$Main/SellMenu.visible = false
+	elif menu == Menu.temp_sell_gummy_worm:
+		$"Main/GummyManufacturing".visible = false
+		$Main/MainMenu.visible = false
+		$Main/SugarManufacturing.visible = false
+		$Main/BuyGelatin.visible = false
+		$Main/SellMenu.visible = true
 	else:
 		print("Oh no, something bad happened :(")
 func _on_button_2_button_up() -> void:
@@ -74,3 +86,11 @@ func _on_sugar_menu_2_button_up() -> void:
 	
 func _on_buy_gelatin_button_up() -> void:
 	Globals.gelatin += 1
+
+func _on_sell_gummy_worm_button_up() -> void:
+	menu = 5
+
+func _on_sell_button_button_up() -> void:
+	if Globals.gummy_worm_stock >= 1:
+		Globals.gummy_worm_stock -= 1
+		Globals.money += 10

@@ -37,7 +37,6 @@ offset_bottom = -204.0
 text = "Back"
 
 [node name="MainMenu" type="Control" parent="Main" unique_id=2022100755]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -58,13 +57,21 @@ offset_right = 151.0
 offset_bottom = -99.0
 text = "Make sugar"
 
-[node name="SugarMenu2" type="Button" parent="Main/MainMenu" unique_id=457706806]
+[node name="GelatinMenu" type="Button" parent="Main/MainMenu" unique_id=457706806]
 layout_mode = 0
 offset_left = -389.0
 offset_top = -67.0
 offset_right = -157.0
 offset_bottom = 73.0
 text = "Buy gelatin"
+
+[node name="SellGummyWorm" type="Button" parent="Main/MainMenu" unique_id=811522666]
+layout_mode = 0
+offset_left = -112.0
+offset_top = -64.0
+offset_right = 120.0
+offset_bottom = 76.0
+text = "Sell gummy worms"
 
 [node name="GummyManufacturing" type="Control" parent="Main" unique_id=1710361508]
 visible = false
@@ -92,6 +99,7 @@ scale = Vector2(3.27, 3.27)
 text = "Gummy worms"
 
 [node name="SugarManufacturing" type="Control" parent="Main" unique_id=1737057060]
+visible = false
 anchors_preset = 0
 offset_left = -556.0
 offset_top = -304.0
@@ -116,6 +124,7 @@ offset_bottom = 202.0
 text = "Make Sugar"
 
 [node name="BuyGelatin" type="Control" parent="Main" unique_id=920204874]
+visible = false
 anchors_preset = 0
 offset_left = -556.0
 offset_top = -304.0
@@ -139,10 +148,37 @@ offset_right = 404.0
 offset_bottom = 202.0
 text = "buy gelatin"
 
+[node name="SellMenu" type="Control" parent="Main" unique_id=36542821]
+visible = false
+anchors_preset = 0
+offset_left = -556.0
+offset_top = -304.0
+offset_right = -516.0
+offset_bottom = -264.0
+
+[node name="Money" type="RichTextLabel" parent="Main/SellMenu" unique_id=625885017]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 545.0
+offset_right = 561.104
+offset_bottom = 614.41895
+scale = Vector2(3.27, 3.27)
+text = "Gelatin"
+
+[node name="SellButton" type="Button" parent="Main/SellMenu" unique_id=912579261]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 68.0
+offset_right = 404.0
+offset_bottom = 202.0
+text = "sell gummy worm"
+
 [connection signal="button_up" from="Main/BackButton" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="Main/MainMenu/GummyMenu" to="." method="_open_gummy_menu"]
 [connection signal="button_up" from="Main/MainMenu/SugarMenu" to="." method="_open_sugar_menu"]
-[connection signal="button_up" from="Main/MainMenu/SugarMenu2" to="." method="_on_sugar_menu_2_button_up"]
+[connection signal="button_up" from="Main/MainMenu/GelatinMenu" to="." method="_on_sugar_menu_2_button_up"]
+[connection signal="button_up" from="Main/MainMenu/SellGummyWorm" to="." method="_on_sell_gummy_worm_button_up"]
 [connection signal="button_up" from="Main/GummyManufacturing/MakeGummy" to="." method="_make_gummy_worms"]
 [connection signal="button_up" from="Main/SugarManufacturing/MakeSugar" to="." method="_make_sugar"]
 [connection signal="button_up" from="Main/BuyGelatin/BuyGelatin" to="." method="_on_buy_gelatin_button_up"]
+[connection signal="button_up" from="Main/SellMenu/SellButton" to="." method="_on_sell_button_button_up"]
