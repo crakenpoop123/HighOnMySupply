@@ -70,4 +70,3 @@ text = "Press E to start mixing ingrediants
 
 [connection signal="area_shape_entered" from="Pot/Area2D" to="Player" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Pot/Area2D" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Pot/Area2D" to="Player" method="_on_area_2d_body_exited"]
