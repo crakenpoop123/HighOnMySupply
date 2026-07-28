@@ -85,7 +85,9 @@ func _on_sugar_menu_2_button_up() -> void: # Open the gelatin menu
 	menu = 4
 	
 func _on_buy_gelatin_button_up() -> void: # Gelatin button that gives you gelatin
-	Globals.gelatin += 1
+	if Globals.money >= 5:
+		Globals.gelatin += 1
+		Globals.money -= 5
 
 func _on_sell_gummy_worm_button_up() -> void: # Open the sell menu
 	menu = 5
