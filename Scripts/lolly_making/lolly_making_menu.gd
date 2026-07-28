@@ -71,26 +71,26 @@ func _make_gummy_worms() -> void:
 		Globals.sugar -= 1
 		Globals.gelatin -= 1
 
-func _open_gummy_menu() -> void:
+func _open_gummy_menu() -> void: # Open the gummy worm menu to make gummy worms 
 	print("Opening Gummy Menu")
 	menu = 2
 
-func _open_sugar_menu() -> void:
+func _open_sugar_menu() -> void: # Open the sugar menu
 	menu = 3
 
-func _make_sugar() -> void: 
+func _make_sugar() -> void:  # Sugar button that gives you sugar
 	Globals.sugar += 1
 
-func _on_sugar_menu_2_button_up() -> void:
+func _on_sugar_menu_2_button_up() -> void: # Open the gelatin menu
 	menu = 4
 	
-func _on_buy_gelatin_button_up() -> void:
+func _on_buy_gelatin_button_up() -> void: # Gelatin button that gives you gelatin
 	Globals.gelatin += 1
 
-func _on_sell_gummy_worm_button_up() -> void:
+func _on_sell_gummy_worm_button_up() -> void: # Open the sell menu
 	menu = 5
 
-func _on_sell_button_button_up() -> void:
-	if Globals.gummy_worm_stock >= 1:
+func _on_sell_button_button_up() -> void: # Sell 1 gummy worm for 10 money
+	if Globals.gummy_worm_stock >= 1: 
 		Globals.gummy_worm_stock -= 1
 		Globals.money += 10
