@@ -3,11 +3,18 @@ extends Node
 var can_move = true
 var in_cooking_menu = false
 var in_menu = false
+var in_inventory = false
 
 var gummy_worm_stock: int = 0
 var sugar = 0
 var gelatin = 0
 var money = 10
+
+
+
+
+
+
 
 
 # Save the scene using a PackedScene

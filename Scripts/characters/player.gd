@@ -28,7 +28,15 @@ func _process(_delta: float) -> void:
 				$"..".cooking_menu_inst()
 			else:
 				print("failed to interact with anything")
-		
+	if Input.is_action_just_pressed("inventory"):
+		if Globals.in_inventory == false:
+			print("inventory opened")
+			Globals.in_inventory = true
+			$"..".inventory_inst()
+		else:
+			print("already open")
+			
+			
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:
 		if Input.is_action_pressed("move_up"):
