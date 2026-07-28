@@ -10,18 +10,18 @@ enum Menu {
 
 var menu = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void: 
+		# Update text
 	$Main/GummyManufacturing/GummyStock.text = "Gummy worms stock: " + str(Globals.gummy_worm_stock)
 	$Main/SugarManufacturing/SugarStock.text = "Sugar stock: " + str(Globals.sugar)
 	$Main/BuyGelatin/GelatinStock.text = "Gelatin stock: " + str(Globals.gelatin)
 	$Main/SellMenu/Money.text = "money: " + str(Globals.money)
-	
+
+		# All the menus to make them visible or not
 	if menu == Menu.CLOSE_MENU:
 		Globals.in_menu = false
 		Globals.in_cooking_menu = false
@@ -58,14 +58,15 @@ func _process(_delta: float) -> void:
 		$Main/SellMenu.visible = true
 	else:
 		print("Oh no, something bad happened :(")
-func _on_button_2_button_up() -> void:
+
+func _on_button_2_button_up() -> void: # Back button
 	print("Close Menu button pressed")
-	if menu == 1:
+	if menu == 1: # Code so that the menu closes on page 1
 		menu = 0
 	else:
 		menu = 1
 
-func _make_gummy_worms() -> void:
+func _make_gummy_worms() -> void: # Make the gummy worms
 	if Globals.sugar >= 1 and Globals.gelatin >= 1:
 		Globals.gummy_worm_stock += 1
 		Globals.sugar -= 1
