@@ -14,6 +14,7 @@ var money = 10
 
 # Farm variables
 var farm_exists = false
+var dry_rate = 5 # Time it takes for a farm plot to dry
 
 
 

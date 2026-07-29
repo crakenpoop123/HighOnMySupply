@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void: 
-	$Text.text = "Press E to start mixing ingrediants" # Origially the text changed so thats why this is here
+	$MixTip.text = "Press E to start mixing ingrediants" # Origially the text changed so thats why this is here
 	
 func cooking_menu_inst(): #Make the menu appear
 	var cooking_menu = COOKING_MENU.instantiate()

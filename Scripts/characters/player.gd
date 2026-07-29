@@ -45,8 +45,22 @@ func check_for_farm():
 	Globals.farm_exists = $"..".has_node("Farm")
 
 func find_farm_plots():
+	var touching_any_plots = false
 	for plot in $"..".get_node("Farm").get_children():
 		plot.player_can_interact = is_interact_area_touching(plot)
+		touching_any_plots = true
+	return touching_any_plots
+
+func get_nearest_farm_plot():
+	var closest_dist = INF
+	var closest_plot
+	for plot in $"..".get_node("Farm").get_children():
+		var curr_dist = self.global_position.distance_to(plot.global_position)
+		if is_interact_area_touching(plot) and curr_dist < closest_dist:
+			closest_dist = curr_dist
+			closest_plot = plot
+	
+	return closest_plot
 
 func is_interact_area_touching(body):
 	return body in $"InteractArea".get_overlapping_bodies()
@@ -78,12 +92,18 @@ func interact():
 			if near_pot == true:
 				Globals.in_cooking_menu = true
 				Globals.in_menu = true
-				print("in cooking menu")
+				print("PLayer has interacted with the cooking menu")
 				
 				# Open the cooking menu
 				$"..".cooking_menu_inst()
+			elif find_farm_plots():
+				print("Player has interacted with a farm plot")
+				
+				# Increase the growth rate of the plot slightly
+				get_nearest_farm_plot().water()
+				
 			else:
-				print("failed to interact with anything")
+				print("Failed to interact with anything")
 	if Input.is_action_just_pressed("inventory"):
 		if Globals.in_inventory == false:
 			print("inventory opened")
