@@ -58,14 +58,6 @@ texture = ExtResource("2_bxcts")
 position = Vector2(362, -113.5)
 shape = SubResource("RectangleShape2D_2btpf")
 
-[node name="Text" type="RichTextLabel" parent="." unique_id=752118289]
-offset_left = 253.0
-offset_top = -278.0
-offset_right = 499.0
-offset_bottom = -174.0
-text = "Press E to start mixing ingrediants
-"
-
 [node name="Menus" type="Node2D" parent="." unique_id=136826671]
 
 [connection signal="area_entered" from="Pot/Area2D" to="Player" method="_on_area_2d_area_entered"]
