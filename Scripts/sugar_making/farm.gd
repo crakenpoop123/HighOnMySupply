@@ -42,7 +42,6 @@ func harvest():
 func _on_random_growth_tick_timeout() -> void:
 	growth_stage = min(growth_stage + 1, Globals.sugar_cane_max_growth)
 	
-	print(growth_stage == Globals.sugar_cane_max_growth)
 	fully_grown = growth_stage == Globals.sugar_cane_max_growth
 	
 	print("grew to stage ", growth_stage)
