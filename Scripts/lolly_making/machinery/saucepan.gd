@@ -11,8 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func player_interact():
-	print("Shredded", shred(min(2, Globals.sugar_cane)))
-
-func shred(sugar_cane):
-	print("Shreddy Mc shredface")
-	return sugar_cane
+	print("Saucey")

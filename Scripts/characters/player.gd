@@ -119,7 +119,7 @@ func interact():
 			elif find_farm_plots():
 				print("Player has interacted with a farm plot")
 				
-				# Increase the growth rate of the plot slightly
+				# Interact with the plot
 				get_nearest_farm_plot().player_interact()
 			elif find_machinery():
 				print("Player has interacted with machinery")
