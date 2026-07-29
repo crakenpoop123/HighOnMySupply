@@ -47,11 +47,12 @@ func get_nearest_interactable():
 	var closest_dist = INF
 	var closest_interactable
 	for interactable_parent in Globals.interactable_parents:
-		for interactable in $"..".get_node(interactable_parent).get_children():
-			var curr_dist = self.global_position.distance_to(interactable.global_position)
-			if is_interact_area_touching(interactable) and curr_dist < closest_dist:
-				closest_dist = curr_dist
-				closest_interactable = interactable
+		if $"..".has_node(interactable_parent):
+			for interactable in $"..".get_node(interactable_parent).get_children():
+				var curr_dist = self.global_position.distance_to(interactable.global_position)
+				if is_interact_area_touching(interactable) and curr_dist < closest_dist:
+					closest_dist = curr_dist
+					closest_interactable = interactable
 	
 	return closest_interactable
 
