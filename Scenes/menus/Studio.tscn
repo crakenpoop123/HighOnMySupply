@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dgq8x6x3x4cbk"]
 
 [ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://Scripts/menus/studio.gd" id="1_oeoyy"]
-[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="2_57jmn"]
+[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="2_oeoyy"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=665983815]
+[node name="Studio" type="CanvasLayer" unique_id=665983815]
 script = ExtResource("1_oeoyy")
 
 [node name="Main" type="Control" parent="." unique_id=761685612]
@@ -14,21 +14,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Main" unique_id=1660349661]
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+[node name="Eye" type="TextureRect" parent="Main" unique_id=1660349661]
+modulate = Color(0.15127608, 0.15127608, 0.15127608, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -146.0
-offset_top = -80.0
-offset_right = 133.11108
-offset_bottom = 77.0
+offset_left = -148.0
+offset_top = 45.0
+offset_right = 131.11108
+offset_bottom = 202.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_57jmn")
+texture = ExtResource("2_oeoyy")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Main" unique_id=359954901]
+[node name="Black" type="TextureRect" parent="Main" unique_id=1682941649]
+modulate = Color(0.15127608, 0.15127608, 0.15127608, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -587.0
+offset_right = 137.11108
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oeoyy")
+
+[node name="StudioName" type="RichTextLabel" parent="Main" unique_id=359954901]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,8 +58,8 @@ grow_vertical = 2
 scale = Vector2(6.07, 6.07)
 text = "THE VOICES"
 
-[node name="Timer" type="Timer" parent="." unique_id=1848453553]
+[node name="NextSceneTimer" type="Timer" parent="." unique_id=1848453553]
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="NextSceneTimer" to="." method="_on_timer_timeout"]
