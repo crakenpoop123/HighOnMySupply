@@ -45,4 +45,13 @@ offset_right = 0.1579895
 offset_bottom = -0.16000366
 text = "lolly making"
 
+[node name="SugarMaking" type="Button" parent="Main/Buttons" unique_id=1856087631]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 260.0
+offset_bottom = 250.0
+text = "Sugar making
+"
+
 [connection signal="button_up" from="Main/Buttons/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Main/Buttons/SugarMaking" to="." method="_on_sugar_making_button_up"]

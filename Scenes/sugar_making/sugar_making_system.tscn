@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmd74wek3gncq"]
+
+[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_48tdt"]
+[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="2_k3pft"]
+
+[node name="SugarMakingSystem" type="Node2D" unique_id=2143707258]
+
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1668654048]
+repeat_size = Vector2(4800, 3800)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground" unique_id=1711437732]
+position = Vector2(244.49982, 177.30182)
+scale = Vector2(37.914063, 29.655554)
+texture = ExtResource("1_48tdt")
+
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_k3pft")]
+
+[node name="Menus" type="Node2D" parent="." unique_id=154102362]

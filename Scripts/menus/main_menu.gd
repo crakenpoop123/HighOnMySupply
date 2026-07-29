@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_button_up() -> void:
 	get_tree().change_scene_to_file("res://Scenes/lolly_making/lolly_making_system.tscn")
+
+
+func _on_sugar_making_button_up() -> void:
+	get_tree().change_scene_to_file("res://Scenes/sugar_making/sugar_making_system.tscn")
