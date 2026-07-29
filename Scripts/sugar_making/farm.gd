@@ -6,6 +6,8 @@ var growth = 0
 var growth_rate = 1
 var wetness = 0
 
+var fully_grown
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max))
@@ -23,8 +25,12 @@ func water():
 
 
 func _on_random_growth_tick_timeout() -> void:
-	growth += 1
+	growth = min(growth + 1, Globals.sugar_cane_max_growth)
+	
+	print(growth == Globals.sugar_cane_max_growth)
+	fully_grown = growth == Globals.sugar_cane_max_growth
 	
 	print("grew to stage ", growth)
 	
-	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
+	if !fully_grown:
+		$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)

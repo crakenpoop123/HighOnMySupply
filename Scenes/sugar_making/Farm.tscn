@@ -25,6 +25,7 @@ texture = SubResource("PlaceholderTexture2D_xqgsf")
 one_shot = true
 
 [node name="RandomGrowthTick" type="Timer" parent="." unique_id=1212978563]
+one_shot = true
 autostart = true
 
 [connection signal="timeout" from="RandomGrowthTick" to="." method="_on_random_growth_tick_timeout"]

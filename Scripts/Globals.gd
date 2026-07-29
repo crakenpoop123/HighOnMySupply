@@ -17,7 +17,7 @@ var farm_exists = false
 var dry_rate = 5 # Time it takes for a farm plot to dry
 var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a single stage of sugar cane
 var sugar_cane_growth_max = 2 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
-
+var sugar_cane_max_growth = 7
 
 
 
