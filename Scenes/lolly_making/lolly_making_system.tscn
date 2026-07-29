@@ -29,6 +29,7 @@ sources/0 = SubResource("TileSetAtlasSource_2btpf")
 size = Vector2(130, 129)
 
 [node name="LollieMakingSystem" type="Node2D" unique_id=1693147495]
+position = Vector2(3, 0)
 script = ExtResource("1_2btpf")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=125246660]

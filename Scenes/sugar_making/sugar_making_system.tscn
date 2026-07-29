@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_48tdt"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="2_k3pft"]
+[ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://Scenes/sugar_making/Farm.tscn" id="3_48tdt"]
 
 [node name="SugarMakingSystem" type="Node2D" unique_id=2143707258]
 
@@ -12,6 +13,11 @@ repeat_size = Vector2(4800, 3800)
 position = Vector2(244.49982, 177.30182)
 scale = Vector2(37.914063, 29.655554)
 texture = ExtResource("1_48tdt")
+
+[node name="Farm" type="Node2D" parent="." unique_id=1283718155]
+position = Vector2(150, 57)
+
+[node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("3_48tdt")]
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_k3pft")]
 

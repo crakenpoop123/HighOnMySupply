@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://cyxfiuftc7mml"]
 
+[ext_resource type="Script" uid="uid://cebgn12v8bb7" path="res://Scripts/sugar_making/farm.gd" id="1_ajfg2"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqgsf"]
 size = Vector2(1, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqgsf"]
 
 [node name="FarmPlot" type="StaticBody2D" unique_id=882134452]
-collision_layer = 0
+collision_layer = 3
+script = ExtResource("1_ajfg2")
 
 [node name="PlotCollision" type="CollisionShape2D" parent="." unique_id=51989486]
 position = Vector2(4.7683716e-07, -5.9604645e-08)

@@ -1,16 +1,19 @@
 extends Node
 
-var can_move = true
+# Player interaction variables
+var can_move = true # Interacting with the physica world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 
+# Lolly production variables
 var gummy_worm_stock: int = 0
 var sugar = 0
 var gelatin = 0
 var money = 10
 
-
+# Farm variables
+var farm_exists = false
 
 
 
