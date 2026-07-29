@@ -46,9 +46,10 @@ func check_for_farm():
 
 func find_farm_plots():
 	var touching_any_plots = false
-	for plot in $"..".get_node("Farm").get_children():
-		plot.player_can_interact = is_interact_area_touching(plot)
-		touching_any_plots = true
+	if $"..".has_node("Farm"):
+		for plot in $"..".get_node("Farm").get_children():
+			plot.player_can_interact = is_interact_area_touching(plot)
+			touching_any_plots = true
 	return touching_any_plots
 
 func find_machinery():

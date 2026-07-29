@@ -16,7 +16,7 @@ position = Vector2(314, 333)
 
 [node name="Machinery" type="Node2D" parent="." unique_id=773268305]
 
-[node name="Sprite2D" type="Sprite2D" parent="Machinery" unique_id=1435277138]
+[node name="Saucepan" type="Sprite2D" parent="Machinery" unique_id=1435277138]
 position = Vector2(706.99994, 354)
 scale = Vector2(0.56935126, 0.56935126)
 texture = ExtResource("3_cw0bx")
