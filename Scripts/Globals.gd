@@ -5,6 +5,7 @@ var can_move = true # Interacting with the physica world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
+var interactable_parents = ["Farm", "Machinery"]
 
 # Inventory variables
 var gummy_worm_stock: int = 0
@@ -20,7 +21,6 @@ var cane_sugar = 0
 var pure_sugar = 0
 
 # Farm variables
-var farm_exists = false
 var dry_rate = 5 # Time it takes for a farm plot to dry
 var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a single stage of sugar cane
 var sugar_cane_growth_max = 2 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
