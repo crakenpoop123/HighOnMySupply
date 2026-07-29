@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b5jtfqfnsgpr7"]
+
+[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_samsm"]
+[ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://Scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
+[ext_resource type="Texture2D" uid="uid://dqedpwn8wk51w" path="res://images.jpg" id="2_twj7y"]
+[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="4_wodbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf8u4"]
+size = Vector2(312, 308)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
+size = Vector2(131, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodbr"]
+
+[node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
+script = ExtResource("1_tf8u4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1175047369]
+position = Vector2(1482, 62)
+scale = Vector2(12.335936, 12.335936)
+texture = ExtResource("1_samsm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
+
+[node name="Saucepan" type="Node2D" parent="." unique_id=2141124942]
+
+[node name="SaucepanSprite" type="Sprite2D" parent="Saucepan" unique_id=1642097283]
+position = Vector2(-1.9999924, 7.6293945e-06)
+scale = Vector2(0.68791944, 0.68791944)
+texture = ExtResource("2_twj7y")
+
+[node name="SaucepanArea" type="Area2D" parent="Saucepan" unique_id=946257984]
+
+[node name="SaucepanCollision" type="CollisionShape2D" parent="Saucepan/SaucepanArea" unique_id=2115889523]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_tf8u4")
+
+[node name="Ingrediant" type="Node2D" parent="." unique_id=749894720]
+
+[node name="IngrediantSprite" type="Sprite2D" parent="Ingrediant" unique_id=1150678755]
+position = Vector2(350.25, -30.000008)
+scale = Vector2(0.5911017, 0.28389832)
+texture = ExtResource("4_wodbr")
+
+[node name="IngrediantArea" type="Area2D" parent="Ingrediant" unique_id=1372577605]
+
+[node name="IngrediantCollision" type="CollisionShape2D" parent="Ingrediant/IngrediantArea" unique_id=1441459547]
+position = Vector2(349, -32)
+shape = SubResource("RectangleShape2D_lo870")
+
+[node name="Mouse" type="Node2D" parent="." unique_id=231667404]
+
+[node name="MouseArea" type="Area2D" parent="Mouse" unique_id=814818792]
+
+[node name="MouseCollision" type="CollisionShape2D" parent="Mouse/MouseArea" unique_id=387624360]
+shape = SubResource("RectangleShape2D_wodbr")
