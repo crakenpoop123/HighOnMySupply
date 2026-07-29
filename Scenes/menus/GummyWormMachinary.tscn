@@ -2,20 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="1_vgcd1"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="1_xj7cc"]
-[ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="3_cw0bx"]
+[ext_resource type="Texture2D" uid="uid://dqedpwn8wk51w" path="res://images.jpg" id="3_cw0bx"]
 
 [node name="GummyWormMachinary" type="Node2D" unique_id=503787241]
 
 [node name="Eye" type="Sprite2D" parent="." unique_id=1919424687]
-position = Vector2(348.00003, 0)
+position = Vector2(360.00003, -42)
 scale = Vector2(3.3262713, 1)
 texture = ExtResource("1_vgcd1")
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("1_xj7cc")]
 position = Vector2(314, 333)
 
-[node name="Saucepan" type="Node2D" parent="." unique_id=773268305]
+[node name="Machinery" type="Node2D" parent="." unique_id=773268305]
 
-[node name="Sprite2D" type="Sprite2D" parent="Saucepan" unique_id=1435277138]
-position = Vector2(690, 309)
+[node name="Sprite2D" type="Sprite2D" parent="Machinery" unique_id=1435277138]
+position = Vector2(706.99994, 354)
+scale = Vector2(0.56935126, 0.56935126)
 texture = ExtResource("3_cw0bx")
