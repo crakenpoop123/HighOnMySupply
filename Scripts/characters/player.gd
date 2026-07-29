@@ -51,6 +51,25 @@ func find_farm_plots():
 		touching_any_plots = true
 	return touching_any_plots
 
+func find_machinery():
+	if $"..".has_node("Machinery"):
+		for machine in $"..".get_node("Machinery").get_children():
+			if is_interact_area_touching(machine):
+				return true
+	return false
+
+
+func get_nearest_machinery():
+	var closest_dist = INF
+	var closest_machine
+	for machine in $"..".get_node("Machinery").get_children():
+		var curr_dist = self.global_position.distance_to(machine.global_position)
+		if is_interact_area_touching(machine) and curr_dist < closest_dist:
+			closest_dist = curr_dist
+			closest_machine = machine
+	
+	return closest_machine
+
 func get_nearest_farm_plot():
 	var closest_dist = INF
 	var closest_plot
@@ -101,7 +120,10 @@ func interact():
 				
 				# Increase the growth rate of the plot slightly
 				get_nearest_farm_plot().player_interact()
+			elif find_machinery():
+				print("Player has interacted with machinery")
 				
+				get_nearest_machinery().player_interact()
 			else:
 				print("Failed to interact with anything")
 	if Input.is_action_just_pressed("inventory"):

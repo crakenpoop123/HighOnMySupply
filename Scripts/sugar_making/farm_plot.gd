@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Most golf is boring
+	
 	growth_rate = 1 + $WetnessTimer.time_left / (Globals.dry_rate * 2)
 	#print(growth_rate)
 

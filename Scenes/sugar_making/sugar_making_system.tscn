@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_48tdt"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="2_k3pft"]
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://Scenes/sugar_making/farm_plot.tscn" id="3_48tdt"]
+[ext_resource type="PackedScene" uid="uid://druo01roukbdx" path="res://Scenes/sugar_making/machines/shredder.tscn" id="4_k3pft"]
 
 [node name="SugarMakingSystem" type="Node2D" unique_id=2143707258]
 
@@ -22,3 +23,8 @@ position = Vector2(150, 57)
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_k3pft")]
 
 [node name="Menus" type="Node2D" parent="." unique_id=154102362]
+
+[node name="Machinery" type="Node2D" parent="." unique_id=724633394]
+
+[node name="Shredder" parent="Machinery" unique_id=569272027 instance=ExtResource("4_k3pft")]
+position = Vector2(-155, 95)
