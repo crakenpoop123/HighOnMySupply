@@ -8,15 +8,23 @@ var wetness = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Most golf is boring
 	growth_rate = 1 + $WetnessTimer.time_left / (Globals.dry_rate * 2)
-	print(growth_rate)
+	#print(growth_rate)
 
 func water():
 	wetness = 1
 	$WetnessTimer.start(Globals.dry_rate)
+
+
+func _on_random_growth_tick_timeout() -> void:
+	growth += 1
+	
+	print("grew to stage ", growth)
+	
+	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)

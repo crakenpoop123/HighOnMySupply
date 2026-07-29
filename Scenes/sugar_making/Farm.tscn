@@ -23,3 +23,8 @@ texture = SubResource("PlaceholderTexture2D_xqgsf")
 
 [node name="WetnessTimer" type="Timer" parent="." unique_id=1424376439]
 one_shot = true
+
+[node name="RandomGrowthTick" type="Timer" parent="." unique_id=1212978563]
+autostart = true
+
+[connection signal="timeout" from="RandomGrowthTick" to="." method="_on_random_growth_tick_timeout"]
