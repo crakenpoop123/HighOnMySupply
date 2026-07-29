@@ -100,7 +100,7 @@ func interact():
 				print("Player has interacted with a farm plot")
 				
 				# Increase the growth rate of the plot slightly
-				get_nearest_farm_plot().water()
+				get_nearest_farm_plot().player_interact()
 				
 			else:
 				print("Failed to interact with anything")

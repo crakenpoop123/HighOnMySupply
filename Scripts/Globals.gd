@@ -6,8 +6,9 @@ var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 
-# Lolly production variables
+# Inventory variables
 var gummy_worm_stock: int = 0
+var sugar_cane = 0
 var sugar = 0
 var gelatin = 0
 var money = 10
