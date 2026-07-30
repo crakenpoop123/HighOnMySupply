@@ -1,5 +1,6 @@
 extends Node2D
 
+var EMPTY
 var holding_click = false
 var holding = false
 var mouse_in_area = false
@@ -23,5 +24,6 @@ func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape
 
 
 func _on_mouse_area_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	if holding == true:
+	if holding == false:
 		mouse_in_area = false
+		area_name = EMPTY

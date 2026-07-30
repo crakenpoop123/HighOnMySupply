@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://wj652j0ikc11"]
+
+[ext_resource type="Texture2D" uid="uid://dqedpwn8wk51w" path="res://images.jpg" id="1_y7b24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf8u4"]
+size = Vector2(312, 308)
+
+[node name="Saucepan" type="Node2D" unique_id=1966054965]
+
+[node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=2031679370]
+position = Vector2(0, 4.5474735e-13)
+scale = Vector2(0.68791944, 0.68791944)
+texture = ExtResource("1_y7b24")
+
+[node name="SaucepanArea" type="Area2D" parent="." unique_id=524295402]
+
+[node name="SaucepanCollision" type="CollisionShape2D" parent="SaucepanArea" unique_id=385913758]
+shape = SubResource("RectangleShape2D_tf8u4")
