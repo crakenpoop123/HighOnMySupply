@@ -5,6 +5,7 @@ var holding_click = false
 var holding = false
 var mouse_in_area = false
 var area_name: Area2D
+var m
 @onready var mouse_pos = get_global_mouse_position()
 
 func _process(_delta: float) -> void:
@@ -15,7 +16,17 @@ func _process(_delta: float) -> void:
 		holding_click = false
 	
 	$MouseArea/MouseCollision.global_position = mouse_pos
+	
+	if holding == true and area_name.get_parent(): # MOVES THE ITEM WHEN YOU ARE HOLDING IT
+		area_name.get_parent().global_position = get_global_mouse_position()
+		if holding_click == false: # IF YOU ARENT HOLDING CLICK
+			holding = false # DROP IT
 
+	if holding == false: # IF YOU ARENT HOLDING ANYTHING
+		if mouse_in_area == true:# WHEN YOU ARE IN AN AREA
+			if holding_click == true: # AND YOU ARE HOLDING CLICK
+				holding = true # START DRAGGING
+	
 
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if holding == false:

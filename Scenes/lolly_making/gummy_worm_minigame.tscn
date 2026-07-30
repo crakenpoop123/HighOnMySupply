@@ -21,7 +21,7 @@ scale = Vector2(12.335936, 12.335936)
 texture = ExtResource("1_samsm")
 
 [node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_lo870")]
-position = Vector2(-526, 21)
+position = Vector2(-525, 19)
 
 [node name="Ingrediant" type="Node2D" parent="." unique_id=749894720]
 
