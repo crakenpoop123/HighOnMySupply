@@ -26,7 +26,8 @@ var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a sin
 var sugar_cane_growth_max = 2 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
 var sugar_cane_max_growth = 7
 
-
+#mouse
+var can_drag = true
 
 
 
