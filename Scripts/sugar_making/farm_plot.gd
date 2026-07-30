@@ -27,14 +27,14 @@ func player_interact():
 	
 
 func water():
-	#print("Watered")
+	print("Watered")
 	
 	wetness = 1
 	$WetnessTimer.start(Globals.dry_rate)
 
 func harvest():
 	Globals.sugar_cane += 1
-	#print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
+	print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
 	growth_stage = 0
 	
 	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
@@ -44,7 +44,7 @@ func _on_random_growth_tick_timeout() -> void:
 	
 	fully_grown = growth_stage == Globals.sugar_cane_max_growth
 	
-	print("grew to stage ", growth_stage)
+	#print("grew to stage ", growth_stage)
 	
 	if !fully_grown:
 		$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
