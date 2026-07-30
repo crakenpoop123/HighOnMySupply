@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpayx1bs3oeen"]
+
+[node name="ShredderInterface" type="Node2D" unique_id=276271610]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=181210517]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2144764361]
