@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://crqyf08e4lhxu"]
+
+[ext_resource type="Script" uid="uid://drncxaxh1p5l3" path="res://Scripts/mouse.gd" id="1_d8ufc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodbr"]
+
+[node name="Mouse" type="Node2D" unique_id=415866673]
+script = ExtResource("1_d8ufc")
+
+[node name="MouseArea" type="Area2D" parent="." unique_id=827093889]
+
+[node name="MouseCollision" type="CollisionShape2D" parent="MouseArea" unique_id=152658689]
+shape = SubResource("RectangleShape2D_wodbr")
+
+[node name="MouseMarker" type="Marker2D" parent="." unique_id=972463335]
