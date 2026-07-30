@@ -15,6 +15,11 @@ position = Vector2(244.49982, 177.30182)
 scale = Vector2(37.914063, 29.655554)
 texture = ExtResource("1_48tdt")
 
+[node name="Machinery" type="Node2D" parent="." unique_id=724633394]
+
+[node name="Shredder" parent="Machinery" unique_id=569272027 instance=ExtResource("4_k3pft")]
+position = Vector2(-155, 95)
+
 [node name="Farm" type="Node2D" parent="." unique_id=1283718155]
 position = Vector2(150, 57)
 
@@ -23,8 +28,3 @@ position = Vector2(150, 57)
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_k3pft")]
 
 [node name="Menus" type="Node2D" parent="." unique_id=154102362]
-
-[node name="Machinery" type="Node2D" parent="." unique_id=724633394]
-
-[node name="Shredder" parent="Machinery" unique_id=569272027 instance=ExtResource("4_k3pft")]
-position = Vector2(-155, 95)
