@@ -50,6 +50,3 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_lo870")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]
-
-[connection signal="area_shape_entered" from="Ingrediant/IngrediantArea" to="." method="_on_ingrediant_area_area_shape_entered"]
-[connection signal="area_shape_exited" from="Ingrediant/IngrediantArea" to="." method="_on_ingrediant_area_area_shape_exited"]
