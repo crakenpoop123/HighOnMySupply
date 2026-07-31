@@ -23,6 +23,10 @@ func _physics_process(_delta: float) -> void:
 		move()
 	else: # Stop the player from drifting when they shouldn't move
 		target_speed = Vector2.ZERO
+	
+	if Globals.can_attack:
+		check_for_attacks()
+	
 	move_and_slide()
 
 
@@ -78,6 +82,13 @@ func move():
 	
 	velocity += (target_speed - velocity) / movement_smoothing
 
+func check_for_attacks():
+	if Input.is_action_pressed("click"):
+		if $ShootTimer.time_left == 0:
+			attack()
+
+func attack():
+	print("Attack")
 
 func interact():
 	if Input.is_action_just_pressed("interact"):
