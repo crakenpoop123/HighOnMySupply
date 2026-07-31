@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://Scenes/lolly_making/sugar.tscn" id="4_lo870"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/mouse.tscn" id="5_lo870"]
 
+[sub_resource type="TileSet" id="TileSet_lo870"]
+
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
 
@@ -24,3 +26,6 @@ position = Vector2(-525, 19)
 position = Vector2(264, -154)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1688369970]
+tile_set = SubResource("TileSet_lo870")
