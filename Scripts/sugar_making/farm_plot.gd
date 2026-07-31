@@ -37,10 +37,16 @@ func harvest():
 	print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
 	growth_stage = 0
 	
+	$PlotSprite.frame = growth_stage
+	
+	fully_grown = false
+	
 	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
 
 func _on_random_growth_tick_timeout() -> void:
 	growth_stage = min(growth_stage + 1, Globals.sugar_cane_max_growth)
+	
+	$PlotSprite.frame = growth_stage
 	
 	fully_grown = growth_stage == Globals.sugar_cane_max_growth
 	

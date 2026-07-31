@@ -1,25 +1,67 @@
 [gd_scene format=3 uid="uid://cyxfiuftc7mml"]
 
 [ext_resource type="Script" uid="uid://cebgn12v8bb7" path="res://Scripts/sugar_making/farm_plot.gd" id="1_ajfg2"]
+[ext_resource type="Texture2D" uid="uid://dekr1k4rrn35s" path="res://Assets/tilemaps/sugarcane_growth_tilemap.png" id="2_jvxcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uykjk"]
+atlas = ExtResource("2_jvxcw")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds6f1"]
+atlas = ExtResource("2_jvxcw")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60kwg"]
+atlas = ExtResource("2_jvxcw")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0gmh"]
+atlas = ExtResource("2_jvxcw")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnrg4"]
+atlas = ExtResource("2_jvxcw")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6u5dw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uykjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds6f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60kwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0gmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnrg4")
+}],
+"loop": true,
+"name": &"growth_stages",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqgsf"]
-size = Vector2(1, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqgsf"]
+size = Vector2(0.9666667, 0.9666667)
 
 [node name="FarmPlot" type="StaticBody2D" unique_id=882134452]
 collision_layer = 2
 script = ExtResource("1_ajfg2")
 
+[node name="PlotSprite" type="AnimatedSprite2D" parent="." unique_id=1310054586]
+position = Vector2(0, -28.999998)
+scale = Vector2(1.8125, 1.8125)
+sprite_frames = SubResource("SpriteFrames_6u5dw")
+animation = &"growth_stages"
+
 [node name="PlotCollision" type="CollisionShape2D" parent="." unique_id=51989486]
-position = Vector2(4.7683716e-07, -5.9604645e-08)
 scale = Vector2(60, 60)
 shape = SubResource("RectangleShape2D_xqgsf")
-
-[node name="PlotSprite" type="Sprite2D" parent="." unique_id=792278582]
-position = Vector2(0, 1.9073486e-06)
-scale = Vector2(60, 60)
-texture = SubResource("PlaceholderTexture2D_xqgsf")
 
 [node name="WetnessTimer" type="Timer" parent="." unique_id=1424376439]
 one_shot = true

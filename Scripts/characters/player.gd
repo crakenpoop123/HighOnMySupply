@@ -101,7 +101,7 @@ func orient_animation():
 		dir_state = "down"
 	elif player_dir > -3 * PI/4 and player_dir < -PI/4:
 		dir_state = "up"
-	print(dir_state)
+	#print(dir_state)
 	
 	call_correct_animation()
 
@@ -109,7 +109,7 @@ func call_correct_animation():
 	var animation = "move_" if target_speed.length() != 0 else "idle_"
 	animation = animation + dir_state
 	
-	print(animation)
+	#print(animation)
 	$PlayerSprite.play(animation)
 
 func check_for_attacks():
