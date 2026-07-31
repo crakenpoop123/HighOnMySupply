@@ -12,7 +12,7 @@ var gummy_worm_stock: int = 0
 var sugar = 0
 var gelatin = 0
 var money = 10
-# Sugar cane variables
+# Sugar variables
 var sugar_cane = 0
 var shredded_cane = 0
 var crushed_cane = 0
@@ -28,6 +28,7 @@ var sugar_cane_max_growth = 7
 
 #mouse
 var can_drag = true
+var can_attack = true # When this is true, the mouse click will be used for attacking
 
 
 
