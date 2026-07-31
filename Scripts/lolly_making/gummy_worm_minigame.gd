@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	
-	if mouse.area_name.get_parent() == "SaucepanCollision":
+	if mouse.area_name.get_parent() != "Saucepan":
 		if mouse.holding == true and mouse.area_name.get_parent(): # MOVES THE ITEM WHEN YOU ARE HOLDING IT
 				mouse.area_name.get_parent().global_position = get_global_mouse_position()
 				if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
