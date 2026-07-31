@@ -7,17 +7,19 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	
-	print(mouse)
-	print(mouse.area_name)
-	print(str(mouse.area_name))
 	
-	if mouse != null:
-		if mouse.area_name != "Saucepan":
+	
+		
+	
+	
+	
+	if mouse.area_name.name != 'Nil':
+		if mouse.area_name.name != "Saucepan":
 			if mouse.holding == true and mouse.area_name: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
 					mouse.area_name.global_position = get_global_mouse_position()
 					if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
 						mouse.holding = false # DROP IT
-	
+
 			if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
 				if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
 					if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK

@@ -4,7 +4,7 @@ var EMPTY
 var holding_click = false
 var holding = false
 var mouse_in_area = false
-var area_name
+var area_name: Node2D
 @onready var mouse_pos = get_global_mouse_position()
 
 func _process(_delta: float) -> void:
@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if holding == false:
 		mouse_in_area = true
-		area_name = area.name
+		area_name = area.get_parent()
 
 
 func _on_mouse_area_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
