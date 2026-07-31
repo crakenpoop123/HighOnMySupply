@@ -3,11 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_samsm"]
 [ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://Scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://Scenes/lolly_making/saucepan.tscn" id="3_lo870"]
-[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="4_wodbr"]
+[ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://Scenes/lolly_making/sugar.tscn" id="4_lo870"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/mouse.tscn" id="5_lo870"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
-size = Vector2(131, 120)
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
@@ -23,17 +20,7 @@ texture = ExtResource("1_samsm")
 [node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_lo870")]
 position = Vector2(-525, 19)
 
-[node name="Ingrediant" type="Node2D" parent="." unique_id=749894720]
-
-[node name="IngrediantSprite" type="Sprite2D" parent="Ingrediant" unique_id=1150678755]
-position = Vector2(3.0517578e-05, 2)
-scale = Vector2(0.55932206, 0.2863962)
-texture = ExtResource("4_wodbr")
-
-[node name="IngrediantArea" type="Area2D" parent="Ingrediant" unique_id=1372577605]
-
-[node name="IngrediantCollision" type="CollisionShape2D" parent="Ingrediant/IngrediantArea" unique_id=1441459547]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_lo870")
+[node name="Ingrediant" parent="." unique_id=943539963 instance=ExtResource("4_lo870")]
+position = Vector2(264, -154)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]
