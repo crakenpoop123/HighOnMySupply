@@ -9,6 +9,7 @@ var movement_smoothing = 5
 
 var attack_speed = 2 # interval(secs) between attacks
 var player_dir = 0
+var dir_state = "down"
 
 func _process(_delta: float) -> void:
 	if Globals.in_menu == true:
@@ -93,13 +94,23 @@ func get_player_dir():
 
 func orient_animation():
 	if player_dir >= -PI/4 - 0.001 and player_dir <= PI/4 + 0.001:
-		print("right") 
+		dir_state = "right"
 	elif player_dir >= 3*PI/4 or player_dir <= -3*PI/4:
-		print("left")
+		dir_state = "left"
 	elif player_dir > PI/4 and player_dir < 3*PI/4:
-		print("down") 
+		dir_state = "down"
 	elif player_dir > -3 * PI/4 and player_dir < -PI/4:
-		print("up") 
+		dir_state = "up"
+	print(dir_state)
+	
+	call_correct_animation()
+
+func call_correct_animation():
+	var animation = "move_" if target_speed.length() != 0 else "idle_"
+	animation = animation + dir_state
+	
+	print(animation)
+	$PlayerSprite.play(animation)
 
 func check_for_attacks():
 	if Input.is_action_pressed("click"):
