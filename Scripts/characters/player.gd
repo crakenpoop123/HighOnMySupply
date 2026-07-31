@@ -7,6 +7,9 @@ const SPEED = 300.0
 var target_speed = Vector2.ZERO
 var movement_smoothing = 5
 
+var attack_speed = 2 # interval(secs) between attacks
+var player_dir = 0
+var dir_state = "down"
 
 func _process(_delta: float) -> void:
 	if Globals.in_menu == true:
@@ -21,6 +24,8 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:
 		move()
+		get_player_dir()
+		orient_animation()
 	else: # Stop the player from drifting when they shouldn't move
 		target_speed = Vector2.ZERO
 	
@@ -82,9 +87,35 @@ func move():
 	
 	velocity += (target_speed - velocity) / movement_smoothing
 
+func get_player_dir():
+	if target_speed.length() != 0:
+		player_dir = target_speed.angle()
+		print("player direction", player_dir)
+
+func orient_animation():
+	if player_dir >= -PI/4 - 0.001 and player_dir <= PI/4 + 0.001:
+		dir_state = "right"
+	elif player_dir >= 3*PI/4 or player_dir <= -3*PI/4:
+		dir_state = "left"
+	elif player_dir > PI/4 and player_dir < 3*PI/4:
+		dir_state = "down"
+	elif player_dir > -3 * PI/4 and player_dir < -PI/4:
+		dir_state = "up"
+	#print(dir_state)
+	
+	call_correct_animation()
+
+func call_correct_animation():
+	var animation = "move_" if target_speed.length() != 0 else "idle_"
+	animation = animation + dir_state
+	
+	#print(animation)
+	$PlayerSprite.play(animation)
+
 func check_for_attacks():
 	if Input.is_action_pressed("click"):
 		if $ShootTimer.time_left == 0:
+			$ShootTimer.start(attack_speed)
 			attack()
 
 func attack():
