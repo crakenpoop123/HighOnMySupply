@@ -1,32 +1,15 @@
 extends Node2D
 
-var holding_click = false
-var holding = false
-var mouse_in_area = false
+@onready var mouse = $Mouse
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
-		holding_click = true
-	if Input.is_action_just_released("click"):
-		holding_click = false
-	
-	$Mouse/MouseArea/MouseCollision.global_position = get_global_mouse_position()
-	
-	if holding == true:
-		$Ingrediant.global_position = get_global_mouse_position()
-	
-	if mouse_in_area == true:
-		if holding_click == true:
-			holding = true
-		else:
-			holding = false
-	elif mouse_in_area == false:
-		holding = false
+func _process(_delta: float) -> void:
+	if mouse.holding == true and mouse.area_name.get_parent(): # MOVES THE ITEM WHEN YOU ARE HOLDING IT
+		mouse.area_name.get_parent().global_position = get_global_mouse_position()
+		if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
+			mouse.holding = false # DROP IT
 
-
-func _on_ingrediant_area_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	mouse_in_area = true
-
-func _on_ingrediant_area_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	mouse_in_area = false
+	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
+		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
+			if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK
+				mouse.holding = true # START DRAGGING
+			
