@@ -8,13 +8,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	
-	
-		
-	
-	
-	
-	if mouse.area_name.name != 'Nil':
-		if mouse.area_name.name != "Saucepan":
+	if mouse.area_name: # IF THE NAME IS NOT NIL
+		if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
 			if mouse.holding == true and mouse.area_name: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
 					mouse.area_name.global_position = get_global_mouse_position()
 					if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK

@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_samsm"]
 [ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://Scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
-[ext_resource type="PackedScene" path="res://Scenes/lolly_making/saucepan.tscn" id="3_lo870"]
+[ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://Scenes/lolly_making/saucepan.tscn" id="3_lo870"]
 [ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="4_wodbr"]
-[ext_resource type="PackedScene" path="res://Scenes/mouse.tscn" id="5_lo870"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/mouse.tscn" id="5_lo870"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
 size = Vector2(131, 120)
