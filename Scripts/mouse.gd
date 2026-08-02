@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 		holding_click = true
 	if Input.is_action_just_released("click"):
 		holding_click = false
-	print(mouse_in_area)
+	#print(mouse_in_area)
 	$MouseArea/MouseCollision.global_position = mouse_pos
 	if Globals.can_drag == true:
 		if holding == true and area_name.get_parent(): # MOVES THE ITEM WHEN YOU ARE HOLDING IT

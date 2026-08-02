@@ -10,8 +10,8 @@ func _ready() -> void:
 	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
 
 func _process(_delta: float) -> void:
-	#print("inside pot", sugar.inside_pot)
-	#print("everything in pot", all_ingrediants_in_pot)
+	print("inside pot", sugar.inside_pot)
+	print("everything in pot", all_ingrediants_in_pot)
 	
 	
 	
@@ -33,7 +33,7 @@ func check_for_move():
 		if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
 			mouse.holding = false # DROP IT
 			if sugar.inside_pot == true:
-				sugar.reparent(saucepan)
+				#sugar.reparent(saucepan)
 				all_ingrediants_in_pot = true
 
 func check_for_drop():
