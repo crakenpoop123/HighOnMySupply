@@ -22,7 +22,7 @@ texture = ExtResource("1_samsm")
 [node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_lo870")]
 position = Vector2(-525, 19)
 
-[node name="Ingrediant" parent="." unique_id=943539963 instance=ExtResource("4_lo870")]
+[node name="Sugar" parent="." unique_id=943539963 instance=ExtResource("4_lo870")]
 position = Vector2(264, -154)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]

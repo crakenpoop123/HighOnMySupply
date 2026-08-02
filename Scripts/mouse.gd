@@ -26,14 +26,13 @@ func _process(_delta: float) -> void:
 			if mouse_in_area == true:# WHEN YOU ARE IN AN AREA
 				if holding_click == true: # AND YOU ARE HOLDING CLICK
 					holding = true # START DRAGGING
-					
-	if holding == false:
-		if $MouseArea.has_overlapping_areas() == true:
-			mouse_in_area = true 
-	if holding == false:
-		if $MouseArea.has_overlapping_areas() == false:
-			mouse_in_area = false
-			area_name = EMPTY
 
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	area_name = area.get_parent() # THIS DOESN'T WORK THAT GREAT BUT IT SHOULDN'T BE AN ISSUE 
+	mouse_in_area = true
+	if holding == false:
+		area_name = area.get_parent() # THIS DOESN'T WORK THAT GREAT BUT IT SHOULDN'T BE AN ISSUE 
+	
+func _on_mouse_area_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	mouse_in_area = false
+	if holding == false:
+		area_name = EMPTY

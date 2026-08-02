@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
 size = Vector2(131, 120)
 
-[node name="Ingrediant" type="Node2D" unique_id=943539963]
+[node name="Sugar" type="Node2D" unique_id=943539963]
 script = ExtResource("1_4xd1u")
 
 [node name="IngrediantSprite" type="Sprite2D" parent="." unique_id=2147378799]
