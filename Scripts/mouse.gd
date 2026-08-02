@@ -17,15 +17,26 @@ func _process(_delta: float) -> void:
 	#print(mouse_in_area)
 	$MouseArea/MouseCollision.global_position = mouse_pos
 	if Globals.can_drag == true:
-		if holding == true and area_name.get_parent(): # MOVES THE ITEM WHEN YOU ARE HOLDING IT
-			area_name.get_parent().global_position = get_global_mouse_position()
-			if holding_click == false: # IF YOU ARENT HOLDING CLICK
-				holding = false # DROP IT
+		check_for_move()
+		check_for_drop()
 
-		if holding == false: # IF YOU ARENT HOLDING ANYTHING
-			if mouse_in_area == true:# WHEN YOU ARE IN AN AREA
-				if holding_click == true: # AND YOU ARE HOLDING CLICK
-					holding = true # START DRAGGING
+
+
+
+
+
+func check_for_move():
+	if holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
+		area_name.global_position = get_global_mouse_position() # MOVE THE ITEM
+		if holding_click == false: # IF YOU ARENT HOLDING CLICK
+			holding = false # DROP IT
+
+
+func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
+	if holding == false: # IF YOU ARENT HOLDING ANYTHING
+		if mouse_in_area == true:# WHEN YOU ARE IN AN AREA
+			if holding_click == true: # AND YOU ARE HOLDING CLICK
+				holding = true # START DRAGGING # Should't this be stop dragging???
 
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	mouse_in_area = true
