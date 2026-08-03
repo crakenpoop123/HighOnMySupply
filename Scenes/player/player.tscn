@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://f3akijdilgvx"]
 
-[ext_resource type="Script" uid="uid://binswa7562072" path="res://Scripts/player/character/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://binswa7562072" path="res://Scripts/characters/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bygwoc2pl114" path="res://Assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
@@ -271,7 +271,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(60, 128)
+size = Vector2(128, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
 radius = 171.01169
