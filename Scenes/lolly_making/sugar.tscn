@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sn2vd6vx55ru"]
 
-[ext_resource type="Script" uid="uid://xft2amyalehx" path="res://Scripts/lolly_making/sugar.gd" id="1_4xd1u"]
+[ext_resource type="Script" uid="uid://xft2amyalehx" path="res://Scripts/lolly_making/ingrediants/sugar.gd" id="1_4xd1u"]
 [ext_resource type="Texture2D" uid="uid://bf0n0g1vgmyme" path="res://Assets/temporary_assets/images (2).jpg" id="2_4xd1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfpjrejkhqhbb"]
 
-[ext_resource type="Script" uid="uid://bem8n0ndxhi51" path="res://Scripts/lolly_making/gelatin.gd" id="1_jps8i"]
+[ext_resource type="Script" uid="uid://bem8n0ndxhi51" path="res://Scripts/lolly_making/ingrediants/gelatin.gd" id="1_jps8i"]
 [ext_resource type="Texture2D" uid="uid://yuofu3oahby3" path="res://Assets/temporary_assets/images (4).jpg" id="2_jps8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]

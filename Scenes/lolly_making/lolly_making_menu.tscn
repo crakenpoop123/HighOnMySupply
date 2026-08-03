@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ok5e1ml3td6b"]
 
-[ext_resource type="Script" uid="uid://chjejp3tnmrdm" path="res://Scripts/lolly_making/lolly_making_menu.gd" id="1_15d6x"]
+[ext_resource type="Script" uid="uid://chjejp3tnmrdm" path="res://Scripts/menus/lolly_making_menu.gd" id="1_15d6x"]
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="2_1rao7"]
 
 [node name="LollyMakingMenu" type="CanvasLayer" unique_id=2108171630]
