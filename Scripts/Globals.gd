@@ -5,7 +5,7 @@ var can_move = true # Interacting with the physica world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
-var interactable_parents = ["Farm", "Machinery"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan"]
 
 # Inventory variables
 var gummy_worm_stock: int = 0

@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func player_interact():
-	print("Saucey")
+	get_tree().change_scene_to_file("res://Scenes/lolly_making/gummy_worm_minigame.tscn")
