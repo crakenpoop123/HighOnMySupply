@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvnhvqmwcu3ud" path="res://Scripts/sugar_making/machines/interfaces/shredder_interface.gd" id="1_vdr17"]
 [ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://Assets/misc/eye.jpg" id="2_hkbob"]
-[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/mouse.tscn" id="3_hkbob"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/player/mouse.tscn" id="3_hkbob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqpc3"]
 size = Vector2(131, 120)

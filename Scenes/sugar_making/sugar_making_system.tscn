@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmd74wek3gncq"]
 
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="1_48tdt"]
-[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="2_k3pft"]
+[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/player/player.tscn" id="2_k3pft"]
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://Scenes/sugar_making/farm_plot.tscn" id="3_48tdt"]
 [ext_resource type="PackedScene" uid="uid://druo01roukbdx" path="res://Scenes/sugar_making/machinery/shredder.tscn" id="4_k3pft"]
 

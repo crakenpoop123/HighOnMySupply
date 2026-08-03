@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bajshbxjergmi" path="res://Scripts/lolly_making/lolly_making_system.gd" id="1_2btpf"]
 [ext_resource type="Texture2D" uid="uid://cmud76nj75nc4" path="res://icon.svg" id="2_bxcts"]
-[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="3_yt3vf"]
+[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/player/player.tscn" id="3_yt3vf"]
 [ext_resource type="Texture2D" uid="uid://dhq42jv76ukei" path="res://Assets/tilemaps/roadtilemap.png" id="4_gi3lx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2btpf"]
