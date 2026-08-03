@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfwfcx21hs8jn"
-path="res://.godot/imported/spritesheet (1).png-84864b276263cdcba5d159698e4bdeb2.ctex"
+uid="uid://dqiqqamg5p1ix"
+path="res://.godot/imported/oven.png-7ad632838f80951555b4bef220fa8ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheet (1).png"
-dest_files=["res://.godot/imported/spritesheet (1).png-84864b276263cdcba5d159698e4bdeb2.ctex"]
+source_file="res://Assets/tilemaps/oven.png"
+dest_files=["res://.godot/imported/oven.png-7ad632838f80951555b4bef220fa8ecf.ctex"]
 
 [params]
 
