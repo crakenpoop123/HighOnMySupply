@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyxfiuftc7mml"]
 
-[ext_resource type="Script" uid="uid://cebgn12v8bb7" path="res://Scripts/sugar_making/farm_plot.gd" id="1_ajfg2"]
+[ext_resource type="Script" path="res://Scripts/sugar_making/farm_plot.gd" id="1_jvxcw"]
 [ext_resource type="Texture2D" uid="uid://dekr1k4rrn35s" path="res://Assets/tilemaps/sugarcane_growth_tilemap.png" id="2_jvxcw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uykjk"]
@@ -51,7 +51,7 @@ size = Vector2(0.9666667, 0.9666667)
 
 [node name="FarmPlot" type="StaticBody2D" unique_id=882134452]
 collision_layer = 2
-script = ExtResource("1_ajfg2")
+script = ExtResource("1_jvxcw")
 
 [node name="PlotSprite" type="AnimatedSprite2D" parent="." unique_id=1310054586]
 position = Vector2(0, -28.999998)
