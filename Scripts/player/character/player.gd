@@ -90,7 +90,7 @@ func move():
 func get_player_dir():
 	if target_speed.length() != 0:
 		player_dir = target_speed.angle()
-		#print("player direction", player_dir)
+		#print("player direction", player_dir)d
 
 func orient_animation():
 	if player_dir >= -PI/4 - 0.001 and player_dir <= PI/4 + 0.001:
