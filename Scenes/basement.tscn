@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://wc5itm4opyir"]
 
-[ext_resource type="Texture2D" uid="uid://bsmgyhy4l8ree" path="res://basementfloor.png" id="1_gidub"]
+[ext_resource type="Texture2D" uid="uid://bsmgyhy4l8ree" path="res://Assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/characters/player.tscn" id="2_3vl5l"]
-[ext_resource type="Texture2D" uid="uid://e4nffet84fw7" path="res://Scenes/pixil-frame-0 (26).png" id="2_eqmtf"]
+[ext_resource type="Texture2D" uid="uid://e4nffet84fw7" path="res://Assets/temporary_assets/pixil-frame-0 (26).png" id="2_eqmtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("1_gidub")

@@ -3,9 +3,11 @@ extends Node2D
 @onready var mouse = $Mouse
 @onready var sugar = $Sugar
 @onready var saucepan = $Saucepan
+@onready var gelatin = $Gelatin
 
-var ingredients = ["Sugar"]
+
 var all_ingrediants_in_pot = false
+var ingredients_in_pot = 0
 
 func _ready() -> void:
 	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
@@ -13,16 +15,18 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#print("inside pot", sugar.inside_pot)
 	#print("everything in pot", all_ingrediants_in_pot)
+	if ingredients_in_pot == 2:
+		all_ingrediants_in_pot = true
+		
+	print(ingredients_in_pot)
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if all_ingrediants_in_pot == false:
 			if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
 				check_for_move()
 				check_for_drop()
 		elif all_ingrediants_in_pot == true:
-			for ingredient in ingredients:
-				if mouse.area_name.name != str(ingredients[ingredient].name):
-					check_for_move()
-					check_for_drop()
+			check_for_move()
+			check_for_drop()
 
 func check_for_move():
 	if mouse.holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
@@ -32,7 +36,11 @@ func check_for_move():
 			if sugar.inside_pot == true:
 				$Sugar/IngrediantArea.queue_free()
 				sugar.reparent(saucepan)
-				all_ingrediants_in_pot = true
+				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
+			if gelatin.inside_pot == true:
+				$Gelatin/IngrediantArea.queue_free()
+				gelatin.reparent(saucepan)
+				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
 
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING

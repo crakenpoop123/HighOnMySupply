@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgq8x6x3x4cbk"]
 
 [ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://Scripts/menus/studio.gd" id="1_oeoyy"]
-[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://eye.jpg" id="2_oeoyy"]
+[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://Assets/misc/eye.jpg" id="2_oeoyy"]
 
 [node name="Studio" type="CanvasLayer" unique_id=665983815]
 script = ExtResource("1_oeoyy")
