@@ -79,3 +79,5 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" parent="Saucepan" unique_id=1710325032 instance=ExtResource("6_hvcce")]
 position = Vector2(-650, -43)
+
+[node name="Menus" type="Node2D" parent="." unique_id=1940273108]

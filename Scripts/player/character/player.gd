@@ -141,6 +141,6 @@ func interact():
 		if Globals.in_inventory == false:
 			print("inventory opened")
 			Globals.in_inventory = true
-			$"..".inventory_inst()
+			Globals.inventory_inst()
 		else:
 			print("already open")
