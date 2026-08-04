@@ -4,6 +4,7 @@ extends Node2D
 @onready var sugar = $Sugar
 @onready var saucepan = $Saucepan
 @onready var gelatin = $Gelatin
+@onready var water = $Water
 
 
 var all_ingrediants_in_pot = false
@@ -11,13 +12,16 @@ var ingredients_in_pot = 0
 
 func _ready() -> void:
 	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
-
+	gelatin.visible = false
+	
 func _process(_delta: float) -> void:
 	#print("inside pot", sugar.inside_pot)
 	#print("everything in pot", all_ingrediants_in_pot)
-	if ingredients_in_pot == 2:
+	if ingredients_in_pot == 3:
 		all_ingrediants_in_pot = true
-		
+	elif ingredients_in_pot == 2:
+		gelatin.visible = true
+
 	print(ingredients_in_pot)
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if all_ingrediants_in_pot == false:
@@ -41,6 +45,11 @@ func check_for_move():
 				$Gelatin/IngrediantArea.queue_free()
 				gelatin.reparent(saucepan)
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
+			if water.inside_pot == true:
+				$Water/IngrediantArea.queue_free()
+				water.reparent(saucepan)
+				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
+			
 
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
