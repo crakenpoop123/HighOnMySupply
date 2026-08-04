@@ -30,6 +30,14 @@ var sugar_cane_max_growth = 5
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
+func change_scene(saving = true, scene = null):
+	# If saving, you need a scene
+	# If loading, you don't
+	if saving:
+		save_scene()
+		get_tree().change_scene_to_file(scene)
+	else:
+		load_scene()
 
 # Save the scene using a PackedScene
 func save_scene():
