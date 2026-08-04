@@ -30,12 +30,6 @@ var sugar_cane_max_growth = 5
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
-const INVENTORY = preload("res://Scenes/menus/Inventory.tscn")
-
-func inventory_inst():
-	var inventory = INVENTORY.instantiate()
-	$Menus.add_child(inventory)
-
 
 # Save the scene using a PackedScene
 func save_scene():

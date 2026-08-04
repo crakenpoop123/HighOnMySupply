@@ -137,10 +137,4 @@ func interact():
 				get_nearest_interactable().player_interact()
 			else:
 				print("Failed to interact with anything")
-	if Input.is_action_just_pressed("inventory"):
-		if Globals.in_inventory == false:
-			print("inventory opened")
-			Globals.in_inventory = true
-			Globals.inventory_inst()
-		else:
-			print("already open")
+	
