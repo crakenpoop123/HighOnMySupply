@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bsmgyhy4l8ree" path="res://Assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://e4nffet84fw7" path="res://Assets/temporary_assets/pixil-frame-0 (26).png" id="2_eqmtf"]
-[ext_resource type="Texture2D" uid="uid://nrjvuit6dxx1" path="res://walls-stairs-basement-tilemap.png" id="3_d24wa"]
+[ext_resource type="Texture2D" uid="uid://bypi7at15ltng" path="res://walls-stairs-basement-tilemap.png" id="3_d24wa"]
 [ext_resource type="Texture2D" uid="uid://dfwfcx21hs8jn" path="res://Assets/tilemaps/table.png" id="3_rxuev"]
 [ext_resource type="Texture2D" uid="uid://dqiqqamg5p1ix" path="res://Assets/tilemaps/oven.png" id="4_lawva"]
-[ext_resource type="Texture2D" uid="uid://duy8bh7eqr10f" path="res://stairs2.0.png" id="4_t4yp2"]
+[ext_resource type="Texture2D" uid="uid://bx8q7daie17bk" path="res://stairs2.0.png" id="4_t4yp2"]
 [ext_resource type="PackedScene" uid="uid://y1kr45lnmxgk" path="res://Scenes/lolly_making/machinery/saucepan.tscn" id="6_hvcce"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
