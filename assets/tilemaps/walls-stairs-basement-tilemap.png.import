@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8bgodnyhkwjb"
-path="res://.godot/imported/centrifuge-spritesheet.png-64064509cea5ce6a1253f51b2e7a3577.ctex"
+uid="uid://8cqwh6pi2hva"
+path="res://.godot/imported/walls-stairs-basement-tilemap.png-6b038a19bdb336d568661b0204cd7dbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://centrifuge-spritesheet.png"
-dest_files=["res://.godot/imported/centrifuge-spritesheet.png-64064509cea5ce6a1253f51b2e7a3577.ctex"]
+source_file="res://assets/tilemaps/walls-stairs-basement-tilemap.png"
+dest_files=["res://.godot/imported/walls-stairs-basement-tilemap.png-6b038a19bdb336d568661b0204cd7dbf.ctex"]
 
 [params]
 
