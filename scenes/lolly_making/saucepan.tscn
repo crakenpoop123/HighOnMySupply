@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://wj652j0ikc11"]
+
+[ext_resource type="Texture2D" uid="uid://b607uqxwbkc1e" path="res://assets/misc/saucepan.png" id="1_y7b24"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
+radius = 122.016396
+
+[node name="Saucepan" type="Node2D" unique_id=1966054965]
+
+[node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=2031679370]
+position = Vector2(5, -132)
+scale = Vector2(8.520309, 7.847916)
+texture = ExtResource("1_y7b24")
+
+[node name="SaucepanArea" type="Area2D" parent="." unique_id=524295402]
+
+[node name="SaucepanCollision" type="CollisionShape2D" parent="SaucepanArea" unique_id=385913758]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_lbvqo")

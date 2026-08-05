@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ct7yrpktdn4ma"]
+
+[ext_resource type="Script" uid="uid://8euw18457d04" path="res://Scripts/menus/main_menu.gd" id="1_tt5f1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=729215485]
+script = ExtResource("1_tt5f1")
+
+[node name="Main" type="Control" parent="." unique_id=2081455905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main" unique_id=574410928]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 8.0
+offset_right = 497.0
+offset_bottom = 37.0
+scale = Vector2(3.025, 3.025)
+text = "Sugar-High on My Supply"
+
+[node name="Buttons" type="Control" parent="Main" unique_id=672759658]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -516.0
+offset_right = 129.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Main/Buttons" unique_id=561373350]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.762
+anchor_bottom = 0.24000001
+offset_right = 0.1579895
+offset_bottom = -0.16000366
+text = "lolly making"
+
+[node name="SugarMaking" type="Button" parent="Main/Buttons" unique_id=1856087631]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 260.0
+offset_bottom = 250.0
+text = "Sugar making
+"
+
+[node name="Basement" type="Button" parent="Main/Buttons" unique_id=462428832]
+layout_mode = 0
+offset_top = 262.0
+offset_right = 260.0
+offset_bottom = 384.0
+text = "Basement
+"
+
+[connection signal="button_up" from="Main/Buttons/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Main/Buttons/SugarMaking" to="." method="_on_sugar_making_button_up"]
+[connection signal="button_up" from="Main/Buttons/Basement" to="." method="_on_basement_button_up"]

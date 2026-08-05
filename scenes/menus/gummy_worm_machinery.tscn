@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://o684qmd8dhfn"]
+
+[ext_resource type="Script" uid="uid://doujdi7qsntfm" path="res://Scripts/menus/gummy_worm_machinery.gd" id="1_mxpev"]
+[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://Assets/misc/eye.jpg" id="1_vgcd1"]
+[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://Scenes/player/player.tscn" id="1_xj7cc"]
+[ext_resource type="PackedScene" uid="uid://y1kr45lnmxgk" path="res://Scenes/lolly_making/machinery/saucepan.tscn" id="3_cw0bx"]
+
+[node name="GummyWormMachinary" type="Node2D" unique_id=503787241]
+script = ExtResource("1_mxpev")
+
+[node name="Eye" type="Sprite2D" parent="." unique_id=1919424687]
+position = Vector2(360.00003, -42)
+scale = Vector2(3.3262713, 1)
+texture = ExtResource("1_vgcd1")
+
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("1_xj7cc")]
+position = Vector2(314, 333)
+
+[node name="Machinery" type="Node2D" parent="." unique_id=773268305]
+
+[node name="Saucepan" parent="Machinery" unique_id=1710325032 instance=ExtResource("3_cw0bx")]
+position = Vector2(640, 352)

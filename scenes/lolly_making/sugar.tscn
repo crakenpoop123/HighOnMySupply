@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://sn2vd6vx55ru"]
+
+[ext_resource type="Script" uid="uid://xft2amyalehx" path="res://Scripts/lolly_making/ingrediants/sugar.gd" id="1_4xd1u"]
+[ext_resource type="Texture2D" uid="uid://bf0n0g1vgmyme" path="res://Assets/temporary_assets/images (2).jpg" id="2_4xd1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
+size = Vector2(131, 120)
+
+[node name="Sugar" type="Node2D" unique_id=943539963]
+script = ExtResource("1_4xd1u")
+
+[node name="IngrediantSprite" type="Sprite2D" parent="." unique_id=2147378799]
+position = Vector2(3.1292439e-06, 1.0000014)
+scale = Vector2(0.20689654, 0.24999999)
+texture = ExtResource("2_4xd1u")
+
+[node name="IngrediantArea" type="Area2D" parent="." unique_id=845437918]
+
+[node name="IngrediantCollision" type="CollisionShape2D" parent="IngrediantArea" unique_id=1275405894]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_lo870")
+
+[connection signal="area_shape_entered" from="IngrediantArea" to="." method="_on_ingrediant_area_area_shape_entered"]
+[connection signal="area_shape_exited" from="IngrediantArea" to="." method="_on_ingrediant_area_area_shape_exited"]

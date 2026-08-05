@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://t14oq2qxlcxy"]
+
+[ext_resource type="Script" uid="uid://bq7oichpn2p64" path="res://Scripts/sugar_making/machines/press.gd" id="1_6y6uo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8kjn"]
+size = Vector2(1, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7jkfp"]
+
+[node name="Press" type="StaticBody2D" unique_id=1137402984]
+script = ExtResource("1_6y6uo")
+
+[node name="PressCollision" type="CollisionShape2D" parent="." unique_id=1639286767]
+scale = Vector2(60, 60)
+shape = SubResource("RectangleShape2D_b8kjn")
+
+[node name="PressSprite" type="Sprite2D" parent="." unique_id=97721581]
+scale = Vector2(60, 60)
+texture = SubResource("PlaceholderTexture2D_7jkfp")

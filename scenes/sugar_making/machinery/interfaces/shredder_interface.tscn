@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dpayx1bs3oeen"]
+
+[ext_resource type="Script" uid="uid://dvnhvqmwcu3ud" path="res://Scripts/sugar_making/machines/interfaces/shredder_interface.gd" id="1_vdr17"]
+[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://Assets/misc/eye.jpg" id="2_hkbob"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/player/mouse.tscn" id="3_hkbob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqpc3"]
+size = Vector2(131, 120)
+
+[node name="ShredderInterface" type="Node2D" unique_id=276271610]
+script = ExtResource("1_vdr17")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=181210517]
+
+[node name="Ingrediant" type="Node2D" parent="." unique_id=764460527]
+
+[node name="IngrediantSprite" type="Sprite2D" parent="Ingrediant" unique_id=1340990919]
+position = Vector2(3.0517578e-05, 2)
+scale = Vector2(0.55932206, 0.2863962)
+texture = ExtResource("2_hkbob")
+
+[node name="IngrediantArea" type="Area2D" parent="Ingrediant" unique_id=1566176661]
+
+[node name="IngrediantCollision" type="CollisionShape2D" parent="Ingrediant/IngrediantArea" unique_id=238370407]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_lqpc3")
+
+[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_hkbob")]
+
+[connection signal="area_shape_entered" from="Ingrediant/IngrediantArea" to="." method="_on_ingrediant_area_area_shape_entered"]
+[connection signal="area_shape_exited" from="Ingrediant/IngrediantArea" to="." method="_on_ingrediant_area_area_shape_exited"]
