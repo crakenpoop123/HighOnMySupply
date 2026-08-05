@@ -12,12 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_up() -> void:
-	get_tree().change_scene_to_file("res://Scenes/lolly_making/lolly_making_system.tscn")
+	get_tree().change_scene_to_file("res://scenes/lolly_making/lolly_making_system.tscn")
 
 
 func _on_sugar_making_button_up() -> void:
-	get_tree().change_scene_to_file("res://Scenes/sugar_making/sugar_making_system.tscn")
+	get_tree().change_scene_to_file("res://scenes/sugar_making/sugar_making_system.tscn")
 
 
 func _on_basement_button_up() -> void:
-	get_tree().change_scene_to_file("res://Scenes/areas_in_world/basement.tscn")
+	get_tree().change_scene_to_file("res://scenes/areas_in_world/basement.tscn")

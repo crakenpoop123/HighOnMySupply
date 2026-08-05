@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhq42jv76ukei"
-path="res://.godot/imported/roadtilemap.png-1a91a48462326a8012b711f237563b13.ctex"
+uid="uid://dgm1n3tp750s8"
+path="res://.godot/imported/walls-stairs-basement-tilemap.png-98320b7e8faa017934fd4039c9e47f7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/roadtilemap.png"
-dest_files=["res://.godot/imported/roadtilemap.png-1a91a48462326a8012b711f237563b13.ctex"]
+source_file="res://walls-stairs-basement-tilemap.png"
+dest_files=["res://.godot/imported/walls-stairs-basement-tilemap.png-98320b7e8faa017934fd4039c9e47f7e.ctex"]
 
 [params]
 

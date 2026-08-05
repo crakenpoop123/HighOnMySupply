@@ -1,6 +1,6 @@
 extends Node2D
 
-const COOKING_MENU = preload("res://Scenes/lolly_making/lolly_making_menu.tscn")
+const COOKING_MENU = preload("res://scenes/lolly_making/lolly_making_menu.tscn")
 
 func _ready() -> void:
 	pass # Replace with function body.
