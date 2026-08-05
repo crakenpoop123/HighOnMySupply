@@ -5,6 +5,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
 radius = 122.016396
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm4y6"]
+size = Vector2(61, 222)
+
 [node name="Saucepan" type="Node2D" unique_id=1966054965]
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=2031679370]
@@ -17,3 +20,9 @@ texture = ExtResource("1_y7b24")
 [node name="SaucepanCollision" type="CollisionShape2D" parent="SaucepanArea" unique_id=385913758]
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_lbvqo")
+
+[node name="SaucepanHandle" type="Area2D" parent="." unique_id=1521146442]
+
+[node name="SaucepanHandleCollision" type="CollisionShape2D" parent="SaucepanHandle" unique_id=217877187]
+position = Vector2(-1.5, -227)
+shape = SubResource("RectangleShape2D_xm4y6")
