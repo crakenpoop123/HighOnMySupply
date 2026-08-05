@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhq42jv76ukei"
-path="res://.godot/imported/roadtilemap.png-1a91a48462326a8012b711f237563b13.ctex"
+uid="uid://b8bgodnyhkwjb"
+path="res://.godot/imported/centrifuge-spritesheet.png-64064509cea5ce6a1253f51b2e7a3577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/roadtilemap.png"
-dest_files=["res://.godot/imported/roadtilemap.png-1a91a48462326a8012b711f237563b13.ctex"]
+source_file="res://centrifuge-spritesheet.png"
+dest_files=["res://.godot/imported/centrifuge-spritesheet.png-64064509cea5ce6a1253f51b2e7a3577.ctex"]
 
 [params]
 
