@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dekr1k4rrn35s"
-path="res://.godot/imported/sugarcane_growth_tilemap.png-25094c1119845fcc546760c46a438300.ctex"
+path="res://.godot/imported/sugarcane_growth_tilemap.png-cbd905ac4042aa823454d9ee7460945b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/sugarcane_growth_tilemap.png"
-dest_files=["res://.godot/imported/sugarcane_growth_tilemap.png-25094c1119845fcc546760c46a438300.ctex"]
+source_file="res://Assets/tilemaps/sugarcane_growth_tilemap.png"
+dest_files=["res://.godot/imported/sugarcane_growth_tilemap.png-cbd905ac4042aa823454d9ee7460945b.ctex"]
 
 [params]
 

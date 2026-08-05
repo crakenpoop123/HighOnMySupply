@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqiqqamg5p1ix"
-path="res://.godot/imported/oven.png-82e2bbaab5a4b9851d7fe25c1683f066.ctex"
+path="res://.godot/imported/oven.png-7ad632838f80951555b4bef220fa8ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/oven.png"
-dest_files=["res://.godot/imported/oven.png-82e2bbaab5a4b9851d7fe25c1683f066.ctex"]
+source_file="res://Assets/tilemaps/oven.png"
+dest_files=["res://.godot/imported/oven.png-7ad632838f80951555b4bef220fa8ecf.ctex"]
 
 [params]
 
