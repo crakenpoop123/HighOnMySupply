@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_py71w"]
 [ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_plilb"]
-[ext_resource type="Texture2D" path="res://walls-stairs-basement-tilemap.png" id="3_ks44e"]
-[ext_resource type="Texture2D" path="res://stairs2.0.png" id="4_3v4xa"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_ks44e"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_3v4xa"]
 [ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_x72m0"]
 [ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="6_x0c51"]
-[ext_resource type="PackedScene" path="res://Scenes/player/player.tscn" id="7_jcytw"]
-[ext_resource type="Script" path="res://Scripts/player/character/player.gd" id="8_quea3"]
-[ext_resource type="PackedScene" path="res://Scenes/lolly_making/machinery/saucepan.tscn" id="9_he528"]
-[ext_resource type="Script" path="res://Scripts/lolly_making/machinery/saucepan.gd" id="10_nbuv0"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="7_jcytw"]
+[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="8_quea3"]
+[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="9_he528"]
+[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="10_nbuv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("1_py71w")
@@ -100,8 +100,8 @@ tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAA
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("7_jcytw")]
-position = Vector2(-591.2842, 82.71582)
-velocity = Vector2(-5.8145037e-05, -0.0021605098)
+position = Vector2(-575.1207, 124.84351)
+velocity = Vector2(-44.75014, -59.21419)
 script = ExtResource("8_quea3")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]

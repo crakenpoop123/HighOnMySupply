@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5gswekcxwuek"
-path="res://.godot/imported/sugar-spritesheet.png-3835d2b636092cb5c6a174b4a7f5271e.ctex"
+path="res://.godot/imported/sugar-spritesheet.png-027ff633705c7adbb5978b142159c683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sugar-spritesheet.png"
-dest_files=["res://.godot/imported/sugar-spritesheet.png-3835d2b636092cb5c6a174b4a7f5271e.ctex"]
+source_file="res://assets/tilemaps/sugar-spritesheet.png"
+dest_files=["res://.godot/imported/sugar-spritesheet.png-027ff633705c7adbb5978b142159c683.ctex"]
 
 [params]
 
