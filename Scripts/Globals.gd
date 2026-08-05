@@ -53,14 +53,14 @@ func save_scene():
 		
 		# Print an error if something malfunctions
 		if result == OK:
-			var error = ResourceSaver.save(packed_scene, "res://Scenes//saved_scene.tscn")
+			var error = ResourceSaver.save(packed_scene, "res://scenes//saved_scene.tscn")
 			if error != OK:
 				push_error("An error occured while saving the scene to disk.")
 
 # Load the PackedScene
 func load_scene():
 	# Get the PackedScene
-	var saved_scene: PackedScene = ResourceLoader.load("res://Scenes/saved_scene.tscn")
+	var saved_scene: PackedScene = ResourceLoader.load("res://scenes/saved_scene.tscn")
 	
 	# Check the PackedScene exists
 	if saved_scene:

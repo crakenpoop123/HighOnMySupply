@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func player_interact():
-	Globals.change_scene(true, "res://Scenes/lolly_making/gummy_worm_minigame.tscn")
+	Globals.change_scene(true, "res://scenes/lolly_making/gummy_worm_minigame.tscn")
