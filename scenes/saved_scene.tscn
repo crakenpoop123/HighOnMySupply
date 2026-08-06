@@ -1,18 +1,20 @@
 [gd_scene format=4]
 
-[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_py71w"]
-[ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_plilb"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_ks44e"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_3v4xa"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_x72m0"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="6_x0c51"]
-[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="7_jcytw"]
-[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="8_quea3"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="9_he528"]
-[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="10_nbuv0"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_ks44e"]
+[ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_3v4xa"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_x72m0"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_x0c51"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_jcytw"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="6_quea3"]
+[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="7_he528"]
+[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="8_nbuv0"]
+[ext_resource type="PackedScene" path="res://scenes/sugar_making/farm_plot.tscn" id="9_4wkfk"]
+[ext_resource type="Script" path="res://Scripts/sugar_making/farm_plot.gd" id="10_c7cse"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="11_tdi5l"]
+[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="12_ohu7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
-texture = ExtResource("1_py71w")
+texture = ExtResource("1_ks44e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -24,12 +26,12 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vwho"]
-texture = ExtResource("2_plilb")
+texture = ExtResource("2_3v4xa")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4yp2"]
-texture = ExtResource("3_ks44e")
+texture = ExtResource("3_x72m0")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -39,7 +41,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3dq"]
-texture = ExtResource("4_3v4xa")
+texture = ExtResource("4_x0c51")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -57,7 +59,7 @@ sources/4 = SubResource("TileSetAtlasSource_pa3dq")
 sources/1 = SubResource("TileSetAtlasSource_1vwho")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lawva"]
-texture = ExtResource("5_x72m0")
+texture = ExtResource("5_jcytw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -74,7 +76,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvcce"]
-texture = ExtResource("6_x0c51")
+texture = ExtResource("6_quea3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -100,13 +102,20 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 
-[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("7_jcytw")]
+[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("7_he528")]
 position = Vector2(-650, -43)
-script = ExtResource("8_quea3")
+script = ExtResource("8_nbuv0")
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("9_he528")]
-position = Vector2(-551.71893, 72.30542)
-velocity = Vector2(-48.073708, -35.571915)
-script = ExtResource("10_nbuv0")
+[node name="Farm" type="Node2D" parent="." unique_id=1197396922]
+position = Vector2(-729, 574)
+
+[node name="FarmPlot" type="StaticBody2D" parent="Farm" unique_id=882134452 instance=ExtResource("9_4wkfk")]
+collision_layer = 2
+script = ExtResource("10_c7cse")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("11_tdi5l")]
+position = Vector2(-651.89764, 551.89764)
+velocity = Vector2(-9.641192e-06, 1.7871735e-23)
+script = ExtResource("12_ohu7i")

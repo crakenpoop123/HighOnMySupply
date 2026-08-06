@@ -12,7 +12,7 @@ func _ready() -> void:
 		curr_item.item_name = accessible_item["name"]
 		curr_item.item_quantity = accessible_item["stock"]
 		
-		get_node("InventoryScroll/ScrollVBox").add_child(curr_item)
+		get_node("InventoryScroll/ScrollGrid").add_child(curr_item)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

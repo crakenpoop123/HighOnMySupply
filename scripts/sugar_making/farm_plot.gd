@@ -33,16 +33,17 @@ func water():
 	$WetnessTimer.start(Globals.dry_rate)
 
 func harvest():
-	get_tree().change_scene_to_file("res://scenes/minigames/harvest_sugarcane_minigame.tscn")
-	#Globals.sugar_cane += 1
-	#print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
-	#growth_stage = 0
+	Globals.sugar_cane += 1
+	print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
+	growth_stage = 0
 	
-	#$PlotSprite.frame = growth_stage
+	$PlotSprite.frame = growth_stage
 	
-	#fully_grown = false
+	fully_grown = false
 	
-	#$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
+	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
+	
+	Globals.change_scene(true, "res://scenes/minigames/harvest_sugarcane_minigame.tscn")
 
 func _on_random_growth_tick_timeout() -> void:
 	growth_stage = min(growth_stage + 1, Globals.sugar_cane_max_growth)

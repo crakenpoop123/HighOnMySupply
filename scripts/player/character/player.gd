@@ -18,9 +18,6 @@ func _process(_delta: float) -> void:
 		Globals.can_move = true
 	
 	interact()
-	print("menu", Globals.in_menu)
-	print("inventory", Globals.in_inventory)
-	print("can move", Globals.can_move)
 
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:
