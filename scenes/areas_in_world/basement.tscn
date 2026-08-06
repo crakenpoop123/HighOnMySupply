@@ -96,12 +96,12 @@ scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAAAAAAFAAQAAAACAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
-[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
-position = Vector2(-468, 186)
-
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 
 [node name="Saucepan" parent="Saucepan" unique_id=1710325032 instance=ExtResource("6_hvcce")]
 position = Vector2(-650, -43)
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
+
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
+position = Vector2(-468, 186)

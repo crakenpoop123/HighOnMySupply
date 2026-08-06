@@ -68,23 +68,82 @@ func load_scene():
 		get_tree().change_scene_to_packed.call_deferred(saved_scene)
 
 var inventory_items: Dictionary = {
-	"gummy_worm": 0,
-	"sugar": 0,
-	"gelatin": 0,
-	"money": 10,
-	"sugar_cane": 0,
-	"shredded_cane": 0,
-	"crushed_cane": 0,
-	"cane_juice": 0,
-	"cane_sugar": 0,
-	"pure_sugar": 0
+	"gummy_worm": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Gummy Worms"
+	},
+	"sugar": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Sugar"
+	},
+	"gelatin": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Gelatin"
+	},
+	"sugar_cane": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Sugar Cane"
+	},
+	"shredded_cane": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Shredded Cane"
+	},
+	"crushed_cane": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Crushed Cane"
+	},
+	"cane_juice": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Cane Juice"
+	},
+	"cane_sugar": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Cane Juice"
+	},
+	"pure_sugar": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Pure Sugar"
+	}
 }
 
 var inventory_buildables: Dictionary = {
-	"farm_plot": 0,
-	"saucepan": 1,
-	"shredder": 0,
-	"crusher": 0,
-	"boiler": 0,
-	"centrifuge": 0
+	"farm_plot": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Farm Plots"
+	},
+	"saucepan": {
+		"stock": 1,
+		"had_before": true,
+		"name": "Saucepans"
+	},
+	"shredder": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Shredder"
+	},
+	"crusher": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Crusher"
+	},
+	"boiler": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Boiler"
+	},
+	"centrifuge": {
+		"stock": 0,
+		"had_before": false,
+		"name": "Centrifuge"
+	}
 }
