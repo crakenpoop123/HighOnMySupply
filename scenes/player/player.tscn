@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://f3akijdilgvx"]
 
-[ext_resource type="Script" uid="uid://binswa7562072" path="res://Scripts/player/character/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bygwoc2pl114" path="res://Assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
+[ext_resource type="Script" uid="uid://binswa7562072" path="res://scripts/player/character/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://gkjnbpqj0t2u" path="res://Assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
+[ext_resource type="PackedScene" uid="uid://c4w20xqxkkfuu" path="res://scenes/player/inventory/inventory.tscn" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -298,3 +299,9 @@ shape = SubResource("CircleShape2D_fkybt")
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=859550850]
 one_shot = true
+
+[node name="Inventory" parent="." unique_id=1229629953 instance=ExtResource("3_gmlin")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
