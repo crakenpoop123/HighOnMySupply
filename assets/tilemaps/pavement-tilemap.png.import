@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbfmixrris516"
-path="res://.godot/imported/grass-tilemap.png-587cfb10d9a98dd49cc05a27d5d33d3b.ctex"
+uid="uid://do41onaw5vutn"
+path="res://.godot/imported/pavement-tilemap.png-ba976e1607830a29d2df4df538263bff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass-tilemap.png"
-dest_files=["res://.godot/imported/grass-tilemap.png-587cfb10d9a98dd49cc05a27d5d33d3b.ctex"]
+source_file="res://assets/tilemaps/pavement-tilemap.png"
+dest_files=["res://.godot/imported/pavement-tilemap.png-ba976e1607830a29d2df4df538263bff.ctex"]
 
 [params]
 
