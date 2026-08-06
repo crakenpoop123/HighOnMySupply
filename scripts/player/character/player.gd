@@ -12,14 +12,15 @@ var player_dir = 0
 var dir_state = "down"
 
 func _process(_delta: float) -> void:
-	if Globals.in_menu == true:
+	if Globals.in_menu or Globals.in_inventory:
 		Globals.can_move = false
-		velocity.x = 0
-		velocity.y = 0
 	else:
 		Globals.can_move = true
 	
 	interact()
+	print("menu", Globals.in_menu)
+	print("inventory", Globals.in_inventory)
+	print("can move", Globals.can_move)
 
 func _physics_process(_delta: float) -> void:
 	if Globals.can_move == true:
@@ -28,6 +29,11 @@ func _physics_process(_delta: float) -> void:
 		orient_animation()
 	else: # Stop the player from drifting when they shouldn't move
 		target_speed = Vector2.ZERO
+		
+	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
+	target_speed = target_speed.normalized() * SPEED
+	
+	velocity += (target_speed - velocity) / movement_smoothing
 	
 	if Globals.can_attack:
 		check_for_attacks()
@@ -82,13 +88,8 @@ func move():
 	else:
 		target_speed[0] = 0
 	
-	if Input.is_action_just_pressed("inventory"):
-		Globals.in_inventory = !Globals.in_inventory
 	
-	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
-	target_speed = target_speed.normalized() * SPEED
 	
-	velocity += (target_speed - velocity) / movement_smoothing
 
 func get_player_dir():
 	if target_speed.length() != 0:
@@ -141,3 +142,5 @@ func interact():
 			else:
 				print("Failed to interact with anything")
 	
+	if Input.is_action_just_pressed("inventory"):
+		Globals.in_inventory = !Globals.in_inventory

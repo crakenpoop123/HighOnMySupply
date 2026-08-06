@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://c55wfg610xmgy"]
+[gd_scene format=3 uid="uid://bahqfdhbajjnd"]
 
 [ext_resource type="Texture2D" uid="uid://bd8shi87ymqf8" path="res://icon.svg" id="1_5uf52"]
+[ext_resource type="Script" uid="uid://bcna0xq0ecp0y" path="res://scripts/player/inventory/item.gd" id="2_p6p6m"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2e16i"]
 
@@ -14,6 +15,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_5uf52")
 expand_mode = 3
+script = ExtResource("2_p6p6m")
 
 [node name="ItemName" type="RichTextLabel" parent="." unique_id=329231623]
 modulate = Color(0, 0, 0, 1)
