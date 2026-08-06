@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y1kr45lnmxgk"]
 
 [ext_resource type="Script" uid="uid://0gps47kld5xv" path="res://scripts/lolly_making/machinery/saucepan.gd" id="1_h3g0f"]
-[ext_resource type="Texture2D" uid="uid://8eu5j560grmk" path="res://static-saucepan.png" id="2_2o6pv"]
+[ext_resource type="Texture2D" uid="uid://8eu5j560grmk" path="res://assets/tilemaps/static-saucepan.png" id="2_2o6pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk6li"]
 size = Vector2(68, 30)
