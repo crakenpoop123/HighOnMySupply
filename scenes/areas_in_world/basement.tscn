@@ -98,6 +98,7 @@ tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAA
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
+visible = false
 position = Vector2(-468, 186)
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
