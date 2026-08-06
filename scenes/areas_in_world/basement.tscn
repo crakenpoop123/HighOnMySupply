@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/oven.png" id="4_lawva"]
 [ext_resource type="Texture2D" uid="uid://3g3jdedva5rj" path="res://assets/tilemaps/stairs2.0.png" id="4_t4yp2"]
 [ext_resource type="PackedScene" uid="uid://y1kr45lnmxgk" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="6_hvcce"]
+[ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("1_gidub")
@@ -103,5 +104,7 @@ position = Vector2(-650, -43)
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
-[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
-position = Vector2(-468, 186)
+[node name="Farm" type="Node2D" parent="." unique_id=1197396922]
+position = Vector2(-729, 574)
+
+[node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
