@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 	#print("everything in pot", all_ingrediants_in_pot)
 	if ingredients_in_pot == 3:
 		all_ingrediants_in_pot = true
+		Globals.change_scene(false)
 	elif ingredients_in_pot == 2:
 		gelatin.visible = true
 
@@ -40,14 +41,17 @@ func check_for_move():
 			if sugar.inside_pot == true:
 				$Sugar/IngrediantArea.queue_free()
 				sugar.reparent(saucepan)
+				sugar.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
 			if gelatin.inside_pot == true:
 				$Gelatin/IngrediantArea.queue_free()
 				gelatin.reparent(saucepan)
+				gelatin.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
 			if water.inside_pot == true:
 				$Water/IngrediantArea.queue_free()
 				water.reparent(saucepan)
+				water.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
 			
 

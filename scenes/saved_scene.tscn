@@ -92,8 +92,8 @@ tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAA
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("6_x72m0")]
-position = Vector2(-629.4783, 36.074734)
-velocity = Vector2(-0.055236988, 0)
+position = Vector2(-594.81964, 36.074753)
+velocity = Vector2(-3.65197e-20, 0)
 script = ExtResource("7_x0c51")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b5jtfqfnsgpr7"]
 
-[ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://Scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
-[ext_resource type="Texture2D" uid="uid://uchf23ldq1cd" path="res://Assets/temporary_assets/images (3).jpg" id="2_lo870"]
-[ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://Scenes/lolly_making/saucepan.tscn" id="3_lo870"]
-[ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://Scenes/lolly_making/sugar.tscn" id="4_lo870"]
-[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://Scenes/player/mouse.tscn" id="5_lo870"]
-[ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://Scenes/lolly_making/gelatin.tscn" id="6_4ybiv"]
-[ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://Scenes/lolly_making/water.tscn" id="7_jp8fd"]
+[ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
+[ext_resource type="Texture2D" uid="uid://dxvs87k2pbe52" path="res://assets/temporary_assets/images (3).jpg" id="2_lo870"]
+[ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_lo870"]
+[ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://scenes/lolly_making/sugar.tscn" id="4_lo870"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="5_lo870"]
+[ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://scenes/lolly_making/gelatin.tscn" id="6_4ybiv"]
+[ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://scenes/lolly_making/water.tscn" id="7_jp8fd"]
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
