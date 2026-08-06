@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://bfpjrejkhqhbb"]
 
-[ext_resource type="Script" uid="uid://bem8n0ndxhi51" path="res://Scripts/lolly_making/ingrediants/gelatin.gd" id="1_jps8i"]
-[ext_resource type="Texture2D" uid="uid://yuofu3oahby3" path="res://Assets/temporary_assets/images (4).jpg" id="2_jps8i"]
+[ext_resource type="Script" uid="uid://bem8n0ndxhi51" path="res://scripts/lolly_making/ingrediants/gelatin.gd" id="1_jps8i"]
+[ext_resource type="Texture2D" uid="uid://bxyf44n4irt08" path="res://assets/tilemaps/gelitin-spritesheet.png" id="2_ps3pc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ic5i"]
+atlas = ExtResource("2_ps3pc")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo870"]
-size = Vector2(131, 120)
+size = Vector2(99.5, 142)
 
 [node name="Gelatin" type="Node2D" unique_id=943539963]
 script = ExtResource("1_jps8i")
 
 [node name="IngrediantSprite" type="Sprite2D" parent="." unique_id=2147378799]
-position = Vector2(3.8146973e-06, 1.000001)
-scale = Vector2(0.68749994, 0.3125)
-texture = ExtResource("2_jps8i")
+position = Vector2(-2.999998, -8.999996)
+scale = Vector2(4.40625, 4.40625)
+texture = SubResource("AtlasTexture_7ic5i")
 
 [node name="IngrediantArea" type="Area2D" parent="." unique_id=845437918]
 
 [node name="IngrediantCollision" type="CollisionShape2D" parent="IngrediantArea" unique_id=1275405894]
-position = Vector2(0, 1)
+position = Vector2(2.25, -10)
 shape = SubResource("RectangleShape2D_lo870")
 
 [connection signal="area_shape_entered" from="IngrediantArea" to="." method="_on_ingrediant_area_area_shape_entered"]

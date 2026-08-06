@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://y1kr45lnmxgk"]
 
 [ext_resource type="Script" uid="uid://0gps47kld5xv" path="res://scripts/lolly_making/machinery/saucepan.gd" id="1_h3g0f"]
-[ext_resource type="Texture2D" uid="uid://dqedpwn8wk51w" path="res://assets/temporary_assets/images.jpg" id="2_6705f"]
+[ext_resource type="Texture2D" uid="uid://8eu5j560grmk" path="res://static-saucepan.png" id="2_2o6pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk6li"]
-size = Vector2(60, 60)
+size = Vector2(68, 30)
 
 [node name="Saucepan" type="StaticBody2D" unique_id=1710325032]
 script = ExtResource("1_h3g0f")
 
 [node name="SaucepanCollision" type="CollisionShape2D" parent="." unique_id=2045467664]
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_pk6li")
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=552805677]
-position = Vector2(-2.3841858e-06, -1.66893e-06)
-scale = Vector2(0.16713092, 0.125)
-texture = ExtResource("2_6705f")
+position = Vector2(20.999998, 10.999999)
+rotation = 1.5707964
+scale = Vector2(1.5999608, 1.1966374)
+texture = ExtResource("2_2o6pv")
