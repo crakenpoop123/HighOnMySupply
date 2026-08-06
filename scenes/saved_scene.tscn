@@ -1,18 +1,17 @@
 [gd_scene format=4]
 
-[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_py71w"]
-[ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_plilb"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_ks44e"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_3v4xa"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_x72m0"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="6_x0c51"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="7_jcytw"]
-[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="8_quea3"]
-[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="9_he528"]
-[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="10_nbuv0"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_ch2h3"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="2_py71w"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="3_plilb"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="4_ks44e"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="5_3v4xa"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="6_x72m0"]
+[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="7_x0c51"]
+[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="8_jcytw"]
+[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="9_quea3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
-texture = ExtResource("1_py71w")
+texture = ExtResource("1_ch2h3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -23,14 +22,8 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cn1us"]
-texture = ExtResource("2_plilb")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4yp2"]
-texture = ExtResource("3_ks44e")
+texture = ExtResource("2_py71w")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -40,7 +33,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3dq"]
-texture = ExtResource("4_3v4xa")
+texture = ExtResource("3_plilb")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -53,12 +46,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eqmtf")
-sources/1 = SubResource("TileSetAtlasSource_cn1us")
 sources/3 = SubResource("TileSetAtlasSource_t4yp2")
 sources/4 = SubResource("TileSetAtlasSource_pa3dq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lawva"]
-texture = ExtResource("5_x72m0")
+texture = ExtResource("4_ks44e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -75,7 +67,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvcce"]
-texture = ExtResource("6_x0c51")
+texture = ExtResource("5_3v4xa")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -99,15 +91,15 @@ scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAAAAAAFAAQAAAACAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("7_jcytw")]
-position = Vector2(-627.9898, 66.20904)
-velocity = Vector2(-0.15199754, -153.13577)
-script = ExtResource("8_quea3")
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("6_x72m0")]
+position = Vector2(-594.81964, 36.074753)
+velocity = Vector2(-3.65197e-20, 0)
+script = ExtResource("7_x0c51")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 
-[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("9_he528")]
+[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("8_jcytw")]
 position = Vector2(-650, -43)
-script = ExtResource("10_nbuv0")
+script = ExtResource("9_quea3")
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfpjrejkhqhbb"]
 
 [ext_resource type="Script" uid="uid://bem8n0ndxhi51" path="res://scripts/lolly_making/ingrediants/gelatin.gd" id="1_jps8i"]
-[ext_resource type="Texture2D" uid="uid://bxyf44n4irt08" path="res://assets/tilemaps/gelitin-spritesheet.png" id="2_ps3pc"]
+[ext_resource type="Texture2D" uid="uid://eh477hhcryyn" path="res://assets/tilemaps/gelitin-spritesheet.png" id="2_ps3pc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ic5i"]
 atlas = ExtResource("2_ps3pc")
