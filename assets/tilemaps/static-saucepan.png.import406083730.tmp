@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do41onaw5vutn"
-path="res://.godot/imported/pavement-tilemap.png-5abd9aee97779d4372bec08f213d76f1.ctex"
+uid="uid://8eu5j560grmk"
+path="res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pavement-tilemap.png"
-dest_files=["res://.godot/imported/pavement-tilemap.png-5abd9aee97779d4372bec08f213d76f1.ctex"]
+source_file="res://assets/tilemaps/static-saucepan.png"
+dest_files=["res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"]
 
 [params]
 
