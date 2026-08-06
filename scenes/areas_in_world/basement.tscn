@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://wc5itm4opyir"]
 
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
-[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]
 [ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_d24wa"]
 [ext_resource type="Texture2D" uid="uid://p5cns0jyoqfu" path="res://assets/tilemaps/table.png" id="3_rxuev"]

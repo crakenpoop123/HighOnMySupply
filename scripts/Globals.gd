@@ -30,6 +30,9 @@ var sugar_cane_max_growth = 5
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
+#Basement
+var saucepan_on_table = true
+
 func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
 	# If loading, you don't
