@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btwbrjekow5p0"
-path="res://.godot/imported/store-exterior-tilemap.png-8682866ee5aae0535aef494fefdd232b.ctex"
+path="res://.godot/imported/store-exterior-tilemap.png-84226ba85ac13589800fc488b6b57077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://store-exterior-tilemap.png"
-dest_files=["res://.godot/imported/store-exterior-tilemap.png-8682866ee5aae0535aef494fefdd232b.ctex"]
+source_file="res://assets/tilemaps/store-exterior-tilemap.png"
+dest_files=["res://.godot/imported/store-exterior-tilemap.png-84226ba85ac13589800fc488b6b57077.ctex"]
 
 [params]
 

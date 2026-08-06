@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e4nffet84fw7"
-path="res://.godot/imported/pixil-frame-0 (26).png-aa2bb194e6ad29d95d7e6f80962d77e8.ctex"
+uid="uid://cbfmixrris516"
+path="res://.godot/imported/grass-tilemap.png-d6f8d3e6268cc3f23d14aacbfe4b0c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temporary_assets/pixil-frame-0 (26).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (26).png-aa2bb194e6ad29d95d7e6f80962d77e8.ctex"]
+source_file="res://assets/tilemaps/grass-tilemap.png"
+dest_files=["res://.godot/imported/grass-tilemap.png-d6f8d3e6268cc3f23d14aacbfe4b0c9d.ctex"]
 
 [params]
 
