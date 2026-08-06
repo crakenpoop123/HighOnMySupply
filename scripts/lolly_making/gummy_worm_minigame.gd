@@ -19,7 +19,8 @@ func _process(_delta: float) -> void:
 	#print("everything in pot", all_ingrediants_in_pot)
 	if ingredients_in_pot == 3:
 		all_ingrediants_in_pot = true
-		Globals.change_scene(false)
+		#Globals.change_scene(false)
+		get_tree().change_scene_to_file("res://scenes/lolly_making/gummy_cooking_minigame.tscn")
 	elif ingredients_in_pot == 2:
 		gelatin.visible = true
 
