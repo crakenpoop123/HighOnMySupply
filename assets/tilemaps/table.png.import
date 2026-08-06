@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajbital045oi"
-path="res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"
+uid="uid://p5cns0jyoqfu"
+path="res://.godot/imported/table.png-5cb1032ce2b3b7f54a501ffa6e1f0ba6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/static-saucepan.png"
-dest_files=["res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"]
+source_file="res://assets/tilemaps/table.png"
+dest_files=["res://.godot/imported/table.png-5cb1032ce2b3b7f54a501ffa6e1f0ba6.ctex"]
 
 [params]
 

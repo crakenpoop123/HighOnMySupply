@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajbital045oi"
-path="res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"
+uid="uid://2ei4tkjjr5l3"
+path="res://.godot/imported/centrifuge-spritesheet.png-9571d94b1069e7422f8517c2c6802e36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/static-saucepan.png"
-dest_files=["res://.godot/imported/static-saucepan.png-744bfa2164f07e6e43b4a691e4953a4e.ctex"]
+source_file="res://assets/tilemaps/centrifuge-spritesheet.png"
+dest_files=["res://.godot/imported/centrifuge-spritesheet.png-9571d94b1069e7422f8517c2c6802e36.ctex"]
 
 [params]
 
