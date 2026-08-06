@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://n0hfgmogmcma"]
 
-[ext_resource type="Texture2D" uid="uid://bd8shi87ymqf8" path="res://icon.svg" id="1_ipt3y"]
+[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_r8lo3"]
+[ext_resource type="Script" uid="uid://c86qt1ikhilkp" path="res://scripts/minigames/harvest_sugarcane_minigame.gd" id="1_vsv8q"]
 [ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/sugarcane_growth_tilemap.png" id="2_qq6pq"]
+[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="2_vsv8q"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="3_r1wfk"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="4_r1wfk"]
+[ext_resource type="Texture2D" uid="uid://cyo7p4dp7mj52" path="res://assets/temporary_assets/images.jpg" id="6_vsv8q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1wfk"]
-size = Vector2(53, 246)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o8n4"]
+atlas = ExtResource("1_r8lo3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7468e"]
+atlas = ExtResource("2_vsv8q")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8lo3"]
 atlas = ExtResource("2_qq6pq")
@@ -15,35 +22,29 @@ region = Rect2(128, 0, 32, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8lo3"]
 size = Vector2(38, 129)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1wfk"]
+size = Vector2(22, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsv8q"]
+size = Vector2(50, 147)
+
 [node name="HarvestSugarcaneMinigame" type="Node2D" unique_id=81153966]
+script = ExtResource("1_vsv8q")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1612114763]
-position = Vector2(-120.249954, 126.989975)
-rotation = -0.3490658
-scale = Vector2(10.943971, 6.965052)
-texture = ExtResource("1_ipt3y")
+position = Vector2(-118, 184)
+scale = Vector2(43.093224, 16.824902)
+texture = SubResource("AtlasTexture_2o8n4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269541343]
-position = Vector2(-193, -259)
-scale = Vector2(9.734375, 3.2187502)
-texture = ExtResource("1_ipt3y")
+position = Vector2(-121, -339)
+scale = Vector2(51.523438, 17.036644)
+texture = SubResource("AtlasTexture_7468e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1654048040]
 position = Vector2(-142, 11)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_r1wfk")]
-
-[node name="CaneKnife" type="Node2D" parent="." unique_id=816362561]
-
-[node name="Sprite2D4" type="Sprite2D" parent="CaneKnife" unique_id=371211654]
-position = Vector2(0, -7.6293945e-06)
-scale = Vector2(0.22457626, 0.58474576)
-texture = ExtResource("4_r1wfk")
-
-[node name="Area2D" type="Area2D" parent="CaneKnife" unique_id=503037931]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CaneKnife/Area2D" unique_id=360152400]
-shape = SubResource("RectangleShape2D_r1wfk")
 
 [node name="Sugarcane" type="Node2D" parent="." unique_id=1143279022]
 
@@ -57,3 +58,34 @@ texture = SubResource("AtlasTexture_r8lo3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sugarcane/Area2D" unique_id=1490831246]
 position = Vector2(-487, 73.5)
 shape = SubResource("RectangleShape2D_r8lo3")
+
+[node name="CaneKnife" type="Node2D" parent="." unique_id=816362561]
+
+[node name="CaneKnifeSprite" type="Sprite2D" parent="CaneKnife" unique_id=371211654]
+position = Vector2(2.4150677, 6.4658813)
+rotation = -0.5578256
+scale = Vector2(0.6854649, 1.2775612)
+texture = ExtResource("6_vsv8q")
+
+[node name="Handle" type="Area2D" parent="CaneKnife" unique_id=503037931]
+
+[node name="HandleCollision" type="CollisionShape2D" parent="CaneKnife/Handle" unique_id=360152400]
+position = Vector2(0, 76)
+shape = SubResource("RectangleShape2D_r1wfk")
+
+[node name="Blade" type="Area2D" parent="CaneKnife" unique_id=1232271164]
+
+[node name="BladeCollision" type="CollisionShape2D" parent="CaneKnife/Blade" unique_id=84952359]
+position = Vector2(1, -39.5)
+shape = SubResource("RectangleShape2D_vsv8q")
+
+[node name="Tip" type="RichTextLabel" parent="." unique_id=1119695314]
+visible = false
+offset_left = -466.0
+offset_top = -292.0
+offset_right = -86.0
+offset_bottom = -252.0
+scale = Vector2(3.19, 3.19)
+text = "Try moving your mouse faster!"
+
+[connection signal="area_shape_entered" from="CaneKnife/Blade" to="." method="_on_blade_area_shape_entered"]
