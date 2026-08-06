@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c4w20xqxkkfuu"]
+
+[ext_resource type="Script" uid="uid://dp6jxxj6f6udw" path="res://scripts/player/inventory/inventory.gd" id="1_crr4r"]
+[ext_resource type="PackedScene" uid="uid://c55wfg610xmgy" path="res://scenes/player/inventory/item.tscn" id="2_ymh5l"]
+
+[node name="Inventory" type="Control" unique_id=1229629953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crr4r")
+
+[node name="InventoryScroll" type="ScrollContainer" parent="." unique_id=1705044]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 34.0
+offset_right = 814.0
+offset_bottom = 614.0
+
+[node name="ScrollVBox" type="VBoxContainer" parent="InventoryScroll" unique_id=888250819]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemBackground" parent="InventoryScroll/ScrollVBox" unique_id=2122524277 instance=ExtResource("2_ymh5l")]
+layout_mode = 2
+
+[node name="ItemBackground2" parent="InventoryScroll/ScrollVBox" unique_id=689490089 instance=ExtResource("2_ymh5l")]
+layout_mode = 2

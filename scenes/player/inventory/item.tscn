@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c55wfg610xmgy"]
+
+[ext_resource type="Texture2D" uid="uid://bd8shi87ymqf8" path="res://icon.svg" id="1_5uf52"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2e16i"]
+
+[node name="ItemBackground" type="TextureRect" unique_id=2122524277]
+anchors_preset = -1
+anchor_right = 0.34600002
+anchor_bottom = 0.24700001
+offset_right = 77.40799
+offset_bottom = 127.944
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_5uf52")
+expand_mode = 3
+
+[node name="ItemName" type="RichTextLabel" parent="." unique_id=329231623]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 221.0
+offset_top = 85.0
+offset_right = 357.0
+offset_bottom = 119.0
+text = "Hi, I'm an item"
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=1937924791]
+position = Vector2(121, 134)
+scale = Vector2(-170.42159, -170.42159)
+texture = SubResource("PlaceholderTexture2D_2e16i")
+
+[node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=423773553]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 215.0
+offset_top = 172.0
+offset_right = 390.0
+offset_bottom = 237.0
+text = "You may or may not have some of me"

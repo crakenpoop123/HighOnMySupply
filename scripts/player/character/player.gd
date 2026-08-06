@@ -82,6 +82,9 @@ func move():
 	else:
 		target_speed[0] = 0
 	
+	if Input.is_action_just_pressed("inventory"):
+		Globals.in_inventory = !Globals.in_inventory
+	
 	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
 	target_speed = target_speed.normalized() * SPEED
 	
