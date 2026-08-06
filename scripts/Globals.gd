@@ -66,3 +66,25 @@ func load_scene():
 	if saved_scene:
 		# Change the scene
 		get_tree().change_scene_to_packed.call_deferred(saved_scene)
+
+var inventory_items: Dictionary = {
+	"gummy_worm": 0,
+	"sugar": 0,
+	"gelatin": 0,
+	"money": 10,
+	"sugar_cane": 0,
+	"shredded_cane": 0,
+	"crushed_cane": 0,
+	"cane_juice": 0,
+	"cane_sugar": 0,
+	"pure_sugar": 0
+}
+
+var inventory_buildables: Dictionary = {
+	"farm_plot": 0,
+	"saucepan": 1,
+	"shredder": 0,
+	"crusher": 0,
+	"boiler": 0,
+	"centrifuge": 0
+}
