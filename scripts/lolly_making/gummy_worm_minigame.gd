@@ -11,7 +11,7 @@ var all_ingrediants_in_pot = false
 var ingredients_in_pot = 0
 
 func _ready() -> void:
-	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
+	globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
 	gelatin.visible = false
 	
 func _process(_delta: float) -> void:
@@ -19,8 +19,8 @@ func _process(_delta: float) -> void:
 	#print("everything in pot", all_ingrediants_in_pot)
 	if ingredients_in_pot == 3:
 		all_ingrediants_in_pot = true
-		Globals.saucepan_on_table = false
-		Globals.change_scene(false)
+		globals.saucepan_on_table = false
+		globals.change_scene(false)
 	elif ingredients_in_pot == 2:
 		gelatin.visible = true
 
@@ -31,13 +31,13 @@ func _process(_delta: float) -> void:
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if all_ingrediants_in_pot == false:
 			if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
-				Globals.can_drag = true
+				globals.can_drag = true
 			else:
-				Globals.can_drag = false
+				globals.can_drag = false
 		elif all_ingrediants_in_pot == true:
-			Globals.can_drag = true
+			globals.can_drag = true
 		else:
-			Globals.can_drag = false
+			globals.can_drag = false
 
 func check_for_move():
 	if mouse.holding == false: # MOVES THE ITEM WHEN YOU ARE HOLDING IT

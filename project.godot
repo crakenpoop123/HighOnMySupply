@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.6")
 
 [autoload]
 
-Globals="*uid://b2rhqft3ppwmk"
+globals="*uid://b2rhqft3ppwmk"
 
 [dotnet]
 

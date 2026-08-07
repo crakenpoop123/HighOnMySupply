@@ -10,13 +10,13 @@ var fully_grown
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max))
+	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	growth_rate = 1 + $WetnessTimer.time_left / (Globals.dry_rate * 2)
+	growth_rate = 1 + $WetnessTimer.time_left / (globals.dry_rate * 2)
 	#print(growth_rate)
 
 func player_interact():
@@ -30,29 +30,29 @@ func water():
 	print("Watered")
 	
 	wetness = 1
-	$WetnessTimer.start(Globals.dry_rate)
+	$WetnessTimer.start(globals.dry_rate)
 
 func harvest():
-	Globals.sugar_cane += 1
-	print("Harvested sugar_cane, now at ", Globals.sugar_cane, " sugar cane")
+	globals.sugar_cane += 1
+	print("Harvested sugar_cane, now at ", globals.sugar_cane, " sugar cane")
 	growth_stage = 0
 	
 	$PlotSprite.frame = growth_stage
 	
 	fully_grown = false
 	
-	$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
+	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max) / growth_rate)
 	
-	Globals.change_scene(true, "res://scenes/minigames/harvest_sugarcane_minigame.tscn")
+	globals.change_scene(true, "res://scenes/minigames/harvest_sugarcane_minigame.tscn")
 
 func _on_random_growth_tick_timeout() -> void:
-	growth_stage = min(growth_stage + 1, Globals.sugar_cane_max_growth)
+	growth_stage = min(growth_stage + 1, globals.sugar_cane_max_growth)
 	
 	$PlotSprite.frame = growth_stage
 	
-	fully_grown = growth_stage == Globals.sugar_cane_max_growth
+	fully_grown = growth_stage == globals.sugar_cane_max_growth
 	
 	#print("grew to stage ", growth_stage)
 	
 	if !fully_grown:
-		$RandomGrowthTick.start(randf_range(Globals.sugar_cane_growth_min, Globals.sugar_cane_growth_max) / growth_rate)
+		$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max) / growth_rate)

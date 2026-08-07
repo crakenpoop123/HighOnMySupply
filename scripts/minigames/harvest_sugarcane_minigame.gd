@@ -12,17 +12,17 @@ var slow_tip_timeout = 3.5
 
 func _process(_delta: float) -> void:
 	if hit_sugarcane == true: # When you are doing something with speed you will probably need to change this clark
-		Globals.change_scene(false)
+		globals.change_scene(false)
 	
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if mouse.area_name.name == "CaneKnife" and mouse.holding_click:
 			lock_knife_to_discrete()
 		if mouse.area_name.name != "Sugarcane": # IF THE NAME IS NOT SUGARCANE
-			Globals.can_drag = true
+			globals.can_drag = true
 		else:
-			Globals.can_drag = false
+			globals.can_drag = false
 	
-	#print(mouse.area_name, " ", Globals.can_drag)
+	#print(mouse.area_name, " ", globals.can_drag)
 
 func lock_knife_to_discrete(num_directions = 8):
 	var total_val = (mouse.movement_dir + PI) / (2*PI) * num_directions

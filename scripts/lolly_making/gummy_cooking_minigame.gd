@@ -7,13 +7,13 @@ extends Node2D
 
 
 func _ready() -> void:
-	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
+	globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
 
 	
 func _process(_delta: float) -> void:
 
 	if mouse.area_name: # IF THE NAME IS NOT NIL
-		Globals.can_drag = true
+		globals.can_drag = true
 
 func check_for_move():
 	if mouse.holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
@@ -31,4 +31,4 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 
 
 func _on_button_button_up() -> void:
-	Globals.change_scene(false)
+	globals.change_scene(false)

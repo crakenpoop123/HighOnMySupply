@@ -2,7 +2,7 @@ extends Control
 
 var item_setup = preload("res://scenes/player/inventory/item.tscn")
 
-var viewed_items = Globals.inventory_ingredients
+var viewed_items = globals.inventory_ingredients
 
 var item_mode = "ingredients"
 
@@ -20,9 +20,9 @@ func clear_items():
 
 func check_viewed_items():
 	if item_mode == "ingredients":
-		viewed_items = Globals.inventory_ingredients
+		viewed_items = globals.inventory_ingredients
 	elif item_mode == "buildings":
-		viewed_items = Globals.inventory_buildings
+		viewed_items = globals.inventory_buildings
 	else:
 		push_error("item_mode is an incorrect value. It is currently set to", item_mode)
 
@@ -41,7 +41,7 @@ func load_items():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.visible = Globals.in_inventory
+	self.visible = globals.in_inventory
 
 
 func _on_buildings_tab_pressed() -> void:
@@ -55,4 +55,4 @@ func _on_ingredients_tab_pressed() -> void:
 
 
 func _on_close_inventory_pressed() -> void:
-	Globals.in_inventory = false
+	globals.in_inventory = false

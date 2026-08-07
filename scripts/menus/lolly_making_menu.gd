@@ -16,15 +16,15 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void: 
 		# Update text
-	$Main/GummyManufacturing/GummyStock.text = "Gummy worms stock: " + str(Globals.gummy_worm_stock)
-	$Main/SugarManufacturing/SugarStock.text = "Sugar stock: " + str(Globals.sugar)
-	$Main/BuyGelatin/GelatinStock.text = "Gelatin stock: " + str(Globals.gelatin)
-	$Main/SellMenu/Money.text = "money: " + str(Globals.money)
+	$Main/GummyManufacturing/GummyStock.text = "Gummy worms stock: " + str(globals.gummy_worm_stock)
+	$Main/SugarManufacturing/SugarStock.text = "Sugar stock: " + str(globals.sugar)
+	$Main/BuyGelatin/GelatinStock.text = "Gelatin stock: " + str(globals.gelatin)
+	$Main/SellMenu/Money.text = "money: " + str(globals.money)
 
 		# All the menus to make them visible or not
 	if menu == Menu.CLOSE_MENU:
-		Globals.in_menu = false
-		Globals.in_cooking_menu = false
+		globals.in_menu = false
+		globals.in_cooking_menu = false
 		self.queue_free()
 	elif menu == Menu.MENU_MENU:
 		$"Main/GummyManufacturing".visible = false
@@ -67,10 +67,10 @@ func _on_button_2_button_up() -> void: # Back button
 		menu = 1
 
 func _make_gummy_worms() -> void: # Make the gummy worms
-	if Globals.sugar >= 1 and Globals.gelatin >= 1:
-		Globals.gummy_worm_stock += 1
-		Globals.sugar -= 1
-		Globals.gelatin -= 1
+	if globals.sugar >= 1 and globals.gelatin >= 1:
+		globals.gummy_worm_stock += 1
+		globals.sugar -= 1
+		globals.gelatin -= 1
 
 func _open_gummy_menu() -> void: # Open the gummy worm menu to make gummy worms 
 	print("Opening Gummy Menu")
@@ -80,20 +80,20 @@ func _open_sugar_menu() -> void: # Open the sugar menu
 	menu = 3
 
 func _make_sugar() -> void:  # Sugar button that gives you sugar
-	Globals.sugar += 1
+	globals.sugar += 1
 
 func _on_sugar_menu_2_button_up() -> void: # Open the gelatin menu
 	menu = 4
 	
 func _on_buy_gelatin_button_up() -> void: # Gelatin button that gives you gelatin
-	if Globals.money >= 5:
-		Globals.gelatin += 1
-		Globals.money -= 5
+	if globals.money >= 5:
+		globals.gelatin += 1
+		globals.money -= 5
 
 func _on_sell_gummy_worm_button_up() -> void: # Open the sell menu
 	menu = 5
 
 func _on_sell_button_button_up() -> void: # Sell 1 gummy worm for 10 money
-	if Globals.gummy_worm_stock >= 1: 
-		Globals.gummy_worm_stock -= 1
-		Globals.money += 10
+	if globals.gummy_worm_stock >= 1: 
+		globals.gummy_worm_stock -= 1
+		globals.money += 10

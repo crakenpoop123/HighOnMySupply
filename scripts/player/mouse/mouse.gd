@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		holding_click = false
 	#print(mouse_in_area)
 	$MouseArea/MouseCollision.global_position = mouse_pos
-	if Globals.can_drag == true:
+	if globals.can_drag == true:
 		check_for_move()
 		check_for_drop()
 		check_off_screen()

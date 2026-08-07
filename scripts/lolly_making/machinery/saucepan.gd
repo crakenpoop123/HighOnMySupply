@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func player_interact():
-	if Globals.saucepan_on_table == true:
-		Globals.change_scene(true, "res://scenes/lolly_making/gummy_worm_minigame.tscn")
-	elif Globals.saucepan_on_table == false:
-		Globals.change_scene(true, "res://scenes/lolly_making/gummy_cooking_minigame.tscn")
+	if globals.saucepan_on_table == true:
+		globals.change_scene(true, "res://scenes/lolly_making/gummy_worm_minigame.tscn")
+	elif globals.saucepan_on_table == false:
+		globals.change_scene(true, "res://scenes/lolly_making/gummy_cooking_minigame.tscn")
