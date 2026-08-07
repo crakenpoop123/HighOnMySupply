@@ -39,11 +39,11 @@ func _process(_delta: float) -> void:
 func get_movement_data():
 	movement_speed = (mouse_pos - prev_mouse_pos[0]).length()
 	
-	print("prev pos", prev_mouse_pos)
-	print("pos", mouse_pos)
+	#print("prev pos", prev_mouse_pos)
+	#print("pos", mouse_pos)
 	if prev_mouse_pos[4] != mouse_pos:
 		movement_dir = (prev_mouse_pos[4] - mouse_pos).angle()
-	print("direction", movement_dir)
+	#print("direction", movement_dir)
 
 func check_for_move():
 	if holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT

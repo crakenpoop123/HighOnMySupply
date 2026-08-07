@@ -13,8 +13,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 
 	if mouse.area_name: # IF THE NAME IS NOT NIL
-		check_for_move()
-		check_for_drop()
+		Globals.can_drag = true
 
 func check_for_move():
 	if mouse.holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnq483mqrhbwd"
-path="res://.godot/imported/water-saucepan.png-04081172c7918f025c65a94cf80c7ae9.ctex"
+path="res://.godot/imported/water-saucepan.png-668d5926331821bd819ca26f2e330903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://water-saucepan.png"
-dest_files=["res://.godot/imported/water-saucepan.png-04081172c7918f025c65a94cf80c7ae9.ctex"]
+source_file="res://assets/misc/water-saucepan.png"
+dest_files=["res://.godot/imported/water-saucepan.png-668d5926331821bd819ca26f2e330903.ctex"]
 
 [params]
 

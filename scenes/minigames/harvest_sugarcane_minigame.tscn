@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/sugarcane_growth_tilemap.png" id="2_qq6pq"]
 [ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="2_vsv8q"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="3_r1wfk"]
-[ext_resource type="Texture2D" uid="uid://cyo7p4dp7mj52" path="res://assets/temporary_assets/images.jpg" id="6_vsv8q"]
+[ext_resource type="Texture2D" uid="uid://by653axh0hu56" path="res://assets/tools/cane_knife.png" id="6_vsv8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8n4"]
 atlas = ExtResource("1_r8lo3")
@@ -65,8 +65,7 @@ shape = SubResource("RectangleShape2D_r8lo3")
 
 [node name="CaneKnifeSprite" type="Sprite2D" parent="CaneKnife" unique_id=371211654]
 position = Vector2(2.4150677, 6.4658813)
-rotation = -0.5578256
-scale = Vector2(0.6854649, 1.2775612)
+scale = Vector2(3.3490582, 3.3490582)
 texture = ExtResource("6_vsv8q")
 
 [node name="Handle" type="Area2D" parent="CaneKnife" unique_id=503037931]
@@ -126,4 +125,8 @@ offset_bottom = -252.0
 scale = Vector2(3.19, 3.19)
 text = "Try moving your mouse faster!"
 
+[node name="TipTimer" type="Timer" parent="Tip" unique_id=122639282]
+one_shot = true
+
 [connection signal="area_shape_entered" from="CaneKnife/Blade" to="." method="_on_blade_area_shape_entered"]
+[connection signal="timeout" from="Tip/TipTimer" to="." method="_on_tip_timer_timeout"]

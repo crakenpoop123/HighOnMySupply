@@ -16,7 +16,7 @@ layout_mode = 0
 offset_left = 338.0
 offset_top = 34.0
 offset_right = 814.0
-offset_bottom = 614.0
+offset_bottom = 520.0
 
 [node name="ScrollGrid" type="GridContainer" parent="InventoryScroll" unique_id=815967618]
 layout_mode = 2
