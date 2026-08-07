@@ -40,7 +40,7 @@ func load_items():
 		get_node("InventoryScroll/ScrollGrid").add_child(curr_item)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	self.visible = Globals.in_inventory
 
 

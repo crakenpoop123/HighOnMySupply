@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	growth_rate = 1 + $WetnessTimer.time_left / (Globals.dry_rate * 2)
 	#print(growth_rate)
