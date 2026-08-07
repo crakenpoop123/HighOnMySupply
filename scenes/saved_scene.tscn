@@ -116,6 +116,6 @@ collision_layer = 2
 script = ExtResource("10_c7cse")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("11_tdi5l")]
-position = Vector2(-585.1366, 514.9725)
-velocity = Vector2(-90.75621, 18.222)
+position = Vector2(-556.317, 81.317245)
+velocity = Vector2(-0.006690194, 7.583429e-08)
 script = ExtResource("12_ohu7i")
