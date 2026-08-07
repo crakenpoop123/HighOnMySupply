@@ -4,13 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dxvs87k2pbe52" path="res://assets/temporary_assets/images (3).jpg" id="2_mofkb"]
 [ext_resource type="Texture2D" uid="uid://bqu7f4s6s8hka" path="res://assets/temporary_assets/TGC3001.jpg" id="3_6ibx0"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_7r4nq"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="6_x7mrt"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_brjve"]
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_6ibx0")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
-position = Vector2(-142, 11)
 
 [node name="AlsoBackground" type="Sprite2D" parent="." unique_id=389161290]
 position = Vector2(325, 62)
@@ -23,6 +21,20 @@ scale = Vector2(0.55489844, 0.6636491)
 texture = ExtResource("3_6ibx0")
 
 [node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_7r4nq")]
-position = Vector2(323, 75)
+position = Vector2(198, 170)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
+
+[node name="Button" type="Button" parent="." unique_id=1193797555]
+offset_left = 300.0
+offset_top = -298.0
+offset_right = 544.0
+offset_bottom = 129.0
+scale = Vector2(0.44, 0.22)
+icon = ExtResource("6_x7mrt")
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
+position = Vector2(-142, 11)
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -29,3 +29,7 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
 			if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK
 				mouse.holding = true # START DRAGGING # Should't this be stop dragging???
+
+
+func _on_button_button_up() -> void:
+	Globals.change_scene(false)
