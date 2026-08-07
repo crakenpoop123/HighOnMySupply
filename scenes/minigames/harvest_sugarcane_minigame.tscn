@@ -84,30 +84,35 @@ shape = SubResource("RectangleShape2D_vsv8q")
 [node name="BladeRays" type="Node2D" parent="CaneKnife/Blade" unique_id=608783726]
 
 [node name="BladeRay" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1146774024]
+target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="BladeRay2" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=288151710]
 position = Vector2(0, 28)
+target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="BladeRay5" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=7768107]
 position = Vector2(3, -41)
+target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="BladeRay6" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1503578719]
 position = Vector2(1, -69)
+target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="BladeRay7" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1867864019]
 position = Vector2(0, -100)
+target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
