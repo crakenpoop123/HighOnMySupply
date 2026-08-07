@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="7_he528"]
 [ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="8_nbuv0"]
 [ext_resource type="PackedScene" path="res://scenes/sugar_making/farm_plot.tscn" id="9_4wkfk"]
-[ext_resource type="Script" path="res://Scripts/sugar_making/farm_plot.gd" id="10_c7cse"]
+[ext_resource type="Script" path="res://scripts/sugar_making/farm_plot.gd" id="10_c7cse"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="11_tdi5l"]
 [ext_resource type="Script" path="res://scripts/player/character/player.gd" id="12_ohu7i"]
 
@@ -116,6 +116,6 @@ collision_layer = 2
 script = ExtResource("10_c7cse")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("11_tdi5l")]
-position = Vector2(-651.89764, 551.89764)
-velocity = Vector2(-9.641192e-06, 1.7871735e-23)
+position = Vector2(-585.1366, 514.9725)
+velocity = Vector2(-90.75621, 18.222)
 script = ExtResource("12_ohu7i")
