@@ -1,22 +1,23 @@
 [gd_scene format=4]
 
-[ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="1_plilb"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_x72m0"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_x0c51"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_jcytw"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_quea3"]
-[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="6_he528"]
-[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="7_nbuv0"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="7_quea3"]
-[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="8_4wkfk"]
-[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="8_he528"]
-[ext_resource type="PackedScene" path="res://scenes/sugar_making/farm_plot.tscn" id="9_c7cse"]
-[ext_resource type="Texture2D" path="res://assets/misc/eye.jpg" id="9_nbuv0"]
-[ext_resource type="Script" path="res://scripts/sugar_making/farm_plot.gd" id="10_tdi5l"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="14_ohu7i"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/basementfloor.png" id="1_x0c51"]
+[ext_resource type="Texture2D" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_jcytw"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="3_quea3"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/stairs2.0.png" id="4_he528"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/table.png" id="5_nbuv0"]
+[ext_resource type="Texture2D" path="res://table2.0.png" id="6_4wkfk"]
+[ext_resource type="Texture2D" path="res://assets/tilemaps/oven.png" id="7_c7cse"]
+[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="8_tdi5l"]
+[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="9_ohu7i"]
+[ext_resource type="PackedScene" path="res://scenes/sugar_making/farm_plot.tscn" id="10_bfjyb"]
+[ext_resource type="Script" path="res://scripts/sugar_making/farm_plot.gd" id="11_6mrm5"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="12_ef8g1"]
+[ext_resource type="Script" path="res://scripts/player/character/player.gd" id="13_vd423"]
+[ext_resource type="Texture2D" path="res://assets/misc/eye.jpg" id="14_667ub"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="15_5ylvm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
-texture = ExtResource("1_x72m0")
+texture = ExtResource("1_x0c51")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -28,12 +29,12 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vwho"]
-texture = ExtResource("1_plilb")
+texture = ExtResource("2_jcytw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4yp2"]
-texture = ExtResource("3_x0c51")
+texture = ExtResource("3_quea3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -43,7 +44,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3dq"]
-texture = ExtResource("4_jcytw")
+texture = ExtResource("4_he528")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -61,7 +62,7 @@ sources/4 = SubResource("TileSetAtlasSource_pa3dq")
 sources/1 = SubResource("TileSetAtlasSource_1vwho")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lawva"]
-texture = ExtResource("5_quea3")
+texture = ExtResource("5_nbuv0")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -77,8 +78,15 @@ texture_region_size = Vector2i(32, 32)
 7:1/0 = 0
 2:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pqmk"]
+texture = ExtResource("6_4wkfk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvcce"]
-texture = ExtResource("6_he528")
+texture = ExtResource("7_c7cse")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -87,6 +95,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_lawva")
 sources/2 = SubResource("TileSetAtlasSource_hvcce")
+sources/1 = SubResource("TileSetAtlasSource_0pqmk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdkve"]
 size = Vector2(74, 127)
@@ -102,38 +111,38 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Table" type="TileMapLayer" parent="." unique_id=1387832548]
 position = Vector2(-1094, -324)
 scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAAAAAAFAAQAAAACAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQABAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 
-[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("7_nbuv0")]
+[node name="Saucepan" type="StaticBody2D" parent="Saucepan" unique_id=1710325032 instance=ExtResource("8_tdi5l")]
 position = Vector2(-650, -43)
-script = ExtResource("8_4wkfk")
+script = ExtResource("9_ohu7i")
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
 [node name="Farm" type="Node2D" parent="." unique_id=1197396922]
 position = Vector2(-729, 574)
 
-[node name="FarmPlot" type="StaticBody2D" parent="Farm" unique_id=882134452 instance=ExtResource("9_c7cse")]
+[node name="FarmPlot" type="StaticBody2D" parent="Farm" unique_id=882134452 instance=ExtResource("10_bfjyb")]
 collision_layer = 2
-script = ExtResource("10_tdi5l")
+script = ExtResource("11_6mrm5")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("7_quea3")]
-position = Vector2(-634.07275, 535.2663)
-velocity = Vector2(1.303537e-10, -12.575665)
-script = ExtResource("8_he528")
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("12_ef8g1")]
+position = Vector2(-680.072, 555.07806)
+velocity = Vector2(-0.09246289, 1.3887821e-14)
+script = ExtResource("13_vd423")
 
 [node name="Door" type="Node2D" parent="." unique_id=1712402548]
 
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=251515614]
 position = Vector2(272, -84)
 scale = Vector2(0.30932203, 0.30932206)
-texture = ExtResource("9_nbuv0")
+texture = ExtResource("14_667ub")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door" unique_id=565055366]
-script = ExtResource("14_ohu7i")
+script = ExtResource("15_5ylvm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D" unique_id=190886121]
 position = Vector2(273, -83.5)
