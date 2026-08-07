@@ -8,7 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if globals.saucepan_on_table == true:
+		$".".position = Vector2(-650, -43)
+	elif globals.saucepan_on_table == false:
+		$".".position = Vector2(-752, -28)
+
 
 func player_interact():
 	if globals.saucepan_on_table == true:
