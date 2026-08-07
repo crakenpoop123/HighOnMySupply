@@ -141,4 +141,4 @@ tile_map_data = PackedByteArray("AAD8//j/AAAAAAAAAAD8//n/AAAAAAEAAAD6//j/AAABAAA
 tile_set = SubResource("TileSet_lk40d")
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("7_3w4ne")]
-position = Vector2(969, -540)
+position = Vector2(601, -547)
