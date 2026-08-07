@@ -45,6 +45,7 @@ texture = SubResource("AtlasTexture_7468e")
 position = Vector2(-142, 11)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_r1wfk")]
+position = Vector2(-718, -313)
 
 [node name="Sugarcane" type="Node2D" parent="." unique_id=1143279022]
 
