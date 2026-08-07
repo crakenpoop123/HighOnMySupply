@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/oven.png" id="4_lawva"]
 [ext_resource type="Texture2D" uid="uid://3g3jdedva5rj" path="res://assets/tilemaps/stairs2.0.png" id="4_t4yp2"]
 [ext_resource type="PackedScene" uid="uid://y1kr45lnmxgk" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="6_hvcce"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://table2.0.png" id="6_k7qf4"]
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
 [ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="10_kdkve"]
 [ext_resource type="Script" uid="uid://28spa4m1snv0" path="res://scripts/door.gd" id="11_6g54d"]
@@ -74,6 +75,13 @@ texture_region_size = Vector2i(32, 32)
 7:1/0 = 0
 2:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pqmk"]
+texture = ExtResource("6_k7qf4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvcce"]
 texture = ExtResource("4_lawva")
 texture_region_size = Vector2i(32, 32)
@@ -84,6 +92,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_lawva")
 sources/2 = SubResource("TileSetAtlasSource_hvcce")
+sources/1 = SubResource("TileSetAtlasSource_0pqmk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdkve"]
 size = Vector2(74, 127)
@@ -99,7 +108,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Table" type="TileMapLayer" parent="." unique_id=1387832548]
 position = Vector2(-1094, -324)
 scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAAADAAAAAAAFAAQAAAACAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAQAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQABAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
