@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://b5jtfqfnsgpr7"]
 
 [ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
-[ext_resource type="Texture2D" uid="uid://dxvs87k2pbe52" path="res://assets/temporary_assets/images (3).jpg" id="2_lo870"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://table2.0.png" id="2_7qa4p"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_lo870"]
 [ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://scenes/lolly_making/sugar.tscn" id="4_lo870"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="5_lo870"]
 [ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://scenes/lolly_making/gelatin.tscn" id="6_4ybiv"]
 [ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://scenes/lolly_making/water.tscn" id="7_jp8fd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
+atlas = ExtResource("2_7qa4p")
+region = Rect2(0, 0, 32, 32)
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
@@ -15,9 +19,9 @@ script = ExtResource("1_tf8u4")
 position = Vector2(-142, 11)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1175047369]
-position = Vector2(-141.50005, 9.500004)
-scale = Vector2(2.1471136, 1.8361112)
-texture = ExtResource("2_lo870")
+position = Vector2(-93.73175, 8)
+scale = Vector2(39.48323, 24.503532)
+texture = SubResource("AtlasTexture_hycbr")
 
 [node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_lo870")]
 position = Vector2(-525, 19)
