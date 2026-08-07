@@ -31,12 +31,12 @@ size = Vector2(50, 147)
 [node name="HarvestSugarcaneMinigame" type="Node2D" unique_id=81153966]
 script = ExtResource("1_vsv8q")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1612114763]
+[node name="Grass" type="Sprite2D" parent="." unique_id=1612114763]
 position = Vector2(-118, 184)
 scale = Vector2(43.093224, 16.824902)
 texture = SubResource("AtlasTexture_2o8n4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269541343]
+[node name="Wall" type="Sprite2D" parent="." unique_id=1269541343]
 position = Vector2(-121, -339)
 scale = Vector2(51.523438, 17.036644)
 texture = SubResource("AtlasTexture_7468e")
@@ -49,14 +49,15 @@ position = Vector2(-718, -313)
 
 [node name="Sugarcane" type="Node2D" parent="." unique_id=1143279022]
 
-[node name="Sprite2D3" type="Sprite2D" parent="Sugarcane" unique_id=1340598708]
+[node name="SugarcaneSprite" type="Sprite2D" parent="Sugarcane" unique_id=1340598708]
 position = Vector2(-487, -11)
 scale = Vector2(9.375, 9.375)
 texture = SubResource("AtlasTexture_r8lo3")
 
-[node name="Area2D" type="Area2D" parent="Sugarcane" unique_id=746226768]
+[node name="SugarcaneArea" type="Area2D" parent="Sugarcane" unique_id=746226768]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sugarcane/Area2D" unique_id=1490831246]
+[node name="SugarcaneCollision" type="CollisionShape2D" parent="Sugarcane/SugarcaneArea" unique_id=1490831246]
 position = Vector2(-487, 73.5)
 shape = SubResource("RectangleShape2D_r8lo3")
 
@@ -79,6 +80,37 @@ shape = SubResource("RectangleShape2D_r1wfk")
 [node name="BladeCollision" type="CollisionShape2D" parent="CaneKnife/Blade" unique_id=84952359]
 position = Vector2(1, -39.5)
 shape = SubResource("RectangleShape2D_vsv8q")
+
+[node name="BladeRays" type="Node2D" parent="CaneKnife/Blade" unique_id=608783726]
+
+[node name="BladeRay" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1146774024]
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BladeRay2" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=288151710]
+position = Vector2(0, 28)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BladeRay5" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=7768107]
+position = Vector2(3, -41)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BladeRay6" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1503578719]
+position = Vector2(1, -69)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BladeRay7" type="RayCast2D" parent="CaneKnife/Blade/BladeRays" unique_id=1867864019]
+position = Vector2(0, -100)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Tip" type="RichTextLabel" parent="." unique_id=1119695314]
 visible = false

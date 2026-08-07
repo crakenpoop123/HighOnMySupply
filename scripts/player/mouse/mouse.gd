@@ -7,10 +7,18 @@ var mouse_in_area = false
 var area_name: Node2D
 var also_area_name
 @onready var mouse_pos = get_global_mouse_position()
-@onready var prev_mouse_pos = get_global_mouse_position()
+var prev_mouse_pos: Array = [0, 0, 0, 0, 0]
+var prev_pos_size = 5
+
+var movement_speed = 0
+var movement_dir = 0
+
+func _ready():
+	prev_mouse_pos.fill(get_global_mouse_position())
 
 func _process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
+	
 	if Input.is_action_just_pressed("click"):
 		holding_click = true
 	if Input.is_action_just_released("click"):
@@ -21,17 +29,25 @@ func _process(_delta: float) -> void:
 		check_for_move()
 		check_for_drop()
 		check_off_screen()
+		get_movement_data()
 	
-	prev_mouse_pos = mouse_pos
+	prev_mouse_pos.pop_back()
+	prev_mouse_pos.insert(0, mouse_pos)
 
 
 
-
-
+func get_movement_data():
+	movement_speed = (mouse_pos - prev_mouse_pos[0]).length()
+	
+	print("prev pos", prev_mouse_pos)
+	print("pos", mouse_pos)
+	if prev_mouse_pos[4] != mouse_pos:
+		movement_dir = (prev_mouse_pos[4] - mouse_pos).angle()
+	print("direction", movement_dir)
 
 func check_for_move():
 	if holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
-		area_name.global_position += mouse_pos - prev_mouse_pos # MOVE THE ITEM
+		area_name.global_position += mouse_pos - prev_mouse_pos[0] # MOVE THE ITEM
 		if holding_click == false: # IF YOU ARENT HOLDING CLICK
 			holding = false # DROP IT
 
