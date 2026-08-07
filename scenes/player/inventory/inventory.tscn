@@ -23,3 +23,32 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
+
+[node name="BuildingsTab" type="Button" parent="." unique_id=534667914]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 134.0
+offset_right = 338.0
+offset_bottom = 210.0
+text = "Buildings"
+
+[node name="IngredientsTab" type="Button" parent="." unique_id=1877107942]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 41.0
+offset_right = 338.0
+offset_bottom = 117.0
+text = "Ingredients"
+
+[node name="CloseInventory" type="Button" parent="." unique_id=400814585]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 21.0
+offset_right = 1128.0
+offset_bottom = 97.0
+text = "Close Inventory
+"
+
+[connection signal="pressed" from="BuildingsTab" to="." method="_on_buildings_tab_pressed"]
+[connection signal="pressed" from="IngredientsTab" to="." method="_on_ingredients_tab_pressed"]
+[connection signal="pressed" from="CloseInventory" to="." method="_on_close_inventory_pressed"]
