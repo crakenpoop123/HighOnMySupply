@@ -5,6 +5,9 @@ extends Node2D
 var hit_sugarcane: bool = false
 var min_chop_speed = 50
 
+var pivot_offset = Vector2.ZERO
+var knife_pivot
+
 func _process(_delta: float) -> void:
 	if hit_sugarcane == true: # When you are doing something with speed you will probably need to change this clark
 		Globals.change_scene(false)
@@ -20,7 +23,14 @@ func _process(_delta: float) -> void:
 	#print(mouse.area_name, " ", Globals.can_drag)
 
 func _physics_process(delta: float) -> void:
+	pivot_offset = $CaneKnife.global_position - get_global_mouse_position()
+	knife_pivot = global_position + pivot_offset.rotated(mouse.movement_dir)
 	
+	$CaneKnife.rotation += mouse.movement_dir
+	
+	$CaneKnife.global_position = knife_pivot - pivot_offset.rotated(mouse.movement_dir)
+	
+	#$CaneKnife.
 	for ray in $CaneKnife/Blade/BladeRays.get_children():
 		rotate_to_mouse(ray, PI/2)
 		#print($CaneKnifeOLD/Blade/BladeRay.get_collider())
