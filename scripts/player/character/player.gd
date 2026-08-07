@@ -38,11 +38,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void: # This stuff aint needed anymore
 	near_pot = true
 	print(near_pot)
 
-func _on_area_2d_area_exited(_area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void: # This stuff aint needed anymore
 	near_pot = false
 	print(near_pot)
 
