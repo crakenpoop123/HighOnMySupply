@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1f4a0j514wbk"]
+
+[ext_resource type="Texture2D" uid="uid://bd8shi87ymqf8" path="res://icon.svg" id="1_g2xdh"]
+
+[node name="HotbarItem" type="TextureRect" unique_id=1688962299]
+offset_right = 96.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_g2xdh")
+expand_mode = 1
