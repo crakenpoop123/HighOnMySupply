@@ -11,6 +11,11 @@ var attack_speed = 2 # interval(secs) between attacks
 var player_dir = 0
 var dir_state = "down"
 
+var slot_focused = 0
+
+func _ready():
+	print("key type", int(KEY_0))
+
 func _process(_delta: float) -> void:
 	if globals.in_menu or globals.in_inventory:
 		globals.can_move = false
@@ -18,6 +23,7 @@ func _process(_delta: float) -> void:
 		globals.can_move = true
 	
 	interact()
+	check_hotbar_focus()
 
 func _physics_process(_delta: float) -> void:
 	if globals.can_move == true:
@@ -141,3 +147,8 @@ func interact():
 	
 	if Input.is_action_just_pressed("inventory"):
 		globals.in_inventory = !globals.in_inventory
+
+func check_hotbar_focus():
+	for num in range(10):
+		if Input.is_key_pressed(48 + num):
+			$Hotbar.slot_focused = num
