@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://d1f4a0j514wbk"]
 
 [ext_resource type="Texture2D" uid="uid://r73c42vdbfl8" path="res://assets/gui/hotbarslot.png" id="1_g2xdh"]
+[ext_resource type="Script" uid="uid://ct7o7tuermtkc" path="res://scripts/player/inventory/hotbar_item.gd" id="2_mgkgd"]
 
 [node name="HotbarItem" type="TextureRect" unique_id=1688962299]
-modulate = Color(1, 1, 1, 0.7764706)
+modulate = Color(1, 1, 1, 0.7411765)
 offset_right = 96.0
 offset_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_g2xdh")
 expand_mode = 1
+script = ExtResource("2_mgkgd")
 
 [node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=1651358092]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 82.0
 offset_top = 72.0
