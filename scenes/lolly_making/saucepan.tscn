@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wj652j0ikc11"]
 
-[ext_resource type="Texture2D" uid="uid://b607uqxwbkc1e" path="res://assets/misc/saucepan.png" id="1_y7b24"]
+[ext_resource type="Texture2D" uid="uid://dyi0sjx3beh5r" path="res://assets/misc/saucepan.png" id="1_y7b24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
 radius = 122.016396

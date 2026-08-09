@@ -1,7 +1,7 @@
 extends Control
 
 @onready var item = preload("res://scenes/player/inventory/hotbar_item.tscn")
-var num_slots = 10
+var num_slots = 9
 
 var slot_focused = 0
 
@@ -19,9 +19,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var slot_number = 0
 	for slot in get_node("HotbarGrid").get_children():
+		slot_number += 1
 		slot.label = str(slot_number)
 		if slot_number == slot_focused:
 			slot.modulate = Color(1, 1, 1, 1)
 		else:
 			slot.modulate = Color(1, 1, 1, opacity)
-		slot_number += 1

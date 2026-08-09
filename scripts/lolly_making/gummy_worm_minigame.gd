@@ -7,6 +7,8 @@ extends Node2D
 @onready var water = $Water
 
 
+var empty_saucepan = load("res://assets/misc/saucepan.png")
+var water_saucepan = load("res://assets/misc/water-saucepan.png")
 var all_ingrediants_in_pot = false
 var ingredients_in_pot = 0
 
@@ -27,7 +29,7 @@ func _process(_delta: float) -> void:
 	#print(ingredients_in_pot)
 
 	check_for_move()
-	check_for_drop
+	check_for_drop()
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if all_ingrediants_in_pot == false:
 			if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
@@ -55,10 +57,14 @@ func check_for_move():
 				gelatin.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
 			if water.inside_pot == true:
+				$Saucepan/SaucepanSprite.texture = water_saucepan
 				$Water/IngrediantArea.queue_free()
+				$Water/IngrediantSprite.queue_free()
 				water.reparent(saucepan)
 				water.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
+				
+				
 			
 
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
