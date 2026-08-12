@@ -1,35 +1,60 @@
 [gd_scene format=3 uid="uid://b5jtfqfnsgpr7"]
 
 [ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://scripts/lolly_making/gummy_worm_minigame.gd" id="1_tf8u4"]
-[ext_resource type="Texture2D" uid="uid://dxvs87k2pbe52" path="res://assets/temporary_assets/images (3).jpg" id="2_lo870"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://table2.0.png" id="2_7qa4p"]
+[ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/misc/oven.png" id="2_hycbr"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_lo870"]
 [ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://scenes/lolly_making/sugar.tscn" id="4_lo870"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="5_lo870"]
 [ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://scenes/lolly_making/gelatin.tscn" id="6_4ybiv"]
 [ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://scenes/lolly_making/water.tscn" id="7_jp8fd"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
+atlas = ExtResource("2_7qa4p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hycbr"]
+size = Vector2(637, 649)
+
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
 
+[node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
+position = Vector2(182, -5)
+
+[node name="StoveBackground" type="Sprite2D" parent="Backgrounds" unique_id=734800599]
+position = Vector2(-708.00006, 4.000002)
+scale = Vector2(20.25, 20.296875)
+texture = ExtResource("2_hycbr")
+
+[node name="TableBackground" type="Sprite2D" parent="Backgrounds" unique_id=1175047369]
+position = Vector2(-141, 5.728143)
+scale = Vector2(36.10823, 20.516996)
+texture = SubResource("AtlasTexture_hycbr")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
-position = Vector2(-142, 11)
+position = Vector2(-142, 0)
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1175047369]
-position = Vector2(-141.50005, 9.500004)
-scale = Vector2(2.1471136, 1.8361112)
-texture = ExtResource("2_lo870")
+[node name="Table" type="Node2D" parent="." unique_id=2144922733]
 
-[node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_lo870")]
-position = Vector2(-525, 19)
+[node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_lo870")]
+position = Vector2(-360, 177)
 
-[node name="Sugar" parent="." unique_id=943539963 instance=ExtResource("4_lo870")]
-position = Vector2(264, -154)
+[node name="Sugar" parent="Table" unique_id=943539963 instance=ExtResource("4_lo870")]
+position = Vector2(-83, 221)
 
-[node name="Gelatin" parent="." unique_id=1218447201 instance=ExtResource("6_4ybiv")]
-visible = false
-position = Vector2(280, 163)
+[node name="Gelatin" parent="Table" unique_id=1218447201 instance=ExtResource("6_4ybiv")]
+position = Vector2(284, 226)
 
-[node name="Water" parent="." unique_id=811238870 instance=ExtResource("7_jp8fd")]
-position = Vector2(264, 9)
+[node name="Water" parent="Table" unique_id=811238870 instance=ExtResource("7_jp8fd")]
+position = Vector2(97, 221)
+
+[node name="Stove" type="Node2D" parent="." unique_id=1766608759]
+
+[node name="StoveCollision" type="Area2D" parent="Stove" unique_id=867318703]
+
+[node name="StoveCollisionShape" type="CollisionShape2D" parent="Stove/StoveCollision" unique_id=1779373749]
+position = Vector2(-856.5, -1)
+shape = SubResource("RectangleShape2D_hycbr")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]

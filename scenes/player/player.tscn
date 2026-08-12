@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://binswa7562072" path="res://scripts/player/character/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://gkjnbpqj0t2u" path="res://assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
 [ext_resource type="PackedScene" uid="uid://c4w20xqxkkfuu" path="res://scenes/player/inventory/inventory.tscn" id="3_gmlin"]
+[ext_resource type="PackedScene" uid="uid://dpkcpg0g6djle" path="res://scenes/player/inventory/hotbar.tscn" id="4_e41v5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -306,3 +307,14 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+
+[node name="Hotbar" parent="." unique_id=1780203600 instance=ExtResource("4_e41v5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -578.0
+offset_top = -324.0
+offset_right = 574.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1

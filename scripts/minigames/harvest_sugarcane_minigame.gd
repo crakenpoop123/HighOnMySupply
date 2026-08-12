@@ -3,40 +3,76 @@ extends Node2D
 @onready var mouse = $Mouse
 
 var hit_sugarcane: bool = false
+var min_chop_speed = 30
 
-var all_ingrediants_in_pot = false
-var ingredients_in_pot = 0
+var pivot_offset = Vector2.ZERO
+var knife_angle = 0
 
-func _ready() -> void:
-	Globals.can_drag = false # SET THE MOUSE DRAG TO FALSE SO THAT CODE TO DRAG CAN BE ADDED HERE BECAUSE ANNOYING THINGS HAPPEN
-	
+var slow_tip_timeout = 3.5
+
 func _process(_delta: float) -> void:
 	if hit_sugarcane == true: # When you are doing something with speed you will probably need to change this clark
-		Globals.change_scene(false)
+		globals.change_scene(false)
 	
-
 	if mouse.area_name: # IF THE NAME IS NOT NIL
-		if all_ingrediants_in_pot == false:
-			if mouse.area_name.name != "Sugarcane": # IF THE NAME IS NOT SAUCEPAN
-				check_for_move()
-				check_for_drop()
+		if mouse.area_name.name == "CaneKnife" and mouse.holding_click:
+			lock_knife_to_discrete()
+		if mouse.area_name.name != "Sugarcane": # IF THE NAME IS NOT SUGARCANE
+			globals.can_drag = true
+		else:
+			globals.can_drag = false
+	
+	#print(mouse.area_name, " ", globals.can_drag)
 
-func check_for_move():
-	if mouse.holding == true: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
-		mouse.area_name.global_position = get_global_mouse_position() # MOVE THE ITEM
-		if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
-			mouse.holding = false # DROP IT
+func lock_knife_to_discrete(num_directions = 8):
+	var total_val = (mouse.movement_dir + PI) / (2*PI) * num_directions
+	var nearest_lock = floor(total_val)
+	var locked_angle = nearest_lock * 2 * PI / num_directions - PI
+	
+	print("discrete dir", total_val)
+	print("locked dir", nearest_lock)
+	print("locked angle", locked_angle)
+	
+	offset_node2d($CaneKnife, get_global_mouse_position())
+	$CaneKnife.rotation = locked_angle
 
-func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
-	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
-		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
-			if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK
-				mouse.holding = true # START DRAGGING # Should't this be stop dragging???
+func _physics_process(delta: float) -> void:
+	
+	for ray in $CaneKnife/Blade/BladeRays.get_children():
+		rotate_to_mouse(ray, PI/2)
+		#print($CaneKnifeOLD/Blade/BladeRay.get_collider())
+		if ray.is_colliding():
+			#print("Blade colliding with: ", ray.get_collider().get_parent().name)
+			if ray.get_collider().get_parent().name == "Sugarcane":
+				if mouse.movement_speed >= min_chop_speed:
+					hit_sugarcane = true
+				else:
+					hit_too_slow()
 
+func offset_node2d(node, pivot):
+	pivot_offset = pivot - node.position
+	
+	node.position = pivot
+	
+	for child in node.get_children():
+		child.position -= pivot_offset
+
+func rotate_to_mouse(body, offset):
+	#print(body.rotation)
+	body.rotation = mouse.movement_dir + offset
 
 func _on_blade_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	#print(mouse.movement_speed)
 	if area.get_parent().name == "Sugarcane":
-		hit_sugarcane = true
-
+		if mouse.movement_speed >= min_chop_speed:
+			hit_sugarcane = true
+		else:
+			hit_too_slow()
+ 
 func hit_too_slow(): # Func for you clark
 	$Tip.visible = true
+	$Tip/TipTimer.start(slow_tip_timeout)
+
+
+func _on_tip_timer_timeout() -> void:
+	$Tip.visible = false

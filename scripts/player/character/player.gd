@@ -11,16 +11,22 @@ var attack_speed = 2 # interval(secs) between attacks
 var player_dir = 0
 var dir_state = "down"
 
+var slot_focused = 0
+
+func _ready():
+	print("key type", int(KEY_0))
+
 func _process(_delta: float) -> void:
-	if Globals.in_menu or Globals.in_inventory:
-		Globals.can_move = false
+	if globals.in_menu or globals.in_inventory:
+		globals.can_move = false
 	else:
-		Globals.can_move = true
+		globals.can_move = true
 	
 	interact()
+	check_hotbar_focus()
 
 func _physics_process(_delta: float) -> void:
-	if Globals.can_move == true:
+	if globals.can_move == true:
 		move()
 		get_player_dir()
 		orient_animation()
@@ -32,23 +38,23 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity += (target_speed - velocity) / movement_smoothing
 	
-	if Globals.can_attack:
+	if globals.can_attack:
 		check_for_attacks()
 	
 	move_and_slide()
 
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void: # This stuff aint needed anymore
 	near_pot = true
 	print(near_pot)
 
-func _on_area_2d_area_exited(_area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void: # This stuff aint needed anymore
 	near_pot = false
 	print(near_pot)
 
 
 func find_interactables():
-	for interactable_parent in Globals.interactable_parents:
+	for interactable_parent in globals.interactable_parents:
 		if $"..".has_node(interactable_parent):
 			for interactable in $"..".get_node(interactable_parent).get_children():
 				if is_interact_area_touching(interactable):
@@ -58,7 +64,7 @@ func find_interactables():
 func get_nearest_interactable():
 	var closest_dist = INF
 	var closest_interactable
-	for interactable_parent in Globals.interactable_parents:
+	for interactable_parent in globals.interactable_parents:
 		if $"..".has_node(interactable_parent):
 			for interactable in $"..".get_node(interactable_parent).get_children():
 				var curr_dist = self.global_position.distance_to(interactable.global_position)
@@ -125,10 +131,10 @@ func attack():
 func interact():
 	if Input.is_action_just_pressed("interact"):
 		print("trying to interact")
-		if Globals.in_menu == false:
+		if globals.in_menu == false:
 			if near_pot == true:
-				Globals.in_cooking_menu = true
-				Globals.in_menu = true
+				globals.in_cooking_menu = true
+				globals.in_menu = true
 				print("Player has interacted with the cooking menu")
 				
 				# Open the cooking menu
@@ -140,4 +146,9 @@ func interact():
 				print("Failed to interact with anything")
 	
 	if Input.is_action_just_pressed("inventory"):
-		Globals.in_inventory = !Globals.in_inventory
+		globals.in_inventory = !globals.in_inventory
+
+func check_hotbar_focus():
+	for num in range(10):
+		if Input.is_key_pressed(48 + num):
+			$Hotbar.slot_focused = num

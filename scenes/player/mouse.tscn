@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crqyf08e4lhxu"]
 
-[ext_resource type="Script" uid="uid://drncxaxh1p5l3" path="res://Scripts/player/mouse/mouse.gd" id="1_d8ufc"]
+[ext_resource type="Script" uid="uid://drncxaxh1p5l3" path="res://scripts/player/mouse/mouse.gd" id="1_d8ufc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wodbr"]
 

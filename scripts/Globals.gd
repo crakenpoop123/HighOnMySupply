@@ -5,7 +5,7 @@ var can_move = true # Interacting with the physica world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor"]
 
 # Inventory variables
 var gummy_worm_stock: int = 0
@@ -70,7 +70,7 @@ func load_scene():
 		# Change the scene
 		get_tree().change_scene_to_packed.call_deferred(saved_scene)
 
-var inventory_items: Dictionary = {
+var inventory_ingredients: Dictionary = {
 	"gummy_worm": {
 		"stock": 0,
 		"had_before": false,
@@ -118,7 +118,7 @@ var inventory_items: Dictionary = {
 	}
 }
 
-var inventory_buildables: Dictionary = {
+var inventory_buildings: Dictionary = {
 	"farm_plot": {
 		"stock": 0,
 		"had_before": false,

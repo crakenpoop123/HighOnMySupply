@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyo7p4dp7mj52"
-path="res://.godot/imported/images.jpg-e2b3f6f62953779adb3a89ba5620b8c0.ctex"
+uid="uid://bnq483mqrhbwd"
+path="res://.godot/imported/water-saucepan.png-668d5926331821bd819ca26f2e330903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temporary_assets/images.jpg"
-dest_files=["res://.godot/imported/images.jpg-e2b3f6f62953779adb3a89ba5620b8c0.ctex"]
+source_file="res://assets/misc/water-saucepan.png"
+dest_files=["res://.godot/imported/water-saucepan.png-668d5926331821bd819ca26f2e330903.ctex"]
 
 [params]
 
