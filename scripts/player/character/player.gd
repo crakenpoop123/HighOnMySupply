@@ -78,18 +78,16 @@ func is_interact_area_touching(body):
 	return body in $"InteractArea".get_overlapping_bodies()
 
 func move():
+	target_speed = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
-		target_speed[1] = -SPEED
-	elif Input.is_action_pressed("move_down"):
-		target_speed[1] = SPEED
-	else:
-		target_speed[1] = 0
+		target_speed[1] += -SPEED
+	if Input.is_action_pressed("move_down"):
+		target_speed[1] += SPEED
+		
 	if Input.is_action_pressed("move_left"):
-		target_speed[0] = -SPEED
-	elif Input.is_action_pressed("move_right"):
-		target_speed[0] = SPEED
-	else:
-		target_speed[0] = 0
+		target_speed[0] += -SPEED
+	if Input.is_action_pressed("move_right"):
+		target_speed[0] += SPEED
 	
 	
 	
