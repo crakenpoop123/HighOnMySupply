@@ -51,9 +51,9 @@ position = Vector2(97, 221)
 
 [node name="Stove" type="Node2D" parent="." unique_id=1766608759]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Stove" unique_id=138612410]
+[node name="StoveBody" type="StaticBody2D" parent="Stove" unique_id=138612410]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StaticBody2D" unique_id=672416428]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StoveBody" unique_id=672416428]
 position = Vector2(-855.5, -0.5)
 shape = SubResource("RectangleShape2D_hycbr")
 

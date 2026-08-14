@@ -28,3 +28,6 @@ shape = SubResource("CircleShape2D_lbvqo")
 [node name="SaucepanHandleCollision" type="CollisionShape2D" parent="SaucepanHandle" unique_id=217877187]
 position = Vector2(-1.5, -227)
 shape = SubResource("RectangleShape2D_xm4y6")
+
+[connection signal="body_entered" from="SaucepanArea" to="." method="_on_saucepan_area_body_entered"]
+[connection signal="body_exited" from="SaucepanArea" to="." method="_on_saucepan_area_body_exited"]
