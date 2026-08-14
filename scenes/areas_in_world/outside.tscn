@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cx3ulhoeq1p2m" path="res://assets/tilemaps/roadtilemap.png" id="5_lk40d"]
 [ext_resource type="Texture2D" uid="uid://jaw686ddhuav" path="res://stairstobasement.png" id="6_2hm3b"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="7_3w4ne"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="7_qdj3a"]
 [ext_resource type="Script" uid="uid://cqmb2hqpvwgf7" path="res://scripts/shed_door.gd" id="8_lk40d"]
 [ext_resource type="Script" uid="uid://bfugmxgwdo3vl" path="res://scripts/dairy_door.gd" id="9_2hm3b"]
 
@@ -122,7 +121,7 @@ sources/1 = SubResource("TileSetAtlasSource_qdj3a")
 sources/2 = SubResource("TileSetAtlasSource_45pc1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lk40d"]
-size = Vector2(105, 194)
+size = Vector2(78, 155)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hm3b"]
 size = Vector2(80, 160)
@@ -140,20 +139,16 @@ tile_map_data = PackedByteArray("AAD8//j/AAACAAEAAAD8//n/AAACAAEAAAD6//j/AAABAAA
 tile_set = SubResource("TileSet_lk40d")
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("7_3w4ne")]
-position = Vector2(983, -544)
+position = Vector2(2201, -456)
 
 [node name="ShedDoor" type="Node2D" parent="." unique_id=986048290]
-
-[node name="Sprite2D" type="Sprite2D" parent="ShedDoor" unique_id=807840312]
-position = Vector2(984, -581.99994)
-scale = Vector2(0.43644068, 0.4364407)
-texture = ExtResource("7_qdj3a")
+position = Vector2(1218, -87)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ShedDoor" unique_id=2139628410]
 script = ExtResource("8_lk40d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShedDoor/StaticBody2D" unique_id=532492093]
-position = Vector2(983.5, -575)
+position = Vector2(982, -555.5)
 shape = SubResource("RectangleShape2D_lk40d")
 
 [node name="DairyDoor" type="Node2D" parent="." unique_id=1012277791]
