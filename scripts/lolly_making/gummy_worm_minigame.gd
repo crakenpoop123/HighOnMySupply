@@ -6,7 +6,7 @@ extends Node2D
 @onready var gelatin = $Table/Gelatin
 @onready var water = $Table/Water
 
-
+var animation_playing = false
 var empty_saucepan = load("res://assets/misc/saucepan.png")
 var water_saucepan = load("res://assets/misc/water-saucepan.png")
 var all_ingrediants_in_pot = false
@@ -48,8 +48,10 @@ func check_for_move():
 				if saucepan.on_oven == true:
 					move_to_stove()
 					$AnimationPlayer.play("stove")
-					$Timer.start()
-				
+					if starting_to_close == false:
+						$Timer.start()
+						starting_to_close = true
+						
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
 		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA

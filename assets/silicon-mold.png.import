@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://460dtv4fvws"
-path="res://.godot/imported/table2.0.png-a92356cdaa647d7845181af346d61fd4.ctex"
+uid="uid://be1n17uq3vsyk"
+path="res://.godot/imported/silicon-mold.png-b5e785ddd84d70f79763140fbda882fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://table2.0.png"
-dest_files=["res://.godot/imported/table2.0.png-a92356cdaa647d7845181af346d61fd4.ctex"]
+source_file="res://assets/silicon-mold.png"
+dest_files=["res://.godot/imported/silicon-mold.png-b5e785ddd84d70f79763140fbda882fb.ctex"]
 
 [params]
 
