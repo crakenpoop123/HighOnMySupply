@@ -66,16 +66,10 @@ func check_off_screen():
 	
 	var window = get_window().size
 	
-	
-	print("area x: ", area_x)
-	print("area y: ", area_y)
-	
+
 	area_x = clamp(area_x - $Camera.global_position.x, -window.x/2, window.x/2) + $Camera.global_position.x
 	area_y = clamp(area_y - $Camera.global_position.y, -window.y/2, window.y/2) + $Camera.global_position.y
 	
-	
-	print("clamped area x: ", area_x)
-	print("clamped area y: ", area_y)
 	
 	
 	area_name.global_position = Vector2(area_x, area_y)
