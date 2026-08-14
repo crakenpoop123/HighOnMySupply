@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://cumo2v1011s55"]
 
-[ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://scripts/lolly_making/gummy_worm_minigame.gd" id="1_mofkb"]
+[ext_resource type="Script" uid="uid://cjk8821d32lds" path="res://scripts/lolly_making/gummy_cooking_minigame.gd" id="1_6ibx0"]
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://table2.0.png" id="2_7r4nq"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_7r4nq"]
 [ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://oven-spritesheet.png" id="3_l74fu"]
-[ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://scenes/lolly_making/sugar.tscn" id="5_7bw2h"]
-[ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://scenes/lolly_making/gelatin.tscn" id="6_4bxtm"]
-[ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://scenes/lolly_making/water.tscn" id="7_bqcvw"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_brjve"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
@@ -57,7 +54,7 @@ _data = {
 }
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
-script = ExtResource("1_mofkb")
+script = ExtResource("1_6ibx0")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
 position = Vector2(182, -5)
@@ -75,17 +72,7 @@ texture = SubResource("AtlasTexture_0u8pe")
 [node name="Table" type="Node2D" parent="." unique_id=2144922733]
 
 [node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_7r4nq")]
-position = Vector2(-57, 125)
-
-[node name="Sugar" parent="Table" unique_id=943539963 instance=ExtResource("5_7bw2h")]
-position = Vector2(317, -213)
-
-[node name="Gelatin" parent="Table" unique_id=1218447201 instance=ExtResource("6_4bxtm")]
-visible = false
-position = Vector2(331, -12)
-
-[node name="Water" parent="Table" unique_id=811238870 instance=ExtResource("7_bqcvw")]
-position = Vector2(340, 204)
+position = Vector2(-424, 147)
 
 [node name="Stove" type="Node2D" parent="." unique_id=1766608759]
 position = Vector2(41, 0)
@@ -97,6 +84,7 @@ position = Vector2(-612.5, -0.5)
 shape = SubResource("RectangleShape2D_hycbr")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
+position = Vector2(-324, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1514802872]
 libraries/ = SubResource("AnimationLibrary_ccckq")
