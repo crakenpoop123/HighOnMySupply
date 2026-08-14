@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wj652j0ikc11"]
 
+[ext_resource type="Script" uid="uid://7rapt2ocfu3m" path="res://scripts/lolly_making/saucepan.gd" id="1_n2so2"]
 [ext_resource type="Texture2D" uid="uid://dyi0sjx3beh5r" path="res://assets/misc/saucepan.png" id="1_y7b24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
@@ -9,6 +10,7 @@ radius = 122.016396
 size = Vector2(61, 222)
 
 [node name="Saucepan" type="Node2D" unique_id=1966054965]
+script = ExtResource("1_n2so2")
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=2031679370]
 position = Vector2(5, -132)
