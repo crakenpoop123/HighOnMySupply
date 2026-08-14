@@ -72,4 +72,4 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 	
 func move_to_stove():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Camera2D, "position", Vector2(-600, 0), 1.0)
+	tween.tween_property($Mouse/Camera, "position", Vector2(-600, 0), 1.0)

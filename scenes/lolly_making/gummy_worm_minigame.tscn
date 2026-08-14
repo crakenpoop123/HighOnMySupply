@@ -32,9 +32,6 @@ position = Vector2(-141, 5.728143)
 scale = Vector2(36.10823, 20.516996)
 texture = SubResource("AtlasTexture_hycbr")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
-position = Vector2(-142, 0)
-
 [node name="Table" type="Node2D" parent="." unique_id=2144922733]
 
 [node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_lo870")]
