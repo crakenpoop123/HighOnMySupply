@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i5mtgnr6ce1x"
-path="res://.godot/imported/gummy-worms.png-46f2a7c3c6eca95c0b6aabf99be4c5d4.ctex"
+uid="uid://b33sjs53q6eon"
+path="res://.godot/imported/tap.png-d3df4773d0990e45ad773978618dc326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gummy-worms.png"
-dest_files=["res://.godot/imported/gummy-worms.png-46f2a7c3c6eca95c0b6aabf99be4c5d4.ctex"]
+source_file="res://assets/tap.png"
+dest_files=["res://.godot/imported/tap.png-d3df4773d0990e45ad773978618dc326.ctex"]
 
 [params]
 

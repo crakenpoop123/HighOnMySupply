@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be1n17uq3vsyk"
-path="res://.godot/imported/silicon-mold.png-bcd304cd0703936ceb62373ea2142bde.ctex"
+uid="uid://bf7wsgauo54rp"
+path="res://.godot/imported/water.png-60eb5d11192d61f791951f83acef7554.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://silicon-mold.png"
-dest_files=["res://.godot/imported/silicon-mold.png-bcd304cd0703936ceb62373ea2142bde.ctex"]
+source_file="res://assets/water.png"
+dest_files=["res://.godot/imported/water.png-60eb5d11192d61f791951f83acef7554.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wj652j0ikc11"]
 
 [ext_resource type="Script" uid="uid://7rapt2ocfu3m" path="res://scripts/lolly_making/saucepan.gd" id="1_n2so2"]
-[ext_resource type="Texture2D" uid="uid://csc3by0dcqmey" path="res://full-saucepan-spritesheet.png" id="2_n2so2"]
+[ext_resource type="Texture2D" uid="uid://csc3by0dcqmey" path="res://assets/full-saucepan-spritesheet.png" id="2_n2so2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyt3"]
 atlas = ExtResource("2_n2so2")

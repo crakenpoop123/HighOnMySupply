@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://460dtv4fvws"
-path="res://.godot/imported/table2.0.png-a92356cdaa647d7845181af346d61fd4.ctex"
+uid="uid://jaw686ddhuav"
+path="res://.godot/imported/stairstobasement.png-22ea562df1e7fbf1ce511a1180029436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://table2.0.png"
-dest_files=["res://.godot/imported/table2.0.png-a92356cdaa647d7845181af346d61fd4.ctex"]
+source_file="res://assets/stairstobasement.png"
+dest_files=["res://.godot/imported/stairstobasement.png-22ea562df1e7fbf1ce511a1180029436.ctex"]
 
 [params]
 

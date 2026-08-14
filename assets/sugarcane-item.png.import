@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csc3by0dcqmey"
-path="res://.godot/imported/full-saucepan-spritesheet.png-e3268509bca7b21cc912d2b16dcc01e3.ctex"
+uid="uid://dkt4c05lrhcdf"
+path="res://.godot/imported/sugarcane-item.png-459b5fe5ccb28facd5043b71dd259edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://full-saucepan-spritesheet.png"
-dest_files=["res://.godot/imported/full-saucepan-spritesheet.png-e3268509bca7b21cc912d2b16dcc01e3.ctex"]
+source_file="res://assets/sugarcane-item.png"
+dest_files=["res://.godot/imported/sugarcane-item.png-459b5fe5ccb28facd5043b71dd259edf.ctex"]
 
 [params]
 

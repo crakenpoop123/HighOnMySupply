@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw40r02mcyd61"
-path="res://.godot/imported/watering-can-spritesheet.png-a5402b48e91914362472cda4d04fceed.ctex"
+uid="uid://csc3by0dcqmey"
+path="res://.godot/imported/full-saucepan-spritesheet.png-f15fc829faaf71eab7ed804cd067d51d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://watering-can-spritesheet.png"
-dest_files=["res://.godot/imported/watering-can-spritesheet.png-a5402b48e91914362472cda4d04fceed.ctex"]
+source_file="res://assets/full-saucepan-spritesheet.png"
+dest_files=["res://.godot/imported/full-saucepan-spritesheet.png-f15fc829faaf71eab7ed804cd067d51d.ctex"]
 
 [params]
 

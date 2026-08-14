@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkt4c05lrhcdf"
-path="res://.godot/imported/sugarcane-item.png-80d1657098d3d97380eaea7c517d61d3.ctex"
+uid="uid://bw40r02mcyd61"
+path="res://.godot/imported/watering-can-spritesheet.png-3c081fb90794b93b4e9d5bbf6c26318e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sugarcane-item.png"
-dest_files=["res://.godot/imported/sugarcane-item.png-80d1657098d3d97380eaea7c517d61d3.ctex"]
+source_file="res://assets/watering-can-spritesheet.png"
+dest_files=["res://.godot/imported/watering-can-spritesheet.png-3c081fb90794b93b4e9d5bbf6c26318e.ctex"]
 
 [params]
 
