@@ -1,40 +1,107 @@
 [gd_scene format=3 uid="uid://cumo2v1011s55"]
 
-[ext_resource type="Script" uid="uid://cgn31udvftbo0" path="res://scripts/lolly_making/gummy_cooking_minigame.gd" id="1_6ibx0"]
-[ext_resource type="Texture2D" uid="uid://dxvs87k2pbe52" path="res://assets/temporary_assets/images (3).jpg" id="2_mofkb"]
-[ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/misc/oven.png" id="2_x7mrt"]
+[ext_resource type="Script" uid="uid://b87icc2g4dx1t" path="res://scripts/lolly_making/gummy_worm_minigame.gd" id="1_mofkb"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://table2.0.png" id="2_7r4nq"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_7r4nq"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="6_x7mrt"]
+[ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://oven-spritesheet.png" id="3_l74fu"]
+[ext_resource type="PackedScene" uid="uid://sn2vd6vx55ru" path="res://scenes/lolly_making/sugar.tscn" id="5_7bw2h"]
+[ext_resource type="PackedScene" uid="uid://bfpjrejkhqhbb" path="res://scenes/lolly_making/gelatin.tscn" id="6_4bxtm"]
+[ext_resource type="PackedScene" uid="uid://dm1v5386glamc" path="res://scenes/lolly_making/water.tscn" id="7_bqcvw"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_brjve"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
+atlas = ExtResource("2_7r4nq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u8pe"]
+atlas = ExtResource("3_l74fu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hycbr"]
+size = Vector2(637, 651)
+
+[sub_resource type="Animation" id="Animation_leah7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backgrounds/StoveBackground:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_ux4k6"]
+resource_name = "stove"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backgrounds/StoveBackground:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1428, 0.2856, 0.4284, 0.5712, 0.714, 0.8568),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(128, 0, 32, 32), Rect2(160, 0, 32, 32), Rect2(192, 0, 32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ccckq"]
+_data = {
+&"RESET": SubResource("Animation_leah7"),
+&"stove": SubResource("Animation_ux4k6")
+}
+
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
-script = ExtResource("1_6ibx0")
+script = ExtResource("1_mofkb")
 
-[node name="Oven" type="Sprite2D" parent="." unique_id=2031328386]
-position = Vector2(-69, 10.999998)
-scale = Vector2(20.375, 20.375)
-texture = ExtResource("2_x7mrt")
+[node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
+position = Vector2(182, -5)
 
-[node name="AlsoBackground" type="Sprite2D" parent="." unique_id=389161290]
-position = Vector2(196, 36)
-scale = Vector2(1, 2.2055554)
-texture = ExtResource("2_mofkb")
+[node name="TableBackground" type="Sprite2D" parent="Backgrounds" unique_id=1175047369]
+position = Vector2(-101.00001, 5.728143)
+scale = Vector2(36.10823, 20.516996)
+texture = SubResource("AtlasTexture_hycbr")
 
-[node name="Saucepan" parent="." unique_id=1966054965 instance=ExtResource("3_7r4nq")]
-position = Vector2(198, 170)
+[node name="StoveBackground" type="Sprite2D" parent="Backgrounds" unique_id=734800599]
+position = Vector2(-757.9999, 4.000002)
+scale = Vector2(20.25, 20.296875)
+texture = SubResource("AtlasTexture_0u8pe")
+
+[node name="Table" type="Node2D" parent="." unique_id=2144922733]
+
+[node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_7r4nq")]
+position = Vector2(-57, 125)
+
+[node name="Sugar" parent="Table" unique_id=943539963 instance=ExtResource("5_7bw2h")]
+position = Vector2(317, -213)
+
+[node name="Gelatin" parent="Table" unique_id=1218447201 instance=ExtResource("6_4bxtm")]
+visible = false
+position = Vector2(331, -12)
+
+[node name="Water" parent="Table" unique_id=811238870 instance=ExtResource("7_bqcvw")]
+position = Vector2(340, 204)
+
+[node name="Stove" type="Node2D" parent="." unique_id=1766608759]
+position = Vector2(41, 0)
+
+[node name="StoveBody" type="StaticBody2D" parent="Stove" unique_id=138612410]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StoveBody" unique_id=672416428]
+position = Vector2(-612.5, -0.5)
+shape = SubResource("RectangleShape2D_hycbr")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
 
-[node name="Button" type="Button" parent="." unique_id=1193797555]
-offset_left = 300.0
-offset_top = -298.0
-offset_right = 544.0
-offset_bottom = 129.0
-scale = Vector2(0.44, 0.22)
-icon = ExtResource("6_x7mrt")
-flat = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1514802872]
+libraries/ = SubResource("AnimationLibrary_ccckq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2008706741]
-position = Vector2(-142, 11)
+[node name="Timer" type="Timer" parent="." unique_id=1953125821]
+one_shot = true
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

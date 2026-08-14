@@ -44,8 +44,11 @@ func check_for_move():
 				water.reparent(saucepan)
 				water.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
-			if saucepan.on_oven == true:
-				move_to_stove()
+			if all_ingrediants_in_pot == true:
+				if saucepan.on_oven == true:
+					move_to_stove()
+					$AnimationPlayer.play("stove")
+					$Timer.start()
 				
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
@@ -53,12 +56,12 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 			if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK
 				mouse.holding = true # START DRAGGING # Should't this be stop dragging???
 
-	
-#func _on_close_timer_timeout() -> void:
-	
-	#globals.saucepan_on_table = false
-	#globals.change_scene(false)
-	
 func move_to_stove():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Mouse/Camera, "position", Vector2(-600, 0), 1.0)
+	tween.tween_property($Mouse/Camera, "position", Vector2(-300, 0), 1.0)
+
+
+func _on_timer_timeout() -> void:
+	globals.saucepan_on_table = false
+	globals.change_scene(false)
+	
