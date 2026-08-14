@@ -14,8 +14,8 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("3_l74fu")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hycbr"]
-size = Vector2(637, 651)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibx0"]
+size = Vector2(921, 648)
 
 [sub_resource type="Animation" id="Animation_leah7"]
 length = 0.001
@@ -74,14 +74,14 @@ texture = SubResource("AtlasTexture_0u8pe")
 [node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_7r4nq")]
 position = Vector2(-424, 147)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Table" unique_id=1570389235]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D" unique_id=1366870569]
+position = Vector2(211.5, 0)
+shape = SubResource("RectangleShape2D_6ibx0")
+
 [node name="Stove" type="Node2D" parent="." unique_id=1766608759]
 position = Vector2(41, 0)
-
-[node name="StoveBody" type="StaticBody2D" parent="Stove" unique_id=138612410]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StoveBody" unique_id=672416428]
-position = Vector2(-612.5, -0.5)
-shape = SubResource("RectangleShape2D_hycbr")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
 position = Vector2(-324, 0)
