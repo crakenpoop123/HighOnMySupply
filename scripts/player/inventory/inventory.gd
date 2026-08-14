@@ -42,7 +42,10 @@ func load_items():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	self.visible = globals.in_inventory
-
+	if globals.in_inventory:
+		self.show()
+	else:
+		self.hide()
 
 func _on_buildings_tab_pressed() -> void:
 	item_mode = "buildings"
