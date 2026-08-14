@@ -3,7 +3,6 @@ extends Node2D
 var inside_pot = false
 var dropped_into_pot = false
 var size = 32
-@onready var mouse = $"../Mouse"
 
 #func _process(delta: float) -> void:
 	#if dropped_into_pot == true: # CODE TO CHANGE IT TO A DIFFERENT SPRITE WHEN SOMETHING ELSE IS MADE

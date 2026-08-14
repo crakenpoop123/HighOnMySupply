@@ -302,11 +302,6 @@ shape = SubResource("CircleShape2D_fkybt")
 one_shot = true
 
 [node name="Inventory" parent="." unique_id=1229629953 instance=ExtResource("3_gmlin")]
-visible = false
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
 
 [node name="Hotbar" parent="." unique_id=1780203600 instance=ExtResource("4_e41v5")]
 anchors_preset = 0

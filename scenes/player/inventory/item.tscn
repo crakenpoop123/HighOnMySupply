@@ -1,38 +1,43 @@
 [gd_scene format=3 uid="uid://bahqfdhbajjnd"]
 
-[ext_resource type="Texture2D" uid="uid://bd8shi87ymqf8" path="res://icon.svg" id="1_5uf52"]
+[ext_resource type="Texture2D" uid="uid://bcgtbtnjxxvkm" path="res://assets/gui/item_background.png" id="1_p6p6m"]
 [ext_resource type="Script" uid="uid://bcna0xq0ecp0y" path="res://scripts/player/inventory/item.gd" id="2_p6p6m"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2e16i"]
 
 [node name="ItemBackground" type="TextureRect" unique_id=2122524277]
 anchors_preset = -1
-anchor_right = 0.141
-anchor_bottom = 0.24800001
-offset_right = -0.43200684
-offset_bottom = 0.29599
-texture = ExtResource("1_5uf52")
+anchor_right = 0.177
+anchor_bottom = 0.157
+offset_right = 0.09599304
+offset_bottom = 0.26399994
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_p6p6m")
+expand_mode = 3
 script = ExtResource("2_p6p6m")
 
 [node name="ItemName" type="RichTextLabel" parent="." unique_id=329231623]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 26.0
-offset_top = 59.0
-offset_right = 141.0
-offset_bottom = 87.0
+offset_left = 109.0
+offset_top = 10.0
+offset_right = 196.0
+offset_bottom = 32.0
+theme_override_font_sizes/normal_font_size = 8
 text = "Hi, I'm an item"
 
 [node name="ItemSprite" type="Sprite2D" parent="." unique_id=1937924791]
-position = Vector2(41.247955, 40.421494)
-scale = Vector2(-42.49591, -40.842987)
+position = Vector2(50.90436, 50.615616)
+scale = Vector2(-76.65174, -77.247765)
 texture = SubResource("PlaceholderTexture2D_2e16i")
 
 [node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=423773553]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 6.0
-offset_top = 84.0
-offset_right = 181.0
-offset_bottom = 149.0
+offset_left = 109.0
+offset_top = 51.0
+offset_right = 201.0
+offset_bottom = 82.0
+theme_override_font_sizes/normal_font_size = 8
 text = "You may or may not have some of me"
