@@ -22,15 +22,15 @@ func _process(_delta: float) -> void:
 	elif ingredients_in_pot == 2:
 		gelatin.visible = true
 
-
+	print(all_ingrediants_in_pot)
+	print(globals.can_drag)
+	
 	check_for_move()
 	check_for_drop()
 	if mouse.area_name: # IF THE NAME IS NOT NIL
 		if all_ingrediants_in_pot == false:
 			if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
 				globals.can_drag = true
-			else:
-				globals.can_drag = false
 		elif all_ingrediants_in_pot == true:
 			globals.can_drag = true
 		else:
