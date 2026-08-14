@@ -14,7 +14,7 @@ atlas = ExtResource("2_7qa4p")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hycbr"]
-size = Vector2(637, 649)
+size = Vector2(637, 651)
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_tf8u4")
@@ -48,10 +48,10 @@ position = Vector2(97, 221)
 
 [node name="Stove" type="Node2D" parent="." unique_id=1766608759]
 
-[node name="StoveCollision" type="Area2D" parent="Stove" unique_id=867318703]
+[node name="StoveBody" type="StaticBody2D" parent="Stove" unique_id=138612410]
 
-[node name="StoveCollisionShape" type="CollisionShape2D" parent="Stove/StoveCollision" unique_id=1779373749]
-position = Vector2(-856.5, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StoveBody" unique_id=672416428]
+position = Vector2(-855.5, -0.5)
 shape = SubResource("RectangleShape2D_hycbr")
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("5_lo870")]

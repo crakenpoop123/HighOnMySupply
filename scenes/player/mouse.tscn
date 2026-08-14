@@ -14,7 +14,7 @@ shape = SubResource("RectangleShape2D_wodbr")
 
 [node name="MouseMarker" type="Marker2D" parent="." unique_id=972463335]
 
-[node name="Camera" type="Camera2D" parent="." unique_id=880694339]
+[node name="Camera" type="Camera2D" parent="." unique_id=855888189]
 
 [connection signal="area_shape_entered" from="MouseArea" to="." method="_on_mouse_area_area_shape_entered"]
 [connection signal="area_shape_exited" from="MouseArea" to="." method="_on_mouse_area_area_shape_exited"]

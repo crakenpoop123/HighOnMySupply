@@ -17,24 +17,11 @@ func _process(_delta: float) -> void:
 	if ingredients_in_pot == 3:
 		if starting_to_close == false:
 			all_ingrediants_in_pot = true
-			move_to_stove()
-			starting_to_close = true
 	elif ingredients_in_pot == 2:
 		gelatin.visible = true
 
-	print(all_ingrediants_in_pot)
-	print(globals.can_drag)
-	
 	check_for_move()
 	check_for_drop()
-	if mouse.area_name: # IF THE NAME IS NOT NIL
-		if all_ingrediants_in_pot == false:
-			if mouse.area_name.name != "Saucepan": # IF THE NAME IS NOT SAUCEPAN
-				globals.can_drag = true
-		elif all_ingrediants_in_pot == true:
-			globals.can_drag = true
-		else:
-			globals.can_drag = false
 
 func check_for_move():
 	if mouse.holding == false: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
@@ -57,6 +44,8 @@ func check_for_move():
 				water.reparent(saucepan)
 				water.dropped_into_pot = true
 				ingredients_in_pot += 1 # Why doesnt this add 1 infinitely??
+			if saucepan.on_oven == true:
+				move_to_stove()
 				
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
