@@ -22,6 +22,8 @@ offset_bottom = 520.0
 
 [node name="ScrollGrid" type="GridContainer" parent="Inventory/InventoryScroll" unique_id=815967618]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 2
 
 [node name="BuildingsTab" type="Button" parent="Inventory" unique_id=534667914]

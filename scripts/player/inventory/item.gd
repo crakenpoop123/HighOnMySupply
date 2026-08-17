@@ -7,6 +7,8 @@ var item_quantity = 0
 func _ready() -> void:
 	$ItemName.text = item_name
 	$ItemQuantity.text = "Quantity: " + str(item_quantity)
+	for child in $".".get_children():
+		child.scale = $".".scale
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
