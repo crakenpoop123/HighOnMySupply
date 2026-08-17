@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dp6jxxj6f6udw" path="res://scripts/player/inventory/inventory.gd" id="1_crr4r"]
 
-[node name="Inventory" type="Control" unique_id=1229629953]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=978713471]
+
+[node name="Inventory" type="Control" parent="." unique_id=1229629953]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,20 +13,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_crr4r")
 
-[node name="InventoryScroll" type="ScrollContainer" parent="." unique_id=1705044]
+[node name="InventoryScroll" type="ScrollContainer" parent="Inventory" unique_id=1705044]
 layout_mode = 0
 offset_left = 338.0
 offset_top = 34.0
 offset_right = 814.0
 offset_bottom = 520.0
 
-[node name="ScrollGrid" type="GridContainer" parent="InventoryScroll" unique_id=815967618]
+[node name="ScrollGrid" type="GridContainer" parent="Inventory/InventoryScroll" unique_id=815967618]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 columns = 2
 
-[node name="BuildingsTab" type="Button" parent="." unique_id=534667914]
+[node name="BuildingsTab" type="Button" parent="Inventory" unique_id=534667914]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 134.0
@@ -32,7 +32,7 @@ offset_right = 338.0
 offset_bottom = 210.0
 text = "Buildings"
 
-[node name="IngredientsTab" type="Button" parent="." unique_id=1877107942]
+[node name="IngredientsTab" type="Button" parent="Inventory" unique_id=1877107942]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 41.0
@@ -40,7 +40,7 @@ offset_right = 338.0
 offset_bottom = 117.0
 text = "Ingredients"
 
-[node name="CloseInventory" type="Button" parent="." unique_id=400814585]
+[node name="CloseInventory" type="Button" parent="Inventory" unique_id=400814585]
 layout_mode = 0
 offset_left = 990.0
 offset_top = 21.0
@@ -49,6 +49,6 @@ offset_bottom = 97.0
 text = "Close Inventory
 "
 
-[connection signal="pressed" from="BuildingsTab" to="." method="_on_buildings_tab_pressed"]
-[connection signal="pressed" from="IngredientsTab" to="." method="_on_ingredients_tab_pressed"]
-[connection signal="pressed" from="CloseInventory" to="." method="_on_close_inventory_pressed"]
+[connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]
+[connection signal="pressed" from="Inventory/IngredientsTab" to="Inventory" method="_on_ingredients_tab_pressed"]
+[connection signal="pressed" from="Inventory/CloseInventory" to="Inventory" method="_on_close_inventory_pressed"]

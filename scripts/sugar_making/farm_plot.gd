@@ -15,9 +15,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	wetness = $WetnessTimer.time_left
 	
-	growth_rate = 1 + $WetnessTimer.time_left / (globals.dry_rate * 2)
+	growth_rate = 1 + wetness / (globals.dry_rate * 2)
 	#print(growth_rate)
+	if wetness != 0:
+		$PlotSprite.animation = "growth_stages_wet"
+	else:
+		$PlotSprite.animation = "growth_stages_dry"
+	$PlotSprite.frame = growth_stage
+	print(wetness)
 
 func player_interact():
 	if fully_grown:
@@ -47,8 +54,6 @@ func harvest():
 
 func _on_random_growth_tick_timeout() -> void:
 	growth_stage = min(growth_stage + 1, globals.sugar_cane_max_growth)
-	
-	$PlotSprite.frame = growth_stage
 	
 	fully_grown = growth_stage == globals.sugar_cane_max_growth
 	

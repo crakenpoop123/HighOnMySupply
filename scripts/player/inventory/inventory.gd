@@ -1,6 +1,7 @@
 extends Control
 
 var item_setup = preload("res://scenes/player/inventory/item.tscn")
+var item_location = "InventoryScroll/ScrollGrid"
 
 var viewed_items = globals.inventory_ingredients
 
@@ -15,7 +16,7 @@ func update_items():
 	load_items()
 
 func clear_items():
-	for child in get_node("InventoryScroll/ScrollGrid").get_children():
+	for child in get_node(item_location).get_children():
 		child.queue_free()
 
 func check_viewed_items():
@@ -37,12 +38,15 @@ func load_items():
 		curr_item.item_name = accessible_item["name"]
 		curr_item.item_quantity = accessible_item["stock"]
 		
-		get_node("InventoryScroll/ScrollGrid").add_child(curr_item)
+		get_node(item_location).add_child(curr_item)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	self.visible = globals.in_inventory
-
+	if globals.in_inventory:
+		self.show()
+	else:
+		self.hide()
 
 func _on_buildings_tab_pressed() -> void:
 	item_mode = "buildings"

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://wj652j0ikc11"]
 
-[ext_resource type="Texture2D" uid="uid://dyi0sjx3beh5r" path="res://assets/misc/saucepan.png" id="1_y7b24"]
+[ext_resource type="Script" uid="uid://7rapt2ocfu3m" path="res://scripts/lolly_making/saucepan.gd" id="1_n2so2"]
+[ext_resource type="Texture2D" uid="uid://csc3by0dcqmey" path="res://assets/full-saucepan-spritesheet.png" id="2_n2so2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vyt3"]
+atlas = ExtResource("2_n2so2")
+region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
 radius = 122.016396
@@ -9,11 +14,12 @@ radius = 122.016396
 size = Vector2(61, 222)
 
 [node name="Saucepan" type="Node2D" unique_id=1966054965]
+script = ExtResource("1_n2so2")
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=2031679370]
 position = Vector2(5, -132)
 scale = Vector2(8.520309, 7.847916)
-texture = ExtResource("1_y7b24")
+texture = SubResource("AtlasTexture_3vyt3")
 
 [node name="SaucepanArea" type="Area2D" parent="." unique_id=524295402]
 
@@ -26,3 +32,6 @@ shape = SubResource("CircleShape2D_lbvqo")
 [node name="SaucepanHandleCollision" type="CollisionShape2D" parent="SaucepanHandle" unique_id=217877187]
 position = Vector2(-1.5, -227)
 shape = SubResource("RectangleShape2D_xm4y6")
+
+[connection signal="body_entered" from="SaucepanArea" to="." method="_on_saucepan_area_body_entered"]
+[connection signal="body_exited" from="SaucepanArea" to="." method="_on_saucepan_area_body_exited"]

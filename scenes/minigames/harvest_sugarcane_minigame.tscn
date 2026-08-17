@@ -28,6 +28,8 @@ size = Vector2(22, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsv8q"]
 size = Vector2(50, 147)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vsv8q"]
+
 [node name="HarvestSugarcaneMinigame" type="Node2D" unique_id=81153966]
 script = ExtResource("1_vsv8q")
 
@@ -40,9 +42,6 @@ texture = SubResource("AtlasTexture_2o8n4")
 position = Vector2(-121, -339)
 scale = Vector2(51.523438, 17.036644)
 texture = SubResource("AtlasTexture_7468e")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1654048040]
-position = Vector2(-142, 11)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_r1wfk")]
 position = Vector2(-718, -313)
@@ -115,6 +114,10 @@ target_position = Vector2(0, 100)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="PivotVisualiser" type="Sprite2D" parent="." unique_id=423153018]
+scale = Vector2(16, 16)
+texture = SubResource("PlaceholderTexture2D_vsv8q")
 
 [node name="Tip" type="RichTextLabel" parent="." unique_id=1119695314]
 visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jaw686ddhuav"
-path="res://.godot/imported/stairstobasement.png-6aae65f639f59d6750955ff104c8ecb6.ctex"
+uid="uid://dkt4c05lrhcdf"
+path="res://.godot/imported/sugarcane-item.png-459b5fe5ccb28facd5043b71dd259edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stairstobasement.png"
-dest_files=["res://.godot/imported/stairstobasement.png-6aae65f639f59d6750955ff104c8ecb6.ctex"]
+source_file="res://assets/sugarcane-item.png"
+dest_files=["res://.godot/imported/sugarcane-item.png-459b5fe5ccb28facd5043b71dd259edf.ctex"]
 
 [params]
 
