@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 	else:
 		$PlotSprite.animation = "growth_stages_dry"
 	$PlotSprite.frame = growth_stage
-	print(wetness)
+	#print(wetness)
 
 func player_interact():
 	if fully_grown:

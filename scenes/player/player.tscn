@@ -301,8 +301,6 @@ shape = SubResource("CircleShape2D_fkybt")
 [node name="ShootTimer" type="Timer" parent="." unique_id=859550850]
 one_shot = true
 
-[node name="Inventory" parent="." unique_id=1229629953 instance=ExtResource("3_gmlin")]
-
 [node name="Hotbar" parent="." unique_id=1780203600 instance=ExtResource("4_e41v5")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -313,3 +311,5 @@ offset_right = 574.0
 offset_bottom = 324.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]

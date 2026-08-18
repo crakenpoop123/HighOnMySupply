@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	if globals.can_drag == true:
 		check_for_move()
 		check_for_drop()
-		check_off_screen()
+		check_off_screen(area_name)
 		get_movement_data()
 	
 	prev_mouse_pos.pop_back()
@@ -58,11 +58,12 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 			if holding_click == true: # AND YOU ARE HOLDING CLICK
 				holding = true # START DRAGGING # Should't this be stop dragging???
 
-func check_off_screen():
+func check_off_screen(dragged_area):
+	print(type_string(typeof(dragged_area)))
 	if !area_name:
 		return
-	var area_x = area_name.global_position[0]
-	var area_y = area_name.global_position[1]
+	var area_x = dragged_area.global_position[0]
+	var area_y = dragged_area.global_position[1]
 	
 	var window = get_window().size
 	
@@ -72,7 +73,7 @@ func check_off_screen():
 	
 	
 	
-	area_name.global_position = Vector2(area_x, area_y)
+	dragged_area.global_position = Vector2(area_x, area_y)
 
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	mouse_in_area = true
