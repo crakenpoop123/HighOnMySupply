@@ -19,7 +19,7 @@ layout_mode = 0
 offset_left = 370.0
 offset_top = 48.0
 offset_right = 782.0
-offset_bottom = 614.0
+offset_bottom = 514.0
 
 [node name="ScrollGrid" type="GridContainer" parent="Inventory/InventoryScroll" unique_id=815967618]
 layout_mode = 2
@@ -51,6 +51,9 @@ offset_right = 1128.0
 offset_bottom = 97.0
 text = "Close Inventory
 "
+
+[node name="DraggedSprite" type="Sprite2D" parent="." unique_id=1275316134]
+visible = false
 
 [connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]
 [connection signal="pressed" from="Inventory/IngredientsTab" to="Inventory" method="_on_ingredients_tab_pressed"]

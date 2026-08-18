@@ -4,6 +4,7 @@ var item_name: String = "Hi, I'm an item"
 var item_quantity = 0
 var icon
 var mouse_touching = false
+var item_index: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
