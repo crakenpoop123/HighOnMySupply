@@ -37,7 +37,7 @@ func load_items():
 		
 		curr_item.item_name = accessible_item["name"]
 		curr_item.item_quantity = accessible_item["stock"]
-		curr_item.icon = accessible_item["icon"]
+		curr_item.icon = accessible_item["icon_region"]
 		
 		get_node(item_location).add_child(curr_item)
 
