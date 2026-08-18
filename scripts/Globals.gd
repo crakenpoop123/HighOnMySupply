@@ -75,55 +75,55 @@ var inventory_ingredients: Dictionary = {
 		"stock": 0,
 		"had_before": false,
 		"name": "Gummy Worms", 
-		"icon": load("")
+		"icon": load("res://assets/gummy-worms.png")
 	},
 	"sugar": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Sugar", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/sugar-spritesheet.png")
 	},
 	"gelatin": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Gelatin", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/gelitin-spritesheet.png")
 	},
 	"sugar_cane": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Sugar Cane", 
-		"icon": load("")
+		"icon": load("res://assets/sugarcane-item.png")
 	},
 	"shredded_cane": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Shredded Cane", 
-		"icon": load("")
+		"icon": load("res://assets/misc/eye.jpg")
 	},
 	"crushed_cane": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Crushed Cane", 
-		"icon": load("")
+		"icon": load("res://assets/misc/eye.jpg")
 	},
 	"cane_juice": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Cane Juice", 
-		"icon": load("")
+		"icon": load("res://assets/misc/eye.jpg")
 	},
 	"cane_sugar": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Cane Juice", 
-		"icon": load("")
+		"name": "Cane Sugar", 
+		"icon": load("res://assets/misc/eye.jpg")
 	},
 	"pure_sugar": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Pure Sugar", 
-		"icon": load("")
+		"icon": load("res://assets/misc/eye.jpg")
 	}
 }
 
@@ -132,36 +132,36 @@ var inventory_buildings: Dictionary = {
 		"stock": 0,
 		"had_before": false,
 		"name": "Farm Plots", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/sugarcane_growth_tilemap.png")
 	},
 	"saucepan": {
 		"stock": 1,
 		"had_before": true,
 		"name": "Saucepans", 
-		"icon": load("")
+		"icon": load("res://assets/misc/saucepan.png")
 	},
 	"shredder": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Shredder", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/shredder_tilemap.png")
 	},
 	"crusher": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Crusher", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/hydraulic_press_spritesheet.png")
 	},
 	"boiler": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Boiler", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/boiler-tilemap.png")
 	},
 	"centrifuge": {
 		"stock": 0,
 		"had_before": false,
 		"name": "Centrifuge", 
-		"icon": load("")
+		"icon": load("res://assets/tilemaps/centrifuge-spritesheet.png")
 	}
 }
