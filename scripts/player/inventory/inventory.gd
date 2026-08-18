@@ -74,10 +74,12 @@ func drag_item(dragged_item):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	self.visible = globals.in_inventory
+	
+	$"../DraggedSprite".visible = dragging != null and globals.in_inventory
+	
 	if globals.in_inventory:
 		check_for_draggables()
 		
-		$"../DraggedSprite".visible = dragging != null
 		if dragging:
 			drag_item(dragging)
 
