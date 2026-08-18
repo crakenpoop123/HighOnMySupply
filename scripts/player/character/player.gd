@@ -150,3 +150,12 @@ func check_hotbar_focus():
 	for num in range(10):
 		if Input.is_key_pressed(48 + num):
 			$Hotbar.slot_focused = num
+	if Input.is_action_just_pressed("scroll_up"):
+		$Hotbar.slot_focused += 1
+	if Input.is_action_just_pressed("scroll_down"):
+		$Hotbar.slot_focused -= 1
+	
+	$Hotbar.slot_focused = ($Hotbar.slot_focused - 1) % 9 + 1
+	if $Hotbar.slot_focused <= 0:
+		$Hotbar.slot_focused += 9
+	print($Hotbar.slot_focused)
