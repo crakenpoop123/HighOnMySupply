@@ -8,6 +8,7 @@ var viewed_items = globals.inventory_ingredients
 var item_mode = "ingredients"
 
 var dragging = null
+var move_to = null
 var dragging_array
 
 # Called when the node enters the scene tree for the first time.
@@ -46,13 +47,21 @@ func load_items():
 		get_node(item_location).add_child(curr_item)
 
 func check_for_draggables():
-	for item in $InventoryScroll/ScrollGrid.get_children():
-		if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click"):
+		for item in $InventoryScroll/ScrollGrid.get_children():
 			if item.mouse_touching:
 				dragging = item.item_index
 				print(dragging)
 				return
-			dragging = null
+		
+		# $"../../Hotbar/HotbarGrid"
+		
+		for slot in $"../../Hotbar/HotbarGrid".get_children():
+			if slot.mouse_touching:
+				move_to = slot.label
+				print(move_to)
+		
+		dragging = null
 
 func get_node_from_name(name):
 	for item in $InventoryScroll/ScrollGrid.get_children():
@@ -70,6 +79,11 @@ func drag_item(dragged_item):
 	
 	$"../DraggedSprite".global_position = get_global_mouse_position()
 	$"../DraggedSprite".texture = dragging_array[dragged_item]["icon_region"]
+	
+	if move_to:
+		for slot in $"../../Hotbar/HotbarGrid".get_children():
+			if slot.label == move_to:
+				slot.item_icon = dragging_array[dragged_item]["icon_region"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

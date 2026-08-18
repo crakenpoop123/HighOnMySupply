@@ -3,10 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://r73c42vdbfl8" path="res://assets/gui/hotbarslot.png" id="1_g2xdh"]
 [ext_resource type="Script" uid="uid://ct7o7tuermtkc" path="res://scripts/player/inventory/hotbar_item.gd" id="2_mgkgd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgkgd"]
+size = Vector2(120, 105)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mgkgd"]
+
 [node name="HotbarItem" type="TextureRect" unique_id=1688962299]
 modulate = Color(1, 1, 1, 0.7411765)
-offset_right = 96.0
-offset_bottom = 96.0
+offset_right = 120.0
+offset_bottom = 105.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_g2xdh")
@@ -16,8 +21,22 @@ script = ExtResource("2_mgkgd")
 [node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=1651358092]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 82.0
-offset_top = 72.0
-offset_right = 106.0
-offset_bottom = 96.0
+offset_left = 83.0
+offset_top = 83.0
+offset_right = 107.0
+offset_bottom = 107.0
 text = "0"
+
+[node name="SlotArea" type="Area2D" parent="." unique_id=1972282823]
+
+[node name="SlotCollision" type="CollisionShape2D" parent="SlotArea" unique_id=1949239159]
+position = Vector2(60, 52.5)
+shape = SubResource("RectangleShape2D_mgkgd")
+
+[node name="SlotItem" type="Sprite2D" parent="." unique_id=101752037]
+position = Vector2(60.000004, 53)
+scale = Vector2(94, 94)
+texture = SubResource("PlaceholderTexture2D_mgkgd")
+
+[connection signal="mouse_entered" from="SlotArea" to="." method="_on_slot_area_mouse_entered"]
+[connection signal="mouse_exited" from="SlotArea" to="." method="_on_slot_area_mouse_exited"]
