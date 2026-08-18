@@ -51,6 +51,7 @@ func check_for_draggables():
 		for item in $InventoryScroll/ScrollGrid.get_children():
 			if item.mouse_touching:
 				dragging = item.item_index
+				move_to = null
 				print(dragging)
 				return
 		
@@ -60,8 +61,10 @@ func check_for_draggables():
 			if slot.mouse_touching:
 				move_to = slot.label
 				print(move_to)
+				return
 		
 		dragging = null
+		move_to = null
 
 func get_node_from_name(name):
 	for item in $InventoryScroll/ScrollGrid.get_children():
@@ -84,6 +87,7 @@ func drag_item(dragged_item):
 		for slot in $"../../Hotbar/HotbarGrid".get_children():
 			if slot.label == move_to:
 				slot.item_icon = dragging_array[dragged_item]["icon_region"]
+				dragging = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

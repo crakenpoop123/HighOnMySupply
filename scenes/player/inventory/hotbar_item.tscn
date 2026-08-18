@@ -34,8 +34,8 @@ position = Vector2(60, 52.5)
 shape = SubResource("RectangleShape2D_mgkgd")
 
 [node name="SlotItem" type="Sprite2D" parent="." unique_id=101752037]
-position = Vector2(60.000004, 53)
-scale = Vector2(94, 94)
+position = Vector2(60, 53)
+scale = Vector2(1.9999999, 1.9999999)
 texture = SubResource("PlaceholderTexture2D_mgkgd")
 
 [connection signal="mouse_entered" from="SlotArea" to="." method="_on_slot_area_mouse_entered"]
