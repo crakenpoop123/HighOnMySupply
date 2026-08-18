@@ -158,4 +158,5 @@ func check_hotbar_focus():
 	$Hotbar.slot_focused = ($Hotbar.slot_focused - 1) % 9 + 1
 	if $Hotbar.slot_focused <= 0:
 		$Hotbar.slot_focused += 9
-	print($Hotbar.slot_focused)
+	
+	#print($Hotbar.slot_focused)

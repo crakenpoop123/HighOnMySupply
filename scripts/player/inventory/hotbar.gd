@@ -3,7 +3,7 @@ extends Control
 @onready var item = preload("res://scenes/player/inventory/hotbar_item.tscn")
 var num_slots = 9
 
-var slot_focused = 0
+var slot_focused = 1
 
 var opacity = 0.75
 
