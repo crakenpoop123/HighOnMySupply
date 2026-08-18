@@ -15,10 +15,10 @@ script = ExtResource("1_crr4r")
 
 [node name="InventoryScroll" type="ScrollContainer" parent="Inventory" unique_id=1705044]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 34.0
-offset_right = 814.0
-offset_bottom = 520.0
+offset_left = 370.0
+offset_top = 48.0
+offset_right = 782.0
+offset_bottom = 614.0
 
 [node name="ScrollGrid" type="GridContainer" parent="Inventory/InventoryScroll" unique_id=815967618]
 layout_mode = 2

@@ -12,7 +12,6 @@ anchor_bottom = 0.157
 offset_right = 0.09599304
 offset_bottom = 0.26399994
 size_flags_horizontal = 3
-size_flags_vertical = 3
 texture = ExtResource("1_p6p6m")
 expand_mode = 5
 script = ExtResource("2_p6p6m")
@@ -27,7 +26,7 @@ offset_bottom = 32.0
 theme_override_font_sizes/normal_font_size = 8
 text = "Hi, I'm an item"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1376094692]
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1376094692]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 13.0

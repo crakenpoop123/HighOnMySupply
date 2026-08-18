@@ -74,47 +74,56 @@ var inventory_ingredients: Dictionary = {
 	"gummy_worm": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Gummy Worms"
+		"name": "Gummy Worms", 
+		"icon": load()
 	},
 	"sugar": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Sugar"
+		"name": "Sugar", 
+		"icon": load()
 	},
 	"gelatin": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Gelatin"
+		"name": "Gelatin", 
+		"icon": load()
 	},
 	"sugar_cane": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Sugar Cane"
+		"name": "Sugar Cane", 
+		"icon": load()
 	},
 	"shredded_cane": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Shredded Cane"
+		"name": "Shredded Cane", 
+		"icon": load()
 	},
 	"crushed_cane": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Crushed Cane"
+		"name": "Crushed Cane", 
+		"icon": load()
 	},
 	"cane_juice": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Cane Juice"
+		"name": "Cane Juice", 
+		"icon": load()
 	},
 	"cane_sugar": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Cane Juice"
+		"name": "Cane Juice", 
+		"icon": load()
 	},
 	"pure_sugar": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Pure Sugar"
+		"name": "Pure Sugar", 
+		"icon": load()
 	}
 }
 
@@ -122,31 +131,37 @@ var inventory_buildings: Dictionary = {
 	"farm_plot": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Farm Plots"
+		"name": "Farm Plots", 
+		"icon": load()
 	},
 	"saucepan": {
 		"stock": 1,
 		"had_before": true,
-		"name": "Saucepans"
+		"name": "Saucepans", 
+		"icon": load()
 	},
 	"shredder": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Shredder"
+		"name": "Shredder", 
+		"icon": load()
 	},
 	"crusher": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Crusher"
+		"name": "Crusher", 
+		"icon": load()
 	},
 	"boiler": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Boiler"
+		"name": "Boiler", 
+		"icon": load()
 	},
 	"centrifuge": {
 		"stock": 0,
 		"had_before": false,
-		"name": "Centrifuge"
+		"name": "Centrifuge", 
+		"icon": load()
 	}
 }
