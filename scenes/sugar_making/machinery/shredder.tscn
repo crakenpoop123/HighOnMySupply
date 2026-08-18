@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://druo01roukbdx"]
 
+[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="1_81juo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s3k8"]
+atlas = ExtResource("1_81juo")
+region = Rect2(0, 0, 32, 32)
+
 [node name="Shredder" type="StaticBody2D" unique_id=569272027]
 
 [node name="ShredderCollision" type="CollisionShape2D" parent="." unique_id=561563223]
 
 [node name="ShredderSprite" type="Sprite2D" parent="." unique_id=826538515]
+texture = SubResource("AtlasTexture_1s3k8")
