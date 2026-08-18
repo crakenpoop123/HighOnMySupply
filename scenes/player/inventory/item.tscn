@@ -5,6 +5,9 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6p6m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6p6m"]
+size = Vector2(204, 102)
+
 [node name="ItemBackground" type="TextureRect" unique_id=2122524277]
 anchors_preset = -1
 anchor_right = 0.177
@@ -44,3 +47,13 @@ offset_right = 201.0
 offset_bottom = 82.0
 theme_override_font_sizes/normal_font_size = 8
 text = "You may or may not have some of me"
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=4948917]
+collision_layer = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1678461169]
+position = Vector2(102, 51)
+shape = SubResource("RectangleShape2D_p6p6m")
+
+[connection signal="mouse_entered" from="InteractArea" to="." method="_on_interact_area_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="." method="_on_interact_area_mouse_exited"]
