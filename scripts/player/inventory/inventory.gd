@@ -8,6 +8,7 @@ var viewed_items = globals.inventory_ingredients
 var item_mode = "ingredients"
 
 var dragging = null
+var dragging_array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +38,7 @@ func load_items():
 		
 		var accessible_item = viewed_items[item]
 		
+		curr_item.item_index = item
 		curr_item.item_name = accessible_item["name"]
 		curr_item.item_quantity = accessible_item["stock"]
 		curr_item.icon = accessible_item["icon_region"]
@@ -45,11 +47,12 @@ func load_items():
 
 func check_for_draggables():
 	for item in $InventoryScroll/ScrollGrid.get_children():
-		if item.mouse_touching:
-			dragging = item.name
-			print(dragging)
-			return
-		dragging = null
+		if Input.is_action_just_pressed("click"):
+			if item.mouse_touching:
+				dragging = item.item_index
+				print(dragging)
+				return
+			dragging = null
 
 func get_node_from_name(name):
 	for item in $InventoryScroll/ScrollGrid.get_children():
@@ -58,15 +61,25 @@ func get_node_from_name(name):
 	return null
 
 func drag_item(dragged_item):
-	pass
+	print("drag_item: ", dragged_item)
+	
+	if dragged_item in globals.inventory_ingredients:
+		dragging_array = globals.inventory_ingredients
+	elif dragged_item in globals.inventory_buildings:
+		dragging_array = globals.inventory_buildings
+	
+	$"../DraggedSprite".global_position = get_global_mouse_position()
+	$"../DraggedSprite".texture = dragging_array[dragged_item]["icon_region"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	self.visible = globals.in_inventory
 	if globals.in_inventory:
 		check_for_draggables()
+		
+		$"../DraggedSprite".visible = dragging != null
 		if dragging:
-			drag_item(get_node_from_name(dragging))
+			drag_item(dragging)
 
 func _on_buildings_tab_pressed() -> void:
 	item_mode = "buildings"

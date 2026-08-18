@@ -52,6 +52,9 @@ offset_bottom = 97.0
 text = "Close Inventory
 "
 
+[node name="DraggedSprite" type="Sprite2D" parent="." unique_id=1275316134]
+visible = false
+
 [connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]
 [connection signal="pressed" from="Inventory/IngredientsTab" to="Inventory" method="_on_ingredients_tab_pressed"]
 [connection signal="pressed" from="Inventory/CloseInventory" to="Inventory" method="_on_close_inventory_pressed"]

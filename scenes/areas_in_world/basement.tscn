@@ -97,10 +97,6 @@ sources/1 = SubResource("TileSetAtlasSource_0pqmk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdkve"]
 size = Vector2(74, 127)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7qf4"]
-atlas = ExtResource("10_kdkve")
-region = Rect2(0, 0, 32, 32)
-
 [node name="Basement" type="Node2D" unique_id=49085389]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1517755424]
@@ -142,6 +138,3 @@ script = ExtResource("11_6g54d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D" unique_id=190886121]
 position = Vector2(273, -83.5)
 shape = SubResource("RectangleShape2D_kdkve")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039324999]
-texture = SubResource("AtlasTexture_k7qf4")
