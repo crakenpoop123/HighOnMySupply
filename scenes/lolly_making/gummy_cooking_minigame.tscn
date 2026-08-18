@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="2_7r4nq"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_7r4nq"]
 [ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://assets/oven-spritesheet.png" id="3_l74fu"]
+[ext_resource type="Texture2D" uid="uid://be1n17uq3vsyk" path="res://assets/silicon-mold.png" id="6_x7mrt"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_brjve"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
@@ -12,46 +13,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u8pe"]
 atlas = ExtResource("3_l74fu")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibx0"]
-size = Vector2(921, 648)
+size = Vector2(1261, 648)
 
-[sub_resource type="Animation" id="Animation_leah7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backgrounds/StoveBackground:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 32, 32)]
-}
-
-[sub_resource type="Animation" id="Animation_ux4k6"]
-resource_name = "stove"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backgrounds/StoveBackground:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1428, 0.2856, 0.4284, 0.5712, 0.714, 0.8568),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(128, 0, 32, 32), Rect2(160, 0, 32, 32), Rect2(192, 0, 32, 32)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ccckq"]
-_data = {
-&"RESET": SubResource("Animation_leah7"),
-&"stove": SubResource("Animation_ux4k6")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec317"]
+atlas = ExtResource("6_x7mrt")
+region = Rect2(0, 0, 32, 32)
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_6ibx0")
@@ -60,8 +29,8 @@ script = ExtResource("1_6ibx0")
 position = Vector2(182, -5)
 
 [node name="TableBackground" type="Sprite2D" parent="Backgrounds" unique_id=1175047369]
-position = Vector2(-101.00001, 5.728143)
-scale = Vector2(36.10823, 20.516996)
+position = Vector2(81.634186, 5.728143)
+scale = Vector2(47.522865, 20.516996)
 texture = SubResource("AtlasTexture_hycbr")
 
 [node name="StoveBackground" type="Sprite2D" parent="Backgrounds" unique_id=734800599]
@@ -74,10 +43,10 @@ texture = SubResource("AtlasTexture_0u8pe")
 [node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_7r4nq")]
 position = Vector2(-424, 147)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Table" unique_id=1570389235]
+[node name="TableBody" type="StaticBody2D" parent="Table" unique_id=1570389235]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D" unique_id=1366870569]
-position = Vector2(211.5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableBody" unique_id=1366870569]
+position = Vector2(381.5, 0)
 shape = SubResource("RectangleShape2D_6ibx0")
 
 [node name="Stove" type="Node2D" parent="." unique_id=1766608759]
@@ -86,10 +55,12 @@ position = Vector2(41, 0)
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
 position = Vector2(-324, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1514802872]
-libraries/ = SubResource("AnimationLibrary_ccckq")
-
 [node name="Timer" type="Timer" parent="." unique_id=1953125821]
 one_shot = true
+
+[node name="SiliconMold" type="Sprite2D" parent="." unique_id=1988662671]
+position = Vector2(720, -168)
+scale = Vector2(6.283203, 6.283203)
+texture = SubResource("AtlasTexture_ec317")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

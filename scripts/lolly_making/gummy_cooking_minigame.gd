@@ -22,8 +22,9 @@ func check_for_move():
 	if mouse.holding == false: # MOVES THE ITEM WHEN YOU ARE HOLDING IT
 		if mouse.holding_click == false: # IF YOU ARENT HOLDING CLICK
 			mouse.holding = false # DROP IT
-			
-				
+			if saucepan.on_table == true:
+					move_to_table()
+	
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
 		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
@@ -36,3 +37,6 @@ func _on_timer_timeout() -> void:
 	globals.saucepan_on_table = false
 	globals.change_scene(false)
 	
+func move_to_table():
+	var tween = get_tree().create_tween()
+	tween.tween_property($Mouse/Camera, "position", Vector2(600, 0), 1.0)
