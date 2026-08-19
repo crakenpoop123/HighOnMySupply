@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func _on_interact_area_mouse_entered() -> void:
 	mouse_touching = true
-	print("touching ", item_name)
+	#print("touching ", item_name)
 
 
 func _on_interact_area_mouse_exited() -> void:

@@ -3,6 +3,8 @@ extends TextureRect
 var label = "0"
 var mouse_touching = false
 var item_icon = null
+var item_type = null
+var item = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

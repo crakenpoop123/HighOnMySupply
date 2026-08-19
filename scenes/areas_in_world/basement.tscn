@@ -299,8 +299,6 @@ position = Vector2(-729, 574)
 
 [node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
 
-[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
-
 [node name="Door" type="Node2D" parent="." unique_id=1712402548]
 
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=251515614]
@@ -350,3 +348,5 @@ position = Vector2(381, 226)
 texture = SubResource("AtlasTexture_jc7p3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MachineryThings/Fridge" unique_id=1671043587]
+
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
