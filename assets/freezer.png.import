@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0rgrp8ffjapd"
-path="res://.godot/imported/freezer.png-45930f7e88d4a785517bb57654b606b3.ctex"
+path="res://.godot/imported/freezer.png-e3954795ea7884029edddd4c4f293aaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://freezer.png"
-dest_files=["res://.godot/imported/freezer.png-45930f7e88d4a785517bb57654b606b3.ctex"]
+source_file="res://assets/freezer.png"
+dest_files=["res://.godot/imported/freezer.png-e3954795ea7884029edddd4c4f293aaf.ctex"]
 
 [params]
 
