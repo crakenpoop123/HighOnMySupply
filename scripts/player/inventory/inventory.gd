@@ -8,7 +8,7 @@ var viewed_items = globals.inventory_ingredients
 var item_mode = "ingredients"
 
 var dragging = null
-var move_to = null
+var slot_interacted = null
 var dragging_array
 
 # Called when the node enters the scene tree for the first time.
@@ -51,7 +51,7 @@ func check_for_draggables():
 		for item in $InventoryScroll/ScrollGrid.get_children():
 			if item.mouse_touching:
 				dragging = item.item_index
-				move_to = null
+				slot_interacted = null
 				print(dragging)
 				return
 		
@@ -59,12 +59,12 @@ func check_for_draggables():
 		
 		for slot in $"../../Hotbar/HotbarGrid".get_children():
 			if slot.mouse_touching:
-				move_to = slot.label
-				print(move_to)
+				slot_interacted = slot.label
+				print(slot_interacted)
 				return
 		
 		dragging = null
-		move_to = null
+		slot_interacted = null
 
 func get_node_from_name(name):
 	for item in $InventoryScroll/ScrollGrid.get_children():
@@ -73,7 +73,6 @@ func get_node_from_name(name):
 	return null
 
 func drag_item(dragged_item):
-	print("drag_item: ", dragged_item)
 	
 	if dragged_item in globals.inventory_ingredients:
 		dragging_array = globals.inventory_ingredients
@@ -81,25 +80,46 @@ func drag_item(dragged_item):
 		dragging_array = globals.inventory_buildings
 	
 	$"../DraggedSprite".global_position = get_global_mouse_position()
-	$"../DraggedSprite".texture = dragging_array[dragged_item]["icon_region"]
+	$"../DraggedSprite".texture = dragging_array[dragged_item]["icon_region"] if dragging else null
 	
-	if move_to:
-		for slot in $"../../Hotbar/HotbarGrid".get_children():
-			if slot.label == move_to:
-				slot.item_icon = dragging_array[dragged_item]["icon_region"]
-				dragging = null
+	if slot_interacted:
+		print("dragging in slot_interacted if statement: ", dragging)
+		if dragging:
+			for slot in $"../../Hotbar/HotbarGrid".get_children():
+				if slot.label == slot_interacted:
+					slot.item = dragged_item
+					print("dragged_item in slot: ", dragged_item)
+					slot.item_icon = dragging_array[dragged_item]["icon_region"]
+					slot.item_type = "building" if dragging_array == globals.inventory_buildings else "ingredients"
+					dragging = null
+		else:
+			for slot in $"../../Hotbar/HotbarGrid".get_children():
+				if slot.label == slot_interacted:
+					dragging = slot.item
+					print("item in slot: ", dragging)
+					slot_interacted = null
+					if globals.in_inventory:
+						slot.item = null
+						slot.item_type = null
+						slot.item_icon = null
+						
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.visible = globals.in_inventory
+	$".".visible = globals.in_inventory
 	
-	$"../DraggedSprite".visible = dragging != null and globals.in_inventory
+	$"../DraggedSprite".visible = dragging != null
 	
-	if globals.in_inventory:
-		check_for_draggables()
-		
-		if dragging:
-			drag_item(dragging)
+	check_for_draggables()
+	
+	# Detect when the inventory was just closed
+	if !globals.in_inventory and globals.just_in_inventory:
+		dragging = null
+	
+	globals.just_in_inventory = globals.in_inventory
+	
+	print("drag_item: ", dragging)
+	drag_item(dragging)
 
 func _on_buildings_tab_pressed() -> void:
 	item_mode = "buildings"
