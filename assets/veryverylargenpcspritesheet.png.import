@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdkxwept0bacb"
-path="res://.godot/imported/crushed-cane.png-3d25081ea368e6f2a7d3cc5c03564693.ctex"
+uid="uid://d1vrfih7sj7y6"
+path="res://.godot/imported/veryverylargenpcspritesheet.png-90115f38c25629d643153e3ee276ac9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crushed-cane.png"
-dest_files=["res://.godot/imported/crushed-cane.png-3d25081ea368e6f2a7d3cc5c03564693.ctex"]
+source_file="res://assets/veryverylargenpcspritesheet.png"
+dest_files=["res://.godot/imported/veryverylargenpcspritesheet.png-90115f38c25629d643153e3ee276ac9d.ctex"]
 
 [params]
 

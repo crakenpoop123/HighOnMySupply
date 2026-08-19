@@ -1,7 +1,6 @@
 extends Node2D
 @export var player: Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Tilemaps/Collisions.hide()
 	$"Tilemaps/Bottom Layer/Buildings".modulate.a = 100
