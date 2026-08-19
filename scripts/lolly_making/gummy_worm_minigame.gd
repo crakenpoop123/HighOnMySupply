@@ -12,7 +12,10 @@ var water_saucepan = load("res://assets/misc/water-saucepan.png")
 var all_ingrediants_in_pot = false
 var ingredients_in_pot = 0
 var starting_to_close: bool = false
-	
+
+func _ready() -> void:
+	$Table/Saucepan/SaucepanSprite.texture = empty_saucepan 
+
 func _process(_delta: float) -> void:
 	if ingredients_in_pot == 3:
 		if starting_to_close == false:

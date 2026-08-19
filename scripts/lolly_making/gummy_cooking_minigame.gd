@@ -5,8 +5,6 @@ extends Node2D
 
 var empty_saucepan = load("res://assets/misc/saucepan.png")
 var water_saucepan = load("res://assets/misc/water-saucepan.png")
-var all_ingrediants_in_pot = false
-var ingredients_in_pot = 0
 var starting_to_close: bool = false
 
 func _ready() -> void:

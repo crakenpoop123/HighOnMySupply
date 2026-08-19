@@ -26,7 +26,7 @@ size = Vector2(202, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibx0"]
 size = Vector2(1261, 648)
 
-[node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
+[node name="GummyCookingMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_6ibx0")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
@@ -66,9 +66,6 @@ position = Vector2(-424, 147)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableBody" unique_id=1366870569]
 position = Vector2(381.5, 0)
 shape = SubResource("RectangleShape2D_6ibx0")
-
-[node name="Stove" type="Node2D" parent="." unique_id=1766608759]
-position = Vector2(41, 0)
 
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_brjve")]
 position = Vector2(-324, 0)

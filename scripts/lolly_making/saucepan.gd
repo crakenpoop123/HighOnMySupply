@@ -6,9 +6,9 @@ var on_mold = false
 var size = 32
 	
 func _ready() -> void:
-	if in_cooking_scene == true:	
+	$SaucepanSprite.texture.region = Rect2(32, 0, size, size*2)
+	if in_cooking_scene == true:
 		$SaucepanSprite.texture = load("res://assets/full-saucepan-spritesheet.png")
-		$SaucepanSprite.texture.region = Rect2(32, 0, size, size*2)
 		
 func _on_saucepan_area_body_entered(body: StaticBody2D) -> void:
 	if body.name == "StoveBody":
