@@ -15,22 +15,17 @@ var dragging_array
 func _ready() -> void:
 	update_items()
 
+# This updates the items in the inventory for when you change tabs or smt
 func update_items():
 	clear_items()
 	load_items()
 
+# This clears the old items
 func clear_items():
 	for child in get_node(item_location).get_children():
 		child.queue_free()
 
-func check_viewed_items():
-	if item_mode == "ingredients":
-		viewed_items = globals.inventory_ingredients
-	elif item_mode == "buildings":
-		viewed_items = globals.inventory_buildings
-	else:
-		push_error("item_mode is an incorrect value. It is currently set to", item_mode)
-
+# TH
 func load_items():
 	check_viewed_items()
 	
@@ -45,6 +40,14 @@ func load_items():
 		curr_item.icon = accessible_item["icon_region"]
 		
 		get_node(item_location).add_child(curr_item)
+
+func check_viewed_items():
+	if item_mode == "ingredients":
+		viewed_items = globals.inventory_ingredients
+	elif item_mode == "buildings":
+		viewed_items = globals.inventory_buildings
+	else:
+		push_error("item_mode is an incorrect value. It is currently set to", item_mode)
 
 func check_for_draggables():
 	if Input.is_action_just_pressed("click"):
@@ -102,7 +105,6 @@ func drag_item(dragged_item):
 						slot.item = null
 						slot.item_type = null
 						slot.item_icon = null
-						
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
