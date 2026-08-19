@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cad450l0ubon8"
-path="res://.godot/imported/fridge-tilemap.png-c0ac56842ff40e875a4ce59914311353.ctex"
+uid="uid://d3eswp0wj0axn"
+path="res://.godot/imported/cane-sugar-spritesheet.png-f3f6ac1e8d9f712fd9a28aa848c10a9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fridge-tilemap.png"
-dest_files=["res://.godot/imported/fridge-tilemap.png-c0ac56842ff40e875a4ce59914311353.ctex"]
+source_file="res://assets/cane-sugar-spritesheet.png"
+dest_files=["res://.godot/imported/cane-sugar-spritesheet.png-f3f6ac1e8d9f712fd9a28aa848c10a9e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3lns30sx0wwd"
-path="res://.godot/imported/birck-building-tilemap.png-ecc215b9ba0b83c5c810ac6c90c3bdbe.ctex"
+uid="uid://bdkxwept0bacb"
+path="res://.godot/imported/crushed-cane.png-5d731530f13675b10cd3c7f3bada7de6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://birck-building-tilemap.png"
-dest_files=["res://.godot/imported/birck-building-tilemap.png-ecc215b9ba0b83c5c810ac6c90c3bdbe.ctex"]
+source_file="res://assets/crushed-cane.png"
+dest_files=["res://.godot/imported/crushed-cane.png-5d731530f13675b10cd3c7f3bada7de6.ctex"]
 
 [params]
 
