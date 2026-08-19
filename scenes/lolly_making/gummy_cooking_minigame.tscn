@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="2_7r4nq"]
 [ext_resource type="PackedScene" uid="uid://wj652j0ikc11" path="res://scenes/lolly_making/saucepan.tscn" id="3_7r4nq"]
 [ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://assets/oven-spritesheet.png" id="3_l74fu"]
+[ext_resource type="Script" uid="uid://btn2hb8784hgj" path="res://scripts/lolly_making/mold.gd" id="4_ec317"]
 [ext_resource type="Texture2D" uid="uid://be1n17uq3vsyk" path="res://assets/silicon-mold.png" id="6_x7mrt"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_brjve"]
 
@@ -15,12 +16,15 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("3_l74fu")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibx0"]
-size = Vector2(1261, 648)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec317"]
 atlas = ExtResource("6_x7mrt")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mrt"]
+size = Vector2(202, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibx0"]
+size = Vector2(1261, 648)
 
 [node name="GummyWormMinigame" type="Node2D" unique_id=1248444812]
 script = ExtResource("1_6ibx0")
@@ -40,6 +44,20 @@ texture = SubResource("AtlasTexture_0u8pe")
 
 [node name="Table" type="Node2D" parent="." unique_id=2144922733]
 
+[node name="Mold" type="Node2D" parent="Table" unique_id=498260039]
+script = ExtResource("4_ec317")
+
+[node name="SiliconMold" type="Sprite2D" parent="Table/Mold" unique_id=1988662671]
+position = Vector2(720, -168)
+scale = Vector2(6.283203, 6.283203)
+texture = SubResource("AtlasTexture_ec317")
+
+[node name="MoldBody" type="StaticBody2D" parent="Table/Mold" unique_id=1980577865]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Mold/MoldBody" unique_id=1534416789]
+position = Vector2(719, -168)
+shape = SubResource("RectangleShape2D_x7mrt")
+
 [node name="Saucepan" parent="Table" unique_id=1966054965 instance=ExtResource("3_7r4nq")]
 position = Vector2(-424, 147)
 
@@ -57,10 +75,5 @@ position = Vector2(-324, 0)
 
 [node name="Timer" type="Timer" parent="." unique_id=1953125821]
 one_shot = true
-
-[node name="SiliconMold" type="Sprite2D" parent="." unique_id=1988662671]
-position = Vector2(720, -168)
-scale = Vector2(6.283203, 6.283203)
-texture = SubResource("AtlasTexture_ec317")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
