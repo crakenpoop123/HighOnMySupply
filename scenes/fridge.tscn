@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://wiuk7t8aytpk"]
+
+[ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://fridge-tilemap.png" id="1_ipvyg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc7p3"]
+atlas = ExtResource("1_ipvyg")
+
+[node name="Fridge" type="StaticBody2D" unique_id=1603040923]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2130756807]
+position = Vector2(381, 226)
+texture = SubResource("AtlasTexture_jc7p3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1719561635]

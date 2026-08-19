@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="10_kdkve"]
 [ext_resource type="Script" uid="uid://28spa4m1snv0" path="res://scripts/door.gd" id="11_6g54d"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
+[ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
 [ext_resource type="PackedScene" uid="uid://druo01roukbdx" path="res://scenes/sugar_making/machinery/shredder.tscn" id="19_tluy2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
@@ -270,9 +271,6 @@ size = Vector2(82, 157)
 atlas = ExtResource("8_n0s6i")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jc7p3"]
-atlas = ExtResource("7_n2ghy")
-
 [node name="Basement" type="Node2D" unique_id=49085389]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1517755424]
@@ -341,12 +339,6 @@ position = Vector2(302, 259)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_n0s6i")
 
-[node name="Fridge" type="StaticBody2D" parent="MachineryThings" unique_id=2105094029]
-
-[node name="Sprite2D" type="Sprite2D" parent="MachineryThings/Fridge" unique_id=1379710939]
-position = Vector2(381, 226)
-texture = SubResource("AtlasTexture_jc7p3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MachineryThings/Fridge" unique_id=1671043587]
+[node name="Fridge" parent="MachineryThings" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]

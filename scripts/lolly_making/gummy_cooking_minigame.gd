@@ -8,11 +8,10 @@ var water_saucepan = load("res://assets/misc/water-saucepan.png")
 var starting_to_close: bool = false
 
 func _ready() -> void:
-	$Mouse/Camera.global_position = Vector2(-300, 0)
-	saucepan.in_cooking_scene = true
+	$Mouse/Camera.global_position = Vector2(-300, 0) # SET THE CAMERA TO THE SIDE
+	saucepan.in_cooking_scene = true # LET SAUCEPAN KNOW WHAT SCENE IT IS IN
 	
 func _process(_delta: float) -> void:
-	
 	check_for_move()
 	check_for_drop()
 
@@ -29,12 +28,10 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 			if mouse.holding_click == true: # AND YOU ARE HOLDING CLICK
 				mouse.holding = true # START DRAGGING # Should't this be stop dragging???
 
-	
-
-func _on_timer_timeout() -> void:
+func _on_timer_timeout() -> void: # UNUSED UNUSED UNUSED UNUSED CHANGE SCENE CODE
 	globals.saucepan_on_table = false
 	globals.change_scene(false)
 	
-func move_to_table():
+func move_to_table(): # MOVES THE CAMERA TOWARDS THE TABLE
 	var tween = get_tree().create_tween()
 	tween.tween_property($Mouse/Camera, "position", Vector2(600, 0), 1.0)
