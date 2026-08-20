@@ -71,14 +71,14 @@ func _ready() -> void:
 			"stock": 0,
 			"had_before": false,
 			"name": "Shredded Cane", 
-			"icon": "res://assets/misc/eye.jpg",
+			"icon": "res://assets/shredded-cane.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"crushed_cane": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Crushed Cane", 
-			"icon": "res://assets/misc/eye.jpg",
+			"icon": "res://assets/crushed-cane.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"cane_juice": {
