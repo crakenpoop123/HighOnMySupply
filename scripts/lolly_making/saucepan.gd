@@ -18,6 +18,7 @@ func _on_saucepan_area_body_entered(body: StaticBody2D) -> void: # DETECT WHEN E
 	if body.name == "MoldBody":
 		on_mold = true
 		$"../Mold".change_sprite()
+		$"../../Timer".start()
 		
 func _on_saucepan_area_body_exited(body: StaticBody2D) -> void: # DETECT WHEN EXITING AREAS
 	if body.name == "StoveBody":

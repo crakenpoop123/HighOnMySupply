@@ -2,13 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/fridge-tilemap.png" id="1_ipvyg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jc7p3"]
-atlas = ExtResource("1_ipvyg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipvyg"]
+texture = ExtResource("1_ipvyg")
+texture_region_size = Vector2i(32, 32)
+2:0/0 = 0
+3:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sp1gv"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ipvyg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buvrw"]
+size = Vector2(32, 64)
 
 [node name="Fridge" type="StaticBody2D" unique_id=1603040923]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2130756807]
-position = Vector2(381, 226)
-texture = SubResource("AtlasTexture_jc7p3")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=424218239]
+position = Vector2(-48, -32)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_sp1gv")
+rendering_quadrant_size = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1719561635]
+shape = SubResource("RectangleShape2D_buvrw")

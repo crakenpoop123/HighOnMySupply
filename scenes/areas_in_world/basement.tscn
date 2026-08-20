@@ -340,5 +340,7 @@ scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_n0s6i")
 
 [node name="Fridge" parent="MachineryThings" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
+position = Vector2(385, 260)
+scale = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
