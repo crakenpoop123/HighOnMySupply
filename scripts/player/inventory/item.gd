@@ -18,10 +18,10 @@ func _process(_delta: float) -> void:
 	$ItemQuantity.text = "Quantity: " + str(item_quantity)
 
 
+# Detect when the mouse touches the item
 func _on_interact_area_mouse_entered() -> void:
 	mouse_touching = true
-	#print("touching ", item_name)
 
-
+# Detect when the mouse stops touching the item
 func _on_interact_area_mouse_exited() -> void:
 	mouse_touching = false

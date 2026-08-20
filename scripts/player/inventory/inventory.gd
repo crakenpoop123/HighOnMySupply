@@ -139,10 +139,12 @@ func drag_item(dragged_item):
 			
 			# Stop dragging the item
 			dragging = null
+			slot_interacted = null
 		else:
 			# Start dragging the item in the slot
 			dragging = slot.item
 			print("item in slot: ", dragging)
+			
 			# This fixes a bug where it instantly tries to place the item back in the slot
 			slot_interacted = null
 			
