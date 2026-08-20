@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4w20xqxkkfuu"]
 
 [ext_resource type="Script" uid="uid://dp6jxxj6f6udw" path="res://scripts/player/inventory/inventory.gd" id="1_crr4r"]
+[ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_crr4r"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=978713471]
 
@@ -54,6 +55,10 @@ text = "Close Inventory
 
 [node name="DraggedSprite" type="Sprite2D" parent="." unique_id=1275316134]
 visible = false
+
+[node name="SnapSprite" type="Sprite2D" parent="." unique_id=130403144]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_crr4r")
 
 [connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]
 [connection signal="pressed" from="Inventory/IngredientsTab" to="Inventory" method="_on_ingredients_tab_pressed"]

@@ -8,6 +8,9 @@ var in_inventory = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor"]
 
+# Grid variables
+var grid_size = 80
+
 # Inventory variables
 var gummy_worm_stock: int = 0
 var sugar = 0
