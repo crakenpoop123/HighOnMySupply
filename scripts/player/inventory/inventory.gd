@@ -134,8 +134,12 @@ func get_slot_node_from_name(slot_label):
 func snap_to_grid(movable):
 	#print("player pos: ", $"../..".position)
 	#print("global mouse pos: ", get_global_mouse_position())
-	movable.position = - $"../..".position
-	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size - $"../..".global_position
+	var floor_offset = Vector2(fposmod($"../../../Floor".global_position[0], float(globals.grid_size)), fposmod($"../../../Table".global_position[1], float(globals.grid_size)))
+	#print("floor_offset: ", floor_offset)
+	# Lock position to the grid
+	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position + floor_offset - Vector2(28, 10)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
+	# Re-adjust to the correct spot
+	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(2, 10)
 	#print("movable snapped global pos: ", movable.global_position)
 	#print("movable corrected pos: ", movable.position)
 
