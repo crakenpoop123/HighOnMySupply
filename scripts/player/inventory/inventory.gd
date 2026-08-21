@@ -10,6 +10,7 @@ var item_mode = "ingredients"
 var dragging = null
 var slot_interacted = null
 var dragging_array
+var placing = false
 var slot
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +28,8 @@ func _process(_delta: float) -> void:
 	$"../DraggedSprite".visible = dragging != null
 	
 	# Checks for if the mouse clicked something important
-	check_for_draggables()
+	#print(check_for_draggables())
+	#print("placing: ", placing)
 	
 	# Detect when the inventory was just closed
 	if !globals.in_inventory and globals.just_in_inventory:
@@ -39,7 +41,7 @@ func _process(_delta: float) -> void:
 	#print("drag_item: ", dragging)
 	
 	# Drag the item to a spot
-	drag_item(dragging)
+	drag_item()
 	snap_to_grid($"../SnapSprite")
 
 # This updates the items in the inventory for when you change tabs or smt
@@ -83,6 +85,11 @@ func check_viewed_items():
 
 # Checks for if the mouse clicked something important
 func check_for_draggables():
+	# Save placing's state
+	var init_placing = placing
+	# Set placing to false
+	placing = false
+	
 	# Check if click is pressed
 	if Input.is_action_just_pressed("click"):
 		# Check if the items were pressed
@@ -93,7 +100,7 @@ func check_for_draggables():
 				# A slot is no longer being interacted
 				slot_interacted = null
 				print(dragging)
-				return
+				return "item"
 		
 		
 		# Check if a hotbar slot was pressed
@@ -102,11 +109,30 @@ func check_for_draggables():
 				# Slot_interacted is set to the respective slot
 				slot_interacted = slot.label
 				print(slot_interacted)
-				return
+				return "slot"
+		
+		# Used to instantiate a building when brought out of the hotbar
+		if placing:
+			instantiate_building(dragging, $"../DraggedSprite".global_position)
+			return "place"
+		
+		# Set placing back to what it previously was
+		placing = init_placing
 		
 		# If nothing was interacted with, set both to null
 		dragging = null
 		slot_interacted = null
+		return null
+
+# Instantiate a building *shocker*
+func instantiate_building(building, global_pos):
+	print("Instantiate building")
+	
+	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
+	
+	built_struct.global_position = global_pos
+	
+	$"../../../MachineryThings".add_child(built_struct)
 
 # This gets the item node corresponding with the item's name
 func get_item_node_from_name(name):
@@ -139,23 +165,22 @@ func snap_to_grid(movable):
 	# Lock position to the grid
 	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position + floor_offset - Vector2(28, 10)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
 	# Re-adjust to the correct spot
-	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(2, 10)
+	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(28, 10)
 	#print("movable snapped global pos: ", movable.global_position)
 	#print("movable corrected pos: ", movable.position)
 
 # Drag the item to a spot
-func drag_item(dragged_item):
-	
+func drag_item():
 	# Get the correct item array
-	if dragged_item in globals.inventory_ingredients:
+	if dragging in globals.inventory_ingredients:
 		dragging_array = globals.inventory_ingredients
-	elif dragged_item in globals.inventory_buildings:
+	elif dragging in globals.inventory_buildings:
 		dragging_array = globals.inventory_buildings
 	
 	# Move the drag sprite to the mouse
 	$"../DraggedSprite".global_position = get_global_mouse_position()
 	# Update the drag sprites texture
-	$"../DraggedSprite".texture = dragging_array[dragged_item]["icon_region"] if dragging else null
+	$"../DraggedSprite".texture = dragging_array[dragging]["icon_region"] if dragging else null
 	
 	# If a slot was interacted
 	if slot_interacted:
@@ -168,10 +193,10 @@ func drag_item(dragged_item):
 		# If there was already an item being dragged, move that item to the slot
 		if dragging:
 			# Add the dragged item to the slot
-			slot.item = dragged_item
-			print("dragged_item in slot: ", dragged_item)
+			slot.item = dragging
+			print("dragging in slot: ", dragging)
 			# Show the item's icon in the slot
-			slot.item_icon = dragging_array[dragged_item]["icon_region"]
+			slot.item_icon = dragging_array[dragging]["icon_region"]
 			# Set the slot to te correct type
 			slot.item_type = "building" if dragging_array == globals.inventory_buildings else "ingredients"
 			
@@ -181,7 +206,12 @@ func drag_item(dragged_item):
 		else:
 			# Start dragging the item in the slot
 			dragging = slot.item
-			print("item in slot: ", dragging)
+			print("item in slot: ", dragging, " | item_type: ", slot.item_type)
+			
+			
+			if slot.item_type == "building":
+				$"../SnapSprite".texture = slot.item_icon
+				placing = true
 			
 			# This fixes a bug where it instantly tries to place the item back in the slot
 			slot_interacted = null

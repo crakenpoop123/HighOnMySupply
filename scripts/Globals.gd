@@ -120,7 +120,8 @@ func _ready() -> void:
 			"had_before": true,
 			"name": "Saucepans", 
 			"icon": "res://assets/misc/saucepan.png",
-			"region": Rect2(0, 32, 32, 32)
+			"region": Rect2(0, 32, 32, 32), 
+			"scene": load("res://scenes/lolly_making/machinery/saucepan.tscn")
 		},
 		"shredder": {
 			"stock": 0,
