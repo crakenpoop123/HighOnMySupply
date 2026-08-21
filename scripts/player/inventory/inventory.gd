@@ -132,8 +132,12 @@ func get_slot_node_from_name(slot_label):
 
 # Snap a node to the grid
 func snap_to_grid(movable):
-	movable.global_position = floor(get_global_mouse_position() / globals.grid_size) * globals.grid_size
-	#print(movable.global_position)
+	#print("player pos: ", $"../..".position)
+	#print("global mouse pos: ", get_global_mouse_position())
+	movable.position = - $"../..".position
+	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size - $"../..".global_position
+	#print("movable snapped global pos: ", movable.global_position)
+	#print("movable corrected pos: ", movable.position)
 
 # Drag the item to a spot
 func drag_item(dragged_item):
