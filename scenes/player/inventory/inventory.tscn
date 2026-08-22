@@ -54,9 +54,9 @@ text = "Close Inventory
 "
 
 [node name="DraggedSprite" type="Sprite2D" parent="." unique_id=1275316134]
-visible = false
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=130403144]
+visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_crr4r")
 

@@ -171,6 +171,8 @@ func snap_to_grid(movable):
 
 # Drag the item to a spot
 func drag_item():
+	print("dragging: ", dragging)
+	
 	# Get the correct item array
 	if dragging in globals.inventory_ingredients:
 		dragging_array = globals.inventory_ingredients
