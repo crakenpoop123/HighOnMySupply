@@ -24,11 +24,16 @@ func _process(_delta: float) -> void:
 	# Only show the inventory if you are in the inventory *wow*
 	$".".visible = globals.in_inventory
 	
-	# Show the drag sprite only if something is being dragged
-	$"../DraggedSprite".visible = dragging != null
+	# Show the snap sprite sprite only if something is being dragged that should be snapped
+	if !dragging:
+		$"../SnapSprite".texture = null
+	$"../SnapSprite".visible = dragging != null and $"../SnapSprite".texture != null
+	# Show the drag sprite sprite only if something is being dragged
+	$"../DraggedSprite".visible = dragging != null and !$"../SnapSprite".visible
 	
 	# Checks for if the mouse clicked something important
 	#print(check_for_draggables())
+	check_for_draggables()
 	#print("placing: ", placing)
 	
 	# Detect when the inventory was just closed
@@ -122,6 +127,7 @@ func check_for_draggables():
 		# If nothing was interacted with, set both to null
 		dragging = null
 		slot_interacted = null
+		print("Interacted with nothing")
 		return null
 
 # Instantiate a building *shocker*
@@ -171,7 +177,7 @@ func snap_to_grid(movable):
 
 # Drag the item to a spot
 func drag_item():
-	print("dragging: ", dragging)
+	#print("dragging: ", dragging)
 	
 	# Get the correct item array
 	if dragging in globals.inventory_ingredients:
@@ -186,7 +192,7 @@ func drag_item():
 	
 	# If a slot was interacted
 	if slot_interacted:
-		print("dragging in slot_interacted if statement: ", dragging)
+		#print("dragging in slot_interacted if statement: ", dragging)
 		
 		# Get the correct slot
 		slot = get_slot_node_from_name(slot_interacted)
@@ -196,7 +202,7 @@ func drag_item():
 		if dragging:
 			# Add the dragged item to the slot
 			slot.item = dragging
-			print("dragging in slot: ", dragging)
+			#print("dragging in slot: ", dragging)
 			# Show the item's icon in the slot
 			slot.item_icon = dragging_array[dragging]["icon_region"]
 			# Set the slot to te correct type
@@ -208,7 +214,7 @@ func drag_item():
 		else:
 			# Start dragging the item in the slot
 			dragging = slot.item
-			print("item in slot: ", dragging, " | item_type: ", slot.item_type)
+			#print("item in slot: ", dragging, " | item_type: ", slot.item_type)
 			
 			
 			if slot.item_type == "building":
