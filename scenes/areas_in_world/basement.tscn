@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://wc5itm4opyir"]
 
+[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://Scenes/areas_in_world/basement.gd" id="1_7o4gn"]
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]
@@ -263,6 +264,7 @@ atlas = ExtResource("8_n0s6i")
 region = Rect2(0, 0, 32, 64)
 
 [node name="Basement" type="Node2D" unique_id=49085389]
+script = ExtResource("1_7o4gn")
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1221750453]
 position = Vector2(-1094.0001, -269)

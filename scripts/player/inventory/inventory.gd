@@ -47,7 +47,8 @@ func _process(_delta: float) -> void:
 	
 	# Drag the item to a spot
 	drag_item()
-	snap_to_grid($"../SnapSprite")
+	if globals.scene == "basement":
+		snap_to_grid($"../SnapSprite")
 
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():

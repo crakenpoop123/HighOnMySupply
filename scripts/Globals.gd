@@ -8,6 +8,9 @@ var in_inventory = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor"]
 
+# Scene *wow*
+var scene = null
+
 # Grid variables
 var grid_size = 80
 
