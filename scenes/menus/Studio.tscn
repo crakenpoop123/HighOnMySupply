@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgq8x6x3x4cbk"]
 
 [ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://scripts/menus/studio.gd" id="1_oeoyy"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://Assets/misc/eye.jpg" id="2_oeoyy"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="2_oeoyy"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0q1w0"]
 load_path = "res://.godot/imported/eye.jpg-f674a346bd52ef018a080d722527b0e6.ctex"
