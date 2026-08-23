@@ -27,13 +27,15 @@ func _process(_delta: float) -> void:
 	# Show the snap sprite sprite only if something is being dragged that should be snapped
 	if !dragging:
 		$"../SnapSprite".texture = null
-	$"../SnapSprite".visible = dragging != null and $"../SnapSprite".texture != null
+	$"../SnapSprite".visible = placing != null and $"../SnapSprite".texture != null
 	# Show the drag sprite sprite only if something is being dragged
 	$"../DraggedSprite".visible = dragging != null and !$"../SnapSprite".visible
 	
 	# Checks for if the mouse clicked something important
 	#print(check_for_draggables())
 	check_for_draggables()
+	#print("placing: ", placing)
+	
 	#print("placing: ", placing)
 	
 	# Detect when the inventory was just closed
@@ -117,13 +119,21 @@ func check_for_draggables():
 				print(slot_interacted)
 				return "slot"
 		
+		placing = $"../SnapSprite".visible
+		
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
-			instantiate_building(dragging, $"../DraggedSprite".global_position)
-			return "place"
+			if globals.inventory_buildings[dragging]["stock"] != 0:
+				instantiate_building(dragging, $"../SnapSprite".global_position)
+				print("place")
+				return "place"
+			else:
+				print("No stock to place")
+				return "no stock  to place"
 		
 		# Set placing back to what it previously was
 		placing = init_placing
+		
 		
 		# If nothing was interacted with, set both to null
 		dragging = null
@@ -133,13 +143,23 @@ func check_for_draggables():
 
 # Instantiate a building *shocker*
 func instantiate_building(building, global_pos):
-	print("Instantiate building")
+	print("Instantiate building at pos: ", global_pos)
+	
+	# Offset to get the building to the correct position = to negative half the screens width and height
+	var building_offset = Vector2(-576, -324)
 	
 	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
 	
-	built_struct.global_position = global_pos
+	built_struct.global_position = global_pos + $"../..".position + building_offset
+	print("built struct at pos: ", built_struct.global_position)
 	
 	$"../../../MachineryThings".add_child(built_struct)
+	
+	# Get rid of the snapSprite
+	$"../SnapSprite".texture = null
+	dragging = null
+	# Remove the building from the inventory
+	globals.inventory_buildings[building]["stock"] -= 1
 
 # This gets the item node corresponding with the item's name
 func get_item_node_from_name(item_name):
@@ -221,6 +241,7 @@ func drag_item():
 			if slot.item_type == "building":
 				$"../SnapSprite".texture = slot.item_icon
 				placing = true
+				print("placing true")
 			
 			# This fixes a bug where it instantly tries to place the item back in the slot
 			slot_interacted = null

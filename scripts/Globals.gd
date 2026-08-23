@@ -112,11 +112,12 @@ func _ready() -> void:
 	
 	inventory_buildings = {
 		"farm_plot": {
-			"stock": 0,
+			"stock": 10,
 			"had_before": false,
 			"name": "Farm Plots", 
 			"icon": "res://assets/tilemaps/sugarcane_growth_tilemap.png",
-			"region": Rect2(0, 32, 32, 32)
+			"region": Rect2(0, 32, 32, 32), 
+			"scene": load("res://scenes/sugar_making/farm_plot.tscn")
 		},
 		"saucepan": {
 			"stock": 1,

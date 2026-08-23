@@ -286,9 +286,9 @@ position = Vector2(-650, -43)
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
 [node name="Farm" type="Node2D" parent="." unique_id=1197396922]
-position = Vector2(-729, 574)
 
 [node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
+position = Vector2(-733.9999, 570)
 
 [node name="Door" type="Node2D" parent="." unique_id=1712402548]
 
