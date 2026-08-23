@@ -109,10 +109,10 @@ func check_for_draggables():
 		
 		
 		# Check if a hotbar slot was pressed
-		for slot in $"../../Hotbar/HotbarGrid".get_children():
-			if slot.mouse_touching:
+		for item_slot in $"../../Hotbar/HotbarGrid".get_children():
+			if item_slot.mouse_touching:
 				# Slot_interacted is set to the respective slot
-				slot_interacted = slot.label
+				slot_interacted = item_slot.label
 				print(slot_interacted)
 				return "slot"
 		
@@ -141,11 +141,11 @@ func instantiate_building(building, global_pos):
 	$"../../../MachineryThings".add_child(built_struct)
 
 # This gets the item node corresponding with the item's name
-func get_item_node_from_name(name):
+func get_item_node_from_name(item_name):
 	# Iterate over all item nodes
 	for item in $InventoryScroll/ScrollGrid.get_children():
 		# Check if the name is correct
-		if item.item_name == name:
+		if item.item_name == item_name:
 			return item
 	
 	# Return null if no item was found
@@ -154,10 +154,10 @@ func get_item_node_from_name(name):
 # This gets the slot node corresponding with the item's name
 func get_slot_node_from_name(slot_label):
 	# Iterate over all item nodes
-	for slot in $"../../Hotbar/HotbarGrid".get_children():
+	for slot_item in $"../../Hotbar/HotbarGrid".get_children():
 		# Check if the name is correct
-		if slot.label == str(slot_label):
-			return slot
+		if slot_item.label == str(slot_label):
+			return slot_item
 	
 	# Return null if no item was found
 	return null

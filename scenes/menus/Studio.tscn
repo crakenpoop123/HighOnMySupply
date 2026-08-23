@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dgq8x6x3x4cbk"]
 
-[ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://Scripts/menus/studio.gd" id="1_oeoyy"]
-[ext_resource type="Texture2D" uid="uid://xo7mln3gm8sr" path="res://Assets/misc/eye.jpg" id="2_oeoyy"]
+[ext_resource type="Script" uid="uid://buiphnshfk1by" path="res://scripts/menus/studio.gd" id="1_oeoyy"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://Assets/misc/eye.jpg" id="2_oeoyy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0q1w0"]
+load_path = "res://.godot/imported/eye.jpg-f674a346bd52ef018a080d722527b0e6.ctex"
 
 [node name="Studio" type="CanvasLayer" unique_id=665983815]
 script = ExtResource("1_oeoyy")
@@ -26,7 +29,7 @@ offset_right = 131.11108
 offset_bottom = 202.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_oeoyy")
+texture = SubResource("CompressedTexture2D_0q1w0")
 
 [node name="Black" type="TextureRect" parent="Main" unique_id=1682941649]
 modulate = Color(0.15127608, 0.15127608, 0.15127608, 1)
