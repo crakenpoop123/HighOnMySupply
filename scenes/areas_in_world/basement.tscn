@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://wc5itm4opyir"]
 
-[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://Scenes/areas_in_world/basement.gd" id="1_7o4gn"]
+[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://scenes/areas_in_world/basement.gd" id="1_7o4gn"]
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
 [ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
 [ext_resource type="PackedScene" uid="uid://druo01roukbdx" path="res://scenes/sugar_making/machinery/shredder.tscn" id="19_tluy2"]
+[ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("1_gidub")
@@ -275,7 +276,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Table" type="TileMapLayer" parent="." unique_id=1889674100]
 position = Vector2(-1094, -324)
 scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAAEAAQAAgABAAAAAAAFAAQAAQABAAAAAAAEAAMAAgAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAQAAgABAAAAAAAFAAQAAQABAAAAAAAEAAMAAgAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
@@ -335,5 +336,8 @@ texture = SubResource("AtlasTexture_n0s6i")
 [node name="Fridge" parent="MachineryThings" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
 position = Vector2(385, 260)
 scale = Vector2(2.5, 2.5)
+
+[node name="Dryer" parent="MachineryThings" unique_id=1544863067 instance=ExtResource("21_jc7p3")]
+position = Vector2(181, 259)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
