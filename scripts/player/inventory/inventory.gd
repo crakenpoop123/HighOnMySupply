@@ -256,36 +256,6 @@ func drag_item():
 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	# Only show the inventory if you are in the inventory *wow*
-	$".".visible = globals.in_inventory
-	
-	# Show the drag sprite only if something is being dragged
-	$"../DraggedSprite".visible = dragging != null
-	
-	# Checks for if the mouse clicked something important
-	check_for_draggables()
-	
-	# Detect when the inventory was just closed
-	if !globals.in_inventory and globals.just_in_inventory:
-		dragging = null
-	
-	# Update globals.just_in_inventory
-	globals.just_in_inventory = globals.in_inventory
-	
-	print("drag_item: ", dragging)
-	
-	# Get the item type of the currently dragged item
-	if dragging in globals.inventory_buildings:
-		dragging_type = "building"
-	elif dragging in globals.inventory_ingredients:
-		dragging_type = "ingredient"
-	
-	# Drag the item to a spot
-	drag_item(dragging)
-
-
 # Switch the tab to buildings
 func _on_buildings_tab_pressed() -> void:
 	item_mode = "buildings"
