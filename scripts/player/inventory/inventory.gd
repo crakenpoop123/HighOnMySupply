@@ -9,6 +9,7 @@ var item_mode = "ingredients"
 
 var dragging = null
 var slot_interacted = null
+var dragging_type = null
 var dragging_array
 var placing = false
 var slot
@@ -251,7 +252,6 @@ func drag_item():
 				slot.item = null
 				slot.item_type = null
 				slot.item_icon = null
-
 
 
 
