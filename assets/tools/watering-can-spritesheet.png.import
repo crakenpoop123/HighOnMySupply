@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw40r02mcyd61"
-path="res://.godot/imported/watering-can-spritesheet.png-3c081fb90794b93b4e9d5bbf6c26318e.ctex"
+path="res://.godot/imported/watering-can-spritesheet.png-a5e531446bcc4e675f59c479978572dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/watering-can-spritesheet.png"
-dest_files=["res://.godot/imported/watering-can-spritesheet.png-3c081fb90794b93b4e9d5bbf6c26318e.ctex"]
+source_file="res://assets/tools/watering-can-spritesheet.png"
+dest_files=["res://.godot/imported/watering-can-spritesheet.png-a5e531446bcc4e675f59c479978572dc.ctex"]
 
 [params]
 

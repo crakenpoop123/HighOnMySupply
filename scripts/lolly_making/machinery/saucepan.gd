@@ -2,10 +2,11 @@ extends StaticBody2D
 
 
 func _process(_delta: float) -> void:
-	if globals.saucepan_on_table == true: # CHANGE LOCATION DEPENDING ON STATE
-		$".".position = Vector2(-650, -43)
-	elif globals.saucepan_on_table == false:
-		$".".position = Vector2(-752, -28)
+	pass
+	#if globals.saucepan_on_table == true: # CHANGE LOCATION DEPENDING ON STATE
+		#$".".position = Vector2(-650, -43)
+	#elif globals.saucepan_on_table == false:
+		#$".".position = Vector2(-752, -28)
 
 
 func player_interact():

@@ -296,8 +296,6 @@ collision_mask = 3
 [node name="InteractCollision" type="CollisionShape2D" parent="InteractArea" unique_id=1736922980]
 shape = SubResource("CircleShape2D_fkybt")
 
-[node name="Camera" type="Camera2D" parent="." unique_id=155960658]
-
 [node name="ShootTimer" type="Timer" parent="." unique_id=859550850]
 one_shot = true
 
@@ -313,3 +311,5 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1843507202]

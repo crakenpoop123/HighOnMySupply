@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://44u8jaaqssve"]
+
+[ext_resource type="Texture2D" uid="uid://ciouc7kgssh0r" path="res://dryer-tilemap.png" id="1_57ue0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hrlb"]
+texture = ExtResource("1_57ue0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k75d5"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_4hrlb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqe11"]
+size = Vector2(80, 80)
+
+[node name="Dryer" type="StaticBody2D" unique_id=1544863067]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=233461803]
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_k75d5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847820320]
+position = Vector2(40, 40)
+shape = SubResource("RectangleShape2D_cqe11")

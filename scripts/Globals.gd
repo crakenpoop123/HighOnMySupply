@@ -8,6 +8,12 @@ var in_inventory = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor"]
 
+# Scene *wow*
+var scene = null
+
+# Grid variables
+var grid_size = 80
+
 # Inventory variables
 var gummy_worm_stock: int = 0
 var sugar = 0
@@ -106,18 +112,20 @@ func _ready() -> void:
 	
 	inventory_buildings = {
 		"farm_plot": {
-			"stock": 0,
+			"stock": 10,
 			"had_before": false,
 			"name": "Farm Plots", 
 			"icon": "res://assets/tilemaps/sugarcane_growth_tilemap.png",
-			"region": Rect2(0, 32, 32, 32)
+			"region": Rect2(0, 32, 32, 32), 
+			"scene": load("res://scenes/sugar_making/farm_plot.tscn")
 		},
 		"saucepan": {
 			"stock": 1,
 			"had_before": true,
 			"name": "Saucepans", 
 			"icon": "res://assets/misc/saucepan.png",
-			"region": Rect2(0, 32, 32, 32)
+			"region": Rect2(0, 32, 32, 32), 
+			"scene": load("res://scenes/lolly_making/machinery/saucepan.tscn")
 		},
 		"shredder": {
 			"stock": 0,

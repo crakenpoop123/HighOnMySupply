@@ -10,10 +10,11 @@ size = Vector2(68, 30)
 script = ExtResource("1_h3g0f")
 
 [node name="SaucepanCollision" type="CollisionShape2D" parent="." unique_id=2045467664]
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_pk6li")
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=552805677]
-position = Vector2(5.000002, 10.999999)
+position = Vector2(20.999998, 10.999999)
 rotation = 1.5707964
 scale = Vector2(1.5999608, 1.1966374)
 texture = ExtResource("2_2o6pv")
