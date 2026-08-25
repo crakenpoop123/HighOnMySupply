@@ -9,6 +9,7 @@ var item_mode = "ingredients"
 
 var dragging = null
 var slot_interacted = null
+var dragging_type = null
 var dragging_array
 var slot
 
@@ -176,6 +177,12 @@ func _process(_delta: float) -> void:
 	globals.just_in_inventory = globals.in_inventory
 	
 	print("drag_item: ", dragging)
+	
+	# Get the item type of the currently dragged item
+	if dragging in globals.inventory_buildings:
+		dragging_type = "building"
+	elif dragging in globals.inventory_ingredients:
+		dragging_type = "ingredient"
 	
 	# Drag the item to a spot
 	drag_item(dragging)
