@@ -62,3 +62,18 @@ func _process(delta: float) -> void:
 			
 		if $"Tilemaps/Third Layer/Buildings3 Bottom".modulate.a < 1:
 			$"Tilemaps/Third Layer/Buildings3 Bottom".modulate.a += 0.03
+			
+	# Make the fourth layer fade out as you move upwards
+	if player.global_position.y < -2464:
+		if $"Tilemaps/Fourth Layer/Buildings4".modulate.a > 0.2:
+			$"Tilemaps/Fourth Layer/Buildings4".modulate.a -= 0.03
+			
+		if $"Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a > 0.2:
+			$"Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a -= 0.03
+			
+	else:
+		if $"Tilemaps/Fourth Layer/Buildings4".modulate.a < 1:
+			$"Tilemaps/Fourth Layer/Buildings4".modulate.a += 0.03
+			
+		if $"Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a < 1:
+			$"Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a += 0.03
