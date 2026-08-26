@@ -165,7 +165,7 @@ func instantiate_building(building, global_pos):
 
 # Check if there are any buildings in the spot that a new building is trying to be placed
 func check_overlapping_buildings():
-	$"../SnapSprite/CollisionArea".position = -$"../..".global_position / (Vector2(1, 1) * 2)
+	
 	for building_parent in globals.interactable_parents:
 		if $"../../..".has_node(building_parent):
 			#print("building parent: ", building_parent)
@@ -208,7 +208,7 @@ func snap_to_grid(movable):
 	# Lock position to the grid
 	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position + floor_offset - Vector2(28, 10)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
 	# Re-adjust to the correct spot
-	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(28, 10)
+	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(27, -16)
 	#print("movable snapped global pos: ", movable.global_position)
 	#print("movable corrected pos: ", movable.position)
 

@@ -71,6 +71,7 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_crr4r")
 
 [node name="CollisionSprite" type="Sprite2D" parent="SnapSprite/CollisionArea" unique_id=2001729634]
+scale = Vector2(0.87499994, 0.875)
 texture = ExtResource("2_crr4r")
 
 [connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]

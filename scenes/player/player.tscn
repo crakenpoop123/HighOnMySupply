@@ -312,6 +312,5 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1843507202]

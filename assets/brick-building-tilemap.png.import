@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3lns30sx0wwd"
-path="res://.godot/imported/birck-building-tilemap.png-9f8feab6ed22da7fc7f411730117e125.ctex"
+path="res://.godot/imported/brick-building-tilemap.png-bf01c842e90409d1ba44dc8e01cf8173.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/birck-building-tilemap.png"
-dest_files=["res://.godot/imported/birck-building-tilemap.png-9f8feab6ed22da7fc7f411730117e125.ctex"]
+source_file="res://assets/brick-building-tilemap.png"
+dest_files=["res://.godot/imported/brick-building-tilemap.png-bf01c842e90409d1ba44dc8e01cf8173.ctex"]
 
 [params]
 
