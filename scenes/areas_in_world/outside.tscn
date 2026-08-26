@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="6_urarc"]
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/tilemaps/buildings.tres" id="7_qdj3a"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="8_qdj3a"]
-[ext_resource type="Script" uid="uid://c6j4h3qsdh6l0" path="res://scenes/areas_in_world/tilemaps-city.gd" id="9_b2k1q"]
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="10_b2k1q"]
+[ext_resource type="PackedScene" uid="uid://durfhqp43emmr" path="res://scenes/npc/npc.tscn" id="11_b2k1q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hm3b"]
 texture = ExtResource("1_45di7")
@@ -97,7 +97,6 @@ player = NodePath("Player")
 z_index = 1
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1974134298]
-script = ExtResource("9_b2k1q")
 
 [node name="Ground" type="TileMapLayer" parent="Tilemaps" unique_id=484764003]
 z_index = -1
@@ -170,3 +169,8 @@ y_sort_enabled = true
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAD8//n/AAAAAAEAAAD6//n/AAABAAEAAAD9//n/AAACAAEAAAD+//n/AAACAAEAAAD7//n/AAACAAEAAAACAPn/AQAAAAEAAAAHAPn/AQAAAAEAAAAJAPn/AgABAAEAAAACAPP/AQABAAAAAAAEAPP/AQABAAAAAAAAAPP/AQABAAAAAAADAPn/AQACAAEAAAAEAPn/AQACAAEAAAAAAPn/AQACAAEAAAABAPn/AQACAAEAAAABAPP/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQADAAEAAAACAPL/AQADAAEAAAABAPL/AQADAAEAAAAAAPL/AQADAAEAAAAEAPL/AQADAAEAAAAEAPH/AQADAAAAAAADAPH/AQADAAAAAAACAPH/AQADAAAAAAABAPH/AQADAAAAAAAAAPH/AQADAAAAAAAIAPn/AgACAAEAAAAGAPn/AgACAAEAAAAQAPn/AQAAAAEAAAARAPn/AQACAAEAAAASAPn/AQACAAEAAAAOAPn/AQACAAEAAAAPAPn/AQACAAEAAAAUAPn/AQACAAEAAAAVAPn/AQACAAEAAAAWAPn/AQAAAAEAAAAXAPn/AQACAAEAAAAYAPn/AQACAAEAAAAaAPn/AgACAAEAAAAbAPn/AgAAAAEAAAAcAPn/AgACAAEAAAAhAPn/AAACAAEAAAAiAPn/AAACAAEAAAAjAPn/AQAAAAEAAAAkAPn/AAACAAEAAAAmAPn/AgACAAEAAAAnAPn/AgACAAEAAAAoAPn/AgAAAAEAAAApAPn/AgACAAEAAAArAPn/AQABAAEAAAAsAPn/AQAAAAEAAAAtAPn/AAACAAEAAAAuAPn/AQABAAEAAAAwAPn/AAACAAEAAAAxAPn/AQAAAAEAAAAyAPn/AAACAAEAAAAwAPP/AAADAAAAAAAxAPP/AAADAAAAAAAyAPP/AAADAAAAAAAwAPL/AAADAAEAAAAxAPL/AAADAAEAAAAyAPL/AAADAAEAAAD4//n/AgACAAEAAAD3//n/AgAAAAEAAAD2//n/AgACAAEAAAD1//n/AgACAAEAAAD0//n/AgACAAEAAAA=")
 tile_set = ExtResource("7_qdj3a")
+
+[node name="NPCs" type="Node2D" parent="." unique_id=1919931860]
+
+[node name="TestNpc" parent="NPCs" unique_id=1327797782 instance=ExtResource("11_b2k1q")]
+position = Vector2(399, 139)
