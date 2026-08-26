@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(player.global_position.y)
+	#print(player.global_position.y)
 	
 	# Make the bottom layer fade out as you move upwards
 	if player.global_position.y < -700:
