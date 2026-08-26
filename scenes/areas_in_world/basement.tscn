@@ -286,11 +286,6 @@ position = Vector2(-650, -43)
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
-[node name="Farm" type="Node2D" parent="." unique_id=1197396922]
-
-[node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
-position = Vector2(-733.9999, 570)
-
 [node name="Door" type="Node2D" parent="." unique_id=1712402548]
 
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=251515614]
@@ -304,6 +299,11 @@ script = ExtResource("11_6g54d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D" unique_id=190886121]
 position = Vector2(273, -83.5)
 shape = SubResource("RectangleShape2D_kdkve")
+
+[node name="Farm" type="Node2D" parent="." unique_id=1197396922]
+
+[node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
+position = Vector2(-733.9999, 570)
 
 [node name="MachineryThings" type="Node2D" parent="." unique_id=1282977936]
 

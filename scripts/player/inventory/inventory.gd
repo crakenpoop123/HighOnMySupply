@@ -46,7 +46,8 @@ func _process(_delta: float) -> void:
 	# Update globals.just_in_inventory
 	globals.just_in_inventory = globals.in_inventory
 	
-	#print("drag_item: ", dragging)
+	# Test building overlap
+	check_overlapping_buildings()
 	
 	# Drag the item to a spot
 	drag_item()
@@ -161,6 +162,20 @@ func instantiate_building(building, global_pos):
 	dragging = null
 	# Remove the building from the inventory
 	globals.inventory_buildings[building]["stock"] -= 1
+
+# Check if there are any buildings in the spot that a new building is trying to be placed
+func check_overlapping_buildings():
+	$"../SnapSprite/CollisionArea".position = -$"../..".global_position / (Vector2(1, 1) * 2)
+	for building_parent in globals.interactable_parents:
+		if $"../../..".has_node(building_parent):
+			#print("building parent: ", building_parent)
+			for child in $"../../..".get_node(building_parent).get_children():
+				#print("child of building parent: ", child)
+				#if len($"../SnapSprite/CollisionArea".get_overlapping_bodies()) != 0:
+				if randi_range(0, 50) == 0:
+					print("snap overlapping bodies: ", $"../SnapSprite/CollisionArea".get_overlapping_bodies())
+				if child in $"../SnapSprite/CollisionArea".get_overlapping_bodies():
+					print("snap overlapping with ", child)
 
 # This gets the item node corresponding with the item's name
 func get_item_node_from_name(item_name):

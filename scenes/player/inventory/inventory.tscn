@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dp6jxxj6f6udw" path="res://scripts/player/inventory/inventory.gd" id="1_crr4r"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_crr4r"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crr4r"]
+size = Vector2(32.000004, 32.000004)
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=978713471]
 
 [node name="Inventory" type="Control" parent="." unique_id=1229629953]
@@ -57,6 +60,17 @@ text = "Close Inventory
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=130403144]
 scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_crr4r")
+
+[node name="CollisionArea" type="Area2D" parent="SnapSprite" unique_id=65500252]
+collision_layer = 65535
+collision_mask = 65535
+
+[node name="Hitbox" type="CollisionShape2D" parent="SnapSprite/CollisionArea" unique_id=46652227]
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_crr4r")
+
+[node name="CollisionSprite" type="Sprite2D" parent="SnapSprite/CollisionArea" unique_id=2001729634]
 texture = ExtResource("2_crr4r")
 
 [connection signal="pressed" from="Inventory/BuildingsTab" to="Inventory" method="_on_buildings_tab_pressed"]
