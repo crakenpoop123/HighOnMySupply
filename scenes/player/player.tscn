@@ -273,7 +273,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(94, 128)
+size = Vector2(44, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
 radius = 171.01169
@@ -288,6 +288,7 @@ sprite_frames = SubResource("SpriteFrames_twm3q")
 animation = &"move_down"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=759029234]
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="InteractArea" type="Area2D" parent="." unique_id=2011398043]
@@ -311,5 +312,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1843507202]
