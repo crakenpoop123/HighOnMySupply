@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://q6t4vi8lg4p0"]
 
 [ext_resource type="Script" uid="uid://bwk4b3hqcgnkn" path="res://scripts/node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://durfhqp43emmr" path="res://scenes/npc/npc.tscn" id="3_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=1356839973]
 script = ExtResource("1_wtcfe")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1633661791]
+visible = false
+z_index = -4096
+position = Vector2(552, 329.75)
+scale = Vector2(5.677966, 2.5739856)
+texture = ExtResource("2_0e48y")
+
 [node name="Line2D" type="Line2D" parent="." unique_id=2068534525]
+
+[node name="NPC" parent="." unique_id=1327797782 instance=ExtResource("3_epypp")]
