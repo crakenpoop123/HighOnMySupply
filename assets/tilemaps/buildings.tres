@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://btwbrjekow5p0" path="res://assets/tilemaps/store-exterior-tilemap.png" id="1_ats3r"]
 [ext_resource type="Texture2D" uid="uid://duc73admh0pdw" path="res://assets/tilemaps/default-building-tilemap.png" id="2_sw73q"]
 [ext_resource type="Texture2D" uid="uid://d3lns30sx0wwd" path="res://assets/birck-building-tilemap.png" id="3_yksj0"]
+[ext_resource type="Texture2D" uid="uid://jaw686ddhuav" path="res://assets/stairstobasement.png" id="4_sw73q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urarc"]
 texture = ExtResource("1_ats3r")
@@ -72,8 +73,15 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 3:1/0/y_sort_origin = -16
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yksj0"]
+texture = ExtResource("4_sw73q")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_urarc")
 sources/1 = SubResource("TileSetAtlasSource_qdj3a")
 sources/2 = SubResource("TileSetAtlasSource_lk40d")
+sources/3 = SubResource("TileSetAtlasSource_yksj0")
