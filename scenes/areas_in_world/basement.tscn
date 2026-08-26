@@ -16,12 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
 [ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="9_jc7p3"]
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/hydraulic_press_spritesheet.png" id="10_cs7gm"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="10_kdkve"]
-[ext_resource type="Script" uid="uid://28spa4m1snv0" path="res://scripts/door.gd" id="11_6g54d"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
 [ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
 [ext_resource type="PackedScene" uid="uid://druo01roukbdx" path="res://scenes/sugar_making/machinery/shredder.tscn" id="19_tluy2"]
 [ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
+[ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="21_n0s6i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("1_gidub")
@@ -247,9 +246,6 @@ sources/7 = SubResource("TileSetAtlasSource_me242")
 sources/8 = SubResource("TileSetAtlasSource_c4gtx")
 sources/9 = SubResource("TileSetAtlasSource_p0x8v")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdkve"]
-size = Vector2(74, 127)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
 size = Vector2(80, 80)
 
@@ -285,20 +281,6 @@ tile_set = SubResource("TileSet_eipka")
 position = Vector2(-644, -67)
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
-
-[node name="Door" type="Node2D" parent="." unique_id=1712402548]
-
-[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=251515614]
-position = Vector2(272, -84)
-scale = Vector2(0.30932203, 0.30932206)
-texture = ExtResource("10_kdkve")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Door" unique_id=565055366]
-script = ExtResource("11_6g54d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D" unique_id=190886121]
-position = Vector2(273, -83.5)
-shape = SubResource("RectangleShape2D_kdkve")
 
 [node name="Farm" type="Node2D" parent="." unique_id=1197396922]
 
@@ -341,3 +323,8 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(181, 259)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
+
+[node name="Door" parent="." unique_id=2056007381 instance=ExtResource("21_n0s6i")]
+position = Vector2(249, -127.000015)
+scale = Vector2(0.27999997, 0.16370048)
+scene_to_load = "res://scenes/areas_in_world/outside.tscn"
