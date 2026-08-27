@@ -153,7 +153,7 @@ func instantiate_building(building, global_pos):
 	
 	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
 	
-	built_struct.global_position = global_pos + $"../..".position + building_offset
+	built_struct.global_position = global_pos + building_offset
 	print("built struct at pos: ", built_struct.global_position)
 	
 	$"../../../MachineryThings".add_child(built_struct)
