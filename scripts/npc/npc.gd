@@ -32,11 +32,23 @@ func decide_dir():
 	move()
 
 var i = 0
+@onready var array_size = $"../Line2D".points.size()
 func move():
-	$".".global_position = $"../Line2D".points[i]
-	i += 1
-	$MoveTimer.start(time)
-	
+	#print(i)
+	array_size = $"../Line2D".points.size()
+	if array_size != i:
+		#print(array_size)
+		if $"../Line2D".points.is_empty() == true: # This barely works
+			$"..".rando_path()
+		else:
+			$".".global_position = $"../Line2D".points[i]
+			i += 1
+			$MoveTimer.start(0.2)
+	elif array_size == i:
+		i = 0
+		$"..".rando_path()
+		
+		
 func get_npc_dir():
 	if target_speed.length() != 0:
 		npc_dir = target_speed.angle()
