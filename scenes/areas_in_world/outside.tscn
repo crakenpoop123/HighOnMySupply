@@ -10,7 +10,6 @@
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/tilemaps/buildings.tres" id="7_qdj3a"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="8_qdj3a"]
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="10_b2k1q"]
-[ext_resource type="PackedScene" uid="uid://durfhqp43emmr" path="res://scenes/npc/npc.tscn" id="11_b2k1q"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="12_kvyn1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hm3b"]
@@ -180,7 +179,5 @@ tile_set = ExtResource("7_qdj3a")
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1919931860]
 
-[node name="TestNpc" parent="NPCs" unique_id=1327797782 instance=ExtResource("11_b2k1q")]
-position = Vector2(399, 139)
-
 [node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
+scene_to_load = "res://scenes/areas_in_world/store.tscn"
