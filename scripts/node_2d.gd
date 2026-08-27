@@ -1,12 +1,16 @@
 extends Node2D
 # done with plenty of help from https://kidscancode.org/godot_recipes/4.x/2d/grid_pathfinding/index.html
 
-var cell_size = Vector2i(32, 32)
+var cell_size = Vector2i(80, 80)
 
 var astar_grid = AStarGrid2D.new()
 var grid_size
-var start = Vector2i(randi_range(0, 30), randi_range(0, 19))
-var end = Vector2i(randi_range(0, 30), randi_range(0, 19))
+var grid_x_y_min = 0
+var grid_x_max = 71
+var grid_y_max = 45
+var start = Vector2i(randi_range(grid_x_y_min, grid_x_max), randi_range(grid_x_y_min, grid_y_max))
+var end = Vector2i(randi_range(grid_x_y_min, grid_x_max), randi_range(grid_x_y_min, grid_y_max))
+
 
 func _ready():
 	initialize_grid()
@@ -21,7 +25,7 @@ func initialize_grid():
 	grid_size = (Vector2i(width, height) + Vector2i.ONE) / cell_size
 	astar_grid.size = grid_size
 	astar_grid.cell_size = cell_size
-	astar_grid.offset = Vector2i(-1280, -2720)
+	astar_grid.offset = Vector2i(cell_size/2)
 	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astar_grid.update()
@@ -35,7 +39,7 @@ func _draw():
 			if astar_grid.is_point_solid(Vector2i(x, y)):
 				draw_rect(Rect2(x * cell_size.x, y * cell_size.y, cell_size.x, cell_size.y), Color.DARK_GRAY)
 	
-	print($Line2D.points)
+#	print($Line2D.points)
 
 
 func update_path():
@@ -63,7 +67,7 @@ func _input(event):
 			
 func rando_path():
 	start = end
-	end = Vector2i(randi_range(0, 30), randi_range(0, 19))
+	end = Vector2i(randi_range(grid_x_y_min, grid_x_max), randi_range(grid_x_y_min, grid_y_max))
 	if astar_grid.is_point_solid(end):
 		rando_end()
 	initialize_grid()
@@ -73,7 +77,7 @@ func rando_path():
 	$NPC.move()
 
 func rando_end():
-	end = Vector2i(randi_range(0, 30), randi_range(0, 19))
+	end = Vector2i(randi_range(grid_x_y_min, grid_x_max), randi_range(grid_x_y_min, grid_y_max))
 	print("end had to be randomised")
 	if astar_grid.is_point_solid(end):
 		rando_end()

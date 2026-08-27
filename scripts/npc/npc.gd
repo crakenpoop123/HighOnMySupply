@@ -11,7 +11,8 @@ var npc_dir = 0
 var dir_state = "down"
 
 var time = randi_range(1, 5)
-
+var target_pos
+var curr_pos
 func _ready() -> void:
 	$".".global_position = $"..".start * 32
 
@@ -37,16 +38,24 @@ func move():
 	#print(i)
 	array_size = $"../Line2D".points.size()
 	if array_size != i:
-		#print(array_size)
 		if $"../Line2D".points.is_empty() == true: # This barely works
 			$"..".rando_path()
 		else:
-			$".".global_position = $"../Line2D".points[i]
+			target_pos = $"../Line2D".points[i] + Vector2(-1280, -2720)
+			curr_pos = $".".global_position
+			$".".global_position = target_pos
 			i += 1
 			$MoveTimer.start(0.2)
+			var vector = target_pos - curr_pos # VERY VERY VERY BROKEN
+			print(vector/80)# VERY VERY VERY BROKEN
+			#vector.normalise# VERY VERY VERY BROKEN
+			velocity = vector * SPEED# VERY VERY VERY BROKEN
+			# Wait until toucjhing# VERY VERY VERY BROKEN
 	elif array_size == i:
 		i = 0
 		$"..".rando_path()
+		
+		
 		
 		
 func get_npc_dir():
