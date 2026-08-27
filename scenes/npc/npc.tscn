@@ -8,17 +8,16 @@ atlas = ExtResource("1_sspvn")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpyoa"]
-size = Vector2(44, 128)
+size = Vector2(21, 36)
 
 [node name="NPC" type="CharacterBody2D" unique_id=1327797782]
 script = ExtResource("1_pcwmf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474460051]
-scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_pcwmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=568267737]
-position = Vector2(-2, 0)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dpyoa")
 
 [node name="MoveTimer" type="Timer" parent="." unique_id=2010640593]

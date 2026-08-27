@@ -12,12 +12,16 @@ func _ready():
 	initialize_grid()
 	update_path()
 
+var corner_one = Vector2i(-1280, -2720)
+var corner_two = Vector2i(4480, 960)
+var width = abs(corner_one.x - corner_two.x)
+var height = abs(corner_one.y - corner_two.y)
 
 func initialize_grid():
-	grid_size = Vector2i(get_viewport_rect().size) / cell_size
+	grid_size = (Vector2i(width, height) + Vector2i.ONE) / cell_size
 	astar_grid.size = grid_size
 	astar_grid.cell_size = cell_size
-	astar_grid.offset = cell_size / 2
+	astar_grid.offset = Vector2i(-1280, -2720)
 	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astar_grid.update()

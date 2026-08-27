@@ -38,7 +38,7 @@ func move():
 	array_size = $"../Line2D".points.size()
 	if array_size != i:
 		#print(array_size)
-		if $"../Line2D".points.is_empty() == true:
+		if $"../Line2D".points.is_empty() == true: # This barely works
 			$"..".rando_path()
 		else:
 			$".".global_position = $"../Line2D".points[i]

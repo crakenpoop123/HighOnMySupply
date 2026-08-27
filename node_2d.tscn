@@ -9,3 +9,5 @@ script = ExtResource("1_wtcfe")
 [node name="Line2D" type="Line2D" parent="." unique_id=2068534525]
 
 [node name="NPC" parent="." unique_id=1327797782 instance=ExtResource("3_epypp")]
+position = Vector2(505, 314)
+scale = Vector2(4, 4)
