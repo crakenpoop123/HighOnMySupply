@@ -46,9 +46,6 @@ func _process(_delta: float) -> void:
 	# Update globals.just_in_inventory
 	globals.just_in_inventory = globals.in_inventory
 	
-	# Test building overlap
-	check_overlapping_buildings()
-	
 	# Drag the item to a spot
 	drag_item()
 	if globals.scene == "basement":
@@ -125,14 +122,17 @@ func check_for_draggables():
 		
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
-			if globals.inventory_buildings[dragging]["stock"] != 0:
-				instantiate_building(dragging, $"../../SnapSprite".global_position)
-				print("place")
-				return "place"
+			if !check_overlapping_buildings():
+				if globals.inventory_buildings[dragging]["stock"] != 0:
+					instantiate_building(dragging, $"../../SnapSprite".global_position)
+					print("Place")
+					return "Place"
+				else:
+					print("No stock to place")
+					return "No stock"
 			else:
-				print("No stock to place")
-				return "no stock  to place"
-		
+				print("Obstructed tile")
+				return "Obstruction"
 		# Set placing back to what it previously was
 		placing = init_placing
 		
@@ -153,7 +153,7 @@ func instantiate_building(building, global_pos):
 	
 	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
 	
-	built_struct.global_position = global_pos + $"../..".position + building_offset
+	built_struct.global_position = global_pos + building_offset
 	print("built struct at pos: ", built_struct.global_position)
 	
 	$"../../../MachineryThings".add_child(built_struct)
@@ -166,33 +166,18 @@ func instantiate_building(building, global_pos):
 
 # Check if there are any buildings in the spot that a new building is trying to be placed
 func check_overlapping_buildings():
-	#print(get_viewport_rect().size/2)
-	#$"../../SnapSprite/CollisionArea".position = -get_viewport_rect().size/Vector2(2, 2)
-	#$"../../SnapSprite/CollisionArea".position = Vector2.ZERO
 	
 	#Get the global list of names of interactable bodies and loop through each name
 	for building_parent in globals.interactable_parents:
 		# Checks that the basement has the body
 		if $"../../..".has_node(building_parent):
-			
 			# Loops through all children of the current body
 			for child in $"../../..".get_node(building_parent).get_children():
-				
-				# Reduce print spam
-				#if randi_range(0, 20) == 0:
-					#print(child.position)
-					#print( $"../../SnapSprite/CollisionArea".position)
-					#print("----------")
-					#print(child.global_position)
-					#print( $"../../SnapSprite/CollisionArea".global_position)
-					#print("----------------------------------------------")
-					#
-					# Prints the bodies overlapping with $"../../SnapSprite/CollisionArea"
-					#print("snap overlapping bodies: ", $"../../SnapSprite/CollisionArea".get_overlapping_bodies())
-				
 				# If the current child is in the bodies overlapping with $"../../SnapSprite/CollisionArea", print it
 				if child in $"../../SnapSprite/CollisionArea".get_overlapping_bodies():
-					print("snap overlapping with ", child)
+					return true
+	
+	return false
 
 # This gets the item node corresponding with the item's name
 func get_item_node_from_name(item_name):
