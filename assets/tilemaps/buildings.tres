@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btwbrjekow5p0" path="res://assets/tilemaps/store-exterior-tilemap.png" id="1_ats3r"]
 [ext_resource type="Texture2D" uid="uid://duc73admh0pdw" path="res://assets/tilemaps/default-building-tilemap.png" id="2_sw73q"]
-[ext_resource type="Texture2D" uid="uid://d3lns30sx0wwd" path="res://assets/birck-building-tilemap.png" id="3_yksj0"]
+[ext_resource type="Texture2D" uid="uid://d3lns30sx0wwd" path="res://assets/brick-building-tilemap.png" id="3_yksj0"]
 [ext_resource type="Texture2D" uid="uid://jaw686ddhuav" path="res://assets/stairstobasement.png" id="4_sw73q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urarc"]

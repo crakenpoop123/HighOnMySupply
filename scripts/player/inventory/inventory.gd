@@ -27,10 +27,10 @@ func _process(_delta: float) -> void:
 	
 	# Show the snap sprite sprite only if something is being dragged that should be snapped
 	if !dragging:
-		$"../SnapSprite".texture = null
-	$"../SnapSprite".visible = placing != null and $"../SnapSprite".texture != null
+		$"../../SnapSprite".texture = null
+	$"../../SnapSprite".visible = placing != null and $"../../SnapSprite".texture != null
 	# Show the drag sprite sprite only if something is being dragged
-	$"../DraggedSprite".visible = dragging != null and !$"../SnapSprite".visible
+	$"../DraggedSprite".visible = dragging != null and !$"../../SnapSprite".visible
 	
 	# Checks for if the mouse clicked something important
 	#print(check_for_draggables())
@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
 	# Drag the item to a spot
 	drag_item()
 	if globals.scene == "basement":
-		snap_to_grid($"../SnapSprite")
+		snap_to_grid($"../../SnapSprite")
 
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():
@@ -121,12 +121,12 @@ func check_for_draggables():
 				print(slot_interacted)
 				return "slot"
 		
-		placing = $"../SnapSprite".visible
+		placing = $"../../SnapSprite".visible
 		
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
 			if globals.inventory_buildings[dragging]["stock"] != 0:
-				instantiate_building(dragging, $"../SnapSprite".global_position)
+				instantiate_building(dragging, $"../../SnapSprite".global_position)
 				print("place")
 				return "place"
 			else:
@@ -148,7 +148,8 @@ func instantiate_building(building, global_pos):
 	print("Instantiate building at pos: ", global_pos)
 	
 	# Offset to get the building to the correct position = to negative half the screens width and height
-	var building_offset = Vector2(-576, -324)
+	var building_offset = Vector2.ZERO
+	#Vector2(-576, -324)
 	
 	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
 	
@@ -158,23 +159,39 @@ func instantiate_building(building, global_pos):
 	$"../../../MachineryThings".add_child(built_struct)
 	
 	# Get rid of the snapSprite
-	$"../SnapSprite".texture = null
+	$"../../SnapSprite".texture = null
 	dragging = null
 	# Remove the building from the inventory
 	globals.inventory_buildings[building]["stock"] -= 1
 
 # Check if there are any buildings in the spot that a new building is trying to be placed
 func check_overlapping_buildings():
-	$"../SnapSprite/CollisionArea".position = -$"../..".global_position / (Vector2(1, 1) * 2)
+	#print(get_viewport_rect().size/2)
+	#$"../../SnapSprite/CollisionArea".position = -get_viewport_rect().size/Vector2(2, 2)
+	#$"../../SnapSprite/CollisionArea".position = Vector2.ZERO
+	
+	#Get the global list of names of interactable bodies and loop through each name
 	for building_parent in globals.interactable_parents:
+		# Checks that the basement has the body
 		if $"../../..".has_node(building_parent):
-			#print("building parent: ", building_parent)
+			
+			# Loops through all children of the current body
 			for child in $"../../..".get_node(building_parent).get_children():
-				#print("child of building parent: ", child)
-				#if len($"../SnapSprite/CollisionArea".get_overlapping_bodies()) != 0:
-				if randi_range(0, 50) == 0:
-					print("snap overlapping bodies: ", $"../SnapSprite/CollisionArea".get_overlapping_bodies())
-				if child in $"../SnapSprite/CollisionArea".get_overlapping_bodies():
+				
+				# Reduce print spam
+				#if randi_range(0, 20) == 0:
+					#print(child.position)
+					#print( $"../../SnapSprite/CollisionArea".position)
+					#print("----------")
+					#print(child.global_position)
+					#print( $"../../SnapSprite/CollisionArea".global_position)
+					#print("----------------------------------------------")
+					#
+					# Prints the bodies overlapping with $"../../SnapSprite/CollisionArea"
+					#print("snap overlapping bodies: ", $"../../SnapSprite/CollisionArea".get_overlapping_bodies())
+				
+				# If the current child is in the bodies overlapping with $"../../SnapSprite/CollisionArea", print it
+				if child in $"../../SnapSprite/CollisionArea".get_overlapping_bodies():
 					print("snap overlapping with ", child)
 
 # This gets the item node corresponding with the item's name
@@ -206,9 +223,9 @@ func snap_to_grid(movable):
 	var floor_offset = Vector2(fposmod($"../../../Floor".global_position[0], float(globals.grid_size)), fposmod($"../../../Table".global_position[1], float(globals.grid_size)))
 	#print("floor_offset: ", floor_offset)
 	# Lock position to the grid
-	movable.global_position = floor((get_global_mouse_position() + $"../..".global_position + floor_offset - Vector2(28, 10)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
+	movable.position = floor((get_global_mouse_position() - get_viewport_rect().size/2 + $"../..".global_position + floor_offset - Vector2(1, -19)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
 	# Re-adjust to the correct spot
-	movable.global_position = movable.global_position - $"../..".global_position - floor_offset + Vector2(28, 10)
+	movable.position = movable.position - $"../..".global_position - floor_offset + Vector2(11, -19)
 	#print("movable snapped global pos: ", movable.global_position)
 	#print("movable corrected pos: ", movable.position)
 
@@ -255,7 +272,7 @@ func drag_item():
 			
 			
 			if slot.item_type == "building":
-				$"../SnapSprite".texture = slot.item_icon
+				$"../../SnapSprite".texture = slot.item_icon
 				placing = true
 				print("placing true")
 			

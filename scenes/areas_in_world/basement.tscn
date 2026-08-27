@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://wc5itm4opyir"]
+[gd_scene format=4 uid="uid://d1qmuc75mxwy1"]
 
 [ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://scenes/areas_in_world/basement.gd" id="1_7o4gn"]
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
