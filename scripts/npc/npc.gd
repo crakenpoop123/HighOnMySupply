@@ -10,12 +10,14 @@ var movement_smoothing = 5
 var npc_dir = 0
 var dir_state = "down"
 
-var direction = randi_range(0, 4)
 var time = randi_range(1, 5)
+
+func _ready() -> void:
+	$".".global_position = $"..".start * 32
 
 func _physics_process(_delta: float) -> void:
 	
-	move()
+	#move()
 	get_npc_dir()
 	orient_animation()
 	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
@@ -26,28 +28,19 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func decide_dir():
-	direction = randi_range(0, 4)
 	time = randf_range(1, 2)
+	move()
+
+var i = 0
+func move():
+	$".".global_position = $"../Line2D".points[i]
+	i += 1
 	$MoveTimer.start(time)
 	
-func move():
-	target_speed = Vector2.ZERO
-	if direction == 0:
-		target_speed[1] += -SPEED
-	if direction == 1:
-		target_speed[1] += SPEED
-	if direction == 2:
-		target_speed[0] += -SPEED
-	if direction == 3:
-		target_speed[0] += SPEED
-	if direction == 4:
-		target_speed[0] = 0
-		
-		
 func get_npc_dir():
 	if target_speed.length() != 0:
 		npc_dir = target_speed.angle()
-		#print("npc direction", npc_dir)d
+		#print("npc direction", npc_dir)
 
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:

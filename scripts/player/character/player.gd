@@ -55,6 +55,8 @@ func _on_area_2d_area_exited(_area: Area2D) -> void: # This stuff aint needed an
 
 func find_interactables():
 	for interactable_parent in globals.interactable_parents:
+		print(interactable_parent)
+			
 		if $"..".has_node(interactable_parent):
 			for interactable in $"..".get_node(interactable_parent).get_children():
 				if is_interact_area_touching(interactable):
@@ -62,13 +64,19 @@ func find_interactables():
 	return false
 
 func get_nearest_interactable():
+	print("Getting nearest")
 	var closest_dist = INF
 	var closest_interactable
 	for interactable_parent in globals.interactable_parents:
+		print("Finding parents: ", interactable_parent)
 		if $"..".has_node(interactable_parent):
+			print("Found parent: ", interactable_parent)
 			for interactable in $"..".get_node(interactable_parent).get_children():
+				print("EACH")
+				print(interactable)
 				var curr_dist = self.global_position.distance_to(interactable.global_position)
 				if is_interact_area_touching(interactable) and curr_dist < closest_dist:
+					print("Updating closest object, was ", closest_interactable, ", is now ", interactable)
 					closest_dist = curr_dist
 					closest_interactable = interactable
 	
