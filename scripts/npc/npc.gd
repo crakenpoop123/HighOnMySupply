@@ -37,16 +37,20 @@ func move():
 	#print(i)
 	array_size = $"../Line2D".points.size()
 	if array_size != i:
-		#print(array_size)
 		if $"../Line2D".points.is_empty() == true: # This barely works
 			$"..".rando_path()
 		else:
-			$".".global_position = $"../Line2D".points[i]
+			$".".global_position = $"../Line2D".points[i] + Vector2(-1280, -2720)
 			i += 1
 			$MoveTimer.start(0.2)
 	elif array_size == i:
 		i = 0
 		$"..".rando_path()
+		
+		# DIrection vector = target_pos - curr_pos
+		#vector.normalise
+		# Velocity = vector * speed
+		# Wait until toucjhing
 		
 		
 func get_npc_dir():

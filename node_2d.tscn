@@ -11,3 +11,5 @@ script = ExtResource("1_wtcfe")
 [node name="NPC" parent="." unique_id=1327797782 instance=ExtResource("3_epypp")]
 position = Vector2(505, 314)
 scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="NPC" unique_id=471161578]
