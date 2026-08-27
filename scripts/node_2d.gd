@@ -12,6 +12,7 @@ func _ready():
 	initialize_grid()
 	update_path()
 
+
 func initialize_grid():
 	grid_size = Vector2i(get_viewport_rect().size) / cell_size
 	astar_grid.size = grid_size
@@ -49,11 +50,26 @@ func draw_grid():
 func _input(event):
 	if event is InputEventMouseButton:
 		# Add/remove wall
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var pos = Vector2i(event.position) / cell_size
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			var pos = Vector2i(get_global_mouse_position()) / cell_size
 			if astar_grid.is_in_boundsv(pos):
 				astar_grid.set_point_solid(pos, not astar_grid.is_point_solid(pos))
 			update_path()
 			queue_redraw()
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			$NPC.move()
+			
+func rando_path():
+	start = end
+	end = Vector2i(randi_range(0, 30), randi_range(0, 19))
+	if astar_grid.is_point_solid(end):
+		rando_end()
+	initialize_grid()
+	update_path()
+	_draw()
+	queue_redraw()
+
+func rando_end():
+	end = Vector2i(randi_range(0, 30), randi_range(0, 19))
+	print("end had to be randomised")
+	if astar_grid.is_point_solid(end):
+		rando_end()
+		
