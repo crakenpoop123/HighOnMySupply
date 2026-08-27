@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cx3ulhoeq1p2m" path="res://assets/tilemaps/roadtilemap.png" id="5_lk40d"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="6_urarc"]
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/tilemaps/buildings.tres" id="7_qdj3a"]
-[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="8_qdj3a"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="8_qdj3a"]
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="10_b2k1q"]
 [ext_resource type="PackedScene" uid="uid://q6t4vi8lg4p0" path="res://node_2d.tscn" id="12_i0f8x"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="12_kvyn1"]
@@ -181,6 +181,7 @@ tile_set = ExtResource("7_qdj3a")
 [node name="NPCs" type="Node2D" parent="." unique_id=1919931860]
 
 [node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
+position = Vector2(-279, -524)
 scene_to_load = "res://scenes/areas_in_world/store.tscn"
 
 [node name="Node2D" parent="." unique_id=1356839973 instance=ExtResource("12_i0f8x")]

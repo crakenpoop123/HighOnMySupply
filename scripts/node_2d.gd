@@ -39,7 +39,7 @@ func _draw():
 			if astar_grid.is_point_solid(Vector2i(x, y)):
 				draw_rect(Rect2(x * cell_size.x, y * cell_size.y, cell_size.x, cell_size.y), Color.DARK_GRAY)
 	
-	print($Line2D.points)
+#	print($Line2D.points)
 
 
 func update_path():
