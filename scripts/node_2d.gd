@@ -66,6 +66,7 @@ func rando_path():
 	update_path()
 	_draw()
 	queue_redraw()
+	$NPC.move()
 
 func rando_end():
 	end = Vector2i(randi_range(0, 30), randi_range(0, 19))
