@@ -72,8 +72,8 @@ func get_nearest_interactable():
 		if $"..".has_node(interactable_parent):
 			print("Found parent: ", interactable_parent)
 			for interactable in $"..".get_node(interactable_parent).get_children():
-				print("EACH")
-				print(interactable)
+				#print("EACH")
+				#print(interactable)
 				var curr_dist = self.global_position.distance_to(interactable.global_position)
 				if is_interact_area_touching(interactable) and curr_dist < closest_dist:
 					print("Updating closest object, was ", closest_interactable, ", is now ", interactable)

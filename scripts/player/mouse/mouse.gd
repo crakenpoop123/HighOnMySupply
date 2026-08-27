@@ -59,7 +59,7 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 				holding = true # START DRAGGING # Should't this be stop dragging???
 
 func check_off_screen(dragged_area):
-	print(type_string(typeof(dragged_area)))
+	#print(type_string(typeof(dragged_area)))
 	if !area_name:
 		return
 	var area_x = dragged_area.global_position[0]
