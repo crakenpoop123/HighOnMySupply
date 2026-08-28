@@ -162,6 +162,7 @@ func _ready() -> void:
 	for building in inventory_buildings:
 		inventory_buildings[building]["icon_region"] = images(str(inventory_buildings[building]["icon"]), inventory_buildings[building]["region"])
 		
+		saved_states.setup()
 
 func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
