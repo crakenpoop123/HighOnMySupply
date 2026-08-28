@@ -10,9 +10,7 @@
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/tilemaps/buildings.tres" id="7_qdj3a"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="8_qdj3a"]
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="10_b2k1q"]
-[ext_resource type="PackedScene" uid="uid://q6t4vi8lg4p0" path="res://node_2d.tscn" id="12_i0f8x"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="12_kvyn1"]
-[ext_resource type="PackedScene" uid="uid://durfhqp43emmr" path="res://scenes/npc/npc.tscn" id="12_t4hvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hm3b"]
 texture = ExtResource("1_45di7")
@@ -89,6 +87,11 @@ sources/2 = SubResource("TileSetAtlasSource_kvyn1")
 sources/4 = SubResource("TileSetAtlasSource_i0f8x")
 sources/5 = SubResource("TileSetAtlasSource_t4hvj")
 sources/3 = SubResource("TileSetAtlasSource_qdj3a")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_i0f8x"]
+vertices = PackedVector2Array(2390, -170, 1050, -170, 1050, -1750, 2390, -1750)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1040, -1760, 2400, -1760, 2400, -160, 1040, -160)])
 
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -181,16 +184,13 @@ tile_set = ExtResource("7_qdj3a")
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1919931860]
 
-[node name="NPC" parent="NPCs" unique_id=1327797782 instance=ExtResource("12_t4hvj")]
-scale = Vector2(4, 4)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="NPCs" unique_id=1299006216]
 
-[node name="Camera2D" type="Camera2D" parent="NPCs/NPC" unique_id=488878055]
-position = Vector2(404.5, -66)
-zoom = Vector2(0.175, 0.175)
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NPCs/CharacterBody2D" unique_id=198439728]
 
 [node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
 position = Vector2(-279, -524)
 scene_to_load = "res://scenes/areas_in_world/store.tscn"
 
-[node name="Node2D" parent="." unique_id=1356839973 instance=ExtResource("12_i0f8x")]
-position = Vector2(-1280, -2720)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2037526969]
+navigation_polygon = SubResource("NavigationPolygon_i0f8x")
