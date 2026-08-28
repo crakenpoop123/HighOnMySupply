@@ -197,21 +197,23 @@ func save_scene():
 # Iteratively set the owner property of all nodes as root
 # This allows them to be saved to a packed scene
 func make_nodes_owner(scene):
-	#print("main scene", scene)
 	
+	# Iterate through all children nodes
 	for child in scene.get_children():
-		#if child.has_property("owner"):
+		# If the child does not already have an owner
+		# This happens for the instantiated scenes
 		if child.owner == null:
-			print("child: ", child)
-			print("child owner: ", child.owner)
-			print("parent: ", scene)
-			print("root: ", get_tree().current_scene)
-			print("---------------")
+			# Print things about the nodes
+			#print("child: ", child)
+			#print("child owner: ", child.owner)
+			#print("parent: ", scene)
+			#print("root: ", get_tree().current_scene)
+			#print("---------------")
 			
+			# Update ownership
 			child.owner = get_tree().current_scene
-		#child.owner = scene
 		
-		#for child_child in child.get_children():
+		# Recursively call the function 
 		make_nodes_owner(child)
 
 # Load the PackedScene
