@@ -305,6 +305,7 @@ shape = SubResource("CircleShape2D_fkybt")
 one_shot = true
 
 [node name="Hotbar" parent="." unique_id=1780203600 instance=ExtResource("4_e41v5")]
+z_index = 3
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -329,4 +330,4 @@ collision_mask = 65535
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_75vfm")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1873042123]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1720789273]
