@@ -317,8 +317,6 @@ grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1843507202]
-
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=1889221138]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_p47bc")

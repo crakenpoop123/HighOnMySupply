@@ -188,7 +188,7 @@ func save_scene():
 		
 		# Print an error if something malfunctions
 		if result == OK:
-			var error = ResourceSaver.save(packed_scene, "res://scenes//saved_scenes//saved_scene.tscn")
+			var error = ResourceSaver.save(packed_scene, "res://scenes/saved_scene.tscn")
 			if error != OK:
 				push_error("An error occured while saving the scene to disk.")
 			else:
@@ -197,16 +197,23 @@ func save_scene():
 # Iteratively set the owner property of all nodes as root
 # This allows them to be saved to a packed scene
 func make_nodes_owner(scene):
+	# Iterate through all children nodes
 	for child in scene.get_children():
-		#if child.has_property("owner"):
-		if child.owner != scene:
-			print("child owner: ", child.owner)
-			print("new owner: ", scene)
+		# If the child does not already have an owner
+		# This happens for the instantiated scenes
+		if child.owner == null:
+			# Print things about the nodes
+			#print("child: ", child)
+			#print("child owner: ", child.owner)
+			#print("parent: ", scene)
+			#print("root: ", get_tree().current_scene)
+			#print("---------------")
+			
+			# Update ownership
+			child.owner = get_tree().current_scene
 		
-		child.owner = scene
-		
-		for child_child in child.get_children():
-			make_nodes_owner(child_child)
+		# Recursively call the function 
+		make_nodes_owner(child)
 
 # Load the PackedScene
 func load_scene():
