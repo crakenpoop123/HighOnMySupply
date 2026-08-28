@@ -6,7 +6,7 @@ var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 var just_in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside"]
 
 # Scene *wow*
 var scene = null

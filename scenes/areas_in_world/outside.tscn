@@ -194,14 +194,5 @@ tile_set = ExtResource("7_qdj3a")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="NPCs/CharacterBody2D" unique_id=198439728]
 
-<<<<<<< Updated upstream
-[node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
-position = Vector2(-279, -524)
-scene_to_load = "res://scenes/areas_in_world/store.tscn"
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2037526969]
 navigation_polygon = SubResource("NavigationPolygon_i0f8x")
-=======
-[node name="Node2D" parent="." unique_id=1356839973 instance=ExtResource("12_i0f8x")]
-position = Vector2(-1280, -2720)
->>>>>>> Stashed changes
