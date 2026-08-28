@@ -118,7 +118,7 @@ func _ready() -> void:
 			"name": "Farm Plots", 
 			"icon": "res://assets/tilemaps/sugarcane_growth_tilemap.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/sugar_making/farm_plot.tscn")
+			"scene": load("res://scenes/buildables/farm_plot.tscn")
 		},
 		"saucepan": {
 			"stock": 1,
@@ -126,14 +126,15 @@ func _ready() -> void:
 			"name": "Saucepans", 
 			"icon": "res://assets/misc/saucepan.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/lolly_making/machinery/saucepan.tscn")
+			"scene": load("res://scenes/buildables/saucepan.tscn")
 		},
 		"shredder": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Shredder", 
 			"icon": "res://assets/tilemaps/shredder_tilemap.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"scene": load("res://scenes/buildables/shredder.tscn")
 		},
 		"crusher": {
 			"stock": 0,
@@ -227,6 +228,22 @@ func load_scene():
 		print("Loaded saved scene successfully")
 		# Change the scene
 		get_tree().change_scene_to_packed.call_deferred(saved_scene)
+		
+		call_deferred("find_interactables_for_loading", get_tree().current_scene)
+
+# Recursively searches the scene tree to find any interactable parents
+func find_interactables_for_loading(node):
+	for child in node.get_children():
+		if node.name in interactable_parents:
+			load_states(child)
+		else:
+			find_interactables_for_loading(child)
+
+# Load the saved_states autoload to all variables
+func load_states(node):
+	if node.has_method("load_prev_state"):
+		node.load_prev_states
+
 
 var inventory_ingredients: Dictionary
 

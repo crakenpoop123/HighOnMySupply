@@ -156,7 +156,7 @@ func instantiate_building(building, global_pos):
 	built_struct.global_position = global_pos + building_offset
 	print("built struct at pos: ", built_struct.global_position)
 	
-	$"../../../MachineryThings".add_child(built_struct)
+	$"../../../Buildables".add_child(built_struct)
 	
 	# Get rid of the snapSprite
 	$"../../SnapSprite".texture = null

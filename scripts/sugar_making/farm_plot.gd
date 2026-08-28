@@ -7,10 +7,14 @@ var growth_rate = 1
 var wetness = 0
 
 var fully_grown
+var build_type = "farm_plot"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max))
+	
+	saved_states.building_data[build_type][self.name] = {}
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +28,8 @@ func _process(_delta: float) -> void:
 	else:
 		$PlotSprite.animation = "growth_stages_dry"
 	$PlotSprite.frame = growth_stage
+	
+	save_curr_state()
 
 func player_interact():
 	if fully_grown:
@@ -31,6 +37,24 @@ func player_interact():
 	else:
 		water()
 	
+
+# Saves variables to the autoload saved_states:
+func save_curr_state():
+	# Print statements
+	#print("saving ", self, "'s state")
+	#print("state: ", saved_states.building_data.keys(), " | ", build_type)
+	#print("all farms: ", saved_states.building_data[build_type].keys())
+	#print("value: ", saved_states.building_data[build_type])
+	
+	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
+	saved_states.building_data[build_type][self.name]["wetness"] = wetness
+
+# Loads the variable saved in the autoload saved_states:
+func load_prev_state():
+	print("loading ", self, "'s state")
+	
+	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
+	wetness = saved_states.building_data[build_type][self.name]["wetness"]
 
 func water():
 	print("Watered")
