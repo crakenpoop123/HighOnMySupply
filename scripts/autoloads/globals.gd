@@ -7,6 +7,7 @@ var in_menu = false
 var in_inventory = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside"]
+var player_loading_point: String = ""
 
 # Scene *wow*
 var scene = null

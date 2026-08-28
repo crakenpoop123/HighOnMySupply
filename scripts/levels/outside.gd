@@ -3,7 +3,11 @@ extends Node2D
 
 func _ready() -> void:
 	globals.scene = "outside"
-	
+	if globals.player_loading_point == "basement":
+		player.global_position = Vector2(2198.0, -491)
+	elif globals.player_loading_point == "store":
+		player.global_position = Vector2(2198.0, 500)
+		
 	$Tilemaps/Collisions.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

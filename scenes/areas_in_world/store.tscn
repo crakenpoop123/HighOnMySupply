@@ -146,3 +146,4 @@ position = Vector2(3, 241)
 position = Vector2(-79, 319)
 scale = Vector2(1e-05, 0.00803709)
 scene_to_load = "res://scenes/areas_in_world/outside.tscn"
+scene_from = "store"

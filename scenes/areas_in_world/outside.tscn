@@ -103,12 +103,14 @@ z_index = 1
 position = Vector2(2199, -562.14)
 scale = Vector2(-0.005115032, -0.000607684)
 scene_to_load = "res://scenes/areas_in_world/basement.tscn"
+scene_from = "outside"
 
 [node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
 z_index = 1
 position = Vector2(-279, -562)
 scale = Vector2(1e-05, 1e-05)
 scene_to_load = "res://scenes/areas_in_world/store.tscn"
+scene_from = "outside"
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("8_qdj3a")]
 z_index = 1
