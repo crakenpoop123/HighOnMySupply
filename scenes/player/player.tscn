@@ -328,3 +328,5 @@ collision_mask = 65535
 [node name="Hitbox" type="CollisionShape2D" parent="SnapSprite/CollisionArea" unique_id=1237068700]
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_75vfm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1873042123]

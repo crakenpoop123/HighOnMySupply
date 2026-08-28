@@ -15,5 +15,5 @@ func setup():
 		# Iterate through all keys in the array
 		for key in arr.keys():
 			# Add it to the building_data
-			building_data[key] = null
+			building_data[key] = {}
 	#print("building data: ", building_data)
