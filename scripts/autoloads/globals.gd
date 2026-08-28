@@ -197,7 +197,6 @@ func save_scene():
 # Iteratively set the owner property of all nodes as root
 # This allows them to be saved to a packed scene
 func make_nodes_owner(scene):
-	
 	# Iterate through all children nodes
 	for child in scene.get_children():
 		# If the child does not already have an owner

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6")
 [autoload]
 
 globals="*uid://mugs5qj66xuf"
+saved_states="*uid://b22grf7w76k6w"
 
 [dotnet]
 
