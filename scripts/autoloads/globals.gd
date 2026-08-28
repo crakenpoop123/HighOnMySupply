@@ -6,7 +6,7 @@ var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 var just_in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside"]
 
 # Scene *wow*
 var scene = null
@@ -117,7 +117,7 @@ func _ready() -> void:
 			"name": "Farm Plots", 
 			"icon": "res://assets/tilemaps/sugarcane_growth_tilemap.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/sugar_making/farm_plot.tscn")
+			"scene": load("res://scenes/buildables/farm_plot.tscn")
 		},
 		"saucepan": {
 			"stock": 1,
@@ -125,14 +125,15 @@ func _ready() -> void:
 			"name": "Saucepans", 
 			"icon": "res://assets/misc/saucepan.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/lolly_making/machinery/saucepan.tscn")
+			"scene": load("res://scenes/buildables/saucepan.tscn")
 		},
 		"shredder": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Shredder", 
 			"icon": "res://assets/tilemaps/shredder_tilemap.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"scene": load("res://scenes/buildables/shredder.tscn")
 		},
 		"crusher": {
 			"stock": 0,

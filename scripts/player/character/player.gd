@@ -46,6 +46,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func find_interactables():
+	print(globals.interactable_parents)
 	for interactable_parent in globals.interactable_parents:
 		print(interactable_parent)
 			

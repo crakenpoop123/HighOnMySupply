@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://x50y0htftkw3"]
+[gd_scene format=3 uid="uid://cyxfiuftc7mml"]
 
 [ext_resource type="Script" uid="uid://cebgn12v8bb7" path="res://scripts/sugar_making/farm_plot.gd" id="1_jvxcw"]
 [ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/sugarcane_growth_tilemap.png" id="2_jvxcw"]
