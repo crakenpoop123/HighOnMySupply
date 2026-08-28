@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="6_k7qf4"]
 [ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/fridge-tilemap.png" id="7_n2ghy"]
 [ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/boiler-tilemap.png" id="8_n0s6i"]
-[ext_resource type="PackedScene" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
+[ext_resource type="PackedScene" uid="uid://x50y0htftkw3" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
 [ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="9_jc7p3"]
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/hydraulic_press_spritesheet.png" id="10_cs7gm"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
@@ -282,45 +282,43 @@ position = Vector2(-644, -67)
 
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
-[node name="Farm" type="Node2D" parent="." unique_id=1197396922]
+[node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
-[node name="FarmPlot" parent="Farm" unique_id=882134452 instance=ExtResource("9_1vwho")]
-position = Vector2(-733.9999, 570)
-
-[node name="MachineryThings" type="Node2D" parent="." unique_id=1282977936]
-
-[node name="Shredder" parent="MachineryThings" unique_id=569272027 instance=ExtResource("19_tluy2")]
+[node name="Shredder" parent="Buildables" unique_id=569272027 instance=ExtResource("19_tluy2")]
 position = Vector2(-255.00002, -44.000004)
 scale = Vector2(2.5, 2.5)
 
-[node name="Centrifuge" type="StaticBody2D" parent="MachineryThings" unique_id=263369220]
+[node name="Centrifuge" type="StaticBody2D" parent="Buildables" unique_id=263369220]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MachineryThings/Centrifuge" unique_id=326358471]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildables/Centrifuge" unique_id=326358471]
 position = Vector2(-335, -44)
 shape = SubResource("RectangleShape2D_1l4aa")
 
-[node name="Sprite2D" type="Sprite2D" parent="MachineryThings/Centrifuge" unique_id=2019335364]
+[node name="Sprite2D" type="Sprite2D" parent="Buildables/Centrifuge" unique_id=2019335364]
 position = Vector2(-335.00003, -44.000004)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_n2ghy")
 
-[node name="Boiler" type="StaticBody2D" parent="MachineryThings" unique_id=365522650]
+[node name="Boiler" type="StaticBody2D" parent="Buildables" unique_id=365522650]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MachineryThings/Boiler" unique_id=1478657869]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildables/Boiler" unique_id=1478657869]
 position = Vector2(302, 260.5)
 shape = SubResource("RectangleShape2D_n2ghy")
 
-[node name="Sprite2D" type="Sprite2D" parent="MachineryThings/Boiler" unique_id=1815726020]
+[node name="Sprite2D" type="Sprite2D" parent="Buildables/Boiler" unique_id=1815726020]
 position = Vector2(302, 259)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_n0s6i")
 
-[node name="Fridge" parent="MachineryThings" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
+[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
 position = Vector2(385, 260)
 scale = Vector2(2.5, 2.5)
 
-[node name="Dryer" parent="MachineryThings" unique_id=1544863067 instance=ExtResource("21_jc7p3")]
+[node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("21_jc7p3")]
 position = Vector2(181, 259)
+
+[node name="FarmPlot" parent="Buildables" unique_id=882134452 instance=ExtResource("9_1vwho")]
+position = Vector2(-733.9999, 570)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
 

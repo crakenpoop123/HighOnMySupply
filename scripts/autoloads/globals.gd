@@ -6,7 +6,7 @@ var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 var just_in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables"]
 
 # Scene *wow*
 var scene = null
@@ -227,6 +227,22 @@ func load_scene():
 		print("Loaded saved scene successfully")
 		# Change the scene
 		get_tree().change_scene_to_packed.call_deferred(saved_scene)
+		
+		call_deferred("find_interactables_for_loading", get_tree().current_scene)
+
+# Recursively searches the scene tree to find any interactable parents
+func find_interactables_for_loading(node):
+	for child in node.get_children():
+		if node.name in interactable_parents:
+			load_states(child)
+		else:
+			find_interactables_for_loading(child)
+
+# Load the saved_states autoload to all variables
+func load_states(node):
+	if node.has_method("load_prev_state"):
+		node.load_prev_states
+
 
 var inventory_ingredients: Dictionary
 

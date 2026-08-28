@@ -41,12 +41,20 @@ func player_interact():
 # Saves variables to the autoload saved_states:
 func save_curr_state():
 	# Print statements
-	print("saving ", self, "'s state")
-	print("state: ", saved_states.building_data.keys(), " | ", build_type)
-	print("all farms: ", saved_states.building_data[build_type].keys())
-	print("value: ", saved_states.building_data[build_type])
+	#print("saving ", self, "'s state")
+	#print("state: ", saved_states.building_data.keys(), " | ", build_type)
+	#print("all farms: ", saved_states.building_data[build_type].keys())
+	#print("value: ", saved_states.building_data[build_type])
 	
-	saved_states.building_data[build_type][self.name]["test"] = "test"
+	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
+	saved_states.building_data[build_type][self.name]["wetness"] = wetness
+
+# Loads the variable saved in the autoload saved_states:
+func load_prev_state():
+	print("loading ", self, "'s state")
+	
+	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
+	wetness = saved_states.building_data[build_type][self.name]["wetness"]
 
 func water():
 	print("Watered")
