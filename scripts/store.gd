@@ -9,4 +9,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if $Player.global_position.y < 76:
+		if $Tilemaps/ShelvesOne/ShelvesOneTop.modulate.a > 0.2:
+			$Tilemaps/ShelvesOne/ShelvesOneTop.modulate.a -= 0.03
+			
+		if $Tilemaps/ShelvesOne/ShelvesOneBottom.modulate.a > 0.2:
+			$Tilemaps/ShelvesOne/ShelvesOneBottom.modulate.a -= 0.03
+			
+	else:
+		if $Tilemaps/ShelvesOne/ShelvesOneTop.modulate.a < 1:
+			$Tilemaps/ShelvesOne/ShelvesOneTop.modulate.a += 0.03
+			
+		if $Tilemaps/ShelvesOne/ShelvesOneBottom.modulate.a < 1:
+			$Tilemaps/ShelvesOne/ShelvesOneBottom.modulate.a += 0.03
