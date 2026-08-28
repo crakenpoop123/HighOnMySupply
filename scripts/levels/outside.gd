@@ -17,7 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print(player.global_position.y)
-	
+	print(get_global_mouse_position())
 	# Make the bottom layer fade out as you move upwards
 	if player.global_position.y < -700:
 		if $"Tilemaps/Bottom Layer/Buildings".modulate.a > 0.2:

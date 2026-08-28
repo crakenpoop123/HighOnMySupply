@@ -14,8 +14,8 @@ var time = randi_range(1, 5)
 var target_pos
 var curr_pos
 func _ready() -> void:
-	$".".global_position = $"..".start * 32
-
+	$".".global_position = $"../../Node2D".start
+	print($"../../Node2D".start)
 func _physics_process(_delta: float) -> void:
 	
 	#move()
@@ -29,35 +29,42 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func decide_dir():
-	time = randf_range(1, 2)
 	move()
 
 var i = 0
-@onready var array_size = $"../Line2D".points.size()
+@onready var array_size = $"../../Node2D/Line2D".points.size()
 func move():
-	#print(i)
-	array_size = $"../Line2D".points.size()
+	array_size = $"../../Node2D/Line2D".points.size()
 	if array_size != i:
-		if $"../Line2D".points.is_empty() == true: # This barely works
-			$"..".rando_path()
+		if $"../../Node2D/Line2D".points.is_empty() == true: # This barely works
+			$"../../Node2D".rando_path()
 		else:
-			target_pos = $"../Line2D".points[i] + Vector2(-1280, -2720)
+			target_pos = $"../../Node2D/Line2D".points[i] + Vector2(-1280, -2720)
 			curr_pos = $".".global_position
-			$".".global_position = target_pos
 			i += 1
-			$MoveTimer.start(0.2)
-			var vector = target_pos - curr_pos # VERY VERY VERY BROKEN
-			print(vector/80)# VERY VERY VERY BROKEN
-			#vector.normalise# VERY VERY VERY BROKEN
-			velocity = vector * SPEED# VERY VERY VERY BROKEN
-			# Wait until toucjhing# VERY VERY VERY BROKEN
+			var vector = target_pos - curr_pos
+			vector = vector.normalized()
+			velocity = vector * SPEED
+			$MoveTimer.start(0)
+			
 	elif array_size == i:
-		i = 0
-		$"..".rando_path()
+		if check_if_it_is_at_the_right_spot(Vector2i($"../../Node2D".end), Vector2i($".".global_position)):
+			i = 0
+			$"../../Node2D".rando_path()
+		else:
+			i -= 1
 		
-		
-		
-		
+
+# Check if it is at the right spot (spot)
+func check_if_it_is_at_the_right_spot(spot, pos):
+	# Small margin of error it can be within
+	var small_margin_of_error_it_can_be_within = Vector2i(0.001, 0.001)
+	if pos - small_margin_of_error_it_can_be_within < spot and pos + small_margin_of_error_it_can_be_within > spot:
+		return true # returns true
+	
+	return false # Returns something
+
+
 func get_npc_dir():
 	if target_speed.length() != 0:
 		npc_dir = target_speed.angle()

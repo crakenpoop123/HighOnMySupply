@@ -22,9 +22,11 @@ var width = abs(corner_one.x - corner_two.x)
 var height = abs(corner_one.y - corner_two.y)
 
 func initialize_grid():
+	@warning_ignore("integer_division")
 	grid_size = (Vector2i(width, height) + Vector2i.ONE) / cell_size
 	astar_grid.size = grid_size
 	astar_grid.cell_size = cell_size
+	@warning_ignore("integer_division")
 	astar_grid.offset = Vector2i(cell_size/2)
 	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
@@ -32,6 +34,9 @@ func initialize_grid():
 	
 func _draw():
 	draw_grid()
+	#draw_rect(Rect2(pos, size))
+	#draw_rect(Rect2(29, 29 * (80, 80), 80))
+	
 	draw_rect(Rect2(start * cell_size, cell_size), Color.GREEN_YELLOW)
 	draw_rect(Rect2(end * cell_size, cell_size), Color.ORANGE_RED)
 	for x in grid_size.x:
@@ -40,7 +45,6 @@ func _draw():
 				draw_rect(Rect2(x * cell_size.x, y * cell_size.y, cell_size.x, cell_size.y), Color.DARK_GRAY)
 	
 #	print($Line2D.points)
-
 
 func update_path():
 	$Line2D.points = PackedVector2Array(astar_grid.get_point_path(start, end))
@@ -59,6 +63,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		# Add/remove wall
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			@warning_ignore("integer_division")
 			var pos = Vector2i(get_global_mouse_position()) / cell_size
 			if astar_grid.is_in_boundsv(pos):
 				astar_grid.set_point_solid(pos, not astar_grid.is_point_solid(pos))
