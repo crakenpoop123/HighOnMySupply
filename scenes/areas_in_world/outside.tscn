@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://do0bavnf6i1qy"]
+[gd_scene format=4 uid="uid://c4mbimtowlx0"]
 
 [ext_resource type="Script" uid="uid://w8hfvut4s3yt" path="res://scripts/levels/outside.gd" id="1_2hm3b"]
 [ext_resource type="Texture2D" uid="uid://duc73admh0pdw" path="res://assets/tilemaps/default-building-tilemap.png" id="1_45di7"]
@@ -10,7 +10,9 @@
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/tilemaps/buildings.tres" id="7_qdj3a"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="8_qdj3a"]
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="10_b2k1q"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="12_i0f8x"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="12_kvyn1"]
+[ext_resource type="Script" uid="uid://beksakds1b028" path="res://scripts/levels/npc.gd" id="12_t4hvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hm3b"]
 texture = ExtResource("1_45di7")
@@ -89,9 +91,13 @@ sources/5 = SubResource("TileSetAtlasSource_t4hvj")
 sources/3 = SubResource("TileSetAtlasSource_qdj3a")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i0f8x"]
-vertices = PackedVector2Array(2390, -170, 1050, -170, 1050, -1750, 2390, -1750)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(2390, -1750, 2390, -170, 1050, -170, 1050, -1750)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1040, -1760, 2400, -1760, 2400, -160, 1040, -160)])
+sample_partition_type = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4hvj"]
+size = Vector2(100, 151)
 
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -188,20 +194,23 @@ scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAD8//n/AAAAAAEAAAD6//n/AAABAAEAAAD9//n/AAACAAEAAAD+//n/AAACAAEAAAD7//n/AAACAAEAAAACAPn/AQAAAAEAAAAHAPn/AQAAAAEAAAAJAPn/AgABAAEAAAACAPP/AQABAAAAAAAEAPP/AQABAAAAAAAAAPP/AQABAAAAAAADAPn/AQACAAEAAAAEAPn/AQACAAEAAAAAAPn/AQACAAEAAAABAPn/AQACAAEAAAABAPP/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQADAAEAAAACAPL/AQADAAEAAAABAPL/AQADAAEAAAAAAPL/AQADAAEAAAAEAPL/AQADAAEAAAAEAPH/AQADAAAAAAADAPH/AQADAAAAAAACAPH/AQADAAAAAAABAPH/AQADAAAAAAAAAPH/AQADAAAAAAAIAPn/AgACAAEAAAAGAPn/AgACAAEAAAAQAPn/AQAAAAEAAAARAPn/AQACAAEAAAASAPn/AQACAAEAAAAOAPn/AQACAAEAAAAPAPn/AQACAAEAAAAUAPn/AQACAAEAAAAVAPn/AQACAAEAAAAWAPn/AQAAAAEAAAAXAPn/AQACAAEAAAAYAPn/AQACAAEAAAAaAPn/AQACAAEAAAAcAPn/AQACAAEAAAAhAPn/AAACAAEAAAAiAPn/AAACAAEAAAAjAPn/AQAAAAEAAAAkAPn/AAACAAEAAAAmAPn/AgACAAEAAAAnAPn/AgACAAEAAAAoAPn/AgAAAAEAAAApAPn/AgACAAEAAAArAPn/AQABAAEAAAAsAPn/AQAAAAEAAAAtAPn/AAACAAEAAAAuAPn/AQABAAEAAAAwAPn/AAACAAEAAAAxAPn/AQAAAAEAAAAyAPn/AAACAAEAAAAwAPP/AAADAAAAAAAxAPP/AAADAAAAAAAyAPP/AAADAAAAAAAwAPL/AAADAAEAAAAxAPL/AAADAAEAAAAyAPL/AAADAAEAAAD4//n/AgACAAEAAAD3//n/AgAAAAEAAAD2//n/AgACAAEAAAD1//n/AgACAAEAAAD0//n/AgACAAEAAAAbAPn/AwAAAAEAAAA=")
 tile_set = ExtResource("7_qdj3a")
 
-[node name="NPCs" type="Node2D" parent="." unique_id=1919931860]
+[node name="NPCs" type="Node2D" parent="." unique_id=1397088088]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="NPCs" unique_id=1299006216]
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NPCs/CharacterBody2D" unique_id=198439728]
-
-<<<<<<< Updated upstream
-[node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("12_kvyn1")]
-position = Vector2(-279, -524)
-scene_to_load = "res://scenes/areas_in_world/store.tscn"
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2037526969]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1862096508]
 navigation_polygon = SubResource("NavigationPolygon_i0f8x")
-=======
-[node name="Node2D" parent="." unique_id=1356839973 instance=ExtResource("12_i0f8x")]
-position = Vector2(-1280, -2720)
->>>>>>> Stashed changes
+
+[node name="Npc" type="CharacterBody2D" parent="NavigationRegion2D" unique_id=1323976698]
+script = ExtResource("12_t4hvj")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Npc" unique_id=1311458745]
+position = Vector2(1715.5, -296)
+scale = Vector2(0.4194911, 0.35799527)
+texture = ExtResource("12_i0f8x")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NavigationRegion2D/Npc" unique_id=804605591]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Npc" unique_id=241221101]
+position = Vector2(1715, -295.5)
+shape = SubResource("RectangleShape2D_t4hvj")
