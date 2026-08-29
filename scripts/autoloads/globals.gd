@@ -6,11 +6,13 @@ var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
 var just_in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables"]
 var player_loading_point: String = ""
 
 # Scene *wow*
 var scene = null
+
+var states_setup = false
 
 # Grid variables
 var grid_size = 80
@@ -163,8 +165,12 @@ func _ready() -> void:
 		inventory_ingredients[item]["icon_region"] = images(str(inventory_ingredients[item]["icon"]), inventory_ingredients[item]["region"])
 	for building in inventory_buildings:
 		inventory_buildings[building]["icon_region"] = images(str(inventory_buildings[building]["icon"]), inventory_buildings[building]["region"])
-		
+	
+	if !states_setup:
 		saved_states.setup()
+		states_setup = true
+	else:
+		push_error("Setup stopped by states_setup var")
 
 func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
@@ -174,6 +180,9 @@ func change_scene(saving = true, scene = null):
 		get_tree().change_scene_to_file(scene)
 	else:
 		load_scene()
+		
+		# Load the interactables (like FarmPlots and other machinery), along with their states
+		call_deferred("find_interactables_for_loading", get_tree().current_scene)
 
 # Save the scene using a PackedScene
 func save_scene():
@@ -227,22 +236,34 @@ func load_scene():
 	if saved_scene:
 		print("Loaded saved scene successfully")
 		# Change the scene
-		get_tree().change_scene_to_packed.call_deferred(saved_scene)
+		get_tree().change_scene_to_packed(saved_scene)
 		
-		call_deferred("find_interactables_for_loading", get_tree().current_scene)
+		await get_tree().process_frame
+		await get_tree().process_frame
+		
+		# Load the states for these interactables
+		#call_deferred("load_states")
 
 # Recursively searches the scene tree to find any interactable parents
 func find_interactables_for_loading(node):
+	#print("Loading interactable node: ", node)
+	
+	#print("building data: ", saved_states.building_data)
+	#print("--------------------------")
+	
+	if node == null:
+		print("node null")
+		
+		await get_tree().process_frame
+		find_interactables_for_loading(get_tree().current_scene)
+		return
+	
 	for child in node.get_children():
-		if node.name in interactable_parents:
-			load_states(child)
-		else:
-			find_interactables_for_loading(child)
+		if child.has_method("load_prev_state"):
+			child.call_deferred("load_prev_state")
+		
+		find_interactables_for_loading(child)
 
-# Load the saved_states autoload to all variables
-func load_states(node):
-	if node.has_method("load_prev_state"):
-		node.load_prev_states
 
 
 var inventory_ingredients: Dictionary

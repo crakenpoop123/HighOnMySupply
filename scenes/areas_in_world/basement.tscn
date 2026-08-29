@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d1qmuc75mxwy1"]
 
-[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://scenes/areas_in_world/basement.gd" id="1_7o4gn"]
+[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://scripts/levels/basement.gd" id="1_7o4gn"]
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b0rgrp8ffjapd" path="res://assets/freezer.png" id="4_1l4aa"]
 [ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/misc/oven.png" id="4_lawva"]
 [ext_resource type="Texture2D" uid="uid://3g3jdedva5rj" path="res://assets/tilemaps/stairs2.0.png" id="4_t4yp2"]
-[ext_resource type="PackedScene" path="res://scenes/lolly_making/machinery/saucepan.tscn" id="6_hvcce"]
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="6_k7qf4"]
 [ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/fridge-tilemap.png" id="7_n2ghy"]
 [ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/boiler-tilemap.png" id="8_n0s6i"]
@@ -18,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/hydraulic_press_spritesheet.png" id="10_cs7gm"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
 [ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
-[ext_resource type="PackedScene" path="res://scenes/sugar_making/machinery/shredder.tscn" id="19_tluy2"]
 [ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="21_n0s6i"]
 
@@ -277,16 +275,9 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 
-[node name="Saucepan" parent="Saucepan" unique_id=1710325032 instance=ExtResource("6_hvcce")]
-position = Vector2(-644, -67)
-
 [node name="Menus" type="Node2D" parent="." unique_id=1940273108]
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
-
-[node name="Shredder" parent="Buildables" unique_id=569272027 instance=ExtResource("19_tluy2")]
-position = Vector2(-255.00002, -44.000004)
-scale = Vector2(2.5, 2.5)
 
 [node name="Centrifuge" type="StaticBody2D" parent="Buildables" unique_id=263369220]
 

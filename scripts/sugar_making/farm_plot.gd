@@ -14,7 +14,15 @@ var build_type = "farm_plot"
 func _ready() -> void:
 	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max))
 	
+	# Ensure it loads the state before deleting data
+	if build_type in saved_states.building_data:
+		if self.name in saved_states.building_data[build_type]:
+			load_prev_state() 
+	
+	# Setup the saved data for this node
 	saved_states.building_data[build_type][self.name] = {}
+	
+	save_curr_state()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,17 +49,18 @@ func player_interact():
 # Saves variables to the autoload saved_states:
 func save_curr_state():
 	# Print statements
-	#print("saving ", self, "'s state")
+	#print("saving ", self, "'s state: ", saved_states.building_data[build_type][self.name])
 	#print("state: ", saved_states.building_data.keys(), " | ", build_type)
 	#print("all farms: ", saved_states.building_data[build_type].keys())
 	#print("value: ", saved_states.building_data[build_type])
 	
 	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
 	saved_states.building_data[build_type][self.name]["wetness"] = wetness
+	
 
 # Loads the variable saved in the autoload saved_states:
 func load_prev_state():
-	print("loading ", self, "'s state")
+	#print("loading ", self, "'s state: ", saved_states.building_data[build_type][self.name])
 	
 	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
 	wetness = saved_states.building_data[build_type][self.name]["wetness"]
@@ -72,6 +81,8 @@ func harvest():
 	fully_grown = false
 	
 	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max) / growth_rate)
+	
+	save_curr_state()
 	
 	globals.change_scene(true, "res://scenes/minigames/harvest_sugarcane_minigame.tscn")
 
