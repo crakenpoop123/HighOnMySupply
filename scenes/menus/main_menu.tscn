@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ct7yrpktdn4ma"]
 
 [ext_resource type="Script" uid="uid://8euw18457d04" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://dojuawewbn0vk" path="res://titlescreen.png" id="2_2o76q"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://determination.ttf" id="3_6bivr"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=729215485]
 script = ExtResource("1_xqga4")
@@ -13,14 +15,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Main" unique_id=1391422399]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_2o76q")
+
 [node name="Title" type="RichTextLabel" parent="Main" unique_id=574410928]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 8.0
-offset_right = 497.0
-offset_bottom = 37.0
-scale = Vector2(3.025, 3.025)
-text = "Sugar-High on My Supply"
+offset_left = 245.99998
+offset_top = 56.0
+offset_right = 368.21057
+offset_bottom = 101.26872
+scale = Vector2(5.42, 5.42)
+theme_override_colors/default_color = Color(0.8261806, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_6bivr")
+text = "Sugar-High on 
+My Supply"
+horizontal_alignment = 1
 
 [node name="Buttons" type="Control" parent="Main" unique_id=672759658]
 layout_mode = 1
@@ -37,12 +49,20 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Basement" type="Button" parent="Main/Buttons" unique_id=462428832]
-layout_mode = 0
-offset_left = 21.0
-offset_top = -2.0
-offset_right = 281.0
-offset_bottom = 120.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.483
+anchor_right = 0.924
+anchor_bottom = 0.69900006
+offset_left = 0.07899475
+offset_top = 0.15299988
+offset_right = -0.08401489
+offset_bottom = 0.20898438
+theme_override_fonts/font = ExtResource("3_6bivr")
+theme_override_font_sizes/font_size = 76
 text = "Play
 "
+flat = true
 
 [connection signal="button_up" from="Main/Buttons/Basement" to="." method="_on_basement_button_up"]
