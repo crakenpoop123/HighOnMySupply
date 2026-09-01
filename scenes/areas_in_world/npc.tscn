@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://beksakds1b028" path="res://scripts/levels/npc.gd" id="1_4xuqu"]
 [ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="2_cllaw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4hvj"]
-size = Vector2(34, 38)
-
 [node name="Npc" type="CharacterBody2D" unique_id=1601175420]
 script = ExtResource("1_4xuqu")
 
@@ -17,6 +14,3 @@ texture = ExtResource("2_cllaw")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1647791386]
 avoidance_enabled = true
 debug_enabled = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353255129]
-shape = SubResource("RectangleShape2D_t4hvj")
