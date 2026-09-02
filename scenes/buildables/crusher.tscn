@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bie0h7smtwcpq"]
 
 [ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="1_4erow"]
+[ext_resource type="Script" uid="uid://bruylwhxcf5n7" path="res://scripts/buildables/crusher.gd" id="1_kdgfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
 size = Vector2(80, 80)
@@ -10,6 +11,7 @@ atlas = ExtResource("1_4erow")
 region = Rect2(0, 0, 32, 32)
 
 [node name="Crusher" type="StaticBody2D" unique_id=1753015928]
+script = ExtResource("1_kdgfb")
 
 [node name="CrusherCollision" type="CollisionShape2D" parent="." unique_id=2090161173]
 shape = SubResource("RectangleShape2D_1l4aa")
