@@ -5,7 +5,7 @@ var crushing = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Press/PressSprite.frame = 0
-	#$Ingredients/CrushedCane.visible = false
+	$CrushedCane.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,8 +16,10 @@ func _process(delta: float) -> void:
 		# If the press is on the last frame
 		print("Press frame: ", $Press/PressSprite.frame)
 		if $Press/PressSprite.frame == 10:
-			$Ingredients/CrushedCane.visible = true
-			$Ingredients/CrushedCane/CrushTimer.start(2)
+			$CrushedCane.visible = true
+			$Ingredients/ShreddedCane
+			$CrushedCane/CaneTimer.start()
+			crushing = false
 	else:
 		$Press/PressSprite.stop()
 		$Press/PressSprite.frame = 0
