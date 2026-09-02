@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dyb073ippheol"]
 
+[ext_resource type="Script" uid="uid://d1sqw04fwpmaj" path="res://scripts/lolly_making/shredding_minigame.gd" id="1_ggfwr"]
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="2_osowt"]
 [ext_resource type="Texture2D" uid="uid://dkt4c05lrhcdf" path="res://assets/sugarcane-item.png" id="3_ggfwr"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="3_oat1k"]
+[ext_resource type="Script" uid="uid://4yf5rju7k37k" path="res://scripts/lolly_making/sugarcane.gd" id="4_c6ro8"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_fafnc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
@@ -15,9 +17,6 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ro8"]
 size = Vector2(271.96146, 53.651108)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oat1k"]
-size = Vector2(526, 528)
 
 [sub_resource type="Animation" id="Animation_c6ro8"]
 length = 0.001
@@ -57,7 +56,47 @@ _data = {
 &"shredder": SubResource("Animation_lusuf")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oat1k"]
+size = Vector2(526, 528)
+
+[sub_resource type="Animation" id="Animation_osowt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Table/Sugarcane/SugarcaneSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3h6xl"]
+resource_name = "Sugarcane_Shredded"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Table/Sugarcane/SugarcaneSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2v2va"]
+_data = {
+&"RESET": SubResource("Animation_osowt"),
+&"Sugarcane_Shredded": SubResource("Animation_3h6xl")
+}
+
 [node name="ShredderMinigame" type="Node2D" unique_id=1248444812]
+script = ExtResource("1_ggfwr")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
 position = Vector2(1082, 318)
@@ -76,6 +115,7 @@ texture = SubResource("AtlasTexture_ggfwr")
 position = Vector2(900, 323)
 
 [node name="Sugarcane" type="Node2D" parent="Table" unique_id=156895924]
+script = ExtResource("4_c6ro8")
 
 [node name="SugarcaneSprite" type="Sprite2D" parent="Table/Sugarcane" unique_id=17321545]
 position = Vector2(-648.00006, -3.999998)
@@ -92,9 +132,14 @@ shape = SubResource("RectangleShape2D_c6ro8")
 [node name="Shredder" type="Node2D" parent="." unique_id=391252232]
 position = Vector2(900, 323)
 
-[node name="Area2D" type="Area2D" parent="Shredder" unique_id=427310588]
+[node name="ShredderAnimation" type="AnimationPlayer" parent="Shredder" unique_id=392240044]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_osowt")
+autoplay = &"shredder"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shredder/Area2D" unique_id=148057560]
+[node name="ShredderBody" type="StaticBody2D" parent="Shredder" unique_id=1831839909]
+
+[node name="ShredderCollision" type="CollisionShape2D" parent="Shredder/ShredderBody" unique_id=148057560]
 position = Vector2(-72, 1)
 shape = SubResource("RectangleShape2D_oat1k")
 
@@ -104,8 +149,9 @@ position = Vector2(576, 324)
 [node name="Timer" type="Timer" parent="." unique_id=1953125821]
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=392240044]
-libraries/ = SubResource("AnimationLibrary_osowt")
-autoplay = &"shredder"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1347994954]
+libraries/ = SubResource("AnimationLibrary_2v2va")
 
+[connection signal="body_entered" from="Table/Sugarcane/SugarcaneArea" to="Table/Sugarcane" method="_on_sugarcane_area_body_entered"]
+[connection signal="body_exited" from="Table/Sugarcane/SugarcaneArea" to="Table/Sugarcane" method="_on_sugarcane_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
