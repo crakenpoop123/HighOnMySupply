@@ -77,7 +77,7 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"shredded_cane": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Shredded Cane", 
 			"icon": "res://assets/shredded-cane.png",

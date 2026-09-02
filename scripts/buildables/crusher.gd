@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func player_interact():
-	globals.change_scene(false, null)
+	if globals.inventory_ingredients["shredded_cane"]["stock"] > 0:
+		globals.change_scene(true, "res://scenes/minigames/crush_minigame.tscn")

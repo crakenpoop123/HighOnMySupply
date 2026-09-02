@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bie0h7smtwcpq"]
 
-[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="1_4erow"]
 [ext_resource type="Script" uid="uid://bruylwhxcf5n7" path="res://scripts/buildables/crusher.gd" id="1_kdgfb"]
+[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/hydraulic_press_spritesheet.png" id="2_kdgfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
 size = Vector2(80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2ghy"]
-atlas = ExtResource("1_4erow")
+atlas = ExtResource("2_kdgfb")
 region = Rect2(0, 0, 32, 32)
 
 [node name="Crusher" type="StaticBody2D" unique_id=1753015928]

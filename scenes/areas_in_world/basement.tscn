@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_n0s6i"]
 [ext_resource type="PackedScene" uid="uid://csntl0mmwtutv" path="res://scenes/buildables/centrifuge.tscn" id="19_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
+[ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="21_n0s6i"]
 
@@ -280,6 +281,10 @@ position = Vector2(-733.9999, 570)
 position = Vector2(303, 260)
 
 [node name="Centrifuge" parent="Buildables" unique_id=1753015928 instance=ExtResource("19_jc7p3")]
+position = Vector2(-254, -69)
+
+[node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_jc7p3")]
+position = Vector2(-174, -69)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
 
