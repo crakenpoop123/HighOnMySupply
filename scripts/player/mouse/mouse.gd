@@ -58,6 +58,8 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 			if holding_click == true: # AND YOU ARE HOLDING CLICK
 				holding = true # START DRAGGING # Should't this be stop dragging???
 
+
+# Got rid of this for noiw because there were too many bugs
 #func check_off_screen(dragged_area):
 	##print(type_string(typeof(dragged_area)))
 	#if !area_name:
