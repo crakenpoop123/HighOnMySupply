@@ -137,6 +137,7 @@ scale = Vector2(2.4375, 2.4375)
 texture = ExtResource("6_5fnwl")
 
 [node name="CaneTimer" type="Timer" parent="CrushedCane" unique_id=1037530476]
+one_shot = true
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=1940803150]
 
@@ -153,3 +154,4 @@ position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_5fnwl")
 
 [connection signal="area_entered" from="Press/PressArea" to="." method="_on_press_area_area_entered"]
+[connection signal="timeout" from="CrushedCane/CaneTimer" to="." method="_on_cane_timer_timeout"]

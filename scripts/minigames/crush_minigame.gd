@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		print("Press frame: ", $Press/PressSprite.frame)
 		if $Press/PressSprite.frame == 10:
 			$CrushedCane.visible = true
-			$Ingredients/ShreddedCane
+			$Ingredients/ShreddedCane.visible = false
 			$CrushedCane/CaneTimer.start()
 			crushing = false
 	else:
@@ -31,5 +31,5 @@ func _on_press_area_area_entered(area: Area2D) -> void:
 		crushing = true
 
 
-func _on_crush_timer_timeout() -> void:
+func _on_cane_timer_timeout() -> void:
 	globals.change_scene(false)
