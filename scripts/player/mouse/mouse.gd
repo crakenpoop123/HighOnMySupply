@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	if globals.can_drag == true:
 		check_for_move()
 		check_for_drop()
-		check_off_screen(area_name)
+		#check_off_screen(area_name)
 		get_movement_data()
 	
 	prev_mouse_pos.pop_back()
@@ -58,27 +58,27 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 			if holding_click == true: # AND YOU ARE HOLDING CLICK
 				holding = true # START DRAGGING # Should't this be stop dragging???
 
-func check_off_screen(dragged_area):
-	#print(type_string(typeof(dragged_area)))
-	if !area_name:
-		return
-	var area_x = dragged_area.global_position[0]
-	var area_y = dragged_area.global_position[1]
-	
-	var window = get_window().size
-	
-
-	area_x = clamp(area_x - $Camera.global_position.x, -window.x/2, window.x/2) + $Camera.global_position.x
-	area_y = clamp(area_y - $Camera.global_position.y, -window.y/2, window.y/2) + $Camera.global_position.y
-	
-	
-	
-	dragged_area.global_position = Vector2(area_x, area_y)
+#func check_off_screen(dragged_area):
+	##print(type_string(typeof(dragged_area)))
+	#if !area_name:
+		#return
+	#var area_x = dragged_area.global_position[0]
+	#var area_y = dragged_area.global_position[1]
+	#
+	#var window = get_window().size
+	#
+#
+	#area_x = clamp(area_x - $"../Camera".global_position.x, -window.x/2, window.x/2) + $Camera.global_position.x
+	#area_y = clamp(area_y - $"../Camera".global_position.y, -window.y/2, window.y/2) + $Camera.global_position.y
+	#
+	#
+	#
+	#dragged_area.global_position = Vector2(area_x, area_y)
 
 func _on_mouse_area_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	mouse_in_area = true
 	if holding == false:
-		area_name = area.get_parent() # THIS DOESN'T WORK THAT GREAT BUT IT SHOULDN'T BE AN ISSUE 
+		area_name = area.get_parent()
 	
 func _on_mouse_area_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	mouse_in_area = false
