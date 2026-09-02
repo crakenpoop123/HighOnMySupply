@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://csntl0mmwtutv"]
+
+[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="1_jjjn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
+size = Vector2(80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ghy"]
+atlas = ExtResource("1_jjjn7")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Centrifuge" type="StaticBody2D" unique_id=1753015928]
+
+[node name="CentrifugeCollision" type="CollisionShape2D" parent="." unique_id=2090161173]
+shape = SubResource("RectangleShape2D_1l4aa")
+
+[node name="CentrifugeSprite" type="Sprite2D" parent="." unique_id=2037098027]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_n2ghy")

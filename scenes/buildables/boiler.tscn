@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmlgcyupaqs7t"]
+
+[ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/boiler-tilemap.png" id="1_remwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
+size = Vector2(80, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0s6i"]
+atlas = ExtResource("1_remwp")
+region = Rect2(0, 0, 32, 64)
+
+[node name="Boiler" type="StaticBody2D" unique_id=1934958900]
+
+[node name="BoilerCollision" type="CollisionShape2D" parent="." unique_id=1498546231]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_n2ghy")
+
+[node name="BoilerSprite" type="Sprite2D" parent="." unique_id=1659339368]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_n0s6i")

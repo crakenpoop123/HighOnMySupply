@@ -139,7 +139,7 @@ func interact():
 				# Open the cooking menu
 				$"..".cooking_menu_inst()
 			elif find_interactables():
-				
+				# Interact with the nearest interactable object
 				get_nearest_interactable().player_interact()
 			else:
 				print("Failed to interact with anything")

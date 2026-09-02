@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/centrifuge-spritesheet.png" id="9_jc7p3"]
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/hydraulic_press_spritesheet.png" id="10_cs7gm"]
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="11_hxrqi"]
+[ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_n0s6i"]
+[ext_resource type="PackedScene" uid="uid://csntl0mmwtutv" path="res://scenes/buildables/centrifuge.tscn" id="19_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
 [ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="21_n0s6i"]
@@ -244,20 +246,6 @@ sources/7 = SubResource("TileSetAtlasSource_me242")
 sources/8 = SubResource("TileSetAtlasSource_c4gtx")
 sources/9 = SubResource("TileSetAtlasSource_p0x8v")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
-size = Vector2(80, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2ghy"]
-atlas = ExtResource("9_jc7p3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
-size = Vector2(82, 157)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0s6i"]
-atlas = ExtResource("8_n0s6i")
-region = Rect2(0, 0, 32, 64)
-
 [node name="Basement" type="Node2D" unique_id=49085389]
 script = ExtResource("1_7o4gn")
 
@@ -279,37 +267,19 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
-[node name="Centrifuge" type="StaticBody2D" parent="Buildables" unique_id=263369220]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildables/Centrifuge" unique_id=326358471]
-position = Vector2(-335, -44)
-shape = SubResource("RectangleShape2D_1l4aa")
-
-[node name="Sprite2D" type="Sprite2D" parent="Buildables/Centrifuge" unique_id=2019335364]
-position = Vector2(-335.00003, -44.000004)
-scale = Vector2(2.5, 2.5)
-texture = SubResource("AtlasTexture_n2ghy")
-
-[node name="Boiler" type="StaticBody2D" parent="Buildables" unique_id=365522650]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildables/Boiler" unique_id=1478657869]
-position = Vector2(302, 260.5)
-shape = SubResource("RectangleShape2D_n2ghy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Buildables/Boiler" unique_id=1815726020]
-position = Vector2(302, 259)
-scale = Vector2(2.5, 2.5)
-texture = SubResource("AtlasTexture_n0s6i")
-
 [node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
 position = Vector2(385, 260)
-scale = Vector2(2.5, 2.5)
 
 [node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("21_jc7p3")]
 position = Vector2(181, 259)
 
 [node name="FarmPlot" parent="Buildables" unique_id=882134452 instance=ExtResource("9_1vwho")]
 position = Vector2(-733.9999, 570)
+
+[node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_n0s6i")]
+position = Vector2(303, 260)
+
+[node name="Centrifuge" parent="Buildables" unique_id=1753015928 instance=ExtResource("19_jc7p3")]
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
 
