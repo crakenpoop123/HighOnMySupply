@@ -57,26 +57,35 @@ func find_interactables():
 	return false
 
 func get_nearest_interactable():
-	print("Getting nearest")
+	#print("Getting nearest parent")
+	
+	# Init the closest dist to infinity so all interactables will be closer than that
 	var closest_dist = INF
 	var closest_interactable
+	
+	# Iterate over all interactable parents
 	for interactable_parent in globals.interactable_parents:
-		print("Finding parents: ", interactable_parent)
+		# Check if this parent exists
 		if $"..".has_node(interactable_parent):
-			print("Found parent: ", interactable_parent)
+			# Iterate through all interactables (children of the interactable parents)
 			for interactable in $"..".get_node(interactable_parent).get_children():
-				#print("EACH")
-				#print(interactable)
+				# Set the curr_dist to the dist between the player and the interactable
 				var curr_dist = self.global_position.distance_to(interactable.global_position)
+				
+				# If this interactable is touching the player's interact area and it is closer than the current closest interactable
 				if is_interact_area_touching(interactable) and curr_dist < closest_dist:
-					print("Updating closest object, was ", closest_interactable, ", is now ", interactable)
+					# Update the closes dist and interactable
 					closest_dist = curr_dist
 					closest_interactable = interactable
 	
+	# Return the closest interactable
+	# Will return null if none were found
 	return closest_interactable
 
+# Function to check if a body is within the player's interact radius
 func is_interact_area_touching(body):
-	return body in $"InteractArea".get_overlapping_bodies()
+	# Checks if body is overlapping with $InteractArea
+	return body in $InteractArea.get_overlapping_bodies()
 
 func move():
 	target_speed = Vector2.ZERO
