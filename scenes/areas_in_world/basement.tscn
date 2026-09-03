@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d1qmuc75mxwy1"]
 
-[ext_resource type="Script" uid="uid://cnj3hnjv6ftqm" path="res://scripts/levels/basement.gd" id="1_7o4gn"]
+[ext_resource type="Script" uid="uid://sy1confsgq4b" path="res://scripts/levels/basement.gd" id="1_7o4gn"]
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_gidub"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://druo01roukbdx"]
 
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="1_81juo"]
+[ext_resource type="Script" uid="uid://1mlvspj2m5py" path="res://scripts/buildables/shredder.gd" id="1_ku8jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81juo"]
 size = Vector2(32, 32)
@@ -10,6 +11,8 @@ atlas = ExtResource("1_81juo")
 region = Rect2(0, 0, 32, 32)
 
 [node name="Shredder" type="StaticBody2D" unique_id=569272027]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_ku8jc")
 
 [node name="ShredderCollision" type="CollisionShape2D" parent="." unique_id=561563223]
 shape = SubResource("RectangleShape2D_81juo")
