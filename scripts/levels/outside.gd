@@ -3,10 +3,12 @@ extends Node2D
 
 func _ready() -> void:
 	globals.scene = "outside"
+	print("Loading point: ", globals.player_loading_point)
+	print("Player is loaded as: ", player)
 	if globals.player_loading_point == "basement":
 		player.global_position = Vector2(2198.0, -491)
 	elif globals.player_loading_point == "store":
-		player.global_position = Vector2(2198.0, 500)
+		player.global_position = Vector2(-280, -491)
 		
 	$Tilemaps/Tilemaps/Collisions.hide()
 
