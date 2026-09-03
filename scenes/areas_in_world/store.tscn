@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="4_7ntr8"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="4_vb42v"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="7_e3jts"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="8_6h10x"]
+[ext_resource type="Texture2D" uid="uid://d1vrfih7sj7y6" path="res://assets/veryverylargenpcspritesheet.png" id="8_bh7et"]
 [ext_resource type="Script" uid="uid://b7eeteqvs1rv8" path="res://scripts/npc/clerk.gd" id="8_ty5sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvvaa"]
@@ -65,9 +65,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_vb42v")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3jts"]
-atlas = ExtResource("8_6h10x")
-
 [node name="Store" type="Node2D" unique_id=1226858103]
 script = ExtResource("1_7ntr8")
 
@@ -85,6 +82,7 @@ tile_map_data = PackedByteArray("AAD9/wMAAAAAAAEAAAD+/wMAAAACAAAAAAD//wMAAAAAAAE
 tile_set = SubResource("TileSet_e3jts")
 
 [node name="Collisions" type="TileMapLayer" parent="Tilemaps" unique_id=479834884]
+visible = false
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAABAAEAAAABAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAD5/wEAAAABAAAAAAD6/wEAAAABAAAAAAD7/wEAAAABAAAAAAD8/wEAAAABAAAAAAD6////AAABAAAAAAD7////AAABAAAAAAD8////AAABAAAAAAD9////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAP3/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAAAAAAAAAAAAAAABAP3/AAABAAAAAAACAP3/AAABAAAAAAADAP3/AAABAAAAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAD7//3/AAABAAAAAAD8//3/AAABAAAAAAD9//3/AAABAAAAAAD+//3/AAABAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD4//z/AAAAAAAAAAD4//7/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAADAPv/AAABAAAAAAAEAPv/AAABAAAAAAAFAPv/AAABAAAAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD+//n/AAABAAAAAAD///n/AAABAAAAAAAAAPn/AAABAAAAAAABAPn/AAABAAAAAAD4//f/AAAAAAAAAAD5//f/AAAAAAAAAAD6//f/AAAAAAAAAAD7//f/AAAAAAAAAAD8//f/AAAAAAAAAAD9//f/AAAAAAAAAAD+//f/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPf/AAAAAAAAAAACAPf/AAAAAAAAAAADAPf/AAAAAAAAAAAEAPf/AAAAAAAAAAAFAPf/AAAAAAAAAAAGAPf/AAAAAAAAAAAHAPf/AAAAAAAAAAD4/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAPf/AAAAAAAAAAAIAPj/AAAAAAAAAAAIAPn/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAD3//f/AAAAAAAAAAD3//j/AAAAAAAAAAD3//n/AAAAAAAAAAD3//r/AAAAAAAAAAD3//v/AAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3////AAAAAAAAAAD3/wAAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wQAAAAAAAAAAAA=")
 tile_set = ExtResource("4_7ntr8")
@@ -154,11 +152,15 @@ scene_to_load = "res://scenes/areas_in_world/outside.tscn"
 scene_from = "store"
 
 [node name="Clerk" type="Node2D" parent="." unique_id=679407640]
+z_index = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="Clerk" unique_id=1632845335]
 position = Vector2(-5, -527)
-scale = Vector2(0.5720339, 0.349642)
-texture = SubResource("AtlasTexture_e3jts")
+scale = Vector2(4, 4)
+texture = ExtResource("8_bh7et")
+hframes = 16
+vframes = 8
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clerk/Sprite2D" unique_id=375038701]
 
