@@ -72,8 +72,8 @@ func water():
 	$WetnessTimer.start(globals.dry_rate)
 
 func harvest():
-	globals.sugar_cane += 1
-	print("Harvested sugar_cane, now at ", globals.sugar_cane, " sugar cane")
+	globals.inventory_ingredients["sugar_cane"]["stock"] += 1
+	print("Harvested sugar_cane, now at ", globals.inventory_ingredients["sugar_cane"]["stock"], " sugar cane")
 	growth_stage = 0
 	
 	$PlotSprite.frame = growth_stage
