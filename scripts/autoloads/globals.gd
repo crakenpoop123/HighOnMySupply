@@ -17,19 +17,6 @@ var states_setup = false
 # Grid variables
 var grid_size = 80
 
-# Inventory variables
-var gummy_worm_stock: int = 0
-var sugar = 0
-var gelatin = 0
-var money = 10
-# Sugar variables
-var sugar_cane = 0
-var shredded_cane = 0
-var crushed_cane = 0
-var cane_juice = 0
-var cane_sugar = 0
-var pure_sugar = 0
-
 var raw_image
 var texture
 
@@ -131,7 +118,7 @@ func _ready() -> void:
 			"scene": load("res://scenes/buildables/saucepan.tscn")
 		},
 		"shredder": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Shredder", 
 			"icon": "res://assets/tilemaps/shredder_tilemap.png",
