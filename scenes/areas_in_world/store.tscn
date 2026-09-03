@@ -7,6 +7,8 @@
 [ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="4_7ntr8"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="4_vb42v"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="7_e3jts"]
+[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="8_6h10x"]
+[ext_resource type="Script" uid="uid://b7eeteqvs1rv8" path="res://scripts/npc/clerk.gd" id="8_ty5sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvvaa"]
 texture = ExtResource("1_jvno2")
@@ -64,6 +66,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_vb42v")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3jts"]
+atlas = ExtResource("8_6h10x")
 
 [node name="Store" type="Node2D" unique_id=1226858103]
 script = ExtResource("1_7ntr8")
@@ -153,10 +156,11 @@ scene_from = "store"
 [node name="Clerk" type="Node2D" parent="." unique_id=679407640]
 
 [node name="Sprite2D" type="Sprite2D" parent="Clerk" unique_id=1632845335]
+position = Vector2(-5, -527)
+scale = Vector2(0.5720339, 0.349642)
 texture = SubResource("AtlasTexture_e3jts")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clerk/Sprite2D" unique_id=375038701]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Clerk" unique_id=792360013]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clerk/StaticBody2D" unique_id=811253429]
+[node name="StaticBody2D" type="StaticBody2D" parent="Clerk" unique_id=469460670]
+script = ExtResource("8_ty5sa")
