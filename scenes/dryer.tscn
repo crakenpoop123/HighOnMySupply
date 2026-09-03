@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://44u8jaaqssve"]
 
-[ext_resource type="Texture2D" uid="uid://ciouc7kgssh0r" path="res://dryer-tilemap.png" id="1_57ue0"]
+[ext_resource type="Texture2D" uid="uid://ciouc7kgssh0r" path="res://assets/tilemaps/machinary/dryer-tilemap.png" id="1_57ue0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hrlb"]
 texture = ExtResource("1_57ue0")

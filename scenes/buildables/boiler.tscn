@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmlgcyupaqs7t"]
 
-[ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/boiler-tilemap.png" id="1_remwp"]
+[ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/machinary/boiler-tilemap.png" id="1_remwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
 size = Vector2(80, 150)

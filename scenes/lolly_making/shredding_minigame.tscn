@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dyb073ippheol"]
 
 [ext_resource type="Script" uid="uid://d1sqw04fwpmaj" path="res://scripts/lolly_making/shredding_minigame.gd" id="1_ggfwr"]
-[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/table2.0.png" id="2_osowt"]
-[ext_resource type="Texture2D" uid="uid://dkt4c05lrhcdf" path="res://assets/sugarcane-item.png" id="3_ggfwr"]
-[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/shredder_tilemap.png" id="3_oat1k"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/machinary/table2.0.png" id="2_osowt"]
+[ext_resource type="Texture2D" uid="uid://dkt4c05lrhcdf" path="res://assets/items/sugarcane-item.png" id="3_ggfwr"]
+[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/machinary/shredder_tilemap.png" id="3_oat1k"]
 [ext_resource type="Script" uid="uid://4yf5rju7k37k" path="res://scripts/lolly_making/sugarcane.gd" id="4_c6ro8"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_fafnc"]
 

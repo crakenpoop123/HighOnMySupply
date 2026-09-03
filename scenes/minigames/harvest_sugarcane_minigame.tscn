@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://n0hfgmogmcma"]
 
-[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/basementfloor.png" id="1_r8lo3"]
+[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="1_r8lo3"]
 [ext_resource type="Script" uid="uid://c86qt1ikhilkp" path="res://scripts/minigames/harvest_sugarcane_minigame.gd" id="1_vsv8q"]
-[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/sugarcane_growth_tilemap.png" id="2_qq6pq"]
-[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/walls-stairs-basement-tilemap.png" id="2_vsv8q"]
+[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png" id="2_qq6pq"]
+[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="2_vsv8q"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="3_r1wfk"]
 [ext_resource type="Texture2D" uid="uid://by653axh0hu56" path="res://assets/tools/cane_knife.png" id="6_vsv8q"]
 

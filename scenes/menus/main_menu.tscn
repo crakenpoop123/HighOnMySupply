@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ct7yrpktdn4ma"]
 
 [ext_resource type="Script" uid="uid://8euw18457d04" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
-[ext_resource type="Texture2D" uid="uid://dojuawewbn0vk" path="res://titlescreen.png" id="2_2o76q"]
-[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://determination.ttf" id="3_6bivr"]
+[ext_resource type="Texture2D" uid="uid://dojuawewbn0vk" path="res://assets/gui/titlescreen.png" id="2_2o76q"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_6bivr"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=729215485]
 script = ExtResource("1_xqga4")

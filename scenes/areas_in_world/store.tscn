@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://6g5mx8rfo7j5"]
 
 [ext_resource type="Script" uid="uid://dli7e032b8vif" path="res://scripts/store.gd" id="1_7ntr8"]
-[ext_resource type="Texture2D" uid="uid://bufeoak4q6tb5" path="res://assets/tilemaps/store-floor_wall.png" id="1_jvno2"]
-[ext_resource type="Texture2D" uid="uid://dtacw4ep24poy" path="res://assets/tilemaps/store-framework.png" id="2_0tib8"]
+[ext_resource type="Texture2D" uid="uid://bufeoak4q6tb5" path="res://assets/tilemaps/floors_walls/store-floor_wall.png" id="1_jvno2"]
+[ext_resource type="Texture2D" uid="uid://dtacw4ep24poy" path="res://assets/tilemaps/machinary/store-framework.png" id="2_0tib8"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pvvaa"]
-[ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/tilemaps/collisions.tres" id="4_7ntr8"]
+[ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/misc/collisions.tres" id="4_7ntr8"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="4_vb42v"]
-[ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://door.tscn" id="7_e3jts"]
-[ext_resource type="Texture2D" uid="uid://d1vrfih7sj7y6" path="res://assets/veryverylargenpcspritesheet.png" id="8_bh7et"]
+[ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://scenes/door.tscn" id="7_e3jts"]
+[ext_resource type="Texture2D" uid="uid://d1vrfih7sj7y6" path="res://assets/npc/veryverylargenpcspritesheet.png" id="8_bh7et"]
 [ext_resource type="Script" uid="uid://b7eeteqvs1rv8" path="res://scripts/npc/clerk.gd" id="8_ty5sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvvaa"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm1v5386glamc"]
 
 [ext_resource type="Script" uid="uid://cebk27rtpnb07" path="res://scripts/lolly_making/water.gd" id="1_1g28k"]
-[ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/tilemaps/liquid-spritesheet.png" id="2_uslkc"]
+[ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="2_uslkc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yfvw"]
 atlas = ExtResource("2_uslkc")

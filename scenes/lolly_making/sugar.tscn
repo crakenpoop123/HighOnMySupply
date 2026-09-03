@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sn2vd6vx55ru"]
 
 [ext_resource type="Script" uid="uid://xft2amyalehx" path="res://scripts/lolly_making/ingrediants/sugar.gd" id="1_4xd1u"]
-[ext_resource type="Texture2D" uid="uid://chivea563sk5x" path="res://assets/tilemaps/sugar-spritesheet.png" id="2_k78wt"]
+[ext_resource type="Texture2D" uid="uid://chivea563sk5x" path="res://assets/items/sugar-spritesheet.png" id="2_k78wt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fipvd"]
 atlas = ExtResource("2_k78wt")

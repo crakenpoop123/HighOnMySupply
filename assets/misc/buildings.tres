@@ -1,0 +1,87 @@
+[gd_resource type="TileSet" format=3 uid="uid://cr6dcdffo0b4"]
+
+[ext_resource type="Texture2D" uid="uid://btwbrjekow5p0" path="res://assets/tilemaps/buildings/store-exterior-tilemap.png" id="1_2d8i7"]
+[ext_resource type="Texture2D" uid="uid://duc73admh0pdw" path="res://assets/tilemaps/buildings/default-building-tilemap.png" id="2_dh1dm"]
+[ext_resource type="Texture2D" uid="uid://d3lns30sx0wwd" path="res://assets/tilemaps/buildings/brick-building-tilemap.png" id="3_ch66v"]
+[ext_resource type="Texture2D" uid="uid://jaw686ddhuav" path="res://assets/tilemaps/buildings/stairstobasement.png" id="4_gadxc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urarc"]
+texture = ExtResource("1_2d8i7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/y_sort_origin = 1
+1:0/0 = 0
+1:0/0/y_sort_origin = 1
+2:0/0 = 0
+2:0/0/y_sort_origin = 1
+3:0/0 = 0
+3:0/0/y_sort_origin = 1
+3:1/0 = 0
+3:1/0/y_sort_origin = 1
+3:2/0 = 0
+3:2/0/y_sort_origin = 1
+2:2/0 = 0
+2:2/0/y_sort_origin = 1
+1:2/0 = 0
+1:2/0/y_sort_origin = 1
+0:2/0 = 0
+0:2/0/y_sort_origin = 1
+2:1/0 = 0
+2:1/0/y_sort_origin = 1
+1:1/0 = 0
+1:1/0/y_sort_origin = 1
+0:1/0 = 0
+0:1/0/y_sort_origin = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qdj3a"]
+texture = ExtResource("2_dh1dm")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+1:0/0/y_sort_origin = 1
+0:0/0 = 0
+0:0/0/y_sort_origin = 1
+2:0/0 = 0
+2:0/0/y_sort_origin = 1
+3:0/0 = 0
+3:0/0/y_sort_origin = 1
+3:1/0 = 0
+3:1/0/y_sort_origin = 1
+2:1/0 = 0
+2:1/0/y_sort_origin = 1
+1:1/0 = 0
+1:1/0/y_sort_origin = 1
+0:1/0 = 0
+0:1/0/y_sort_origin = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lk40d"]
+texture = ExtResource("3_ch66v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/y_sort_origin = -16
+1:0/0 = 0
+1:0/0/y_sort_origin = -16
+2:0/0 = 0
+2:0/0/y_sort_origin = -16
+3:0/0 = 0
+3:0/0/y_sort_origin = -16
+0:1/0 = 0
+0:1/0/y_sort_origin = -16
+1:1/0 = 0
+1:1/0/y_sort_origin = -16
+2:1/0 = 0
+2:1/0/y_sort_origin = -16
+3:1/0 = 0
+3:1/0/y_sort_origin = -16
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yksj0"]
+texture = ExtResource("4_gadxc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_urarc")
+sources/1 = SubResource("TileSetAtlasSource_qdj3a")
+sources/2 = SubResource("TileSetAtlasSource_lk40d")
+sources/3 = SubResource("TileSetAtlasSource_yksj0")
