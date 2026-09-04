@@ -12,9 +12,12 @@ var bottom = -160
 var dir_state = "down"
 var npc_dir = 0
 
-var using_ai = false # CHANGE THIS TO TRUE WHEN YOU ADD YOUR STUFF CLARK
-var npc_responses = ["Hello", "Hello2", "Hello3"]
-var ai_response: String = "YOUR AI STUFF HERE CLARK"
+
+var npc_greeting_responses = ["Hello", "What", "Yo"]
+var greeting_ending = ["!", ".", "?"]
+var npc_interested = ["Alright I'll buy some."]
+var npc_uninterested = ["Get away from me"]
+
 
 func _ready() -> void:
 	nav_agent.navigation_finished.connect(on_nav_finished)
@@ -41,10 +44,13 @@ func make_path(pos: Vector2):
 
 
 func player_interact():
-	if using_ai == false:
-		$"../../Player".talking(npc_responses[randi_range(1-1, 3-1)])
-	else:
-		$"../../Player".talking(ai_response)
+	$"../../Player".talking(form_response())
+
+func form_response():
+	var response: String = ""
+	response += npc_greeting_responses[randi_range(1-1, 3-1)]
+	response += greeting_ending[randi_range(1-1, 3-1)]
+	return response
 
 func get_player_dir():
 	if target_speed.length() != 0:
