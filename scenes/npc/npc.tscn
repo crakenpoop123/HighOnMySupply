@@ -1,15 +1,52 @@
 [gd_scene format=3 uid="uid://by71bmbfjej11"]
 
 [ext_resource type="Script" uid="uid://beksakds1b028" path="res://scripts/levels/npc.gd" id="1_4xuqu"]
-[ext_resource type="Texture2D" uid="uid://dw5ae38v0jp7h" path="res://assets/misc/eye.jpg" id="2_cllaw"]
+[ext_resource type="Texture2D" uid="uid://d1vrfih7sj7y6" path="res://assets/npc/veryverylargenpcspritesheet.png" id="1_sspvn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcwmf"]
+atlas = ExtResource("1_sspvn")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpyoa"]
+atlas = ExtResource("1_sspvn")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4bp4"]
+atlas = ExtResource("1_sspvn")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woxlu"]
+atlas = ExtResource("1_sspvn")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ay68w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcwmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpyoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4bp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woxlu")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}]
 
 [node name="Npc" type="CharacterBody2D" unique_id=1601175420]
 script = ExtResource("1_4xuqu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=953418460]
-position = Vector2(9.536743e-07, -1.9073486e-06)
-scale = Vector2(0.14406778, 0.09069213)
-texture = ExtResource("2_cllaw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1895173929]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ay68w")
+animation = &"move_left"
+frame_progress = 0.4823232
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1647791386]
 avoidance_enabled = true

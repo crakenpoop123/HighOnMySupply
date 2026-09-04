@@ -62,9 +62,9 @@ func _on_error_timer_timeout() -> void:
 
 
 func find_interactables():
-	print(globals.interactable_parents)
+	#print(globals.interactable_parents)
 	for interactable_parent in globals.interactable_parents:
-		print(interactable_parent)
+		#print(interactable_parent)
 			
 		if $"..".has_node(interactable_parent):
 			for interactable in $"..".get_node(interactable_parent).get_children():
@@ -150,11 +150,12 @@ func check_for_attacks():
 			attack()
 
 func attack():
-	print("Attack")
+	pass
+	#print("Attack")
 
 func interact():
 	if Input.is_action_just_pressed("interact"):
-		print("trying to interact")
+		#print("trying to interact")
 		if globals.in_menu == false:
 			if find_interactables():
 				# Interact with the nearest interactable object and save the result
@@ -162,7 +163,8 @@ func interact():
 				if interact_result != null:
 					display_gui_error("Insufficient stock of " + interact_result + ". You need at least 1 " + interact_result)
 			else:
-				print("Failed to interact with anything")
+				pass
+			#	print("Failed to interact with anything")
 	
 	if Input.is_action_just_pressed("inventory"):
 		globals.in_inventory = !globals.in_inventory

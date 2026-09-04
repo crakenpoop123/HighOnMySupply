@@ -111,6 +111,9 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_45pc1")
 sources/1 = SubResource("TileSetAtlasSource_x7w6e")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0f8x"]
+size = Vector2(26, 128)
+
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
 script = ExtResource("1_i0f8x")
@@ -133,6 +136,7 @@ scene_from = "outside"
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("3_45pc1")]
 z_index = 1
 position = Vector2(2155, -365)
+collision_layer = 5
 
 [node name="Tilemaps" type="NavigationRegion2D" parent="." unique_id=1862096508]
 navigation_polygon = SubResource("NavigationPolygon_i0f8x")
@@ -227,3 +231,10 @@ tile_set = ExtResource("12_t81t5")
 
 [node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
 position = Vector2(1625, -366)
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Npc" unique_id=628718027]
+editor_description = "what
+"
+shape = SubResource("RectangleShape2D_i0f8x")
