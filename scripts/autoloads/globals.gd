@@ -39,42 +39,42 @@ func _ready() -> void:
 			"stock": 0,
 			"had_before": false,
 			"name": "Gummy Worms", 
-			"icon": "res://assets/gummy-worms.png",
+			"icon": "res://assets/items/gummy-worms.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"sugar": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Sugar", 
-			"icon": "res://assets/tilemaps/sugar-spritesheet.png",
+			"icon": "res://assets/items/sugar-spritesheet.png",
 			"region": Rect2(32, 0, 32, 32)
 		},
 		"gelatin": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Gelatin", 
-			"icon": "res://assets/tilemaps/gelitin-spritesheet.png",
+			"icon": "res://assets/items/gelitin-spritesheet.png",
 			"region": Rect2(32, 0, 32, 32)
 		},
 		"sugar_cane": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Sugar Cane", 
-			"icon": "res://assets/sugarcane-item.png",
+			"icon": "res://assets/items/sugarcane-item.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"shredded_cane": {
 			"stock": 1,
 			"had_before": false,
 			"name": "Shredded Cane", 
-			"icon": "res://assets/shredded-cane.png",
+			"icon": "res://assets/items/shredded-cane.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"crushed_cane": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Crushed Cane", 
-			"icon": "res://assets/crushed-cane.png",
+			"icon": "res://assets/items/crushed-cane.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"cane_juice": {
@@ -105,7 +105,7 @@ func _ready() -> void:
 			"stock": 10,
 			"had_before": false,
 			"name": "Farm Plots", 
-			"icon": "res://assets/tilemaps/sugarcane_growth_tilemap.png",
+			"icon": "res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png",
 			"region": Rect2(0, 32, 32, 32), 
 			"scene": load("res://scenes/buildables/farm_plot.tscn")
 		},
@@ -113,7 +113,7 @@ func _ready() -> void:
 			"stock": 1,
 			"had_before": true,
 			"name": "Saucepans", 
-			"icon": "res://assets/misc/saucepan.png",
+			"icon": "res://assets/items/saucepan.png",
 			"region": Rect2(0, 32, 32, 32), 
 			"scene": load("res://scenes/buildables/saucepan.tscn")
 		},
@@ -121,7 +121,7 @@ func _ready() -> void:
 			"stock": 1,
 			"had_before": false,
 			"name": "Shredder", 
-			"icon": "res://assets/tilemaps/shredder_tilemap.png",
+			"icon": "res://assets/tilemaps/buildables/shredder_tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/shredder.tscn")
 		},
@@ -129,21 +129,21 @@ func _ready() -> void:
 			"stock": 0,
 			"had_before": false,
 			"name": "Crusher", 
-			"icon": "res://assets/tilemaps/hydraulic_press_spritesheet.png",
+			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"boiler": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Boiler", 
-			"icon": "res://assets/tilemaps/boiler-tilemap.png",
+			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"centrifuge": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Centrifuge", 
-			"icon": "res://assets/tilemaps/centrifuge-spritesheet.png",
+			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
 			"region": Rect2(0, 0, 32, 32)
 		}
 	}
