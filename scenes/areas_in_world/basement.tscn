@@ -14,9 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/buildables/shredder_tilemap.png" id="12_8gw4c"]
 [ext_resource type="Texture2D" uid="uid://p5cns0jyoqfu" path="res://assets/tilemaps/furniture/table.png" id="13_bfuli"]
 [ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/furniture/oven.png" id="14_mqxdj"]
-[ext_resource type="PackedScene" uid="uid://bwsnoq5ymi54o" path="res://scenes/buildables/fridge.tscn" id="15_me242"]
-[ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
-[ext_resource type="PackedScene" uid="uid://x50y0htftkw3" path="res://scenes/buildables/farm_plot.tscn" id="17_p0x8v"]
+[ext_resource type="PackedScene" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
+[ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/buildables/farm_plot.tscn" id="17_p0x8v"]
 [ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_w3un1"]
 [ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_6eavr"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="21_87mep"]
@@ -267,7 +266,7 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
-[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("15_me242")]
+[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("18_w3un1")]
 position = Vector2(385, 260)
 
 [node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("16_c4gtx")]
