@@ -132,7 +132,7 @@ scene_from = "outside"
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("3_45pc1")]
 z_index = 1
-position = Vector2(-280, -491)
+position = Vector2(2155, -365)
 
 [node name="Tilemaps" type="NavigationRegion2D" parent="." unique_id=1862096508]
 navigation_polygon = SubResource("NavigationPolygon_i0f8x")

@@ -156,14 +156,7 @@ func interact():
 	if Input.is_action_just_pressed("interact"):
 		print("trying to interact")
 		if globals.in_menu == false:
-			if near_pot == true:
-				globals.in_cooking_menu = true
-				globals.in_menu = true
-				print("Player has interacted with the cooking menu")
-				
-				# Open the cooking menu
-				$"..".cooking_menu_inst()
-			elif find_interactables():
+			if find_interactables():
 				# Interact with the nearest interactable object and save the result
 				var interact_result = get_nearest_interactable().player_interact()
 				if interact_result != null:
