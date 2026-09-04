@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cad450l0ubon8"
-path="res://.godot/imported/fridge-tilemap.png-fb25c7832a8e1e7ba77a1942b3b24de8.ctex"
+uid="uid://2ei4tkjjr5l3"
+path="res://.godot/imported/centrifuge-spritesheet.png-9c15f5af0196c1f5d0aa668288917252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/fridge-tilemap.png"
-dest_files=["res://.godot/imported/fridge-tilemap.png-fb25c7832a8e1e7ba77a1942b3b24de8.ctex"]
+source_file="res://assets/tilemaps/buildables/centrifuge-spritesheet.png"
+dest_files=["res://.godot/imported/centrifuge-spritesheet.png-9c15f5af0196c1f5d0aa668288917252.ctex"]
 
 [params]
 

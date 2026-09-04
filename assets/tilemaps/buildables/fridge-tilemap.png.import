@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ggejv0rssj7"
-path="res://.godot/imported/sugarcane_growth_tilemap.png-07eca0528a42bc74f82871ee1ad87a26.ctex"
+uid="uid://cad450l0ubon8"
+path="res://.godot/imported/fridge-tilemap.png-d7e47f8f9e104f45a8d77387e277e2ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png"
-dest_files=["res://.godot/imported/sugarcane_growth_tilemap.png-07eca0528a42bc74f82871ee1ad87a26.ctex"]
+source_file="res://assets/tilemaps/buildables/fridge-tilemap.png"
+dest_files=["res://.godot/imported/fridge-tilemap.png-d7e47f8f9e104f45a8d77387e277e2ff.ctex"]
 
 [params]
 

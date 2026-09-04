@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmwmuvhtecnsf"
-path="res://.godot/imported/wet-sugarcane_growth_tilemap.png-6bab65914716c4c20800b01180336795.ctex"
+uid="uid://d30nihi2erii6"
+path="res://.godot/imported/shredder_tilemap.png-c4736e148365fbd91ca31be9abb3fad6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/wet-sugarcane_growth_tilemap.png"
-dest_files=["res://.godot/imported/wet-sugarcane_growth_tilemap.png-6bab65914716c4c20800b01180336795.ctex"]
+source_file="res://assets/tilemaps/buildables/shredder_tilemap.png"
+dest_files=["res://.godot/imported/shredder_tilemap.png-c4736e148365fbd91ca31be9abb3fad6.ctex"]
 
 [params]
 

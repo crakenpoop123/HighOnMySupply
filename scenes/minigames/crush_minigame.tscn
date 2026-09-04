@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="3_phq0y"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="4_s5rcu"]
 [ext_resource type="Texture2D" uid="uid://b5n6yyytmujsl" path="res://assets/items/shredded-cane.png" id="5_1ph6i"]
-[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/machinary/hydraulic_press_spritesheet.png" id="5_5fnwl"]
+[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png" id="5_5fnwl"]
 [ext_resource type="Texture2D" uid="uid://bdkxwept0bacb" path="res://assets/items/crushed-cane.png" id="6_5fnwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7468e"]

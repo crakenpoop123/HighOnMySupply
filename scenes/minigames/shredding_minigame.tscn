@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://dyb073ippheol"]
 
-[ext_resource type="Script" uid="uid://d1sqw04fwpmaj" path="res://scripts/lolly_making/shredding_minigame.gd" id="1_ggfwr"]
-[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/machinary/table2.0.png" id="2_osowt"]
-[ext_resource type="Texture2D" uid="uid://dkt4c05lrhcdf" path="res://assets/items/sugarcane-item.png" id="3_ggfwr"]
-[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/machinary/shredder_tilemap.png" id="3_oat1k"]
-[ext_resource type="Script" uid="uid://4yf5rju7k37k" path="res://scripts/lolly_making/sugarcane.gd" id="4_c6ro8"]
-[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="7_fafnc"]
+[ext_resource type="Script" uid="uid://d1sqw04fwpmaj" path="res://scripts/lolly_making/shredding_minigame.gd" id="1_8im7d"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/furniture/table2.0.png" id="2_dctec"]
+[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/buildables/shredder_tilemap.png" id="3_2oxts"]
+[ext_resource type="Script" uid="uid://4yf5rju7k37k" path="res://scripts/lolly_making/sugarcane.gd" id="4_2kk2r"]
+[ext_resource type="Texture2D" uid="uid://dkt4c05lrhcdf" path="res://assets/items/sugarcane-item.png" id="5_773ru"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="6_e7oqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hycbr"]
-atlas = ExtResource("2_osowt")
+atlas = ExtResource("2_dctec")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggfwr"]
-atlas = ExtResource("3_oat1k")
+atlas = ExtResource("3_2oxts")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ro8"]
@@ -96,7 +96,7 @@ _data = {
 }
 
 [node name="ShredderMinigame" type="Node2D" unique_id=1248444812]
-script = ExtResource("1_ggfwr")
+script = ExtResource("1_8im7d")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=227882420]
 position = Vector2(1082, 318)
@@ -115,12 +115,12 @@ texture = SubResource("AtlasTexture_ggfwr")
 position = Vector2(900, 323)
 
 [node name="Sugarcane" type="Node2D" parent="Table" unique_id=156895924]
-script = ExtResource("4_c6ro8")
+script = ExtResource("4_2kk2r")
 
 [node name="SugarcaneSprite" type="Sprite2D" parent="Table/Sugarcane" unique_id=17321545]
 position = Vector2(-648.00006, -3.999998)
 scale = Vector2(7.96875, 7.96875)
-texture = ExtResource("3_ggfwr")
+texture = ExtResource("5_773ru")
 
 [node name="SugarcaneArea" type="Area2D" parent="Table/Sugarcane" unique_id=318641786]
 
@@ -143,7 +143,7 @@ autoplay = &"shredder"
 position = Vector2(-72, 1)
 shape = SubResource("RectangleShape2D_oat1k")
 
-[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("7_fafnc")]
+[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("6_e7oqb")]
 position = Vector2(576, 324)
 
 [node name="Timer" type="Timer" parent="." unique_id=1953125821]

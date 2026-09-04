@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p5cns0jyoqfu"
-path="res://.godot/imported/table.png-d645a99aadfd19acb98bf7415c0bb344.ctex"
+uid="uid://dmwmuvhtecnsf"
+path="res://.godot/imported/wet-sugarcane_growth_tilemap.png-383db8af2a21d77eb297fd36533100a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/table.png"
-dest_files=["res://.godot/imported/table.png-d645a99aadfd19acb98bf7415c0bb344.ctex"]
+source_file="res://assets/tilemaps/buildables/wet-sugarcane_growth_tilemap.png"
+dest_files=["res://.godot/imported/wet-sugarcane_growth_tilemap.png-383db8af2a21d77eb297fd36533100a1.ctex"]
 
 [params]
 

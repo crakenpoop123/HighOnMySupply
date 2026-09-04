@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciouc7kgssh0r"
-path="res://.godot/imported/dryer-tilemap.png-f615ffd86c0c5121379369328c887775.ctex"
+uid="uid://b0rgrp8ffjapd"
+path="res://.godot/imported/freezer.png-725487333cbae630c8d74bb1e3323fdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/dryer-tilemap.png"
-dest_files=["res://.godot/imported/dryer-tilemap.png-f615ffd86c0c5121379369328c887775.ctex"]
+source_file="res://assets/tilemaps/furniture/freezer.png"
+dest_files=["res://.godot/imported/freezer.png-725487333cbae630c8d74bb1e3323fdf.ctex"]
 
 [params]
 
