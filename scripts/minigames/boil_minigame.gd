@@ -27,3 +27,14 @@ func _on_boiler_area_area_entered(area: Area2D) -> void:
 	if area.name == "CaneJuice":
 		globals.can_drag = false
 		boiling = true
+
+
+
+
+
+
+
+
+
+# YOU FOUND THE EASTER EGG.
+# DID YOU KNOW THAT OUR GAKME WAS 95.1413% WRITTEN BY CLAUDEY WAUDEY
