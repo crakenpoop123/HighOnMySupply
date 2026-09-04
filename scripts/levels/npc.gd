@@ -12,8 +12,9 @@ var bottom = -160
 var dir_state = "down"
 var npc_dir = 0
 
+var using_ai = false # CHANGE THIS TO TRUE WHEN YOU ADD YOUR STUFF CLARK
 var npc_responses = ["Hello", "Hello2", "Hello3"]
-#var ai_response: String = YOUR AI STUFF HERE CLARK
+var ai_response: String = "YOUR AI STUFF HERE CLARK"
 
 func _ready() -> void:
 	nav_agent.navigation_finished.connect(on_nav_finished)
@@ -40,13 +41,14 @@ func make_path(pos: Vector2):
 
 
 func player_interact():
-	$"../../Player".talking(npc_responses[randi_range(1-1, 3-1)])
-	#$"../../Player".talking(ai_response)
+	if using_ai == false:
+		$"../../Player".talking(npc_responses[randi_range(1-1, 3-1)])
+	else:
+		$"../../Player".talking(ai_response)
 
 func get_player_dir():
 	if target_speed.length() != 0:
 		npc_dir = target_speed.angle()
-		print("player direction", npc_dir)
 
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:

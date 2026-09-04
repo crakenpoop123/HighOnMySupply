@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dvygx20llb4ey"]
 
+[ext_resource type="Script" uid="uid://cnhebe7tf6x53" path="res://scripts/menus/text_box.gd" id="1_i3erv"]
 [ext_resource type="Texture2D" uid="uid://5kke58u72gmn" path="res://assets/misc/red.png" id="1_pbbeq"]
 
 [node name="TextBox" type="Control" unique_id=1268152057]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i3erv")
 
 [node name="TextUreRect" type="TextureRect" parent="." unique_id=113678170]
 layout_mode = 1
@@ -38,3 +40,13 @@ scale = Vector2(2.185, 2.185)
 text = "This is a placeholder text. If you are seeing this, then something is broken."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1876535129]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 416.0
+offset_right = 1106.0
+offset_bottom = 463.0
+text = "X"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
