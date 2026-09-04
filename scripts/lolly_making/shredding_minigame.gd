@@ -3,6 +3,10 @@ extends Node2D
 @onready var mouse = $Mouse
 @onready var sugarcane = $Table/Sugarcane
 
+func _ready() -> void:
+	# Decrease sugar cane by one
+	globals.inventory_ingredients["sugar_cane"]["stock"] -= 1
+
 func _process(delta: float) -> void:
 	
 	check_for_move()
@@ -27,4 +31,8 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 
 
 func _on_timer_timeout() -> void:
+	# Increase shredded cane by one
+	globals.inventory_ingredients["shredded_cane"]["stock"] += 1
+	
+	# Load the saved_scene
 	globals.change_scene(false)

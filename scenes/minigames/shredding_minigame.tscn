@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dyb073ippheol"]
+[gd_scene format=3 uid="uid://xxa5gjvjqbot"]
 
 [ext_resource type="Script" uid="uid://d1sqw04fwpmaj" path="res://scripts/lolly_making/shredding_minigame.gd" id="1_8im7d"]
 [ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/furniture/table2.0.png" id="2_dctec"]
