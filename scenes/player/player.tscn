@@ -317,6 +317,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
+layer = 0
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=1889221138]
 scale = Vector2(2.5, 2.5)
@@ -331,3 +332,17 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_75vfm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1720789273]
+
+[node name="GUIError" type="RichTextLabel" parent="." unique_id=862216187]
+offset_left = -400.0
+offset_top = 62.0
+offset_right = 400.0
+offset_bottom = 262.0
+theme_override_font_sizes/normal_font_size = 32
+text = "ERROR: THIS IS A TEST ERROR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="GUIError" unique_id=2135514109]
+
+[connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
