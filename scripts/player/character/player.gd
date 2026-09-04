@@ -14,7 +14,10 @@ var dir_state = "down"
 var slot_focused = 0
 
 func _ready():
-	print("key type", int(KEY_0))
+	# Hide the GUI Error
+	# This is used to display an error to the player, like insufficient ingredients
+	#$GUIError.visible = false
+	pass
 
 func _process(_delta: float) -> void:
 	if globals.in_menu or globals.in_inventory:
@@ -43,6 +46,19 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 
+# Display an error message on the screen that the user can see
+func display_gui_error(error, duration = 3):
+	# Update the text and show the text label
+	$GUIError.text = error
+	$GUIError.visible = true
+	
+	# Start a timer to hide the error after a period of time
+	$GUIError/ErrorTimer.start(duration)
+
+# When the error timer runs out
+func _on_error_timer_timeout() -> void:
+	# Hide the error text
+	$GUIError.visible = true
 
 
 func find_interactables():
