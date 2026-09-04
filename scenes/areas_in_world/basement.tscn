@@ -1,30 +1,30 @@
 [gd_scene format=4 uid="uid://d1qmuc75mxwy1"]
 
-[ext_resource type="Script" uid="uid://sy1confsgq4b" path="res://scripts/levels/basement.gd" id="1_7o4gn"]
-[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="1_gidub"]
-[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="2_3vl5l"]
-[ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="2_pv233"]
-[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="3_d24wa"]
-[ext_resource type="Texture2D" uid="uid://p5cns0jyoqfu" path="res://assets/tilemaps/machinary/table.png" id="3_rxuev"]
-[ext_resource type="Texture2D" uid="uid://b0rgrp8ffjapd" path="res://assets/tilemaps/machinary/freezer.png" id="4_1l4aa"]
-[ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/machinary/oven.png" id="4_lawva"]
-[ext_resource type="Texture2D" uid="uid://3g3jdedva5rj" path="res://assets/tilemaps/floors_walls/stairs2.0.png" id="4_t4yp2"]
-[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/machinary/table2.0.png" id="6_k7qf4"]
-[ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/tilemaps/machinary/fridge-tilemap.png" id="7_n2ghy"]
-[ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/machinary/boiler-tilemap.png" id="8_n0s6i"]
-[ext_resource type="PackedScene" uid="uid://x50y0htftkw3" path="res://scenes/sugar_making/farm_plot.tscn" id="9_1vwho"]
-[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/machinary/centrifuge-spritesheet.png" id="9_jc7p3"]
-[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/machinary/hydraulic_press_spritesheet.png" id="10_cs7gm"]
-[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/machinary/shredder_tilemap.png" id="11_hxrqi"]
-[ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_n0s6i"]
-[ext_resource type="PackedScene" uid="uid://csntl0mmwtutv" path="res://scenes/buildables/centrifuge.tscn" id="19_jc7p3"]
-[ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/fridge.tscn" id="19_n2ghy"]
-[ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_jc7p3"]
-[ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/dryer.tscn" id="21_jc7p3"]
-[ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://scenes/door.tscn" id="21_n0s6i"]
+[ext_resource type="Script" uid="uid://sy1confsgq4b" path="res://scripts/levels/basement.gd" id="1_jc7p3"]
+[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="2_cs7gm"]
+[ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="3_hxrqi"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/machinary/table2.0.png" id="4_tluy2"]
+[ext_resource type="Texture2D" uid="uid://b0rgrp8ffjapd" path="res://assets/tilemaps/machinary/freezer.png" id="5_0mflk"]
+[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="6_u372f"]
+[ext_resource type="Texture2D" uid="uid://3g3jdedva5rj" path="res://assets/tilemaps/floors_walls/stairs2.0.png" id="7_q6f6i"]
+[ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/tilemaps/machinary/fridge-tilemap.png" id="8_ti2y7"]
+[ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/machinary/boiler-tilemap.png" id="9_f327p"]
+[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/machinary/centrifuge-spritesheet.png" id="10_thc1f"]
+[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/machinary/hydraulic_press_spritesheet.png" id="11_o526a"]
+[ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/machinary/shredder_tilemap.png" id="12_8gw4c"]
+[ext_resource type="Texture2D" uid="uid://p5cns0jyoqfu" path="res://assets/tilemaps/machinary/table.png" id="13_bfuli"]
+[ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/machinary/oven.png" id="14_mqxdj"]
+[ext_resource type="PackedScene" uid="uid://wiuk7t8aytpk" path="res://scenes/buildables/fridge.tscn" id="15_me242"]
+[ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
+[ext_resource type="PackedScene" uid="uid://x50y0htftkw3" path="res://scenes/buildables/farm_plot.tscn" id="17_p0x8v"]
+[ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_w3un1"]
+[ext_resource type="PackedScene" uid="uid://csntl0mmwtutv" path="res://scenes/buildables/centrifuge.tscn" id="19_mlg0d"]
+[ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_6eavr"]
+[ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="21_87mep"]
+[ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://scenes/areas_in_world/doors/door.tscn" id="22_jajs8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
-texture = ExtResource("1_gidub")
+texture = ExtResource("2_cs7gm")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -36,19 +36,19 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vwho"]
-texture = ExtResource("2_pv233")
+texture = ExtResource("3_hxrqi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mflk"]
-texture = ExtResource("6_k7qf4")
+texture = ExtResource("4_tluy2")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u372f"]
-texture = ExtResource("4_1l4aa")
+texture = ExtResource("5_0mflk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -56,7 +56,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4yp2"]
-texture = ExtResource("3_d24wa")
+texture = ExtResource("6_u372f")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -66,7 +66,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3dq"]
-texture = ExtResource("4_t4yp2")
+texture = ExtResource("7_q6f6i")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -76,7 +76,7 @@ texture_region_size = Vector2i(32, 32)
 5:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6f6i"]
-texture = ExtResource("7_n2ghy")
+texture = ExtResource("8_ti2y7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -84,7 +84,7 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ti2y7"]
-texture = ExtResource("8_n0s6i")
+texture = ExtResource("9_f327p")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -102,7 +102,7 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f327p"]
-texture = ExtResource("9_jc7p3")
+texture = ExtResource("10_thc1f")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -111,7 +111,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thc1f"]
-texture = ExtResource("10_cs7gm")
+texture = ExtResource("11_o526a")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -126,7 +126,7 @@ texture_region_size = Vector2i(32, 32)
 10:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o526a"]
-texture = ExtResource("11_hxrqi")
+texture = ExtResource("12_8gw4c")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -149,7 +149,7 @@ sources/9 = SubResource("TileSetAtlasSource_o526a")
 sources/10 = SubResource("TileSetAtlasSource_0mflk")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lawva"]
-texture = ExtResource("3_rxuev")
+texture = ExtResource("13_bfuli")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -157,20 +157,20 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pqmk"]
-texture = ExtResource("6_k7qf4")
+texture = ExtResource("4_tluy2")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvcce"]
-texture = ExtResource("4_lawva")
+texture = ExtResource("14_mqxdj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gw4c"]
-texture = ExtResource("4_1l4aa")
+texture = ExtResource("5_0mflk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -178,7 +178,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfuli"]
-texture = ExtResource("7_n2ghy")
+texture = ExtResource("8_ti2y7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -186,7 +186,7 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqxdj"]
-texture = ExtResource("8_n0s6i")
+texture = ExtResource("9_f327p")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -204,7 +204,7 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_me242"]
-texture = ExtResource("9_jc7p3")
+texture = ExtResource("10_thc1f")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -213,7 +213,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4gtx"]
-texture = ExtResource("10_cs7gm")
+texture = ExtResource("11_o526a")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -228,7 +228,7 @@ texture_region_size = Vector2i(32, 32)
 10:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0x8v"]
-texture = ExtResource("11_hxrqi")
+texture = ExtResource("12_8gw4c")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -248,7 +248,7 @@ sources/8 = SubResource("TileSetAtlasSource_c4gtx")
 sources/9 = SubResource("TileSetAtlasSource_p0x8v")
 
 [node name="Basement" type="Node2D" unique_id=49085389]
-script = ExtResource("1_7o4gn")
+script = ExtResource("1_jc7p3")
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1221750453]
 position = Vector2(-1094.0001, -269)
@@ -268,28 +268,28 @@ tile_set = SubResource("TileSet_eipka")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
-[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("19_n2ghy")]
+[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("15_me242")]
 position = Vector2(385, 260)
 
-[node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("21_jc7p3")]
+[node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("16_c4gtx")]
 position = Vector2(181, 259)
 
-[node name="FarmPlot" parent="Buildables" unique_id=882134452 instance=ExtResource("9_1vwho")]
+[node name="FarmPlot" parent="Buildables" unique_id=882134452 instance=ExtResource("17_p0x8v")]
 position = Vector2(-733.9999, 570)
 
-[node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_n0s6i")]
+[node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_w3un1")]
 position = Vector2(303, 260)
 
-[node name="Centrifuge" parent="Buildables" unique_id=1753015928 instance=ExtResource("19_jc7p3")]
+[node name="Centrifuge" parent="Buildables" unique_id=1753015928 instance=ExtResource("19_mlg0d")]
 position = Vector2(-254, -69)
 
-[node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_jc7p3")]
+[node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_6eavr")]
 position = Vector2(-174, -69)
 
-[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("2_3vl5l")]
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("21_87mep")]
 position = Vector2(0, -1)
 
-[node name="Door" parent="." unique_id=2056007381 instance=ExtResource("21_n0s6i")]
+[node name="Door" parent="." unique_id=2056007381 instance=ExtResource("22_jajs8")]
 position = Vector2(249, -127.000015)
 scale = Vector2(0.27999997, 0.16370048)
 scene_to_load = "res://scenes/areas_in_world/outside.tscn"
