@@ -13,7 +13,7 @@ func _ready() -> void:
 	$Tilemaps/Tilemaps/Collisions.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#print(player.global_position.y)
 	# Make the bottom layer fade out as you move upwards
 	if player.global_position.y < -700:

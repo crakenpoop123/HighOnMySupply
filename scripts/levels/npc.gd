@@ -20,15 +20,14 @@ func _ready() -> void:
 	nav_agent.velocity_computed.connect(_on_navigation_agent_2d_velocity_computed)
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	get_player_dir()
 	orient_animation()
 	var next_path_pos = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_path_pos)
 	var new_velocity = direction * SPEED
-	
 	nav_agent.velocity = new_velocity
-
+	target_speed = nav_agent.velocity
 func on_nav_finished():
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
@@ -47,23 +46,23 @@ func player_interact():
 func get_player_dir():
 	if target_speed.length() != 0:
 		npc_dir = target_speed.angle()
-		#print("player direction", npc_dir)d
+		print("player direction", npc_dir)
 
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:
-		dir_state = "left"
+		dir_state = "right"
 	elif npc_dir >= 3*PI/4 or npc_dir <= -3*PI/4:
-		dir_state = "left"
+		dir_state = "down"
 	elif npc_dir > PI/4 and npc_dir < 3*PI/4:
 		dir_state = "left"
 	elif npc_dir > -3 * PI/4 and npc_dir < -PI/4:
-		dir_state = "left"
+		dir_state = "up"
 	#print(dir_state)
 	
 	call_correct_animation()
 
 func call_correct_animation():
-	var animation = "move_" if target_speed.length() != 0 else "idle_"
+	var animation = "move_" #if target_speed.length() != 0 else "idle_"
 	animation = animation + dir_state
 	
 	#print(animation)
