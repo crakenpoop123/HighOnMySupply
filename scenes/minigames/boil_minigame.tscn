@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbqruo7pwrfi0"]
 
 [ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="1_7qe1c"]
+[ext_resource type="Script" uid="uid://dgiw8t6xw3y5c" path="res://scripts/minigames/boil_minigame.gd" id="1_mk1b2"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="2_eddmm"]
 [ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/buildables/boiler-tilemap.png" id="3_5jf86"]
 [ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="4_okddp"]
@@ -73,6 +74,7 @@ size = Vector2(250, 363)
 size = Vector2(156, 150)
 
 [node name="BoilMinigame" type="Node2D" unique_id=81153966]
+script = ExtResource("1_mk1b2")
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=1269541343]
 position = Vector2(125.00006, -75)
@@ -84,7 +86,14 @@ texture = SubResource("AtlasTexture_7468e")
 [node name="Boiler" type="Node2D" parent="." unique_id=1143279022]
 position = Vector2(-349.00006, 38)
 
-[node name="CaneJuiceSprite" type="AnimatedSprite2D" parent="Boiler" unique_id=893642701]
+[node name="LiquidInBoiler" type="Sprite2D" parent="Boiler" unique_id=1210999801]
+position = Vector2(-83.99994, -30.449944)
+scale = Vector2(9.099988, 11.0499935)
+texture = ExtResource("4_okddp")
+region_enabled = true
+region_rect = Rect2(206.15225, 9.238951, 5.1768036, 18.574144)
+
+[node name="BoilerSprite" type="AnimatedSprite2D" parent="Boiler" unique_id=893642701]
 scale = Vector2(8.937503, 8.937504)
 sprite_frames = SubResource("SpriteFrames_v05i0")
 
@@ -99,16 +108,16 @@ shape = SubResource("RectangleShape2D_r8lo3")
 
 [node name="CaneJuice" type="Area2D" parent="Ingredients" unique_id=494128704]
 position = Vector2(186, -9)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(1.5, 1.5)
 
 [node name="CaneJuiceSprite" type="Sprite2D" parent="Ingredients/CaneJuice" unique_id=1631510941]
 scale = Vector2(5, 5)
 texture = ExtResource("4_okddp")
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+region_rect = Rect2(192, 0, 32, 32)
 
 [node name="CaneJuiceCollision" type="CollisionShape2D" parent="Ingredients/CaneJuice" unique_id=1619245876]
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_5fnwl")
 
-[connection signal="area_entered" from="Boiler/BoilerArea" to="." method="_on_press_area_area_entered"]
+[connection signal="area_entered" from="Boiler/BoilerArea" to="." method="_on_boiler_area_area_entered"]
