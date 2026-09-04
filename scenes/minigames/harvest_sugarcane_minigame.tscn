@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://n0hfgmogmcma"]
 
-[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="1_r8lo3"]
 [ext_resource type="Script" uid="uid://c86qt1ikhilkp" path="res://scripts/minigames/harvest_sugarcane_minigame.gd" id="1_vsv8q"]
-[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png" id="2_qq6pq"]
-[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="2_vsv8q"]
-[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="3_r1wfk"]
-[ext_resource type="Texture2D" uid="uid://by653axh0hu56" path="res://assets/tools/cane_knife.png" id="6_vsv8q"]
+[ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="2_2o8n4"]
+[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="3_7468e"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="4_4j8h6"]
+[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png" id="5_v3a14"]
+[ext_resource type="Texture2D" uid="uid://by653axh0hu56" path="res://assets/tools/cane_knife.png" id="6_mp0o2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8n4"]
-atlas = ExtResource("1_r8lo3")
+atlas = ExtResource("2_2o8n4")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7468e"]
-atlas = ExtResource("2_vsv8q")
+atlas = ExtResource("3_7468e")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8lo3"]
-atlas = ExtResource("2_qq6pq")
+atlas = ExtResource("5_v3a14")
 region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8lo3"]
@@ -43,7 +43,7 @@ position = Vector2(-121, -339)
 scale = Vector2(51.523438, 17.036644)
 texture = SubResource("AtlasTexture_7468e")
 
-[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_r1wfk")]
+[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("4_4j8h6")]
 position = Vector2(-718, -313)
 
 [node name="Sugarcane" type="Node2D" parent="." unique_id=1143279022]
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_r8lo3")
 [node name="CaneKnifeSprite" type="Sprite2D" parent="CaneKnife" unique_id=371211654]
 position = Vector2(2.4150677, 6.4658813)
 scale = Vector2(3.3490582, 3.3490582)
-texture = ExtResource("6_vsv8q")
+texture = ExtResource("6_mp0o2")
 
 [node name="Handle" type="Area2D" parent="CaneKnife" unique_id=503037931]
 
