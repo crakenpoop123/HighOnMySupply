@@ -334,6 +334,7 @@ shape = SubResource("RectangleShape2D_75vfm")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1720789273]
 
 [node name="GUIError" type="RichTextLabel" parent="." unique_id=862216187]
+modulate = Color(1, 0, 0, 1)
 offset_left = -400.0
 offset_top = 62.0
 offset_right = 400.0
@@ -344,5 +345,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ErrorTimer" type="Timer" parent="GUIError" unique_id=2135514109]
+one_shot = true
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
