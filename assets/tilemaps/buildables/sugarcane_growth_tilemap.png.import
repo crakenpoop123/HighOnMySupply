@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ei4tkjjr5l3"
-path="res://.godot/imported/centrifuge-spritesheet.png-8c0636f6b43615fa0d07d70924ff9e46.ctex"
+uid="uid://c8ggejv0rssj7"
+path="res://.godot/imported/sugarcane_growth_tilemap.png-cbdbd600d923e310fa0a8b386ae2bdbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/centrifuge-spritesheet.png"
-dest_files=["res://.godot/imported/centrifuge-spritesheet.png-8c0636f6b43615fa0d07d70924ff9e46.ctex"]
+source_file="res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png"
+dest_files=["res://.godot/imported/sugarcane_growth_tilemap.png-cbdbd600d923e310fa0a8b386ae2bdbf.ctex"]
 
 [params]
 

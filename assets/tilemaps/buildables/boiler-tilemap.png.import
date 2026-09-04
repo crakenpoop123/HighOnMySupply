@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtacw4ep24poy"
-path="res://.godot/imported/store-framework.png-4adbccffec04c885e529afa590a34a1b.ctex"
+uid="uid://bh6o1ft8elqrr"
+path="res://.godot/imported/boiler-tilemap.png-6c256e701dadfb0a6ea24032b1131ef4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/store-framework.png"
-dest_files=["res://.godot/imported/store-framework.png-4adbccffec04c885e529afa590a34a1b.ctex"]
+source_file="res://assets/tilemaps/buildables/boiler-tilemap.png"
+dest_files=["res://.godot/imported/boiler-tilemap.png-6c256e701dadfb0a6ea24032b1131ef4.ctex"]
 
 [params]
 

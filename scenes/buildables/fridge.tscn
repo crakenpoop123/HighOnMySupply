@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wiuk7t8aytpk"]
 
-[ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/tilemaps/machinary/fridge-tilemap.png" id="1_ipvyg"]
+[ext_resource type="Texture2D" uid="uid://cad450l0ubon8" path="res://assets/tilemaps/buildables/fridge-tilemap.png" id="1_ipvyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipvyg"]
 texture = ExtResource("1_ipvyg")

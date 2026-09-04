@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceig2hnqy885c"
-path="res://.godot/imported/hydraulic_press_spritesheet.png-2b6d42a7f2f74067053f195b4db1edf0.ctex"
+uid="uid://dtacw4ep24poy"
+path="res://.godot/imported/store-framework.png-d04d7228cad503119fdc805267bef5df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/hydraulic_press_spritesheet.png"
-dest_files=["res://.godot/imported/hydraulic_press_spritesheet.png-2b6d42a7f2f74067053f195b4db1edf0.ctex"]
+source_file="res://assets/tilemaps/furniture/store-framework.png"
+dest_files=["res://.godot/imported/store-framework.png-d04d7228cad503119fdc805267bef5df.ctex"]
 
 [params]
 

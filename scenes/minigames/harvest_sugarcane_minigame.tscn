@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8hapdkokll2n" path="res://assets/tilemaps/floors_walls/basementfloor.png" id="2_2o8n4"]
 [ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="3_7468e"]
 [ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="4_4j8h6"]
-[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png" id="5_v3a14"]
+[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png" id="5_v3a14"]
 [ext_resource type="Texture2D" uid="uid://by653axh0hu56" path="res://assets/tools/cane_knife.png" id="6_mp0o2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8n4"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csntl0mmwtutv"]
 
-[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/machinary/centrifuge-spritesheet.png" id="1_jjjn7"]
+[ext_resource type="Texture2D" uid="uid://2ei4tkjjr5l3" path="res://assets/tilemaps/buildables/centrifuge-spritesheet.png" id="1_jjjn7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
 size = Vector2(80, 80)

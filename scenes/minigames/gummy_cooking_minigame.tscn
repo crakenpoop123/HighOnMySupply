@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cumo2v1011s55"]
 
 [ext_resource type="Script" uid="uid://cjk8821d32lds" path="res://scripts/lolly_making/gummy_cooking_minigame.gd" id="1_tbsej"]
-[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/machinary/table2.0.png" id="2_bejsi"]
-[ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://assets/tilemaps/machinary/oven-spritesheet.png" id="3_78vfa"]
+[ext_resource type="Texture2D" uid="uid://460dtv4fvws" path="res://assets/tilemaps/furniture/table2.0.png" id="2_bejsi"]
+[ext_resource type="Texture2D" uid="uid://c2nw1psiqra6i" path="res://assets/tilemaps/furniture/oven-spritesheet.png" id="3_78vfa"]
 [ext_resource type="Script" uid="uid://btn2hb8784hgj" path="res://scripts/lolly_making/mold.gd" id="4_qyty0"]
 [ext_resource type="Texture2D" uid="uid://be1n17uq3vsyk" path="res://assets/items/silicon-mold.png" id="5_yofso"]
 [ext_resource type="PackedScene" uid="uid://ldbwhiret1qc" path="res://scenes/ingrediants/saucepan_minigame_ver.tscn" id="6_n5ucd"]

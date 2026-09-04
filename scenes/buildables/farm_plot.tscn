@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://x50y0htftkw3"]
 
 [ext_resource type="Script" uid="uid://cebgn12v8bb7" path="res://scripts/sugar_making/farm_plot.gd" id="1_jvxcw"]
-[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/machinary/sugarcane_growth_tilemap.png" id="2_jvxcw"]
-[ext_resource type="Texture2D" uid="uid://dmwmuvhtecnsf" path="res://assets/tilemaps/machinary/wet-sugarcane_growth_tilemap.png" id="3_86cyd"]
+[ext_resource type="Texture2D" uid="uid://c8ggejv0rssj7" path="res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png" id="2_jvxcw"]
+[ext_resource type="Texture2D" uid="uid://dmwmuvhtecnsf" path="res://assets/tilemaps/buildables/wet-sugarcane_growth_tilemap.png" id="3_86cyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uykjk"]
 atlas = ExtResource("2_jvxcw")

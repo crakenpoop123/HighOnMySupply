@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh6o1ft8elqrr"
-path="res://.godot/imported/boiler-tilemap.png-62712516323ab9fecf024d0fae479499.ctex"
+uid="uid://c2nw1psiqra6i"
+path="res://.godot/imported/oven-spritesheet.png-69efe06486fd64e26e5ff18b2204eff1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/machinary/boiler-tilemap.png"
-dest_files=["res://.godot/imported/boiler-tilemap.png-62712516323ab9fecf024d0fae479499.ctex"]
+source_file="res://assets/tilemaps/furniture/oven-spritesheet.png"
+dest_files=["res://.godot/imported/oven-spritesheet.png-69efe06486fd64e26e5ff18b2204eff1.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bie0h7smtwcpq"]
 
 [ext_resource type="Script" uid="uid://bruylwhxcf5n7" path="res://scripts/buildables/crusher.gd" id="1_kdgfb"]
-[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/machinary/hydraulic_press_spritesheet.png" id="2_kdgfb"]
+[ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png" id="2_kdgfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
 size = Vector2(80, 80)
