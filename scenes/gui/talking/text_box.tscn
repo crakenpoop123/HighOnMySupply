@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dvygx20llb4ey"]
+
+[ext_resource type="Texture2D" uid="uid://5kke58u72gmn" path="res://assets/misc/red.png" id="1_pbbeq"]
+
+[node name="TextBox" type="Control" unique_id=1268152057]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextUreRect" type="TextureRect" parent="." unique_id=113678170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 412.0
+offset_right = -39.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pbbeq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=39190839]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.63600004
+anchor_right = 0.966
+anchor_bottom = 0.95800006
+offset_left = 5.831997
+offset_top = 7.8719788
+offset_right = -581.7909
+offset_bottom = -110.6239
+scale = Vector2(2.185, 2.185)
+text = "This is a placeholder text. If you are seeing this, then something is broken."
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @onready var nav_agent = $NavigationAgent2D
 const SPEED = 300
 
@@ -13,7 +12,8 @@ var bottom = -160
 var dir_state = "down"
 var npc_dir = 0
 
-var ai_responses = ["Hello", "Hello2", "Hello3"]
+var npc_responses = ["Hello", "Hello2", "Hello3"]
+#var ai_response: String = YOUR AI STUFF HERE CLARK
 
 func _ready() -> void:
 	nav_agent.navigation_finished.connect(on_nav_finished)
@@ -40,8 +40,8 @@ func make_path(pos: Vector2):
 
 
 func player_interact():
-	print(ai_responses[randi_range(1-1, 3-1)])
-
+	$"../../Player".talking(npc_responses[randi_range(1-1, 3-1)])
+	#$"../../Player".talking(ai_response)
 
 func get_player_dir():
 	if target_speed.length() != 0:

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c4w20xqxkkfuu" path="res://scenes/player/inventory/inventory.tscn" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dpkcpg0g6djle" path="res://scenes/player/inventory/hotbar.tscn" id="4_e41v5"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="5_p47bc"]
+[ext_resource type="PackedScene" uid="uid://dvygx20llb4ey" path="res://scenes/gui/talking/text_box.tscn" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://cnhebe7tf6x53" path="res://scripts/menus/text_box.gd" id="7_0owmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -346,5 +348,12 @@ vertical_alignment = 1
 
 [node name="ErrorTimer" type="Timer" parent="GUIError" unique_id=2135514109]
 one_shot = true
+
+[node name="TextBox" parent="." unique_id=1268152057 instance=ExtResource("6_75vfm")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+script = ExtResource("7_0owmy")
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]

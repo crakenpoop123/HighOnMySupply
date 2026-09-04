@@ -8,7 +8,7 @@ var in_inventory = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables", "Clerk", "NPCs"]
 var player_loading_point: String = ""
-
+var see_text = false
 # Scene *wow*
 var scene = null
 
