@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/buildables/farm_plot.tscn" id="17_p0x8v"]
 [ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_w3un1"]
-[ext_resource type="PackedScene" uid="uid://csntl0mmwtutv" path="res://scenes/buildables/centrifuge.tscn" id="19_mlg0d"]
 [ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_6eavr"]
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="21_87mep"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://scenes/areas_in_world/doors/door.tscn" id="22_jajs8"]
@@ -259,7 +258,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Table" type="TileMapLayer" parent="." unique_id=1889674100]
 position = Vector2(-1094, -349)
 scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAQAAQABAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAQAAQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAQAAQABAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
@@ -279,9 +278,6 @@ position = Vector2(-733.9999, 570)
 
 [node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_w3un1")]
 position = Vector2(303, 260)
-
-[node name="Centrifuge" parent="Buildables" unique_id=1753015928 instance=ExtResource("19_mlg0d")]
-position = Vector2(-254, -69)
 
 [node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_6eavr")]
 position = Vector2(-174, -69)

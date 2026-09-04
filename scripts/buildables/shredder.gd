@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+# Player interacts with the buildable
 func player_interact():
 	# If the player has at least 1 sugar cane
 	if globals.inventory_ingredients["sugar_cane"]["stock"] > 0:

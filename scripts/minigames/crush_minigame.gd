@@ -11,6 +11,9 @@ func _ready() -> void:
 	$Press/PressSprite.frame = 0
 	# Hide the crushred cane
 	$CrushedCane.visible = false
+	
+	# Init the region of the Cane Juice to be empty
+	$CaneJuice.region_rect = Rect2(0, 0, 32, 32)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +27,10 @@ func _process(delta: float) -> void:
 		if $Press/PressSprite.frame == 5:
 			# Show the crushed cane
 			$CrushedCane.visible = true
+			
+			# Change the CaneJuice to be filled
+			$CaneJuice.region_rect = Rect2(192, 0, 32, 32)
+			
 			# Hide the shredded cane
 			$Ingredients/ShreddedCane.visible = false
 			
@@ -54,6 +61,8 @@ func _on_press_area_area_entered(area: Area2D) -> void:
 func _on_cane_timer_timeout() -> void:
 	# Gain one crushed cane
 	globals.inventory_ingredients["crushed_cane"]["stock"] += 1
+	# Gain one cane juice
+	globals.inventory_ingredients["cane_juice"]["stock"] += 1
 	
 	# Change scene
 	globals.change_scene(false)

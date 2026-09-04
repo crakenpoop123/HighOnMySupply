@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dmlgcyupaqs7t"]
 
+[ext_resource type="Script" uid="uid://3fdgao3fhe50" path="res://scripts/buildables/boiler.gd" id="1_g0tgq"]
 [ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/buildables/boiler-tilemap.png" id="1_remwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
@@ -10,6 +11,7 @@ atlas = ExtResource("1_remwp")
 region = Rect2(0, 0, 32, 64)
 
 [node name="Boiler" type="StaticBody2D" unique_id=1934958900]
+script = ExtResource("1_g0tgq")
 
 [node name="BoilerCollision" type="CollisionShape2D" parent="." unique_id=1498546231]
 position = Vector2(0, 5)

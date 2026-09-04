@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5n6yyytmujsl" path="res://assets/items/shredded-cane.png" id="5_1ph6i"]
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png" id="5_5fnwl"]
 [ext_resource type="Texture2D" uid="uid://bdkxwept0bacb" path="res://assets/items/crushed-cane.png" id="6_5fnwl"]
+[ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="6_urf8k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7468e"]
 atlas = ExtResource("3_phq0y")
@@ -127,6 +128,13 @@ collision_layer = 2
 [node name="PressCollision" type="CollisionShape2D" parent="Press/PressArea" unique_id=1490831246]
 position = Vector2(0, 38)
 shape = SubResource("RectangleShape2D_r8lo3")
+
+[node name="CaneJuice" type="Sprite2D" parent="." unique_id=1710192114]
+position = Vector2(-437, 75)
+scale = Vector2(2.4444444, 2.4444444)
+texture = ExtResource("6_urf8k")
+region_enabled = true
+region_rect = Rect2(193.88808, 0, 27.15866, 32)
 
 [node name="CrushedCane" type="Node2D" parent="." unique_id=1687758502]
 position = Vector2(-32, 11)
