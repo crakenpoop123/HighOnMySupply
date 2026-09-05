@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bnrg4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"growth_stages_dry",
 "speed": 5.0
 }, {
@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_adrr6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"growth_stages_wet",
 "speed": 5.0
 }]

@@ -2,13 +2,67 @@
 
 [ext_resource type="Script" uid="uid://3fdgao3fhe50" path="res://scripts/buildables/boiler.gd" id="1_g0tgq"]
 [ext_resource type="Texture2D" uid="uid://bh6o1ft8elqrr" path="res://assets/tilemaps/buildables/boiler-tilemap.png" id="1_remwp"]
+[ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="3_icxbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
 size = Vector2(80, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0s6i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_icxbh"]
 atlas = ExtResource("1_remwp")
 region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teoiy"]
+atlas = ExtResource("1_remwp")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6adle"]
+atlas = ExtResource("1_remwp")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vc7s"]
+atlas = ExtResource("1_remwp")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0dg1"]
+atlas = ExtResource("1_remwp")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nt0d"]
+atlas = ExtResource("1_remwp")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tfst"]
+atlas = ExtResource("1_remwp")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5vfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icxbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teoiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6adle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vc7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0dg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nt0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tfst")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Boiler" type="StaticBody2D" unique_id=1934958900]
 script = ExtResource("1_g0tgq")
@@ -17,6 +71,18 @@ script = ExtResource("1_g0tgq")
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_n2ghy")
 
-[node name="BoilerSprite" type="Sprite2D" parent="." unique_id=1659339368]
+[node name="LiquidInBoiler" type="Sprite2D" parent="." unique_id=1175528978]
+position = Vector2(-24, -11.000002)
+scale = Vector2(2.8000243, 3.400032)
+texture = ExtResource("3_icxbh")
+region_enabled = true
+region_rect = Rect2(206.51851, 9.112186, 5.1768036, 18.574144)
+
+[node name="BoilerSprite" type="AnimatedSprite2D" parent="." unique_id=645126756]
 scale = Vector2(2.5, 2.5)
-texture = SubResource("AtlasTexture_n0s6i")
+sprite_frames = SubResource("SpriteFrames_v5vfr")
+
+[node name="BoilTimer" type="Timer" parent="." unique_id=409485927]
+one_shot = true
+
+[connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]

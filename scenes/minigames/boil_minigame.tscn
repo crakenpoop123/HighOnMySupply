@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s5req")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -91,11 +91,13 @@ position = Vector2(-83.99994, -30.449944)
 scale = Vector2(9.099988, 11.0499935)
 texture = ExtResource("4_okddp")
 region_enabled = true
-region_rect = Rect2(206.15225, 9.238951, 5.1768036, 18.574144)
+region_rect = Rect2(142.66411, 9.342735, 5.1768036, 18.574144)
 
 [node name="BoilerSprite" type="AnimatedSprite2D" parent="Boiler" unique_id=893642701]
 scale = Vector2(8.937503, 8.937504)
 sprite_frames = SubResource("SpriteFrames_v05i0")
+frame = 4
+frame_progress = 0.08447887
 
 [node name="BoilerArea" type="Area2D" parent="Boiler" unique_id=746226768]
 collision_layer = 2

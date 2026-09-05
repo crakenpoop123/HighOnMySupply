@@ -26,6 +26,9 @@ var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a sin
 var sugar_cane_growth_max = 2 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
 var sugar_cane_max_growth = 5
 
+# Timer vaiables
+var boil_time = 5
+
 #mouse
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
@@ -78,9 +81,16 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"cane_juice": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Cane Juice", 
+			"icon": "res://assets/items/liquid-spritesheet.png",
+			"region": Rect2(192, 0, 32, 32)
+		},
+		"wet_sugar": {
+			"stock": 0,
+			"had_before": false,
+			"name": "Wet Sugar", 
 			"icon": "res://assets/misc/eye.jpg",
 			"region": Rect2(0, 0, 32, 32)
 		},
@@ -88,15 +98,8 @@ func _ready() -> void:
 			"stock": 0,
 			"had_before": false,
 			"name": "Cane Sugar", 
-			"icon": "res://assets/misc/eye.jpg",
-			"region": Rect2(0, 0, 32, 32)
-		},
-		"pure_sugar": {
-			"stock": 0,
-			"had_before": false,
-			"name": "Pure Sugar", 
-			"icon": "res://assets/misc/eye.jpg",
-			"region": Rect2(0, 0, 32, 32)
+			"icon": "res://assets/items/cane-sugar-spritesheet.png",
+			"region": Rect2(32, 0, 32, 32)
 		}
 	}
 	
@@ -144,6 +147,13 @@ func _ready() -> void:
 			"had_before": false,
 			"name": "Centrifuge", 
 			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
+			"region": Rect2(0, 0, 32, 32)
+		},
+		"dryer": {
+			"stock": 0,
+			"had_before": false,
+			"name": "Dryer", 
+			"icon": "res://assets/tilemaps/buildables/dryer-tilemap.png",
 			"region": Rect2(0, 0, 32, 32)
 		}
 	}

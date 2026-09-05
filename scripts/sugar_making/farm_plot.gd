@@ -24,6 +24,18 @@ func _ready() -> void:
 	
 	save_curr_state()
 
+# Saves variables to the autoload saved_states:
+func save_curr_state():
+	# Save the current state of a few important variables
+	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
+	saved_states.building_data[build_type][self.name]["wetness"] = wetness
+
+# Loads the variable saved in the autoload saved_states:
+func load_prev_state():
+	# Loads the state of a few important variables
+	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
+	wetness = saved_states.building_data[build_type][self.name]["wetness"]
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -37,7 +49,6 @@ func _process(_delta: float) -> void:
 		$PlotSprite.animation = "growth_stages_dry"
 	$PlotSprite.frame = growth_stage
 	
-	save_curr_state()
 
 func player_interact():
 	if fully_grown:
@@ -45,25 +56,6 @@ func player_interact():
 	else:
 		water()
 	
-
-# Saves variables to the autoload saved_states:
-func save_curr_state():
-	# Print statements
-	#print("saving ", self, "'s state: ", saved_states.building_data[build_type][self.name])
-	#print("state: ", saved_states.building_data.keys(), " | ", build_type)
-	#print("all farms: ", saved_states.building_data[build_type].keys())
-	#print("value: ", saved_states.building_data[build_type])
-	
-	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
-	saved_states.building_data[build_type][self.name]["wetness"] = wetness
-	
-
-# Loads the variable saved in the autoload saved_states:
-func load_prev_state():
-	#print("loading ", self, "'s state: ", saved_states.building_data[build_type][self.name])
-	
-	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
-	wetness = saved_states.building_data[build_type][self.name]["wetness"]
 
 func water():
 	print("Watered")

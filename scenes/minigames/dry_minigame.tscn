@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cy124s6lp08uk"]
+
+[ext_resource type="Texture2D" uid="uid://8cqwh6pi2hva" path="res://assets/tilemaps/floors_walls/walls-stairs-basement-tilemap.png" id="2_7rwc4"]
+[ext_resource type="PackedScene" uid="uid://crqyf08e4lhxu" path="res://scenes/player/mouse.tscn" id="3_bvbxu"]
+[ext_resource type="Texture2D" uid="uid://ciouc7kgssh0r" path="res://assets/tilemaps/buildables/dryer-tilemap.png" id="3_wapyb"]
+[ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="4_fu3vp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7468e"]
+atlas = ExtResource("2_7rwc4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rwc4"]
+atlas = ExtResource("3_wapyb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvbxu"]
+atlas = ExtResource("3_wapyb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra66k"]
+atlas = ExtResource("3_wapyb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v05i0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rwc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvbxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra66k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8lo3"]
+size = Vector2(250, 363)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fnwl"]
+size = Vector2(156, 150)
+
+[node name="DryMinigame" type="Node2D" unique_id=81153966]
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=1269541343]
+position = Vector2(125.00006, -75)
+scale = Vector2(50, 50)
+texture = SubResource("AtlasTexture_7468e")
+
+[node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("3_bvbxu")]
+
+[node name="Boiler" type="Node2D" parent="." unique_id=1143279022]
+position = Vector2(-349.00006, 38)
+
+[node name="BoilerSprite" type="AnimatedSprite2D" parent="Boiler" unique_id=893642701]
+scale = Vector2(8.937503, 8.937504)
+sprite_frames = SubResource("SpriteFrames_v05i0")
+frame_progress = 0.08447887
+
+[node name="BoilerArea" type="Area2D" parent="Boiler" unique_id=746226768]
+collision_layer = 2
+
+[node name="BoilerCollision" type="CollisionShape2D" parent="Boiler/BoilerArea" unique_id=1490831246]
+position = Vector2(0, -52.5)
+shape = SubResource("RectangleShape2D_r8lo3")
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=1940803150]
+
+[node name="WetSugar" type="Area2D" parent="Ingredients" unique_id=494128704]
+position = Vector2(186, -9)
+scale = Vector2(1.5, 1.5)
+
+[node name="WetSugarSprite" type="Sprite2D" parent="Ingredients/WetSugar" unique_id=1631510941]
+scale = Vector2(5, 5)
+texture = ExtResource("4_fu3vp")
+region_enabled = true
+region_rect = Rect2(192, 0, 32, 32)
+
+[node name="CaneJuiceCollision" type="CollisionShape2D" parent="Ingredients/WetSugar" unique_id=1619245876]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_5fnwl")
+
+[connection signal="area_entered" from="Boiler/BoilerArea" to="." method="_on_boiler_area_area_entered"]

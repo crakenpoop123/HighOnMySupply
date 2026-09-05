@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://44u8jaaqssve"]
 
+[ext_resource type="Script" uid="uid://dgyfkytue0a4h" path="res://scripts/buildables/dryer.gd" id="1_46ads"]
 [ext_resource type="Texture2D" uid="uid://ciouc7kgssh0r" path="res://assets/tilemaps/buildables/dryer-tilemap.png" id="1_57ue0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hrlb"]
@@ -17,6 +18,7 @@ sources/1 = SubResource("TileSetAtlasSource_4hrlb")
 size = Vector2(80, 80)
 
 [node name="Dryer" type="StaticBody2D" unique_id=1544863067]
+script = ExtResource("1_46ads")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=233461803]
 scale = Vector2(2.5, 2.5)
