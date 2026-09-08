@@ -13,11 +13,11 @@ var dir_state = "down"
 var npc_dir = 0
 
 
-var npc_greeting_responses = ["Hello", "What", "Yo"]
+var npc_greeting_responses = ["Hey baby, remember me?", "", "Don't worry baby, hes just a NERD"]
 var greeting_ending = ["!", ".", "?"]
 var npc_interested = ["Alright I'll buy some."]
 var npc_uninterested = ["Get away from me"]
-
+var npc_dismissive = ["BEAT IT CHICK"]
 
 func _ready() -> void:
 	nav_agent.navigation_finished.connect(on_nav_finished)
