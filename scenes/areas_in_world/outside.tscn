@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://i3g7exoswbh5" path="res://assets/tilemaps/floors_walls/crossing.png" id="11_4ghph"]
 [ext_resource type="TileSet" uid="uid://cr6dcdffo0b4" path="res://assets/misc/buildings.tres" id="12_t81t5"]
 [ext_resource type="PackedScene" uid="uid://by71bmbfjej11" path="res://scenes/npc/npc.tscn" id="13_xw64v"]
+[ext_resource type="Texture2D" uid="uid://irdm5t514ka0" path="res://homeless-npc.png" id="14_t4hvj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i0f8x"]
 vertices = PackedVector2Array(2390, -1750, 2390, -170, 2330, -550, 2330, -650, 2250, -1030, 2250, -1130, 2250, -1430, 2250, -1530, 1530, -550, 1050, -170, 1110, -550, 1050, -1750, 1110, -650, 1190, -1530, 1190, -1430, 2070, -650, 1190, -1030, 1190, -1130, 1530, -650, 2070, -550, 2010, -550, 2010, -650, 1590, -650, 1590, -550)
@@ -113,6 +114,9 @@ sources/1 = SubResource("TileSetAtlasSource_x7w6e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0f8x"]
 size = Vector2(26, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45pc1"]
+atlas = ExtResource("14_t4hvj")
 
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -238,3 +242,10 @@ collision_mask = 6
 editor_description = "what
 "
 shape = SubResource("RectangleShape2D_i0f8x")
+
+[node name="homeless guy" type="Sprite2D" parent="NPCs" unique_id=2088298724]
+position = Vector2(-19, -2488)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_45pc1")
+hframes = 4
+vframes = 8
