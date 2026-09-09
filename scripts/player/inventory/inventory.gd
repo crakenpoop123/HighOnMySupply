@@ -163,6 +163,9 @@ func instantiate_building(building, global_pos):
 	dragging = null
 	# Remove the building from the inventory
 	globals.inventory_buildings[building]["stock"] -= 1
+	
+	# Update the inventory items
+	update_items()
 
 # Check if there are any buildings in the spot that a new building is trying to be placed
 func check_overlapping_buildings():
