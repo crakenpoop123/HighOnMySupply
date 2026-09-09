@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/buildables/shredder_tilemap.png" id="12_8gw4c"]
 [ext_resource type="Texture2D" uid="uid://p5cns0jyoqfu" path="res://assets/tilemaps/furniture/table.png" id="13_bfuli"]
 [ext_resource type="Texture2D" uid="uid://bm54kc7j51jgf" path="res://assets/tilemaps/furniture/oven.png" id="14_mqxdj"]
-[ext_resource type="PackedScene" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
+[ext_resource type="TileSet" uid="uid://di6ri2fudjv81" path="res://assets/misc/collisions.tres" id="15_n0s6i"]
+[ext_resource type="PackedScene" uid="uid://44u8jaaqssve" path="res://scenes/buildables/dryer.tscn" id="16_c4gtx"]
 [ext_resource type="PackedScene" uid="uid://cyxfiuftc7mml" path="res://scenes/buildables/farm_plot.tscn" id="17_p0x8v"]
 [ext_resource type="PackedScene" uid="uid://dmlgcyupaqs7t" path="res://scenes/buildables/boiler.tscn" id="18_w3un1"]
 [ext_resource type="PackedScene" uid="uid://bie0h7smtwcpq" path="res://scenes/buildables/crusher.tscn" id="20_6eavr"]
@@ -259,6 +260,13 @@ position = Vector2(-1094, -349)
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAAEAAMAAgAAAAAAAAAEAAQAAgABAAAAAAAFAAQAAQABAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_eipka")
+
+[node name="Collisions" type="TileMapLayer" parent="." unique_id=1573518674]
+visible = false
+position = Vector2(-1094, -349)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAASAAwAAAAAAAAAAAARAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAADAAwAAAAAAAAAAAADAAsAAAAAAAAAAAADAAoAAAAAAAAAAAADAAkAAAAAAAAAAAADAAgAAAAAAAAAAAADAAcAAAAAAAAAAAADAAYAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAATAAwAAAAAAAAAAAATAAsAAAAAAAAAAAATAAoAAAAAAAAAAAATAAkAAAAAAAAAAAATAAgAAAAAAAAAAAATAAcAAAAAAAAAAAATAAYAAAAAAAAAAAATAAUAAAAAAAAAAAATAAQAAAAAAAAAAAATAAMAAAAAAAAAAAATAAIAAAAAAAAAAAA=")
+tile_set = ExtResource("15_n0s6i")
 
 [node name="Saucepan" type="Node2D" parent="." unique_id=981028682]
 

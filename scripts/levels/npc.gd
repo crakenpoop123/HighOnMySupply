@@ -12,12 +12,17 @@ var bottom = -160
 var dir_state = "down"
 var npc_dir = 0
 
+# greeting / no meaning dialog
+var npc_greeting_responses = ["Can I help you?", "Hm?", "How can I help?", "???", "Hello?"]
 
-var npc_greeting_responses = ["Hey baby, remember me?", "", "Don't worry baby, hes just a NERD"]
-var greeting_ending = ["!", ".", "?"]
-var npc_interested = ["Alright I'll buy some."]
-var npc_uninterested = ["Get away from me"]
-var npc_dismissive = ["BEAT IT CHICK"]
+# interested dialog
+var npc_interested = ["Could I have X amount of gummy worms please?", "I would like X gummy worms.", "Give me X amount of gummy worms, NOW", "I NEED X amount of gummy worms NOW", "GIVE ME X GUMMY WORMS OR I’M GOING TO DIE, I NEED IT PLEASE PLEASE PLEASE."]
+
+# positive dialog
+var npc_positive = ["Thank you.", "Much appreciated", "Great.", "If you insist!", "Amazing stuff, thanks."]
+
+# negative dialog
+var npc_negative = ["What do you want? Move.", "I have places to be.", "Get out of my face.", "I don’t want to hear it.", "Waste of my time"]
 
 func _ready() -> void:
 	nav_agent.navigation_finished.connect(on_nav_finished)
@@ -48,8 +53,22 @@ func player_interact():
 
 func form_response():
 	var response: String = ""
-	response += npc_greeting_responses[randi_range(1-1, 3-1)]
-	response += greeting_ending[randi_range(1-1, 3-1)]
+	var response_type: int = randi_range(1, 4)
+	# var response_type: int = 2 # subject to be changed later for different scenarios
+	
+	print(response_type)
+	
+	if response_type == 1: # greeting
+		response = npc_greeting_responses[randi_range(1-1, 5-1)]
+		
+	elif response_type == 2: # positive
+		response = npc_positive[randi_range(1-1, 5-1)]
+	
+	elif response_type == 3: # negative
+		response = npc_negative[randi_range(1-1, 5-1)]
+	
+	elif response_type == 4: # interested
+		response = npc_interested[randi_range(1-1, 5-1)]
 	return response
 
 func get_player_dir():

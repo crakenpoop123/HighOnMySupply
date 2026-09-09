@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	globals.scene = "basement"
 	globals.can_drag = true
+	$Collisions.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
