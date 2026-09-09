@@ -8,7 +8,7 @@ atlas = ExtResource("2_n2so2")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbvqo"]
-radius = 122.016396
+radius = 54.037025
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm4y6"]
 size = Vector2(61, 222)
