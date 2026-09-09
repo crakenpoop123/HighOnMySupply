@@ -16,6 +16,10 @@ var slot
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Hide the inventory on scene load
+	globals.in_inventory = false
+	$".".visible = false
+	
 	update_items()
 
 

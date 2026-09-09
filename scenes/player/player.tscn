@@ -335,6 +335,7 @@ shape = SubResource("RectangleShape2D_75vfm")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1720789273]
 
 [node name="GUIError" type="RichTextLabel" parent="." unique_id=862216187]
+visible = false
 modulate = Color(1, 0, 0, 1)
 offset_left = -400.0
 offset_top = 62.0
@@ -349,6 +350,7 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="TextBox" parent="." unique_id=1268152057 instance=ExtResource("6_75vfm")]
+visible = false
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0

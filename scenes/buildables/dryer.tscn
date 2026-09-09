@@ -20,11 +20,11 @@ size = Vector2(80, 80)
 [node name="Dryer" type="StaticBody2D" unique_id=1544863067]
 script = ExtResource("1_46ads")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=233461803]
+[node name="DryerSprite" type="TileMapLayer" parent="." unique_id=233461803]
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_k75d5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847820320]
+[node name="DrerCollision" type="CollisionShape2D" parent="." unique_id=1847820320]
 position = Vector2(40, 40)
 shape = SubResource("RectangleShape2D_cqe11")

@@ -7,8 +7,8 @@ extends Node2D
 @onready var water = $Table/Water
 
 var animation_playing = false
-var empty_saucepan = load("res://assets/misc/saucepan.png")
-var water_saucepan = load("res://assets/misc/water-saucepan.png")
+var empty_saucepan = load("res://assets/items/saucepan.png")
+var water_saucepan = load("res://assets/items/water-saucepan.png")
 var all_ingrediants_in_pot = false
 var ingredients_in_pot = 0
 var starting_to_close: bool = false
@@ -54,7 +54,7 @@ func check_for_move():
 					if starting_to_close == false:# START THE TIMER TO CHANGE SCENE
 						$Timer.start()
 						starting_to_close = true
-						
+				
 func check_for_drop(): # Somehow I don't understand my own code so just don't touch this becuase if it breaks I can't fix it
 	if mouse.holding == false: # IF YOU ARENT HOLDING ANYTHING
 		if mouse.mouse_in_area == true:# WHEN YOU ARE IN AN AREA
