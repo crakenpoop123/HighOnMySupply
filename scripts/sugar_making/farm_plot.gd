@@ -34,7 +34,11 @@ func save_curr_state():
 func load_prev_state():
 	# Loads the state of a few important variables
 	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
+	
+	print("loaded growth stage as: ", growth_stage)
 	wetness = saved_states.building_data[build_type][self.name]["wetness"]
+	
+	print("loaded wetness as: ", wetness)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
