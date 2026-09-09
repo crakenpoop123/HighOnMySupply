@@ -294,7 +294,7 @@ position = Vector2(-174, -69)
 position = Vector2(0, -1)
 
 [node name="Door" parent="." unique_id=2056007381 instance=ExtResource("22_jajs8")]
-position = Vector2(-90.99997, -397)
-scale = Vector2(0.27999997, 0.16370048)
+position = Vector2(-89.00001, -397.00003)
+scale = Vector2(1e-05, 1e-05)
 scene_to_load = "res://scenes/areas_in_world/outside.tscn"
 scene_from = "basement"
