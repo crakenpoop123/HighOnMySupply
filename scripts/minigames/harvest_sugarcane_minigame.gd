@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	if hit_sugarcane == true:
 		globals.change_scene(false)
 	
-	if mouse.area_name: # If the mouse is touching an area
+	elif mouse.area_name: # If the mouse is touching an area
 		# Check if the mouse is touching the CaneKnife
 		if mouse.area_name.name == "CaneKnife" and mouse.holding_click:
 			lock_knife_to_discrete()

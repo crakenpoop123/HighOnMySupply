@@ -92,13 +92,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vxswh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8lo3"]
-size = Vector2(250, 76)
+size = Vector2(52.000122, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fnwl"]
 size = Vector2(156, 150)
@@ -126,7 +126,7 @@ frame_progress = 0.4580959
 collision_layer = 2
 
 [node name="PressCollision" type="CollisionShape2D" parent="Press/PressArea" unique_id=1490831246]
-position = Vector2(0, 38)
+position = Vector2(0, 55.5)
 shape = SubResource("RectangleShape2D_r8lo3")
 
 [node name="CaneJuice" type="Sprite2D" parent="." unique_id=1710192114]
