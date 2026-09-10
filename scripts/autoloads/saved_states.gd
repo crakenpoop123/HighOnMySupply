@@ -20,7 +20,7 @@ func setup():
 
 # Recursively search all nodes and save the states for certain nodes 
 func save_states(node):
-	print("Iterating children for node: ", node)
+	#print("Iterating children for node: ", node)
 	
 	# Iterate over the children of current nodes
 	for child in node.get_children():
@@ -28,7 +28,7 @@ func save_states(node):
 		if child.has_method("save_curr_state"):
 			if child.build_type in building_data:
 				if child.name in building_data[child.build_type]:
-					print("Saving states for node: ", node)
+					#print("Saving states for node: ", node)
 					child.save_curr_state()
 				else:
 					create_save_data(child)

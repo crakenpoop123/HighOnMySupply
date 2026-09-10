@@ -8,7 +8,7 @@ func _ready() -> void:
 	# Ensure it loads the state before deleting data
 	if build_type in saved_states.building_data:
 		if self.name in saved_states.building_data[build_type]:
-			load_prev_state() 
+			await load_prev_state() 
 	
 	# Setup the saved data for this node
 	saved_states.building_data[build_type][self.name] = {}

@@ -275,9 +275,6 @@ tile_set = ExtResource("15_n0s6i")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
-[node name="Fridge" parent="Buildables" unique_id=1603040923 instance=ExtResource("18_w3un1")]
-position = Vector2(385, 260)
-
 [node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("16_c4gtx")]
 position = Vector2(181, 259)
 

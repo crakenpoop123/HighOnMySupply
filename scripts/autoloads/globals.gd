@@ -183,7 +183,7 @@ func change_scene(saving = true, scene = null):
 		load_scene()
 		
 		# Load the interactables (like FarmPlots and other machinery), along with their states
-		call_deferred("find_interactables_for_loading", get_tree().current_scene)
+		#call_deferred("find_interactables_for_loading", get_tree().current_scene)
 
 # Save the scene using a PackedScene
 func save_scene():

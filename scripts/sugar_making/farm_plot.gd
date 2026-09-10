@@ -16,10 +16,9 @@ func _ready() -> void:
 	
 	# Ensure it loads the state before deleting data
 	if build_type in saved_states.building_data:
-		print("farmplot in building data")
 		if self.name in saved_states.building_data[build_type]:
-			print("farmplot name in building data[farmplot]")
-			load_prev_state() 
+			#print("lading for farmplot: ", saved_states.building_data[build_type][self.name])
+			await load_prev_state() 
 	
 	# Setup the saved data for this node
 	saved_states.building_data[build_type][self.name] = {}
@@ -36,13 +35,15 @@ func save_curr_state():
 
 # Loads the variable saved in the autoload saved_states:
 func load_prev_state():
+	#print("loading in load_prev_state for farmplot: ", saved_states.building_data[build_type][self.name])
+	
 	# Loads the state of a few important variables
 	growth_stage = saved_states.building_data[build_type][self.name]["stage"]
 	
-	print("loaded growth stage as: ", growth_stage)
+	#print("loaded growth stage as: ", growth_stage)
 	wetness = saved_states.building_data[build_type][self.name]["wetness"]
 	
-	print("loaded wetness as: ", wetness)
+	#print("loaded wetness as: ", wetness)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
