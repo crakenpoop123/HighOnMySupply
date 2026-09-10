@@ -16,16 +16,20 @@ func _ready() -> void:
 	
 	# Ensure it loads the state before deleting data
 	if build_type in saved_states.building_data:
+		print("farmplot in building data")
 		if self.name in saved_states.building_data[build_type]:
+			print("farmplot name in building data[farmplot]")
 			load_prev_state() 
 	
 	# Setup the saved data for this node
 	saved_states.building_data[build_type][self.name] = {}
 	
-	save_curr_state()
+	
 
 # Saves variables to the autoload saved_states:
 func save_curr_state():
+	
+	
 	# Save the current state of a few important variables
 	saved_states.building_data[build_type][self.name]["stage"] = growth_stage
 	saved_states.building_data[build_type][self.name]["wetness"] = wetness
@@ -78,7 +82,6 @@ func harvest():
 	
 	$RandomGrowthTick.start(randf_range(globals.sugar_cane_growth_min, globals.sugar_cane_growth_max) / growth_rate)
 	
-	save_curr_state()
 	
 	globals.change_scene(true, "res://scenes/minigames/harvest_sugarcane_minigame.tscn")
 

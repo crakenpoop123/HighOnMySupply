@@ -19,6 +19,8 @@ func _ready() -> void:
 func save_curr_state():
 	# Save the current state of a few important variables
 	saved_states.building_data[build_type][self.name]["state"] = boiler_state
+	
+	print("Boiler state: ", saved_states.building_data[build_type][self.name]["state"])
 
 # Loads the variable saved in the autoload saved_states:
 func load_prev_state():
@@ -37,8 +39,8 @@ func player_interact():
 			# Change the state to dirty
 			boiler_state = "dirty"
 			
-			# Save the current state
-			save_curr_state()
+			
+			await get_tree().process_frame
 			
 			# Change the scene to the boiling minigame
 			globals.change_scene(true, "res://scenes/minigames/boil_minigame.tscn")

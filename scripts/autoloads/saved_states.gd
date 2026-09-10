@@ -18,15 +18,28 @@ func setup():
 			building_data[key] = {}
 	#print("building data: ", building_data)
 
-# Recursively search all nodes and load the states for certain nodes 
-#func load_states(node):
-	#print("Loading states for node: ", node)
-	#
-	## Iterate over the children of current nodes
-	#for child in node.get_children():
-		## This is true when the child has code for loading a previous state 
-		#if child.has_method("load_prev_state"):
-			#child.load_prev_state()
-		#
-		## Recursively call the function
-		#load_states(child)
+# Recursively search all nodes and save the states for certain nodes 
+func save_states(node):
+	print("Iterating children for node: ", node)
+	
+	# Iterate over the children of current nodes
+	for child in node.get_children():
+		# This is true when the child has code for saving the current state 
+		if child.has_method("save_curr_state"):
+			if child.build_type in building_data:
+				if child.name in building_data[child.build_type]:
+					print("Saving states for node: ", node)
+					child.save_curr_state()
+				else:
+					create_save_data(child)
+			else:
+				create_save_data(child)
+		
+		# Recursively call the function
+		await save_states(child)
+		
+	return true
+
+
+func create_save_data(node):
+	building_data[node.build_type][node.name] = {}

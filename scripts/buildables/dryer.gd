@@ -11,7 +11,7 @@ func _ready() -> void:
 	# Setup the saved data for this node
 	saved_states.building_data[build_type][self.name] = {}
 	
-	save_curr_state()
+	
 
 # Saves variables to the autoload saved_states:
 func save_curr_state():
@@ -33,8 +33,6 @@ func player_interact():
 		# Decrease the stock of cane juice
 		globals.inventory_ingredients["wet_sugar"]["stock"] -= 1
 		
-		# Save the current state
-		save_curr_state()
 		
 		# Change the scene to the boiling minigame
 		globals.change_scene(true, "res://scenes/minigames/dry_minigame.tscn") # TODO: add this minigame

@@ -173,8 +173,12 @@ func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
 	# If loading, you don't
 	if saving:
-		save_scene()
-		get_tree().change_scene_to_file(scene)
+		await saved_states.save_states(get_tree().current_scene)
+		
+		await get_tree().process_frame
+		
+		call_deferred("save_scene")
+		get_tree().call_deferred("change_scene_to_file", scene)
 	else:
 		load_scene()
 		
@@ -183,6 +187,8 @@ func change_scene(saving = true, scene = null):
 
 # Save the scene using a PackedScene
 func save_scene():
+	print("globals.save_scene")
+	
 	# Save the scene
 	var scene = get_tree().current_scene
 	# Init the PackedScene
