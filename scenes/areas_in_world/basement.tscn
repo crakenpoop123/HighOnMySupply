@@ -305,6 +305,8 @@ scene_from = "basement"
 
 [node name="FarmArea" type="Area2D" parent="BuildableAreas" unique_id=226476866]
 position = Vector2(-774, 291)
+collision_layer = 255
+collision_mask = 255
 
 [node name="FarmCollision" type="CollisionShape2D" parent="BuildableAreas/FarmArea" unique_id=704340476]
 position = Vector2(280, 160)
@@ -312,6 +314,8 @@ shape = SubResource("RectangleShape2D_n0s6i")
 
 [node name="MachineryArea" type="Area2D" parent="BuildableAreas" unique_id=1651150115]
 position = Vector2(-214, 291)
+collision_layer = 255
+collision_mask = 255
 
 [node name="MachineryCollision" type="CollisionShape2D" parent="BuildableAreas/MachineryArea" unique_id=1318498670]
 position = Vector2(320, 160)
