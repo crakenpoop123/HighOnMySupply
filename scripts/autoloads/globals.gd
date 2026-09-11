@@ -1,7 +1,7 @@
 extends Node
 
 # Player interaction variables
-var can_move = true # Interacting with the physica world
+var can_move = true # Interacting with the physical world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false

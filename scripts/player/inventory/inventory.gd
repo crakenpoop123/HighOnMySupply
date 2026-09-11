@@ -12,6 +12,7 @@ var slot_interacted = null
 var dragging_type = null
 var dragging_array
 var placing = false
+var building_in_valid_area = false
 var slot
 
 # Called when the node enters the scene tree for the first time.
@@ -189,14 +190,24 @@ func check_overlapping_buildings():
 
 # Checks if a buildable that is attempted to be placed is in a valid area
 func check_valid_area(building):
+	#print("Checking valid area for building: ", building)
+	
 	# Check if the building has requirements fror where it is placed
 	if "area" in globals.inventory_buildings[building]:
-		# Checks that the BuildableAreas has the wanted area
-		if $"../../../BuildableAreas".has_node(globals.inventory_buildings[building]["area"]):
-			# Check if the SnapSprite is touching this area
-			if $"../../SnapSprite" in $"../../../BuildableAreas".get_node(globals.inventory_buildings[building]["area"]).get_overlapping_bodies():
-				return true
-	
+		#print("area for building: ", globals.inventory_buildings[building]["area"])
+		# Iterate through the areas
+		for area_requirement in $"../../../BuildableAreas".get_children():
+			#print("checking area requirement: ", area_requirement.name)
+			# Check if this area has the correct name
+			if area_requirement.name == globals.inventory_buildings[building]["area"]:
+				#print("found correct area requirement, which has overlapping bodies: ", area_requirement.get_overlapping_areas())
+				# Check if the SnapSprite is touching this area
+				if $"../../SnapSprite/CollisionArea" in area_requirement.get_overlapping_areas():
+					#print("Can place because of touching area")
+					return true
+	# If the building doesn't have requirements for where it is placed
+	else:
+		return true
 	
 	# Otherwise
 	return false
