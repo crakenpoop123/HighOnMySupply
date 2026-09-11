@@ -1,16 +1,16 @@
 extends Node2D
 
 # greeting / no meaning dialog
-var clerk_greeting_responses = ["Can I help you?", "Hm?", "How can I help?", "???", "Hello?"]
-
-# interested dialog
-var clerk_interested = ["Could I have X amount of gummy worms please?", "I would like X gummy worms.", "Give me X amount of gummy worms, NOW", "I NEED X amount of gummy worms NOW", "GIVE ME X GUMMY WORMS OR I’M GOING TO DIE, I NEED IT PLEASE PLEASE PLEASE."]
+var clerk_greeting_responses = ["Can I help you?", "Huh?", "What.", "Ah!", "*floorboards creak*"]
 
 # positive dialog
-var clerk_positive = ["Thank you.", "Much appreciated", "Great.", "If you insist!", "Amazing stuff, thanks."]
+var clerk_positive = ["Welcome in, have a look around.", "Feel free to browse.", "I hope you enjoy our product.", "Ah, my favourite customer!", "Ah, my only customer!"]
 
 # negative dialog
-var clerk_negative = ["What do you want? Move.", "I have places to be.", "Get out of my face.", "I don’t want to hear it.", "Waste of my time"]
+var clerk_negative = ["If you’re not gonna buy anything then leave.", "Leave. Now.", "We don’t want you here, no one does.", "Exit the premises immediately.", "Leave or I'll call the very real cops."]
+
+# bought dialog
+var clerk_bought = ["Thank you for purchasing!", "Throw a gummy worm for a tip?", "Don’t mess around with that.", "Be careful.", "No refunds."]
 
 func player_interact():
 	$"../../Player".talking(form_response())
@@ -32,5 +32,5 @@ func form_response():
 		response = clerk_negative[randi_range(1-1, 5-1)]
 	
 	elif response_type == 4: # interested
-		response = clerk_interested[randi_range(1-1, 5-1)]
+		response = clerk_bought[randi_range(1-1, 5-1)]
 	return response
