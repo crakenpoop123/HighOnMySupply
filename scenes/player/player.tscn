@@ -362,6 +362,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneyText" type="RichTextLabel" parent="." unique_id=1237365815]
+z_index = 5
 offset_left = -563.0
 offset_top = -311.0
 offset_right = -259.0
