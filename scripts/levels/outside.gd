@@ -11,6 +11,7 @@ func _ready() -> void:
 		player.global_position = Vector2(-280, -491)
 		
 	$Tilemaps/Tilemaps/Collisions.hide()
+	$Tilemaps/Tilemaps/CollisionsLayer3.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

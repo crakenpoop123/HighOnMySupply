@@ -5,10 +5,10 @@ const SPEED = 300
 var target_speed = Vector2.ZERO
 var movement_smoothing = 5
 
-var left = 1040
-var right = 2400
-var top = -1760
-var bottom = -160
+var left = -1280
+var right = 4480
+var top = -2720
+var bottom = 960
 var dir_state = "down"
 var npc_dir = 0
 
