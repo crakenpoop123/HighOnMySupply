@@ -19,8 +19,7 @@ func _ready() -> void:
 func save_curr_state():
 	# Save the current state of a few important variables
 	saved_states.building_data[build_type][self.name]["state"] = boiler_state
-	
-	print("Boiler state: ", saved_states.building_data[build_type][self.name]["state"])
+
 
 # Loads the variable saved in the autoload saved_states:
 func load_prev_state():

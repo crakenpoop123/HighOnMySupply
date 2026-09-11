@@ -110,7 +110,8 @@ func _ready() -> void:
 			"name": "Farm Plots", 
 			"icon": "res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/buildables/farm_plot.tscn")
+			"scene": load("res://scenes/buildables/farm_plot.tscn"), 
+			"area": "FarmArea"
 		},
 		"saucepan": {
 			"stock": 1,
@@ -126,35 +127,40 @@ func _ready() -> void:
 			"name": "Shredder", 
 			"icon": "res://assets/tilemaps/buildables/shredder_tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
-			"scene": load("res://scenes/buildables/shredder.tscn")
+			"scene": load("res://scenes/buildables/shredder.tscn"), 
+			"area": "MachineryArea"
 		},
 		"crusher": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Crusher", 
 			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"area": "MachineryArea"
 		},
 		"boiler": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Boiler", 
 			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"area": "MachineryArea"
 		},
 		"centrifuge": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Centrifuge", 
 			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"area": "MachineryArea"
 		},
 		"dryer": {
 			"stock": 0,
 			"had_before": false,
 			"name": "Dryer", 
 			"icon": "res://assets/tilemaps/buildables/dryer-tilemap.png",
-			"region": Rect2(0, 0, 32, 32)
+			"region": Rect2(0, 0, 32, 32), 
+			"area": "MachineryArea"
 		}
 	}
 	

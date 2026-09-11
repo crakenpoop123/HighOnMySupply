@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vxswh")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }]
@@ -114,7 +114,8 @@ texture = SubResource("AtlasTexture_7468e")
 [node name="Mouse" parent="." unique_id=415866673 instance=ExtResource("4_s5rcu")]
 
 [node name="Press" type="Node2D" parent="." unique_id=1143279022]
-position = Vector2(-349.00006, 38)
+position = Vector2(-332.00006, -0.99999803)
+scale = Vector2(1.62, 1.62)
 
 [node name="PressSprite" type="AnimatedSprite2D" parent="Press" unique_id=380213922]
 scale = Vector2(12.5625, 12.5625)
@@ -130,7 +131,7 @@ position = Vector2(0, 55.5)
 shape = SubResource("RectangleShape2D_r8lo3")
 
 [node name="CaneJuice" type="Sprite2D" parent="." unique_id=1710192114]
-position = Vector2(-437, 75)
+position = Vector2(-443.99997, 82)
 scale = Vector2(2.4444444, 2.4444444)
 texture = ExtResource("6_urf8k")
 region_enabled = true
@@ -140,7 +141,7 @@ region_rect = Rect2(193.88808, 0, 27.15866, 32)
 position = Vector2(-32, 11)
 
 [node name="CaneSprite" type="Sprite2D" parent="CrushedCane" unique_id=2046057145]
-position = Vector2(-317, 68)
+position = Vector2(-300.00003, 70)
 scale = Vector2(2.4375, 2.4375)
 texture = ExtResource("6_5fnwl")
 

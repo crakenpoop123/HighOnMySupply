@@ -278,7 +278,7 @@ animations = [{
 size = Vector2(44, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
-radius = 171.01169
+radius = 118.03813
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
 size = Vector2(32.000004, 32.000004)
@@ -321,6 +321,7 @@ grow_vertical = 1
 layer = 0
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=1889221138]
+visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_p47bc")
 
