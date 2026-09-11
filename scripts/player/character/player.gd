@@ -20,7 +20,7 @@ func _ready():
 	$GUIError.visible = false
 
 func _process(_delta: float) -> void:
-	if globals.in_menu or globals.in_inventory:
+	if globals.in_menu or globals.in_inventory or globals.see_text:
 		globals.can_move = false
 	else:
 		globals.can_move = true
