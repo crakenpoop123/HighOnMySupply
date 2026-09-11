@@ -42,6 +42,10 @@ func _physics_process(_delta: float) -> void:
 	else: # Stop the player from drifting when they shouldn't move
 		target_speed = Vector2.ZERO
 		
+		# Stop the Sprite
+		$PlayerSprite.stop()
+		$PlayerSprite.frame = 0
+		
 	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
 	target_speed = target_speed.normalized() * SPEED
 	
