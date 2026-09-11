@@ -236,7 +236,7 @@ tile_set = ExtResource("12_t81t5")
 [node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
 position = Vector2(1625, -366)
 collision_layer = 2
-collision_mask = 6
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Npc" unique_id=628718027]
 editor_description = "what
