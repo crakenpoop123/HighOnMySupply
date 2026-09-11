@@ -29,6 +29,8 @@ var sugar_cane_max_growth = 5
 # Timer vaiables
 var boil_time = 5
 
+var money = 0
+
 #mouse
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
@@ -91,7 +93,7 @@ func _ready() -> void:
 			"stock": 0,
 			"had_before": false,
 			"name": "Wet Sugar", 
-			"icon": "res://assets/misc/eye.jpg",
+			"icon": "res://assets/items/wet-sugar-spritesheet.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"cane_sugar": {

@@ -20,6 +20,9 @@ func _ready():
 	$GUIError.visible = false
 
 func _process(_delta: float) -> void:
+	# Update Money
+	$MoneyText.text = str("Money: $", globals.money)
+	
 	if globals.in_menu or globals.in_inventory or globals.see_text:
 		globals.can_move = false
 	else:
@@ -169,7 +172,7 @@ func interact():
 		if globals.in_menu == false:
 			if find_interactables():
 				# Interact with the nearest interactable object and save the result
-				var interact_result = get_nearest_interactable().player_interact()
+				var interact_result = await get_nearest_interactable().player_interact()
 				if interact_result != null:
 					display_gui_error("Insufficient stock of " + interact_result + ". You need at least 1 " + interact_result)
 			else:
