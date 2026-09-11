@@ -351,10 +351,14 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="TextBox" parent="." unique_id=1268152057 instance=ExtResource("6_75vfm")]
-visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
