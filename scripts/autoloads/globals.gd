@@ -11,7 +11,7 @@ var player_loading_point: String = ""
 var see_text = false
 # Scene *wow*
 var scene = null
-
+var fading = true
 var states_setup = false
 
 # Grid variables
