@@ -127,13 +127,14 @@ func check_for_draggables():
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
 			if !check_overlapping_buildings():
-				if globals.inventory_buildings[dragging]["stock"] != 0:
-					instantiate_building(dragging, $"../../SnapSprite".global_position)
-					print("Place")
-					return "Place"
-				else:
-					print("No stock to place")
-					return "No stock"
+				if check_valid_area(dragging):
+					if globals.inventory_buildings[dragging]["stock"] != 0:
+						instantiate_building(dragging, $"../../SnapSprite".global_position)
+						print("Place")
+						return "Place"
+					else:
+						print("No stock to place")
+						return "No stock"
 			else:
 				print("Obstructed tile")
 				return "Obstruction"
@@ -184,6 +185,20 @@ func check_overlapping_buildings():
 				if child in $"../../SnapSprite/CollisionArea".get_overlapping_bodies():
 					return true
 	
+	return false
+
+# Checks if a buildable that is attempted to be placed is in a valid area
+func check_valid_area(building):
+	# Check if the building has requirements fror where it is placed
+	if "area" in globals.inventory_buildings[building]:
+		# Checks that the BuildableAreas has the wanted area
+		if $"../../../BuildableAreas".has_node(globals.inventory_buildings[building]["area"]):
+			# Check if the SnapSprite is touching this area
+			if $"../../SnapSprite" in $"../../../BuildableAreas".get_node(globals.inventory_buildings[building]["area"]).get_overlapping_bodies():
+				return true
+	
+	
+	# Otherwise
 	return false
 
 # This gets the item node corresponding with the item's name
