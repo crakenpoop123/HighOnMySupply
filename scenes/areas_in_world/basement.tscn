@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://f3akijdilgvx" path="res://scenes/player/player.tscn" id="21_87mep"]
 [ext_resource type="PackedScene" uid="uid://wuxpkvuvjumr" path="res://scenes/areas_in_world/doors/door.tscn" id="22_jajs8"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs7gm"]
+size = Vector2(640, 32)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqmtf"]
 texture = ExtResource("2_cs7gm")
 texture_region_size = Vector2i(32, 32)
@@ -256,6 +259,13 @@ size = Vector2(640, 320)
 [node name="Basement" type="Node2D" unique_id=49085389]
 script = ExtResource("1_jc7p3")
 
+[node name="BackupTableHitbox" type="StaticBody2D" parent="." unique_id=957817175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackupTableHitbox" unique_id=2127946974]
+z_index = 1
+position = Vector2(-454, -93)
+shape = SubResource("RectangleShape2D_cs7gm")
+
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1221750453]
 position = Vector2(-1094.0001, -269)
 scale = Vector2(2.5, 2.5)
@@ -287,12 +297,14 @@ position = Vector2(185, 289)
 position = Vector2(-733.9999, 570)
 
 [node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_w3un1")]
-position = Vector2(306, 287)
+position = Vector2(306, 289)
 
 [node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_6eavr")]
 position = Vector2(-174, -69)
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("21_87mep")]
+visible = false
+z_index = 1
 position = Vector2(0, -1)
 
 [node name="Door" parent="." unique_id=2056007381 instance=ExtResource("22_jajs8")]
@@ -318,5 +330,6 @@ collision_layer = 255
 collision_mask = 255
 
 [node name="MachineryCollision" type="CollisionShape2D" parent="BuildableAreas/MachineryArea" unique_id=1318498670]
+visible = false
 position = Vector2(320, 160)
 shape = SubResource("RectangleShape2D_jc7p3")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ceig2hnqy885c" path="res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png" id="2_kdgfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4aa"]
-size = Vector2(80, 80)
+size = Vector2(80, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2ghy"]
 atlas = ExtResource("2_kdgfb")
@@ -14,6 +14,7 @@ region = Rect2(0, 0, 32, 32)
 script = ExtResource("1_kdgfb")
 
 [node name="CrusherCollision" type="CollisionShape2D" parent="." unique_id=2090161173]
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_1l4aa")
 
 [node name="CrusherSprite" type="Sprite2D" parent="." unique_id=2037098027]
