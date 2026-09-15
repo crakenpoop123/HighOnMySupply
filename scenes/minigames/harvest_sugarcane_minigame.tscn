@@ -116,6 +116,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="PivotVisualiser" type="Sprite2D" parent="." unique_id=423153018]
+visible = false
 scale = Vector2(16, 16)
 texture = SubResource("PlaceholderTexture2D_vsv8q")
 

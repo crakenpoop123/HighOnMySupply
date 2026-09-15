@@ -48,14 +48,14 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"sugar": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Sugar", 
 			"icon": "res://assets/items/sugar-spritesheet.png",
 			"region": Rect2(32, 0, 32, 32)
 		},
 		"gelatin": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Gelatin", 
 			"icon": "res://assets/items/gelitin-spritesheet.png",
