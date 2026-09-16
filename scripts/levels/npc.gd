@@ -79,13 +79,14 @@ func form_response():
 func get_npc_dir():
 	npc_dir = target_speed.angle()
 	print(npc_dir)
+
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:
 		dir_state = "right"
 	elif npc_dir >= 3*PI/4 or npc_dir <= -3*PI/4:
-		dir_state = "down"
-	elif npc_dir > PI/4 and npc_dir < 3*PI/4:
 		dir_state = "left"
+	elif npc_dir > PI/4 and npc_dir < 3*PI/4:
+		dir_state = "down"
 	elif npc_dir > -3 * PI/4 and npc_dir < -PI/4:
 		dir_state = "up"
 	#print(dir_state)
