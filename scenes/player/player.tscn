@@ -151,7 +151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5cq8p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -168,7 +168,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tf8qx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -185,7 +185,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fq1sf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -202,7 +202,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0r5da")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }, {
@@ -219,7 +219,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7yfyf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_down",
 "speed": 5.0
 }, {
@@ -236,7 +236,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuvkg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_left",
 "speed": 5.0
 }, {
@@ -253,7 +253,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jkbfr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_right",
 "speed": 5.0
 }, {
@@ -270,7 +270,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kr51s")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_up",
 "speed": 5.0
 }]
@@ -282,7 +282,7 @@ size = Vector2(44, 128)
 radius = 118.03813
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
-size = Vector2(32.000004, 32.000004)
+size = Vector2(31.200005, 31.200005)
 
 [node name="Player" type="CharacterBody2D" unique_id=2037227082]
 y_sort_enabled = true
@@ -329,7 +329,6 @@ grow_vertical = 1
 layer = 0
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=1889221138]
-visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_p47bc")
 
