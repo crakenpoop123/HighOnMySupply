@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="3_icxbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
-size = Vector2(80, 18)
+size = Vector2(78, 16.999985)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icxbh"]
 atlas = ExtResource("1_remwp")
@@ -59,7 +59,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8tfst")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nuocc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -126,11 +126,11 @@ script = ExtResource("1_g0tgq")
 
 [node name="BoilerCollision" type="CollisionShape2D" parent="." unique_id=1498546231]
 z_index = 1
-position = Vector2(0, 9)
+position = Vector2(0, -30.500008)
 shape = SubResource("RectangleShape2D_n2ghy")
 
 [node name="LiquidInBoiler" type="Sprite2D" parent="." unique_id=1175528978]
-position = Vector2(-24, -11.000002)
+position = Vector2(-24, -51.000015)
 scale = Vector2(2.8000243, 3.400032)
 texture = ExtResource("3_icxbh")
 region_enabled = true
@@ -138,12 +138,12 @@ region_rect = Rect2(206.51851, 9.112186, 5.1768036, 18.574144)
 
 [node name="BoilerSpriteUpper" type="AnimatedSprite2D" parent="." unique_id=645126756]
 z_index = 2
-position = Vector2(0, -39.999996)
+position = Vector2(0, -79.99999)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_bxb4n")
 
 [node name="BoilerSpriteLower" type="AnimatedSprite2D" parent="." unique_id=1518714709]
-position = Vector2(7.6293945e-06, 40)
+position = Vector2(7.6293945e-06, 0)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_v5vfr")
 

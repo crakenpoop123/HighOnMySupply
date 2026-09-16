@@ -116,7 +116,7 @@ func _ready() -> void:
 			"area": "FarmArea"
 		},
 		"saucepan": {
-			"stock": 1,
+			"stock": 10,
 			"had_before": true,
 			"name": "Saucepans", 
 			"icon": "res://assets/items/saucepan.png",
@@ -141,11 +141,12 @@ func _ready() -> void:
 			"area": "MachineryArea"
 		},
 		"boiler": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Boiler", 
 			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
+			"scene": load("res://scenes/buildables/boiler.tscn"),
 			"area": "MachineryArea"
 		},
 		"centrifuge": {
@@ -157,11 +158,12 @@ func _ready() -> void:
 			"area": "MachineryArea"
 		},
 		"dryer": {
-			"stock": 0,
+			"stock": 1,
 			"had_before": false,
 			"name": "Dryer", 
 			"icon": "res://assets/tilemaps/buildables/dryer-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
+			"scene": load("res://scenes/buildables/dryer.tscn"),
 			"area": "MachineryArea"
 		}
 	}

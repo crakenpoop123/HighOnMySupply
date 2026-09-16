@@ -297,13 +297,13 @@ tile_set = ExtResource("15_n0s6i")
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
 
 [node name="Dryer" parent="Buildables" unique_id=1544863067 instance=ExtResource("16_c4gtx")]
-position = Vector2(185, 289)
+position = Vector2(225, 330)
 
 [node name="FarmPlot" parent="Buildables" unique_id=882134452 instance=ExtResource("17_p0x8v")]
 position = Vector2(-733.9999, 570)
 
 [node name="Boiler" parent="Buildables" unique_id=1934958900 instance=ExtResource("18_w3un1")]
-position = Vector2(306, 289)
+position = Vector2(305, 330)
 
 [node name="Crusher" parent="Buildables" unique_id=1407152380 instance=ExtResource("20_6eavr")]
 position = Vector2(-174, -69)
