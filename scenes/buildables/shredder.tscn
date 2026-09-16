@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d30nihi2erii6" path="res://assets/tilemaps/buildables/shredder_tilemap.png" id="2_7i342"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81juo"]
-size = Vector2(32, 32)
+size = Vector2(32, 12.799998)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s3k8"]
 atlas = ExtResource("2_7i342")
@@ -15,6 +15,9 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_ku8jc")
 
 [node name="ShredderCollision" type="CollisionShape2D" parent="." unique_id=561563223]
+z_index = 1
+position = Vector2(-4.7683704e-07, -9.5999975)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_81juo")
 
 [node name="ShredderSprite" type="Sprite2D" parent="." unique_id=826538515]

@@ -5,37 +5,37 @@
 [ext_resource type="Texture2D" uid="uid://cik7aqgar2i2y" path="res://assets/items/liquid-spritesheet.png" id="3_icxbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ghy"]
-size = Vector2(80, 13)
+size = Vector2(80, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icxbh"]
 atlas = ExtResource("1_remwp")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_teoiy"]
 atlas = ExtResource("1_remwp")
-region = Rect2(32, 0, 32, 64)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6adle"]
 atlas = ExtResource("1_remwp")
-region = Rect2(64, 0, 32, 64)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vc7s"]
 atlas = ExtResource("1_remwp")
-region = Rect2(96, 0, 32, 64)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0dg1"]
 atlas = ExtResource("1_remwp")
-region = Rect2(128, 0, 32, 64)
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nt0d"]
 atlas = ExtResource("1_remwp")
-region = Rect2(160, 0, 32, 64)
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tfst"]
 atlas = ExtResource("1_remwp")
-region = Rect2(192, 0, 32, 64)
+region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v5vfr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxb4n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -64,12 +64,69 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jfmh"]
+atlas = ExtResource("1_remwp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_867lj"]
+atlas = ExtResource("1_remwp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgjyo"]
+atlas = ExtResource("1_remwp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxoru"]
+atlas = ExtResource("1_remwp")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blk1n"]
+atlas = ExtResource("1_remwp")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0ovo"]
+atlas = ExtResource("1_remwp")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuocc"]
+atlas = ExtResource("1_remwp")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5vfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jfmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_867lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgjyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxoru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blk1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0ovo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuocc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Boiler" type="StaticBody2D" unique_id=1934958900]
 script = ExtResource("1_g0tgq")
 
 [node name="BoilerCollision" type="CollisionShape2D" parent="." unique_id=1498546231]
 z_index = 1
-position = Vector2(0, 11.5)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_n2ghy")
 
 [node name="LiquidInBoiler" type="Sprite2D" parent="." unique_id=1175528978]
@@ -79,7 +136,14 @@ texture = ExtResource("3_icxbh")
 region_enabled = true
 region_rect = Rect2(206.51851, 9.112186, 5.1768036, 18.574144)
 
-[node name="BoilerSprite" type="AnimatedSprite2D" parent="." unique_id=645126756]
+[node name="BoilerSpriteUpper" type="AnimatedSprite2D" parent="." unique_id=645126756]
+z_index = 2
+position = Vector2(0, -39.999996)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_bxb4n")
+
+[node name="BoilerSpriteLower" type="AnimatedSprite2D" parent="." unique_id=1518714709]
+position = Vector2(7.6293945e-06, 40)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_v5vfr")
 

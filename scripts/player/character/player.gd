@@ -18,6 +18,7 @@ func _ready():
 	# Hide the GUI Error
 	# This is used to display an error to the player, like insufficient ingredients
 	$GUIError.visible = false
+	$InteractIndicator.visible = false
 
 func _process(_delta: float) -> void:
 	# Update Money
@@ -56,6 +57,10 @@ func _physics_process(_delta: float) -> void:
 	
 	if globals.can_attack:
 		check_for_attacks()
+	if find_interactables():
+		$InteractIndicator.visible = true
+	else:
+		$InteractIndicator.visible = false
 	
 	move_and_slide()
 
@@ -165,6 +170,7 @@ func check_for_attacks():
 func attack():
 	pass
 	#print("Attack")
+
 
 func interact():
 	if Input.is_action_just_pressed("interact"):

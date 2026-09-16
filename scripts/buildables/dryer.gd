@@ -30,7 +30,7 @@ func load_prev_state():
 func player_interact():
 	# If the player has at least one cane juice
 	if globals.inventory_ingredients["wet_sugar"]["stock"] > 0:
-		# Change the scene to the boiling minigame
+		# Change the scene to the drying minigame
 		globals.change_scene(true, "res://scenes/minigames/dry_minigame.tscn") # TODO: add this minigame
 	else:
 		# Return the name of cane juice

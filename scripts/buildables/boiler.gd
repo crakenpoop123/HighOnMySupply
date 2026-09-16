@@ -57,13 +57,15 @@ func _process(delta: float) -> void:
 		# Hide the liquid
 		$LiquidInBoiler.visible = false
 		# Hide the flame
-		$BoilerSprite.frame = 0
+		$BoilerSpriteUpper.frame = 0
+		$BoilerSpriteLower.frame = 0
 	elif boiler_state == "dirty":
 		# Show a green liquid in the boiler 
 		$LiquidInBoiler.visible = true
 		$LiquidInBoiler.region_rect = Rect2(206, 10, 5.177, 18.574) # This is zoomed in on the green liquid in the boiler 
 		# Show the flame
-		$BoilerSprite.frame = 6
+		$BoilerSpriteUpper.frame = 6
+		$BoilerSpriteLower.frame = 6
 		
 		# Detect if the BoilTimer is not yet started
 		if $BoilTimer.time_left == 0:
@@ -74,7 +76,8 @@ func _process(delta: float) -> void:
 		$LiquidInBoiler.visible = true
 		$LiquidInBoiler.region_rect = Rect2(142, 10, 5.177, 18.574) # This is zoomed in on a light coloured liquid
 		# Hide the flame
-		$BoilerSprite.frame = 0
+		$BoilerSpriteUpper.frame = 0
+		$BoilerSpriteLower.frame = 0
 
 # When the boil timer is done
 func _on_boil_timer_timeout() -> void:
