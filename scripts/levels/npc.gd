@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
-const SPEED = 300
+var SPEED = 300
 
 var target_speed = Vector2.ZERO
 var movement_smoothing = 5
@@ -30,7 +30,12 @@ func _ready() -> void:
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
 func _physics_process(_delta: float) -> void:
-	get_player_dir()
+	if globals.see_text == true:
+		SPEED = 0
+	else:
+		SPEED = 300
+	
+	get_npc_dir()
 	orient_animation()
 	var next_path_pos = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_path_pos)
@@ -71,10 +76,9 @@ func form_response():
 		response = npc_interested[randi_range(1-1, 5-1)]
 	return response
 
-func get_player_dir():
-	if target_speed.length() != 0:
-		npc_dir = target_speed.angle()
-
+func get_npc_dir():
+	npc_dir = target_speed.angle()
+	print(npc_dir)
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:
 		dir_state = "right"
