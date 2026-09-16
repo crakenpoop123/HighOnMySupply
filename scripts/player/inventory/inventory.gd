@@ -157,7 +157,7 @@ func instantiate_building(building, global_pos):
 	var building_offset = Vector2.ZERO
 	#Vector2(-576, -324)
 	
-	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
+d	var built_struct = globals.inventory_buildings[building]["scene"].instantiate()
 	
 	built_struct.global_position = global_pos + building_offset
 	print("built struct at pos: ", built_struct.global_position)

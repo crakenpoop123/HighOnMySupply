@@ -57,10 +57,13 @@ func _physics_process(_delta: float) -> void:
 	
 	if globals.can_attack:
 		check_for_attacks()
+	
 	if find_interactables():
 		$InteractIndicator.visible = true
+		$InteractText.text = str(get_nearest_interactable().readable_name)
 	else:
 		$InteractIndicator.visible = false
+		$InteractText.text = ""
 	
 	move_and_slide()
 
@@ -115,7 +118,8 @@ func get_nearest_interactable():
 	# Return the closest interactable
 	# Will return null if none were found
 	return closest_interactable
-
+	# if globals.broken != true:
+		# globals.touching = !true
 # Function to check if a body is within the player's interact radius
 func is_interact_area_touching(body):
 	# Checks if body is overlapping with $InteractArea

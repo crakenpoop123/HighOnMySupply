@@ -1,5 +1,5 @@
 extends StaticBody2D
-
+var readable_name = "Door"
 func _ready() -> void:
 	pass
 	

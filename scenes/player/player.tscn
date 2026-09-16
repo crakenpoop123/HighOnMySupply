@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpw4dyo3lr276" path="res://assets/misc/E.png" id="2_0owmy"]
 [ext_resource type="Texture2D" uid="uid://gkjnbpqj0t2u" path="res://assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
 [ext_resource type="PackedScene" uid="uid://c4w20xqxkkfuu" path="res://scenes/player/inventory/inventory.tscn" id="3_gmlin"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_qek5x"]
 [ext_resource type="PackedScene" uid="uid://dpkcpg0g6djle" path="res://scenes/player/inventory/hotbar.tscn" id="4_e41v5"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://dvygx20llb4ey" path="res://scenes/gui/talking/text_box.tscn" id="6_75vfm"]
@@ -293,6 +294,18 @@ modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 position = Vector2(-0.5, -87)
 texture = ExtResource("2_0owmy")
+
+[node name="InteractText" type="RichTextLabel" parent="." unique_id=1466683401]
+offset_left = -107.0
+offset_top = -126.0
+offset_right = 108.0
+offset_bottom = -103.0
+theme_override_fonts/normal_font = ExtResource("3_qek5x")
+theme_override_fonts/bold_font = ExtResource("3_qek5x")
+theme_override_fonts/bold_italics_font = ExtResource("3_qek5x")
+theme_override_fonts/italics_font = ExtResource("3_qek5x")
+theme_override_fonts/mono_font = ExtResource("3_qek5x")
+horizontal_alignment = 1
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=48635526]
 scale = Vector2(4, 4)

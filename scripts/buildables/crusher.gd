@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var readable_name = "Crusher"
 
 # Player interacts with the buildable
 func player_interact():

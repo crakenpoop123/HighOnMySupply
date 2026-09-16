@@ -133,7 +133,7 @@ func _ready() -> void:
 			"area": "MachineryArea"
 		},
 		"crusher": {
-			"stock": 0,
+			"stock": 999,
 			"had_before": false,
 			"name": "Crusher", 
 			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
