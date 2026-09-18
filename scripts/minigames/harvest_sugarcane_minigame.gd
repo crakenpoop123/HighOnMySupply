@@ -9,6 +9,10 @@ var pivot_offset = Vector2.ZERO
 var knife_angle = 0
 var default_positions: Dictionary
 
+# Different to pivot_offset
+# This one is used to hold the knife by the handle
+var pivot_pos_offset = Vector2(0, -100)
+
 var slow_tip_timeout = 3.5
 
 func _ready() -> void:
@@ -16,6 +20,7 @@ func _ready() -> void:
 	note_node2d_positions($CaneKnife)
 
 func _process(_delta: float) -> void:
+	# Change the scene on hitting the sugar cane
 	if hit_sugarcane == true:
 		globals.change_scene(false)
 	
@@ -23,6 +28,9 @@ func _process(_delta: float) -> void:
 		# Check if the mouse is touching the CaneKnife
 		if mouse.area_name.name == "CaneKnife" and mouse.holding_click:
 			lock_knife_to_discrete()
+		
+		# If the area isn't the Sugarcane, drag
+		# I don't want the player to drag the sugarcane
 		if mouse.area_name.name != "Sugarcane":
 			globals.can_drag = true
 		else:
@@ -65,12 +73,19 @@ func _physics_process(delta: float) -> void:
 # Move the children of a node away from a certain point
 # This is used for pivoting the knife around the mouse
 func offset_node2d(node, pivot):
-	pivot_offset = pivot - node.position
+	# Get the distance required to pivot the node
+	# - pivot is because node will be moved to pivot, so these cancel out
+	pivot_offset = node.position - pivot
 	
+	# Update the position of all children of the node
 	for child in node.get_children():
-		child.position -= pivot_offset
-		
+		child.position = pivot_offset + pivot_pos_offset
+	
+	# Move node in the opposite direction to pivot
+	# This is so that the positions cancel out
 	node.position = pivot
+	
+	# Show where the pivot is with a pink square
 	$PivotVisualiser.position = pivot
 
 func note_node2d_positions(node):
