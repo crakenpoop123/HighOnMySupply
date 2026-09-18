@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://beksakds1b028" path="res://scripts/levels/npc.gd" id="1_4xuqu"]
 [ext_resource type="Texture2D" uid="uid://d1vrfih7sj7y6" path="res://assets/npc/veryverylargenpcspritesheet.png" id="1_sspvn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcwmf"]
+size = Vector2(44, 44)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay68w"]
 atlas = ExtResource("1_sspvn")
 region = Rect2(0, 128, 32, 32)
@@ -82,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lvnn6")
 }],
-"loop": 1,
+"loop": true,
 "name": &"move_down",
 "speed": 5.0
 }, {
@@ -99,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_woxlu")
 }],
-"loop": 1,
+"loop": true,
 "name": &"move_left",
 "speed": 5.0
 }, {
@@ -116,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1owdj")
 }],
-"loop": 1,
+"loop": true,
 "name": &"move_right",
 "speed": 5.0
 }, {
@@ -133,15 +136,23 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fv38m")
 }],
-"loop": 1,
+"loop": true,
 "name": &"move_up",
 "speed": 5.0
 }]
 
 [node name="Npc" type="CharacterBody2D" unique_id=1601175420]
+collision_mask = 0
 script = ExtResource("1_4xuqu")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=725845130]
+editor_description = "what
+"
+z_index = 5
+shape = SubResource("RectangleShape2D_pcwmf")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1895173929]
+position = Vector2(2, -42)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ay68w")
 animation = &"move_down"

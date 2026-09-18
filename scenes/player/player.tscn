@@ -374,6 +374,7 @@ one_shot = true
 
 [node name="TextBox" parent="." unique_id=1268152057 instance=ExtResource("6_75vfm")]
 visible = false
+z_index = 6
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
