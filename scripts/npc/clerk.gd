@@ -1,5 +1,5 @@
 extends Node2D
-
+var readable_name = "Store Clerk"
 # greeting / no meaning dialog
 var clerk_greeting_responses = ["Can I help you?", "Huh?", "What.", "Ah!", "*floorboards creak*"]
 

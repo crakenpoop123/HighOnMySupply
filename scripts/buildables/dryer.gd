@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var build_type = "dryer"
+var readable_name = "Dryer"
 
 func _ready() -> void:
 	# Ensure it loads the state before deleting data

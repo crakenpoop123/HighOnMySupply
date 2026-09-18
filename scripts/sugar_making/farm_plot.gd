@@ -8,7 +8,7 @@ var wetness = 0
 
 var fully_grown
 var build_type = "farm_plot"
-
+var readable_name = "Farm Plot"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

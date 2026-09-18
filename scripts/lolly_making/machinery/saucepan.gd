@@ -2,6 +2,7 @@ extends StaticBody2D
 
 # Changed this from a global var to a local one
 var saucepan_on_table = true
+var readable_name = "Saucepan"
 
 
 func player_interact():

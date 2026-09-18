@@ -1,4 +1,5 @@
 extends StaticBody2D
+var readable_name = "Shredder"
 
 # Player interacts with the buildable
 func player_interact():

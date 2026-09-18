@@ -12,6 +12,7 @@ var bottom = 960
 var dir_state = "down"
 var npc_dir = 0
 
+var readable_name = "Customer"
 # greeting / no meaning dialog
 var npc_greeting_responses = ["Can I help you?", "Hm?", "How can I help?", "???", "Hello?"]
 

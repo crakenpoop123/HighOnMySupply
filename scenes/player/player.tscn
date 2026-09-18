@@ -296,6 +296,7 @@ position = Vector2(-0.5, -87)
 texture = ExtResource("2_0owmy")
 
 [node name="InteractText" type="RichTextLabel" parent="." unique_id=1466683401]
+z_index = 7
 offset_left = -107.0
 offset_top = -126.0
 offset_right = 108.0
@@ -305,6 +306,7 @@ theme_override_fonts/bold_font = ExtResource("3_qek5x")
 theme_override_fonts/bold_italics_font = ExtResource("3_qek5x")
 theme_override_fonts/italics_font = ExtResource("3_qek5x")
 theme_override_fonts/mono_font = ExtResource("3_qek5x")
+text = "Placeholder"
 horizontal_alignment = 1
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=48635526]

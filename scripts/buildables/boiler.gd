@@ -3,6 +3,7 @@ extends StaticBody2D
 var build_type = "boiler"
 
 var boiler_state = "empty"
+var readable_name = "Boiler"
 
 func _ready() -> void:
 	# Ensure it loads the state before deleting data
