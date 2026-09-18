@@ -128,16 +128,19 @@ func check_for_draggables():
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
 			if !check_overlapping_buildings():
-				if check_valid_area(dragging):
+				var valid_area = check_valid_area(dragging)
+				if valid_area == "true":
 					if globals.inventory_buildings[dragging]["stock"] != 0:
 						instantiate_building(dragging, $"../../SnapSprite".global_position)
 						print("Place")
 						return "Place"
 					else:
-						print("No stock to place")
+						$"../..".display_gui_error("No stock to place")
 						return "No stock"
+				else:
+					$"../..".display_gui_error(str("Must be in the correct area. Move it to the ", valid_area.trim_suffix("Area")))
 			else:
-				print("Obstructed tile")
+				$"../..".display_gui_error("Obstructed tile")
 				return "Obstruction"
 		# Set placing back to what it previously was
 		placing = init_placing
@@ -208,13 +211,13 @@ func check_valid_area(building):
 				# Check if the SnapSprite is touching this area
 				if $"../../SnapSprite/CollisionArea" in area_requirement.get_overlapping_areas():
 					#print("Can place because of touching area")
-					return true
+					return "true"
 	# If the building doesn't have requirements for where it is placed
 	else:
-		return true
+		return "true"
 	
-	# Otherwise
-	return false
+	# Return the required area
+	return globals.inventory_buildings[building]["area"]
 
 # This gets the item node corresponding with the item's name
 func get_item_node_from_name(item_name):
@@ -253,7 +256,7 @@ func snap_to_grid(movable):
 
 # Drag the item to a spot
 func drag_item():
-	print("dragging: ", dragging)
+	#print("dragging: ", dragging)
 	
 	# Get the correct item array
 	if dragging in globals.inventory_ingredients:

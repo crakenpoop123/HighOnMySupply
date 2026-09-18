@@ -104,7 +104,7 @@ func _ready() -> void:
 	}
 	
 	inventory_buildings = {
-		# For the area, they must all end in "Area" (i.e. MachineryArea or FarmArea)
+		# For the area, they must all end in "Area" (i.e. ConcreteArea or GrassArea)
 		# This is so that I can subtract this from the area to show the user where they have to place something 
 		"farm_plot": {
 			"stock": 10,
@@ -113,7 +113,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/sugarcane_growth_tilemap.png",
 			"region": Rect2(0, 32, 32, 32), 
 			"scene": load("res://scenes/buildables/farm_plot.tscn"), 
-			"area": "FarmArea"
+			"area": "GrassArea"
 		},
 		"saucepan": {
 			"stock": 10,
@@ -140,7 +140,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/crusher.tscn"), 
-			"area": "MachineryArea"
+			"area": "ConcreteArea"
 		},
 		"boiler": {
 			"stock": 1,
@@ -149,7 +149,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/boiler.tscn"),
-			"area": "MachineryArea"
+			"area": "ConcreteArea"
 		},
 		"centrifuge": {
 			"stock": 0,
@@ -157,7 +157,7 @@ func _ready() -> void:
 			"name": "Centrifuge", 
 			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
 			"region": Rect2(0, 0, 32, 32), 
-			"area": "MachineryArea"
+			"area": "ConcreteArea"
 		},
 		"dryer": {
 			"stock": 1,
@@ -166,7 +166,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/dryer-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/dryer.tscn"),
-			"area": "MachineryArea"
+			"area": "ConcreteArea"
 		}
 	}
 	
