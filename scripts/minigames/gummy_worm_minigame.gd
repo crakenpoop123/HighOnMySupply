@@ -67,6 +67,5 @@ func move_to_stove():# MOVE CAMERA TO STOVE
 
 
 func _on_timer_timeout() -> void: # CHANGE SCENE ON TIMER TIMOUT
-	globals.saucepan_on_table = false
 	globals.change_scene(false)
 	

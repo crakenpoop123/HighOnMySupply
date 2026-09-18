@@ -35,8 +35,6 @@ var money = 0
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
-#Basement
-var saucepan_on_table = true
 
 func _ready() -> void:
 	inventory_ingredients = {
@@ -106,6 +104,8 @@ func _ready() -> void:
 	}
 	
 	inventory_buildings = {
+		# For the area, they must all end in "Area" (i.e. MachineryArea or FarmArea)
+		# This is so that I can subtract this from the area to show the user where they have to place something 
 		"farm_plot": {
 			"stock": 10,
 			"had_before": false,

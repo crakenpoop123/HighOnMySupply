@@ -8,7 +8,7 @@ var size = 32
 func _ready() -> void:
 	$SaucepanSprite.texture.region = Rect2(32, 0, size, size*2) # SET THE AREA OF THE ATLAS TEXTURE
 	if in_cooking_scene == true:
-		$SaucepanSprite.texture = load("res://assets/full-saucepan-spritesheet.png") # WHAT?
+		$SaucepanSprite.texture = load("res://assets/items/full-saucepan-spritesheet.png") # WHAT?
 		
 func _on_saucepan_area_body_entered(body: StaticBody2D) -> void: # DETECT WHEN ENTERING AREAS
 	if body.name == "StoveBody":
@@ -29,4 +29,4 @@ func _on_saucepan_area_body_exited(body: StaticBody2D) -> void: # DETECT WHEN EX
 		on_mold = false
 		
 func empty(): # MAKE THE SAUCEPAN SPRITE EMPTY
-	$SaucepanSprite.texture = load("res://assets/misc/saucepan.png")
+	$SaucepanSprite.texture = load("res://assets/items/saucepan.png")

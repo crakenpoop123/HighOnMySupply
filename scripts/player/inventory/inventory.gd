@@ -186,6 +186,10 @@ func check_overlapping_buildings():
 				if child in $"../../SnapSprite/CollisionArea".get_overlapping_bodies():
 					return true
 	
+	# Check if the SnapSprite is touching the player
+	if $"../.." in $"../../SnapSprite/CollisionArea".get_overlapping_bodies():
+		return true
+	
 	return false
 
 # Checks if a buildable that is attempted to be placed is in a valid area

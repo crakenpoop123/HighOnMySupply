@@ -3,7 +3,7 @@ var base_image
 
 
 func change_sprite(): # CHANGE SPRITE TO BLUE WHEN FILLED UP
-	base_image = load("res://assets/silicon-mold.png")
+	base_image = load("res://assets/items/silicon-mold.png")
 	var atlas_texture = AtlasTexture.new()
 	atlas_texture.atlas = base_image
 	atlas_texture.region = Rect2(64, 0, 32, 32)
