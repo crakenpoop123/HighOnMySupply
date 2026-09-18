@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cajbital045oi" path="res://assets/tools/static-saucepan.png" id="2_2o6pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk6li"]
-size = Vector2(68, 30)
+size = Vector2(68, 4)
 
 [node name="Saucepan" type="StaticBody2D" unique_id=1710325032]
 script = ExtResource("1_h3g0f")
 
 [node name="SaucepanCollision" type="CollisionShape2D" parent="." unique_id=2045467664]
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_pk6li")
 
 [node name="SaucepanSprite" type="Sprite2D" parent="." unique_id=552805677]

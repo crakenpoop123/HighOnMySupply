@@ -121,7 +121,8 @@ func _ready() -> void:
 			"name": "Saucepans", 
 			"icon": "res://assets/items/saucepan.png",
 			"region": Rect2(0, 32, 32, 32), 
-			"scene": load("res://scenes/buildables/saucepan.tscn")
+			"scene": load("res://scenes/buildables/saucepan.tscn"), 
+			"area": "TableArea"
 		},
 		"shredder": {
 			"stock": 1,
@@ -130,7 +131,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/shredder_tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/shredder.tscn"), 
-			"area": "MachineryArea"
+			"area": "TableArea"
 		},
 		"crusher": {
 			"stock": 999,
