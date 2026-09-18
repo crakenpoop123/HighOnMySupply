@@ -14,10 +14,50 @@ func _ready() -> void:
 		var curr_item = item.instantiate()
 		
 		$HotbarGrid.add_child(curr_item)
+	
+	# Iniate the slot labels
+	initiate_slots()
+	
+	# Place all the buildings into the hotbar by default
+	autoload_buildings()
 
+# Places all buildings in the hotbar by default
+func autoload_buildings():
+	var building_count = 0
+	for building in globals.inventory_buildings.keys():
+		# Used to index the slot
+		building_count += 1
+		
+		var slot = get_slot_from_num(building_count)
+		
+		#print(slot, " | label: ", building_count)
+		
+		# Add the item to the slot
+		slot.item = building
+		
+		# Update the item's icon
+		slot.item_icon = globals.inventory_buildings[building]["icon_region"]
+		
+		# Tell the slot this item is a building
+		slot.item_type = "building"
+	
+	# Add the dragged item to the slot
+	#slot.item = dragging
+	##print("dragging in slot: ", dragging)
+	## Show the item's icon in the slot
+	#slot.item_icon = dragging_array[dragging]["icon_region"]
+	## Set the slot to te correct type
+	#slot.item_type = "building" if dragging_array == globals.inventory_buildings else "ingredients"
+	#
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+# Returns the slot from its label
+func get_slot_from_num(label):
+	for slot in get_node("HotbarGrid").get_children():
+		if slot.label == str(label):
+			return slot
+
+# Initiate slot values
+func initiate_slots():
 	var slot_number = 0
 	
 	# Update the slots
