@@ -31,7 +31,7 @@ var boil_time = 5
 
 var money = 0
 
-#mouse
+# Mouse
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
