@@ -132,7 +132,7 @@ sources/0 = SubResource("TileSetAtlasSource_45pc1")
 sources/1 = SubResource("TileSetAtlasSource_x7w6e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0f8x"]
-size = Vector2(30, 128)
+size = Vector2(52, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45pc1"]
 atlas = ExtResource("14_t4hvj")
@@ -267,7 +267,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Npc" unique_id=628718027]
 editor_description = "what
 "
-position = Vector2(-2, 0)
+position = Vector2(-2, 56)
 shape = SubResource("RectangleShape2D_i0f8x")
 
 [node name="homeless guy" type="Sprite2D" parent="NPCs" unique_id=2088298724]

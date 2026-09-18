@@ -1,6 +1,8 @@
 extends CanvasLayer
 var bob_direction = 1
 
+const TUTORIAL = preload("res://scenes/gui/menus/phone_call.tscn")
+
 func _on_basement_button_up() -> void: # Change scene
 		get_tree().change_scene_to_file("res://scenes/areas_in_world/basement.tscn")
 
@@ -16,3 +18,8 @@ func _process(delta: float) -> void:
 		bob_direction = -1
 	elif basement_button.global_position.y <= 378:
 		bob_direction = 1
+
+
+func _on_tutorial_button_up() -> void:
+	var tutorial = TUTORIAL.instantiate()
+	add_child(tutorial)

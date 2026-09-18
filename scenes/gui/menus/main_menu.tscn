@@ -65,4 +65,21 @@ text = "Play
 "
 flat = true
 
+[node name="Tutorial" type="Button" parent="Main/Buttons" unique_id=495537020]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 353.0
+offset_right = 376.0
+offset_bottom = 466.0
+theme_override_font_sizes/font_size = 76
+text = "Tutorial"
+flat = true
+
+[node name="Tutorial" type="Control" parent="." unique_id=1717908948]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="button_up" from="Main/Buttons/Basement" to="." method="_on_basement_button_up"]
+[connection signal="button_up" from="Main/Buttons/Tutorial" to="." method="_on_tutorial_button_up"]

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dc17ou83esybu"]
+
+[ext_resource type="Script" uid="uid://bwi4bl557xp5q" path="res://scripts/menus/phone_call.gd" id="1_br1nl"]
+[ext_resource type="Texture2D" uid="uid://r73c42vdbfl8" path="res://assets/gui/hotbarslot.png" id="2_br1nl"]
+
+[node name="Tutorial" type="Control" unique_id=881028186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_br1nl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=346889561]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.21800001
+anchor_bottom = 0.73600006
+offset_left = 100.0
+offset_top = 59.0
+offset_right = 800.864
+offset_bottom = 112.07196
+texture = ExtResource("2_br1nl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1285864132]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 59.0
+offset_right = 1052.0
+offset_bottom = 589.0
+theme_override_font_sizes/normal_font_size = 35
+text = "Tutorial
+Press w a s d to move or use arrow keys
+Press tab to open the inventory
+Here you can drag buildings and items into your hotbar
+Press tab to close the inventory.
+If you wish to place a building then you can click your hotbar and move your mouse to where you want to place it and click
+Once placed you can press E to interact.
+You can also interact with npcs with E
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=498114344]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 65.0
+offset_right = 1049.0
+offset_bottom = 105.17391
+text = "X"
+
+[node name="Button2" type="Button" parent="." unique_id=555461516]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 521.0
+offset_right = 1021.0
+offset_bottom = 572.6667
+text = ">"
+
+[node name="Button3" type="Button" parent="." unique_id=1287525528]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 521.0
+offset_right = 171.0
+offset_bottom = 572.6667
+text = "<"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
