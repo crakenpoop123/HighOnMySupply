@@ -11,6 +11,7 @@ var attack_speed = 2 # interval(secs) between attacks
 var player_dir = 0
 # Init the player to be facing towards the screen
 var dir_state = "down"
+var talking_npc = null
 
 var slot_focused = 0
 
@@ -36,6 +37,7 @@ func _process(_delta: float) -> void:
 	check_hotbar_focus()
 
 func talking(text: String, npc):
+	talking_npc = npc
 	$TextBox.display_text(text, npc)
 
 func _physics_process(_delta: float) -> void:
@@ -137,7 +139,11 @@ func move():
 	
 
 func get_player_dir():
-	if target_speed.length() != 0:
+	if globals.see_text:
+		var npcx = talking_npc.position.x
+		var npcy = talking_npc.position.y
+		player_dir = atan2(npcy - position.y, npcx - position.x)
+	elif target_speed.length() != 0:
 		player_dir = target_speed.angle()
 		#print("player direction", player_dir)d
 
