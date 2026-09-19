@@ -59,6 +59,8 @@ func _process(_delta: float) -> void:
 		# Tell the user they can't build a building here
 		$"../..".display_gui_error("You may only place buildings in the basement")
 		$"../../SnapSprite".visible = false
+		placing = false
+		dragging = null	
 
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():
@@ -127,7 +129,8 @@ func check_for_draggables():
 				print(slot_interacted)
 				return "slot"
 		
-		placing = $"../../SnapSprite".visible
+		
+		placing = $"../../SnapSprite".visible and globals.scene == "basement"
 		
 		# Used to instantiate a building when brought out of the hotbar
 		if placing:
