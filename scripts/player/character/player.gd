@@ -41,15 +41,11 @@ func talking(text: String, npc):
 func _physics_process(_delta: float) -> void:
 	if globals.can_move == true:
 		move()
-		get_player_dir()
-		orient_animation()
+		
 	else: # Stop the player from drifting when they shouldn't move
 		target_speed = Vector2.ZERO
-		
-		# Stop the Sprite
-		$PlayerSprite.stop()
-		$PlayerSprite.frame = 0
-		
+	get_player_dir()
+	orient_animation()
 	# Normalise the speed. This ensures diagonal movement is the same speed as rectilinear motion
 	target_speed = target_speed.normalized() * SPEED
 	
@@ -159,10 +155,14 @@ func orient_animation():
 	call_correct_animation()
 
 func call_correct_animation():
-	var animation = "move_" if target_speed.length() != 0 else "idle_"
+	var animation
+	if !globals.can_move:
+		animation = "idle_"
+	else:
+		animation = "move_" if target_speed.length() != 0 else "idle_"
 	animation = animation + dir_state
 	
-	#print(animation)
+	print(animation)
 	$PlayerSprite.play(animation)
 
 func check_for_attacks():

@@ -284,12 +284,11 @@ z_index = 5
 shape = SubResource("RectangleShape2D_pcwmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1895173929]
+z_index = 1
 position = Vector2(2, -42)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ay68w")
 animation = &"idle_down"
-frame = 3
-frame_progress = 0.8084953
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1647791386]
 avoidance_enabled = true
