@@ -11,7 +11,6 @@ var top = -2720
 var bottom = 960
 var dir_state = "down"
 var npc_dir = 0
-
 var see_text = false
 
 var readable_name = "Customer"
@@ -59,6 +58,7 @@ func make_path(pos: Vector2):
 
 func player_interact():
 	$"../../Player".talking(form_response(), self)
+	
 
 func form_response():
 	var response: String = ""
@@ -81,8 +81,12 @@ func form_response():
 	return response
 
 func get_npc_dir():
-	npc_dir = target_speed.angle()
-	#print(npc_dir)
+	if !see_text:
+		npc_dir = target_speed.angle()
+	else:
+		var playerx = $"../../Player/".position.x
+		var playery = $"../../Player/".position.y
+		npc_dir = atan2(playery - position.y, playerx - position.x)
 
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:
@@ -93,13 +97,17 @@ func orient_animation():
 		dir_state = "down"
 	elif npc_dir > -3 * PI/4 and npc_dir < -PI/4:
 		dir_state = "up"
+		
 	#print(dir_state)
 	
 	call_correct_animation()
 
 func call_correct_animation():
-	var animation = "move_" #if target_speed.length() != 0 else "idle_"
+	var animation
+	if !see_text:
+		animation = "move_" #if target_speed.length() != 0 else "idle_"
+	else:
+		animation = "idle_"
 	animation = animation + dir_state
-	
 	#print(animation)
 	$AnimatedSprite2D.play(animation)
