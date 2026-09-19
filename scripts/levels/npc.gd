@@ -79,7 +79,7 @@ func form_response():
 
 func get_npc_dir():
 	npc_dir = target_speed.angle()
-	print(npc_dir)
+	#print(npc_dir)
 
 func orient_animation():
 	if npc_dir >= -PI/4 - 0.001 and npc_dir <= PI/4 + 0.001:
