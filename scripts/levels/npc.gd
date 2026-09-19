@@ -12,6 +12,8 @@ var bottom = 960
 var dir_state = "down"
 var npc_dir = 0
 
+var see_text = false
+
 var readable_name = "Customer"
 # greeting / no meaning dialog
 var npc_greeting_responses = ["Can I help you?", "Hm?", "How can I help?", "???", "Hello?"]
@@ -31,7 +33,7 @@ func _ready() -> void:
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
 func _physics_process(_delta: float) -> void:
-	if globals.see_text == true:
+	if see_text == true:
 		SPEED = 0
 	else:
 		SPEED = 300
@@ -43,6 +45,7 @@ func _physics_process(_delta: float) -> void:
 	var new_velocity = direction * SPEED
 	nav_agent.velocity = new_velocity
 	target_speed = nav_agent.velocity
+
 func on_nav_finished():
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
@@ -55,7 +58,7 @@ func make_path(pos: Vector2):
 
 
 func player_interact():
-	$"../../Player".talking(form_response())
+	$"../../Player".talking(form_response(), self)
 
 func form_response():
 	var response: String = ""

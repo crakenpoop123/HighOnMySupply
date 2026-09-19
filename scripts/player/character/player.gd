@@ -35,8 +35,8 @@ func _process(_delta: float) -> void:
 	interact()
 	check_hotbar_focus()
 
-func talking(text: String):
-	$TextBox.display_text(text)
+func talking(text: String, npc):
+	$TextBox.display_text(text, npc)
 
 func _physics_process(_delta: float) -> void:
 	if globals.can_move == true:
