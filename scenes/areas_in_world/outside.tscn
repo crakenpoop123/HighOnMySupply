@@ -132,12 +132,9 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_45pc1")
 sources/1 = SubResource("TileSetAtlasSource_x7w6e")
 
-<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0f8x"]
 size = Vector2(52, 16)
 
-=======
->>>>>>> Stashed changes
 [sub_resource type="AtlasTexture" id="AtlasTexture_45pc1"]
 atlas = ExtResource("14_t4hvj")
 
