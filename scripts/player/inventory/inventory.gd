@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 		$"../..".display_gui_error("You may only place buildings in the basement")
 		$"../../SnapSprite".visible = false
 		placing = false
-		dragging = null	
+		dragging = null
 
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():
@@ -251,19 +251,19 @@ func get_slot_node_from_name(slot_label):
 # Snap a node to the grid
 func snap_to_grid(movable):
 	
-	print("player pos: ", $"../..".position)
-	print("global mouse pos: ", get_global_mouse_position())
+	#print("player pos: ", $"../..".position)
+	#print("global mouse pos: ", get_global_mouse_position())
 	
 	var floor_offset = Vector2(fposmod($"../../../Floor".global_position[0], float(globals.grid_size)), fposmod($"../../../Table".global_position[1], float(globals.grid_size)))
-	print("floor_offset: ", floor_offset)
+	#print("floor_offset: ", floor_offset)
 	
 	# Lock position to the grid
 	movable.position = floor((get_global_mouse_position() - get_viewport_rect().size/2 + $"../..".global_position + floor_offset - Vector2(1, -19)) / globals.grid_size + Vector2(0.5, 0.5)) * globals.grid_size
 	
 	# Re-adjust to the correct spot
 	movable.position = movable.position - $"../..".global_position - floor_offset + Vector2(11, -19)
-	print("movable snapped global pos: ", movable.global_position)
-	print("movable corrected pos: ", movable.position)
+	#print("movable snapped global pos: ", movable.global_position)
+	#print("movable corrected pos: ", movable.position)
 
 # Drag the item to a spot
 func drag_item():

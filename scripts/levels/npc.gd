@@ -105,7 +105,7 @@ func orient_animation():
 func call_correct_animation():
 	var animation
 	if !see_text:
-		animation = "move_" #if target_speed.length() != 0 else "idle_"
+		animation = "move_" 
 	else:
 		animation = "idle_"
 	animation = animation + dir_state

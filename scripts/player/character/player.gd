@@ -168,7 +168,7 @@ func call_correct_animation():
 		animation = "move_" if target_speed.length() != 0 else "idle_"
 	animation = animation + dir_state
 	
-	print(animation)
+	#print(animation)
 	$PlayerSprite.play(animation)
 
 func check_for_attacks():
