@@ -259,20 +259,17 @@ tile_set = ExtResource("12_t81t5")
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1397088088]
 
-<<<<<<< Updated upstream
 [node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
 position = Vector2(1625, -366)
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Npc" unique_id=628718027]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/Npc" unique_id=628718027]
 editor_description = "what
 "
 position = Vector2(-2, 56)
 shape = SubResource("RectangleShape2D_i0f8x")
 
-=======
->>>>>>> Stashed changes
 [node name="homeless guy" type="Sprite2D" parent="NPCs" unique_id=2088298724]
 position = Vector2(-19, -2488)
 scale = Vector2(4, 4)
@@ -280,17 +277,17 @@ texture = SubResource("AtlasTexture_45pc1")
 hframes = 4
 vframes = 8
 
-[node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
+[node name="Npc2" parent="NPCs" unique_id=882991530 instance=ExtResource("13_xw64v")]
 position = Vector2(1625, -366)
 
-[node name="Npc2" parent="NPCs" unique_id=897993385 instance=ExtResource("13_xw64v")]
+[node name="Npc3" parent="NPCs" unique_id=897993385 instance=ExtResource("13_xw64v")]
 position = Vector2(629, -1951)
 
-[node name="Npc3" parent="NPCs" unique_id=374873096 instance=ExtResource("13_xw64v")]
+[node name="Npc4" parent="NPCs" unique_id=374873096 instance=ExtResource("13_xw64v")]
 position = Vector2(3193, -352)
 
-[node name="Npc4" parent="NPCs" unique_id=1452268797 instance=ExtResource("13_xw64v")]
+[node name="Npc5" parent="NPCs" unique_id=1452268797 instance=ExtResource("13_xw64v")]
 position = Vector2(2359, 363)
 
-[node name="Npc5" parent="NPCs" unique_id=659105852 instance=ExtResource("13_xw64v")]
+[node name="Npc6" parent="NPCs" unique_id=659105852 instance=ExtResource("13_xw64v")]
 position = Vector2(3352, -1547)
