@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dc17ou83esybu"]
 
 [ext_resource type="Script" uid="uid://bwi4bl557xp5q" path="res://scripts/menus/phone_call.gd" id="1_br1nl"]
-[ext_resource type="Texture2D" uid="uid://r73c42vdbfl8" path="res://assets/gui/hotbarslot.png" id="2_br1nl"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="2_5d8qn"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_dvjl2"]
 
 [node name="Tutorial" type="Control" unique_id=881028186]
 layout_mode = 3
@@ -17,11 +18,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.21800001
 anchor_bottom = 0.73600006
-offset_left = 100.0
-offset_top = 59.0
-offset_right = 800.864
-offset_bottom = 112.07196
-texture = ExtResource("2_br1nl")
+offset_left = 31.0
+offset_top = -4.0
+offset_right = 869.864
+offset_bottom = 175.07196
+texture = ExtResource("2_5d8qn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1285864132]
 layout_mode = 0
@@ -29,6 +30,7 @@ offset_left = 100.0
 offset_top = 59.0
 offset_right = 1052.0
 offset_bottom = 589.0
+theme_override_fonts/normal_font = ExtResource("3_dvjl2")
 theme_override_font_sizes/normal_font_size = 35
 text = "Tutorial
 Press w a s d to move or use arrow keys
@@ -47,23 +49,33 @@ offset_left = 1021.0
 offset_top = 65.0
 offset_right = 1049.0
 offset_bottom = 105.17391
+theme_override_fonts/font = ExtResource("3_dvjl2")
+theme_override_font_sizes/font_size = 37
 text = "X"
+flat = true
 
 [node name="Button2" type="Button" parent="." unique_id=555461516]
 layout_mode = 0
-offset_left = 983.0
-offset_top = 521.0
-offset_right = 1021.0
-offset_bottom = 572.6667
+offset_left = 999.0
+offset_top = 511.0
+offset_right = 1037.0
+offset_bottom = 587.0
+theme_override_fonts/font = ExtResource("3_dvjl2")
+theme_override_font_sizes/font_size = 51
 text = ">"
+flat = true
+icon_alignment = 1
 
 [node name="Button3" type="Button" parent="." unique_id=1287525528]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 521.0
-offset_right = 171.0
-offset_bottom = 572.6667
+offset_left = 103.0
+offset_top = 513.0
+offset_right = 141.0
+offset_bottom = 589.0
+theme_override_fonts/font = ExtResource("3_dvjl2")
+theme_override_font_sizes/font_size = 51
 text = "<"
+flat = true
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
