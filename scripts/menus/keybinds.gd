@@ -13,7 +13,7 @@ var curr_keybind
 var curr_key
 var curr_keycode
 
-var locked_keys: Array[String] = ["QUIT"]
+var locked_keys: Array[String] = ["pause"]
 var locked_keys_key: Array[int] = [4194305]
 var bound_keys = []
 
