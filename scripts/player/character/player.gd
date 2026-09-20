@@ -196,7 +196,8 @@ func interact():
 			#	print("Failed to interact with anything")
 	
 	if Input.is_action_just_pressed("inventory"):
-		globals.in_inventory = !globals.in_inventory
+		if !globals.game_paused:
+			globals.in_inventory = !globals.in_inventory
 		
 	if Input.is_action_just_pressed("pause"):
 		globals.game_paused = !globals.game_paused
