@@ -19,3 +19,7 @@ func _on_resume_button_pressed() -> void:
 func _on_tutorial_button_pressed() -> void:
 	var tutorial = TUTORIAL.instantiate()
 	add_child(tutorial)
+
+
+func _on_keybind_button_pressed() -> void:
+	globals.change_scene(true, "res://scenes/gui/menus/keybinds.tscn")

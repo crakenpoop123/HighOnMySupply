@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://d273gsihmxtsv"]
+
+[ext_resource type="Texture2D" uid="uid://dmrtog6pms2ox" path="res://assets/gui/scroll_container_background.png" id="1_jv1ns"]
+[ext_resource type="Script" uid="uid://3kq738qe3odf" path="res://scripts/menus/menu_dependencies/keybinding.gd" id="2_jgv1c"]
+[ext_resource type="Texture2D" uid="uid://bqqpcigb2dig5" path="res://assets/gui/button_texture.png" id="3_jgv1c"]
+[ext_resource type="Texture2D" uid="uid://bgwexewx7lv0q" path="res://assets/gui/inverted_button_texture.png" id="4_lt24e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wmf6"]
+texture = ExtResource("3_jgv1c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxqv7"]
+texture = ExtResource("4_lt24e")
+
+[sub_resource type="Theme" id="Theme_2dkqo"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1618886007]
+offset_right = 444.0
+offset_bottom = 126.0
+scale = Vector2(1.025, 1.025)
+size_flags_vertical = 2
+texture = ExtResource("1_jv1ns")
+expand_mode = 5
+script = ExtResource("2_jgv1c")
+
+[node name="Add" type="Button" parent="." unique_id=421800588]
+layout_mode = 0
+offset_left = 115.82926
+offset_top = 40.0
+offset_right = 190.2439
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1wmf6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wxqv7")
+text = "Add key"
+
+[node name="Reset" type="Button" parent="." unique_id=823682571]
+layout_mode = 0
+offset_left = 196.92693
+offset_top = 40.0
+offset_right = 321.92694
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1wmf6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wxqv7")
+text = "Reset keybinds"
+
+[node name="List" type="Button" parent="." unique_id=934538084]
+layout_mode = 0
+offset_left = 327.80496
+offset_top = 39.99999
+offset_right = 409.75616
+offset_bottom = 85.999985
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1wmf6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wxqv7")
+text = "List keys"
+
+[node name="Event" type="RichTextLabel" parent="." unique_id=376193786]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 35.121952
+offset_top = 34.14634
+offset_right = 112.195114
+offset_bottom = 124.87806
+theme = SubResource("Theme_2dkqo")
+text = "Event"
+
+[connection signal="button_up" from="Add" to="." method="_on_add_button_up"]
+[connection signal="button_up" from="Reset" to="." method="_on_reset_button_up"]
+[connection signal="button_up" from="List" to="." method="_on_list_button_up"]

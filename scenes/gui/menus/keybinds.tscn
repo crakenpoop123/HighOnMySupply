@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://kveb8rqm4hnr"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
+[ext_resource type="Texture2D" uid="uid://hwxtt33pihpl" path="res://assets/gui/menus/keybinds_background.png" id="2_corrn"]
+[ext_resource type="Texture2D" uid="uid://s1f0n34i8wfs" path="res://assets/gui/menus/keybind_warning_background.png" id="2_de5hr"]
+[ext_resource type="Texture2D" uid="uid://dbw0i0xspvd3" path="res://assets/gui/menus/keybinds_title.png" id="4_corrn"]
+
+[node name="Keybinds" type="Control" unique_id=399852040]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_de5hr")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1090403247]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 1152.0
+texture = ExtResource("2_corrn")
+
+[node name="KeybindScroll" type="ScrollContainer" parent="." unique_id=216127759]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 161.0
+offset_right = 804.0
+offset_bottom = 623.0
+
+[node name="KeybindVBox" type="VBoxContainer" parent="KeybindScroll" unique_id=679164162]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Popup" type="Control" parent="." unique_id=1738626689]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="PopupTexture" type="TextureRect" parent="Popup" unique_id=1079271925]
+layout_mode = 0
+offset_left = 252.0
+offset_right = 900.0
+offset_bottom = 648.0
+texture = ExtResource("2_de5hr")
+
+[node name="MainText" type="RichTextLabel" parent="Popup" unique_id=1807472894]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 251.0
+offset_right = 702.0
+offset_bottom = 365.0
+text = "You are currently adding a key to keybind KEYBIND. The key is not yet selected"
+
+[node name="Continue" type="RichTextLabel" parent="Popup" unique_id=1772776861]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 361.0
+offset_right = 702.0
+offset_bottom = 418.0
+text = "Do you wish to proceed?"
+
+[node name="Yes" type="Button" parent="Popup" unique_id=326991820]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 461.0
+offset_right = 509.0
+offset_bottom = 561.0
+text = "Yes"
+
+[node name="No" type="Button" parent="Popup" unique_id=1579939626]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 461.0
+offset_right = 781.0
+offset_bottom = 561.0
+text = "No"
+
+[node name="Title" type="TextureRect" parent="." unique_id=198696678]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 35.0
+offset_right = 786.75
+offset_bottom = 137.0
+texture = ExtResource("4_corrn")
+
+[connection signal="button_up" from="Popup/Yes" to="." method="_on_yes_button_up"]
+[connection signal="button_up" from="Popup/No" to="." method="_on_no_button_up"]
