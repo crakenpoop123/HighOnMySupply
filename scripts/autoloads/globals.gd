@@ -5,6 +5,7 @@ var can_move = true # Interacting with the physical world
 var in_cooking_menu = false
 var in_menu = false
 var in_inventory = false
+var game_paused = false
 var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables", "Clerk", "NPCs"]
 var player_loading_point: String = ""

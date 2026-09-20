@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkcpg0g6djle" path="res://scenes/player/inventory/hotbar.tscn" id="4_e41v5"]
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://dvygx20llb4ey" path="res://scenes/gui/talking/text_box.tscn" id="6_75vfm"]
+[ext_resource type="PackedScene" uid="uid://ct0lprtt7h4dh" path="res://scenes/gui/menus/pause_screen.tscn" id="7_5gtgg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -312,7 +313,7 @@ horizontal_alignment = 1
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=48635526]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_twm3q")
-animation = &"move_left"
+animation = &"idle_down"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=759029234]
 position = Vector2(-2, 0)
@@ -342,6 +343,8 @@ grow_vertical = 1
 
 [node name="Inventory" parent="." unique_id=978713471 instance=ExtResource("3_gmlin")]
 layer = 0
+
+[node name="PauseScreen" parent="." unique_id=878729725 instance=ExtResource("7_5gtgg")]
 
 [node name="SnapSprite" type="Sprite2D" parent="." unique_id=1889221138]
 scale = Vector2(2.5, 2.5)

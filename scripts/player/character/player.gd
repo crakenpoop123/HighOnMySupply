@@ -197,6 +197,9 @@ func interact():
 	
 	if Input.is_action_just_pressed("inventory"):
 		globals.in_inventory = !globals.in_inventory
+		
+	if Input.is_action_just_pressed("pause"):
+		globals.game_paused = !globals.game_paused
 
 func check_hotbar_focus():
 	for num in range(10):

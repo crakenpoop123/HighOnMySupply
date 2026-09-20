@@ -154,6 +154,11 @@ scale = Vector2(1e-05, 1e-05)
 scene_to_load = "res://scenes/areas_in_world/store.tscn"
 scene_from = "outside"
 
+[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("3_45pc1")]
+z_index = 1
+position = Vector2(2155, -365)
+collision_layer = 5
+
 [node name="Tilemaps" type="NavigationRegion2D" parent="." unique_id=1862096508]
 navigation_polygon = SubResource("NavigationPolygon_i0f8x")
 navigation_layers = 5
@@ -260,30 +265,19 @@ hframes = 4
 vframes = 8
 
 [node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(1625, -366)
 
 [node name="Npc2" parent="NPCs" unique_id=296700450 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(1625, -366)
 
 [node name="Npc3" parent="NPCs" unique_id=897993385 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(629, -1951)
 
 [node name="Npc4" parent="NPCs" unique_id=374873096 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(3193, -352)
 
 [node name="Npc5" parent="NPCs" unique_id=1452268797 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(2359, 363)
 
 [node name="Npc6" parent="NPCs" unique_id=659105852 instance=ExtResource("13_xw64v")]
-z_index = 1
 position = Vector2(3352, -1547)
-
-[node name="Player" parent="." unique_id=2037227082 instance=ExtResource("3_45pc1")]
-z_index = 1
-position = Vector2(2155, -365)
-collision_layer = 5
