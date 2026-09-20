@@ -11,9 +11,11 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	var basement_button = $Main/Buttons/Basement
+	var tutorial_button = $Main/Buttons/Tutorial
 	
-	basement_button.global_position.y += 0.5*bob_direction
-	
+	basement_button.global_position.y += 0.2*bob_direction
+	tutorial_button.global_position.y += -0.2*bob_direction
+
 	if basement_button.global_position.y >= 400:
 		bob_direction = -1
 	elif basement_button.global_position.y <= 378:
