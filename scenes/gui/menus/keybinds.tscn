@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kveb8rqm4hnr"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
+[ext_resource type="Script" uid="uid://ba1hkkove83n7" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
 [ext_resource type="Texture2D" uid="uid://hwxtt33pihpl" path="res://assets/gui/menus/keybinds_background.png" id="2_corrn"]
 [ext_resource type="Texture2D" uid="uid://s1f0n34i8wfs" path="res://assets/gui/menus/keybind_warning_background.png" id="2_de5hr"]
 [ext_resource type="Texture2D" uid="uid://dbw0i0xspvd3" path="res://assets/gui/menus/keybinds_title.png" id="4_corrn"]

@@ -53,6 +53,11 @@ func on_keybind_changed(type: String, key: String):
 
 
 func _process(_delta: float) -> void:
+	# Leave the keybinds menu
+	if Input.is_action_just_pressed("pause"):
+		globals.change_scene(false)
+	
+	
 	# Show text for if the user is changing a keybind
 	if keybind_changing:
 		if curr_key == null:
