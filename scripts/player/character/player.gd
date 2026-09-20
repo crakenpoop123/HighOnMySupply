@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 	# Update Money
 	$MoneyText.text = str("Money: $", globals.money)
 	
-	if globals.in_menu or globals.in_inventory or globals.see_text:
+	if globals.in_menu or globals.in_inventory or globals.see_text or globals.game_paused:
 		globals.can_move = false
 	else:
 		globals.can_move = true

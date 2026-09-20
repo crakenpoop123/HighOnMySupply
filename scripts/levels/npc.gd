@@ -32,7 +32,7 @@ func _ready() -> void:
 	make_path(Vector2(randi_range(left,right), randi_range(bottom,top)))
 	
 func _physics_process(_delta: float) -> void:
-	if see_text == true:
+	if see_text == true or globals.game_paused:
 		SPEED = 0
 	else:
 		SPEED = 300
@@ -104,7 +104,7 @@ func orient_animation():
 
 func call_correct_animation():
 	var animation
-	if !see_text:
+	if !see_text and !globals.game_paused:
 		animation = "move_" 
 	else:
 		animation = "idle_"

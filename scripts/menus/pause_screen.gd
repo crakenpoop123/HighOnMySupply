@@ -11,4 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$".".visible = globals.game_paused
 	
-	
+
+func _on_resume_button_pressed() -> void:
+	globals.game_paused = false
