@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://kveb8rqm4hnr"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
-[ext_resource type="Texture2D" uid="uid://hwxtt33pihpl" path="res://assets/gui/menus/keybinds_background.png" id="2_corrn"]
+[ext_resource type="Script" uid="uid://ba1hkkove83n7" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="2_an37u"]
 [ext_resource type="Texture2D" uid="uid://s1f0n34i8wfs" path="res://assets/gui/menus/keybind_warning_background.png" id="2_de5hr"]
-[ext_resource type="Texture2D" uid="uid://dbw0i0xspvd3" path="res://assets/gui/menus/keybinds_title.png" id="4_corrn"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="4_3hpwn"]
 
 [node name="Keybinds" type="Control" unique_id=399852040]
 layout_mode = 3
@@ -18,7 +18,7 @@ script = ExtResource("1_de5hr")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 1152.0
-texture = ExtResource("2_corrn")
+texture = ExtResource("2_an37u")
 
 [node name="KeybindScroll" type="ScrollContainer" parent="." unique_id=216127759]
 layout_mode = 0
@@ -78,13 +78,16 @@ offset_right = 781.0
 offset_bottom = 561.0
 text = "No"
 
-[node name="Title" type="TextureRect" parent="." unique_id=198696678]
+[node name="Title" type="RichTextLabel" parent="." unique_id=1333413437]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 35.0
-offset_right = 786.75
-offset_bottom = 137.0
-texture = ExtResource("4_corrn")
+offset_left = 334.0
+offset_top = 6.0
+offset_right = 815.0
+offset_bottom = 139.0
+theme_override_fonts/normal_font = ExtResource("4_3hpwn")
+theme_override_font_sizes/normal_font_size = 100
+text = "Keybinds"
+scroll_active = false
 
 [connection signal="button_up" from="Popup/Yes" to="." method="_on_yes_button_up"]
 [connection signal="button_up" from="Popup/No" to="." method="_on_no_button_up"]
