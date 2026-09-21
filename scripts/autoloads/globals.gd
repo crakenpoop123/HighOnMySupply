@@ -31,13 +31,14 @@ var sugar_cane_max_growth = 5
 var boil_time = 5
 
 var money = 5000
-var gelatin_cost = 5 # This is semi-hardcoded so it will break the clerk speech when changed
+var gelatin_cost = 5 # This will break the clerk speech when changed, but works, functionally
+var gummy_worm_sell_price = 10 # Same as the above comment
 
 # Mouse
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
-var shopkeep_choice_dict = { # Shopkeep test choices
+var shopkeep_choice_dict = { # Shopkeep gelatin choices
 	"1_text": "Buy Gelatin", 
 	"2_text": "Leave", 
 	"1": {
@@ -64,10 +65,36 @@ var shopkeep_choice_dict = { # Shopkeep test choices
 	
 }
 
+var gummy_worm_choice_dict = { # NPC gummy worm choices
+	"1_text": "Sell Gummy Worms", 
+	"2_text": "Leave", 
+	"1": {
+		"main_text": "Sure! I'll buy some gummy worms! I will buy them for $10 apiece", 
+		"1_text": "Sell 1 Gummy Worm", 
+		"2_text": "Sell 10 Gummy Worms", 
+		"3_text": "Leave", 
+		"1": {
+			"func": "sell_gummy_worms", 
+			"arg": 1
+		}, 
+		"2": {
+			"func": "sell_gummy_worms", 
+			"arg": 10
+		}, 
+		"3": {
+			"func": "_on_exit_button_button_up"
+		}
+	}, 
+	"2": {
+		"func": "_on_exit_button_button_up"
+	}
+	
+}
+
 func _ready() -> void:
 	inventory_ingredients = {
 		"gummy_worm": {
-			"stock": 0,
+			"stock": 100,
 			"had_before": false,
 			"name": "Gummy Worms", 
 			"icon": "res://assets/items/gummy-worms.png",

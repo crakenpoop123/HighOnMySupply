@@ -46,6 +46,10 @@ func talking(text: String, npc = null):
 		
 		# Passing "clerk" to the textbox results in crashes
 		talking_npc = null
+	# Let the user sell gummy worms
+	else:
+		# Show the choices to buy sell gummy worms
+		$TextBox.display_choices(globals.gummy_worm_choice_dict)
 	
 	# Show the npc text
 	$TextBox.display_text(text, talking_npc)

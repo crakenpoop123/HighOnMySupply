@@ -24,24 +24,23 @@ func display_text(text: String, npc = null):
 	
 
 var test_choice_dict = { # Shopkeep test choices
-	"1_text": "Buy Gelatin", 
+	"1_text": "Sell Gummy Worms", 
 	"2_text": "Leave", 
 	"1": {
-		"main_text": "How much gelatin would you like to buy? Each piece costs $5.", 
-		"1_text": "1 Gelatin", 
-		"2_text": "10 Gelatin", 
-		"3_text": "100 Gelatin", 
+		"main_text": "Sure! I'll buy some gummy worms! I will buy them for $10 apiece", 
+		"1_text": "Sell 1 Gummy Worm", 
+		"2_text": "Sell 10 Gummy Worms", 
+		"3_text": "Leave", 
 		"1": {
-			"func": "buy_gelatin", 
+			"func": "sell_gummy_worms", 
 			"arg": 1
 		}, 
 		"2": {
-			"func": "buy_gelatin", 
+			"func": "sell_gummy_worms", 
 			"arg": 10
 		}, 
 		"3": {
-			"func": "buy_gelatin", 
-			"arg": 100
+			"func": "_on_exit_button_button_up"
 		}
 	}, 
 	"2": {
@@ -146,6 +145,25 @@ func buy_gelatin(amount):
 	else:
 		# Politely tell the user they are broke
 		$"..".display_gui_error("Sorry, you do not have the funds for this!")
+		# Exit the text 
+		_on_exit_button_button_up()
+
+# Sell amount gummy worms
+func sell_gummy_worms(amount):
+	if globals.inventory_ingredients["gummy_worm"]["stock"] >= amount:
+		# Take gummy worms from the user
+		globals.inventory_ingredients["gummy_worm"]["stock"] -= amount
+		
+		# Give the user money
+		globals.money += amount * globals.gummy_worm_sell_price
+		
+		# Exit the text
+		_on_exit_button_button_up()
+	
+	# If the player doesn't have enough gumm worms
+	else:
+		# Tell the user they don't have the stock for this
+		$"..".display_gui_error("Sorry, you do not have enough gummy worms for this")
 		# Exit the text 
 		_on_exit_button_button_up()
 
