@@ -44,6 +44,7 @@ func _process(_delta: float) -> void:
 	
 	#print("placing: ", placing)
 	
+	
 	# Detect when the inventory was just closed
 	if !globals.in_inventory and globals.just_in_inventory:
 		dragging = null

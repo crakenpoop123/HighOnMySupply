@@ -30,12 +30,39 @@ var sugar_cane_max_growth = 5
 # Timer vaiables
 var boil_time = 5
 
-var money = 0
+var money = 5000
+var gelatin_cost = 5 # This is semi-hardcoded so it will break the clerk speech when changed
 
 # Mouse
 var can_drag = true
 var can_attack = true # When this is true, the mouse click will be used for attacking
 
+var shopkeep_choice_dict = { # Shopkeep test choices
+	"1_text": "Buy Gelatin", 
+	"2_text": "Leave", 
+	"1": {
+		"main_text": "How much gelatin would you like to buy? Each piece costs $5.", 
+		"1_text": "1 Gelatin", 
+		"2_text": "10 Gelatin", 
+		"3_text": "100 Gelatin", 
+		"1": {
+			"func": "buy_gelatin", 
+			"arg": 1
+		}, 
+		"2": {
+			"func": "buy_gelatin", 
+			"arg": 10
+		}, 
+		"3": {
+			"func": "buy_gelatin", 
+			"arg": 100
+		}
+	}, 
+	"2": {
+		"func": "_on_exit_button_button_up"
+	}
+	
+}
 
 func _ready() -> void:
 	inventory_ingredients = {

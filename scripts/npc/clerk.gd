@@ -13,7 +13,7 @@ var clerk_negative = ["If you’re not gonna buy anything then leave.", "Leave. 
 var clerk_bought = ["Thank you for purchasing!", "Throw a gummy worm for a tip?", "Don’t mess around with that.", "Be careful.", "No refunds."]
 
 func player_interact():
-	$"../../Player".talking(form_response())
+	$"../../Player".talking(form_response(), "clerk")
 
 func form_response():
 	var response: String = ""

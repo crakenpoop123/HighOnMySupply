@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp6jxxj6f6udw" path="res://scripts/player/inventory/inventory.gd" id="1_crr4r"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=978713471]
+[node name="Inventory" type="CanvasLayer" unique_id=978713471]
 
 [node name="Inventory" type="Control" parent="." unique_id=1229629953]
 layout_mode = 3

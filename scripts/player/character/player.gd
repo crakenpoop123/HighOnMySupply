@@ -36,9 +36,19 @@ func _process(_delta: float) -> void:
 	interact()
 	check_hotbar_focus()
 
-func talking(text: String, npc):
+func talking(text: String, npc = null):
 	talking_npc = npc
-	$TextBox.display_text(text, npc)
+	
+	# Sell the user gelatin
+	if str(npc) == "clerk":
+		# Show the choices to buy gelatin
+		$TextBox.display_choices(globals.shopkeep_choice_dict)
+		
+		# Passing "clerk" to the textbox results in crashes
+		talking_npc = null
+	
+	# Show the npc text
+	$TextBox.display_text(text, talking_npc)
 
 func _physics_process(_delta: float) -> void:
 	if globals.can_move == true:
@@ -139,7 +149,7 @@ func move():
 	
 
 func get_player_dir():
-	if globals.see_text:
+	if globals.see_text and talking_npc:
 		var npcx = talking_npc.position.x
 		var npcy = talking_npc.position.y
 		player_dir = atan2(npcy - position.y, npcx - position.x)
@@ -198,6 +208,7 @@ func interact():
 	if Input.is_action_just_pressed("inventory"):
 		if !globals.game_paused:
 			globals.in_inventory = !globals.in_inventory
+			$Inventory/Inventory.update_items()
 		
 	if Input.is_action_just_pressed("pause"):
 		globals.game_paused = !globals.game_paused

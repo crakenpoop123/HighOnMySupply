@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i3erv")
 
-[node name="TextUreRect" type="TextureRect" parent="." unique_id=113678170]
+[node name="TextBoxSprite" type="TextureRect" parent="." unique_id=113678170]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_i3erv")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=39190839]
+[node name="TextBox" type="RichTextLabel" parent="." unique_id=39190839]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.034
@@ -41,7 +41,7 @@ text = "This is a placeholder text. If you are seeing this, then something is br
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1876535129]
+[node name="ExitButton" type="Button" parent="." unique_id=1876535129]
 layout_mode = 0
 offset_left = 1063.0
 offset_top = 416.0
@@ -49,4 +49,42 @@ offset_right = 1106.0
 offset_bottom = 463.0
 text = "X"
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="ChoiceNodes" type="Control" parent="." unique_id=1564537616]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Choice1" type="Button" parent="ChoiceNodes" unique_id=906700711]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 207.0
+offset_right = 301.0
+offset_bottom = 263.0
+text = "Insert Choice Here"
+flat = true
+
+[node name="Choice2" type="Button" parent="ChoiceNodes" unique_id=985450461]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 271.0
+offset_right = 301.0
+offset_bottom = 327.0
+text = "Insert Choice Here"
+flat = true
+
+[node name="Choice3" type="Button" parent="ChoiceNodes" unique_id=471841363]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 327.0
+offset_right = 301.0
+offset_bottom = 383.0
+text = "Insert Choice Here"
+flat = true
+
+[connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="pressed" from="ChoiceNodes/Choice1" to="." method="_on_choice_1_pressed"]
+[connection signal="pressed" from="ChoiceNodes/Choice2" to="." method="_on_choice_2_pressed"]
+[connection signal="pressed" from="ChoiceNodes/Choice3" to="." method="_on_choice_3_pressed"]
