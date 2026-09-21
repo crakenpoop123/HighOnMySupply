@@ -1,4 +1,6 @@
 extends Control
+# Preload the audio resources
+const PLACE_BUILDING_SOUND = preload("res://assets/sfx/PlaceBuilding.mp3")
 
 var item_setup = preload("res://scenes/player/inventory/item.tscn")
 var item_location = "InventoryScroll/ScrollGrid"
@@ -141,6 +143,7 @@ func check_for_draggables():
 					if globals.inventory_buildings[dragging]["stock"] != 0:
 						instantiate_building(dragging, $"../../SnapSprite".global_position)
 						print("Place")
+						sound_manager.play_sound(PLACE_BUILDING_SOUND)
 						return "Place"
 					else:
 						$"../..".display_gui_error("No stock to place")

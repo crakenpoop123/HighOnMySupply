@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+# Preload the audio resources
+const INVENTORY_SOUND = preload("res://assets/sfx/InventorySound.mp3")
+const PAUSE_SOUND = preload("res://assets/sfx/PauseSound.mp3")
+const INTERACT_SOUND = preload("res://assets/sfx/InteractSound.mp3")
+const INTERACT_DENIED_SOUND = preload("res://assets/sfx/InteractDeniedSound.mp3")
 var near_pot: bool = false
 
 const SPEED = 300.0
@@ -199,22 +204,28 @@ func attack():
 func interact():
 	if Input.is_action_just_pressed("interact"):
 		#print("trying to interact")
-		if globals.in_menu == false:
+		if !globals.in_menu and !globals.game_paused:
 			if find_interactables():
 				# Interact with the nearest interactable object and save the result
+				
 				var interact_result = await get_nearest_interactable().player_interact()
 				if interact_result != null:
+					sound_manager.play_sound(INTERACT_DENIED_SOUND)
 					display_gui_error("Insufficient stock of " + interact_result + ". You need at least 1 " + interact_result)
+				else:
+					sound_manager.play_sound(INTERACT_SOUND)
 			else:
 				pass
 			#	print("Failed to interact with anything")
 	
 	if Input.is_action_just_pressed("inventory"):
 		if !globals.game_paused:
+			sound_manager.play_sound(INVENTORY_SOUND)
 			globals.in_inventory = !globals.in_inventory
 			$Inventory/Inventory.update_items()
 		
 	if Input.is_action_just_pressed("pause"):
+		sound_manager.play_sound(PAUSE_SOUND)
 		globals.game_paused = !globals.game_paused
 
 func check_hotbar_focus():
