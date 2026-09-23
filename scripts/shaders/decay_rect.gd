@@ -11,3 +11,9 @@ func _process(delta: float) -> void:
 	# Update noise level in the shader
 	if material is ShaderMaterial:
 		material.set_shader_parameter("u_noise_level", globals.noise_level)
+	
+	# Show the clear decay tip
+	if globals.noise_level > 0.2:
+		$"../ClearDecayTip".show()
+	else:
+		$"../ClearDecayTip".hide()
