@@ -44,6 +44,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact"):
 			globals.inventory_ingredients["gummy_worm"]["stock"] -= 1
 			globals.noise_level -= 0.1
+			
 	else:
 		$"../../GummyEatNotify".visible = false
 	# Checks for if the mouse clicked something important

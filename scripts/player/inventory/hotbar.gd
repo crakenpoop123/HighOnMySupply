@@ -21,6 +21,9 @@ func _ready() -> void:
 	# Place all the buildings into the hotbar by default
 	autoload_buildings()
 
+func _process(delta: float) -> void:
+	update_slots()
+
 # Places all buildings in the hotbar by default
 func autoload_buildings():
 	var building_count = 0
@@ -75,3 +78,16 @@ func initiate_slots():
 			slot.modulate = Color(1, 1, 1, 1)
 		else:
 			slot.modulate = Color(1, 1, 1, opacity)
+
+# Update the quantities for all slots
+func update_slots():
+	# Iterate through all slots
+	for slot in get_node("HotbarGrid").get_children():
+		if slot.item_type:
+			# Gets the string for the item dict
+			var inventory_item_str = "inventory_" + str(slot.item_type) + ("s" if str(slot.item_type) == "building" else "")
+			# Get the inventory dict
+			var inventory_items = globals.get(inventory_item_str)	
+			
+			# Update the item quantity
+			slot.quantity = inventory_items[slot.item]["stock"]

@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_25c24")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PauseScreen" unique_id=494686916]
+[node name="SomeLabelIG" type="RichTextLabel" parent="PauseScreen" unique_id=494686916]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.20700002
