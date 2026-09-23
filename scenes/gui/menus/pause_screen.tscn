@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_tue6w")
 
 [node name="FadeScreen" type="TextureRect" parent="PauseScreen" unique_id=14053879]
@@ -27,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_25c24")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PauseScreen" unique_id=494686916]
+[node name="SomeLabelIG" type="RichTextLabel" parent="PauseScreen" unique_id=494686916]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.20700002

@@ -5,7 +5,7 @@ has_surpassed_min = False
 
 
 count = 0
-while noise_level < 1:
+while noise_level < 0.2:
     count += 1
 
     delta = 1/60

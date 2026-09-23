@@ -1,21 +1,24 @@
-extends Node
+extends AudioStreamPlayer
+const BACKGROUND_MUSIC = preload("res://assets/sfx/MainMusic.wav")
 
 @onready var sound_pool_size = 8
+
 var audio_players = []
 var player_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Generates the array of audio players to allow overlapping SFX
+	# Generates the array of audio players to allow overlapping sounds
 	for i in range(sound_pool_size):
 		var audio_player = AudioStreamPlayer.new()
 		add_child(audio_player)
 		audio_players.append(audio_player)
-
+	stream = BACKGROUND_MUSIC
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if !playing:
+		play()
 
 func play_sound(audio_stream: AudioStream) -> void:
 	var player = audio_players[player_index]

@@ -44,6 +44,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact"):
 			globals.inventory_ingredients["gummy_worm"]["stock"] -= 1
 			globals.noise_level -= 0.1
+			
 	else:
 		$"../../GummyEatNotify".visible = false
 	# Checks for if the mouse clicked something important
@@ -150,7 +151,7 @@ func check_for_draggables():
 					if globals.inventory_buildings[dragging]["stock"] != 0:
 						instantiate_building(dragging, $"../../SnapSprite".global_position)
 						print("Place")
-						sound_manager.play_sound(PLACE_BUILDING_SOUND)
+						GlobalAudioStreamPlayer.play_sound(PLACE_BUILDING_SOUND)
 						return "Place"
 					else:
 						$"../..".display_gui_error("No stock to place")
