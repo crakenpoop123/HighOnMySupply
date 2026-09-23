@@ -416,4 +416,15 @@ mouse_filter = 1
 color = Color(1, 1, 1, 0)
 script = ExtResource("11_je7p5")
 
+[node name="ClearDecayTip" type="RichTextLabel" parent="DecayShader" unique_id=1247198778]
+offset_left = 130.0
+offset_top = 463.0
+offset_right = 1026.0
+offset_bottom = 597.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/normal_font_size = 48
+text = "Eat a Gummy Worm to Clear Up Decay"
+
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
