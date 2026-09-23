@@ -26,7 +26,23 @@ func _ready():
 	$GUIError.visible = false
 	$InteractIndicator.visible = false
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	# Slightly increase noise_level each frame
+	
+	
+	# Used for quadratic noise scaling
+	var noise_grad = 2 * globals.noise_level # Gradient of x^2
+	
+	# Gets the time since the last frame, normalised by the noise rate 
+	var time_change = delta / globals.noise_rate
+	
+	# The amount to increase the noise by
+	var noise_increase = max(noise_grad * time_change, time_change / globals.min_noise_rate) 
+	
+	# Increase noise
+	globals.noise_level += noise_increase
+	#print(noise_increase)
+	
 	# Update Money
 	$MoneyText.text = str("Money: $", globals.money)
 	

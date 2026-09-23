@@ -21,7 +21,10 @@ var grid_size = 80
 var raw_image
 var texture
 
-var noise_level = 0.01
+var noise_level = 0.0
+var noise_rate = 150 # Noise_level scales at f(x)/noise_rate, 
+# where f(x) is some function I haven't fully decided on yet
+var min_noise_rate = 20 # noise changes by a min of time_change / min_noise_rate
 
 # Farm variables
 var dry_rate = 5 # Time it takes for a farm plot to dry
