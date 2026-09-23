@@ -201,7 +201,7 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/crusher.tscn"), 
-			"area": "ConcreteArea"
+			"area": "TableArea"
 		},
 		"boiler": {
 			"stock": 1,
