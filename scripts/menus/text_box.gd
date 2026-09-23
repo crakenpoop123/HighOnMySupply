@@ -138,9 +138,11 @@ func buy_gelatin(amount):
 		# Increase gelatin
 		globals.inventory_ingredients["gelatin"]["stock"] += amount
 		
-		# Exit the text
-		_on_exit_button_button_up()
-	
+		# Print thank you message
+		globals.clerk_bought_from = true
+		$"..".talking($"../../Clerk/StaticBody2D".form_response(), "clerk")
+		globals.clerk_bought_from = false
+		
 	# If you do not have the money
 	else:
 		# Politely tell the user they are broke

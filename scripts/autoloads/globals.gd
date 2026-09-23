@@ -10,11 +10,12 @@ var just_in_inventory = false
 var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables", "Clerk", "NPCs"]
 var player_loading_point: String = ""
 var see_text = false
+var clerk_bought_from = false
 # Scene *wow*
 var scene = null
 var fading = true
 var states_setup = false
-var clerk_bought_from = false
+
 # Grid variables
 var grid_size = 80
 

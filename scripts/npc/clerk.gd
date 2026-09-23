@@ -22,7 +22,7 @@ func form_response():
 		response_type = 4
 	elif globals.money < 5:
 		response_type = 3
-	elif globals.money > 200:
+	elif globals.money >= 25:
 		response_type = 2
 	else: response_type = 1
 	# var response_type: int = 2 # subject to be changed later for different scenarios
