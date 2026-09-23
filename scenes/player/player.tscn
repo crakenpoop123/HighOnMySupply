@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://f3akijdilgvx"]
+ [gd_scene format=3 uid="uid://f3akijdilgvx"]
 
 [ext_resource type="Script" uid="uid://binswa7562072" path="res://scripts/player/character/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cpw4dyo3lr276" path="res://assets/misc/E.png" id="2_0owmy"]
@@ -428,5 +428,17 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_font_sizes/normal_font_size = 48
 text = "Eat a Gummy Worm to Clear Up Decay"
+[node name="GummyEatNotify" type="RichTextLabel" parent="." unique_id=1232357777]
+visible = false
+offset_left = -385.0
+offset_top = 124.0
+offset_right = -36.0
+offset_bottom = 149.0
+scale = Vector2(2.195, 2.195)
+size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("3_qek5x")
+text = "You can eat the gummy worm by pressing 'e'"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
