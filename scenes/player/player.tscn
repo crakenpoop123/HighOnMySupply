@@ -429,4 +429,9 @@ text = "You can eat the gummy worm by pressing 'e'"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EconomyPriceMoney" type="Timer" parent="." unique_id=1146459091]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
+[connection signal="timeout" from="EconomyPriceMoney" to="." method="_on_economy_price_money_timeout"]
