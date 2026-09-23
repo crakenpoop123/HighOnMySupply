@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kveb8rqm4hnr"]
 
-[ext_resource type="Script" uid="uid://ba1hkkove83n7" path="res://Scripts/Menus/keybinds.gd" id="1_de5hr"]
-[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="2_an37u"]
+[ext_resource type="Script" uid="uid://ba1hkkove83n7" path="res://scripts/menus/keybinds.gd" id="1_de5hr"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://assets/gui/dialog-box.png" id="2_an37u"]
 [ext_resource type="Texture2D" uid="uid://s1f0n34i8wfs" path="res://assets/gui/menus/keybind_warning_background.png" id="2_de5hr"]
 [ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="4_3hpwn"]
 

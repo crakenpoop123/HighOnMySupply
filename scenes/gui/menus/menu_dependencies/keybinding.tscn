@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d273gsihmxtsv"]
 
-[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="1_8sbu7"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://assets/gui/dialog-box.png" id="1_8sbu7"]
 [ext_resource type="Texture2D" uid="uid://dymmgmtgwcymh" path="res://assets/gui/dialog_box30x9.png" id="1_ninh3"]
 [ext_resource type="Script" uid="uid://3kq738qe3odf" path="res://scripts/menus/menu_dependencies/keybinding.gd" id="2_jgv1c"]
 [ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_ninh3"]

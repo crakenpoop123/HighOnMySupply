@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dvygx20llb4ey"]
 
 [ext_resource type="Script" uid="uid://cnhebe7tf6x53" path="res://scripts/menus/text_box.gd" id="1_i3erv"]
-[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="2_i3erv"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://assets/gui/dialog-box.png" id="2_i3erv"]
+[ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_a1tct"]
+[ext_resource type="Texture2D" uid="uid://dymmgmtgwcymh" path="res://assets/gui/dialog_box30x9.png" id="4_jtaeq"]
 
 [node name="TextBox" type="Control" unique_id=1268152057]
 layout_mode = 3
@@ -32,22 +34,26 @@ anchor_left = 0.034
 anchor_top = 0.63600004
 anchor_right = 0.966
 anchor_bottom = 0.95800006
-offset_left = 5.831997
-offset_top = 7.8719788
-offset_right = -581.7909
-offset_bottom = -110.6239
+offset_left = 54.831997
+offset_top = 22.871948
+offset_right = -576.7268
+offset_bottom = -109.81152
 scale = Vector2(2.185, 2.185)
+theme_override_fonts/normal_font = ExtResource("3_a1tct")
 text = "This is a placeholder text. If you are seeing this, then something is broken."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="." unique_id=1876535129]
 layout_mode = 0
-offset_left = 1063.0
-offset_top = 416.0
-offset_right = 1106.0
-offset_bottom = 463.0
+offset_left = 1065.0
+offset_top = 404.0
+offset_right = 1091.8042
+offset_bottom = 434.0
+scale = Vector2(1.94, 1.94)
+theme_override_fonts/font = ExtResource("3_a1tct")
 text = "X"
+flat = true
 
 [node name="ChoiceNodes" type="Control" parent="." unique_id=1564537616]
 anchors_preset = 0
@@ -55,34 +61,43 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Choice1" type="Button" parent="ChoiceNodes" unique_id=906700711]
-visible = false
 layout_mode = 0
-offset_left = 98.0
-offset_top = 207.0
-offset_right = 301.0
-offset_bottom = 263.0
+offset_left = 932.0
+offset_top = 346.0
+offset_right = 1118.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("3_a1tct")
 text = "Insert Choice Here"
+icon = ExtResource("4_jtaeq")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Choice2" type="Button" parent="ChoiceNodes" unique_id=985450461]
-visible = false
 layout_mode = 0
-offset_left = 98.0
-offset_top = 271.0
-offset_right = 301.0
-offset_bottom = 327.0
+offset_left = 493.0
+offset_top = 346.0
+offset_right = 689.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("3_a1tct")
 text = "Insert Choice Here"
+icon = ExtResource("4_jtaeq")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Choice3" type="Button" parent="ChoiceNodes" unique_id=471841363]
-visible = false
 layout_mode = 0
-offset_left = 98.0
-offset_top = 327.0
-offset_right = 301.0
-offset_bottom = 383.0
+offset_left = 35.0
+offset_top = 344.0
+offset_right = 220.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("3_a1tct")
 text = "Insert Choice Here"
+icon = ExtResource("4_jtaeq")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]
 [connection signal="pressed" from="ChoiceNodes/Choice1" to="." method="_on_choice_1_pressed"]
