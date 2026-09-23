@@ -393,6 +393,7 @@ offset_right = 572.0
 offset_bottom = 319.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 
 [node name="MoneyText" type="RichTextLabel" parent="." unique_id=1237365815]
 z_index = 5
@@ -421,6 +422,7 @@ offset_left = 130.0
 offset_top = 463.0
 offset_right = 1026.0
 offset_bottom = 597.0
+mouse_filter = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
