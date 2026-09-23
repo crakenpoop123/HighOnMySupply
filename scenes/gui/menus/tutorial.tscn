@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc17ou83esybu"]
 
 [ext_resource type="Script" uid="uid://bwi4bl557xp5q" path="res://scripts/menus/phone_call.gd" id="1_br1nl"]
-[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://dialog-box.png" id="2_5d8qn"]
+[ext_resource type="Texture2D" uid="uid://puudn2dkjfvj" path="res://assets/gui/dialog-box.png" id="2_5d8qn"]
 [ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_dvjl2"]
 
 [node name="Tutorial" type="Control" unique_id=881028186]

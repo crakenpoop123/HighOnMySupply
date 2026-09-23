@@ -14,7 +14,7 @@ var see_text = false
 var scene = null
 var fading = true
 var states_setup = false
-
+var clerk_bought_from = false
 # Grid variables
 var grid_size = 80
 

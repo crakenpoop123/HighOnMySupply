@@ -18,8 +18,13 @@ func player_interact():
 func form_response():
 	var response: String = ""
 	var response_type: int = randi_range(1, 4)
-	if globals.money > 5:
+	if globals.clerk_bought_from:
+		response_type = 4
+	elif globals.money < 5:
 		response_type = 3
+	elif globals.money > 200:
+		response_type = 2
+	else: response_type = 1
 	# var response_type: int = 2 # subject to be changed later for different scenarios
 	
 	print(response_type)
