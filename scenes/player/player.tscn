@@ -416,4 +416,17 @@ mouse_filter = 1
 color = Color(1, 1, 1, 0)
 script = ExtResource("11_je7p5")
 
+[node name="GummyEatNotify" type="RichTextLabel" parent="." unique_id=1232357777]
+visible = false
+offset_left = -385.0
+offset_top = 124.0
+offset_right = -36.0
+offset_bottom = 149.0
+scale = Vector2(2.195, 2.195)
+size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("3_qek5x")
+text = "You can eat the gummy worm by pressing 'e'"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
