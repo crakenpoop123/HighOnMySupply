@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://binswa7562072" path="res://scripts/player/character/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cpw4dyo3lr276" path="res://assets/misc/E.png" id="2_0owmy"]
+[ext_resource type="Shader" uid="uid://8sd0k8x21wb0" path="res://scripts/shaders/screen_decay.gdshader" id="2_h17s1"]
 [ext_resource type="Texture2D" uid="uid://gkjnbpqj0t2u" path="res://assets/player/move_idle_player_spritesheet.png" id="2_yh67s"]
 [ext_resource type="PackedScene" uid="uid://c4w20xqxkkfuu" path="res://scenes/player/inventory/inventory.tscn" id="3_gmlin"]
 [ext_resource type="FontFile" uid="uid://dnjr6pp43a134" path="res://assets/gui/determination.ttf" id="3_qek5x"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bjmgjxo2ut2q6" path="res://assets/temporary_assets/pixil-frame-0 (26).png" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://dvygx20llb4ey" path="res://scenes/gui/talking/text_box.tscn" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://ct0lprtt7h4dh" path="res://scenes/gui/menus/pause_screen.tscn" id="7_5gtgg"]
+[ext_resource type="Script" uid="uid://dopu6ae0ic308" path="res://scripts/shaders/decay_rect.gd" id="11_je7p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -286,6 +288,10 @@ radius = 118.03813
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
 size = Vector2(31.200005, 31.200005)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h17s1"]
+shader = ExtResource("2_h17s1")
+shader_parameter/u_noise_level = 0.0
+
 [node name="Player" type="CharacterBody2D" unique_id=2037227082]
 y_sort_enabled = true
 script = ExtResource("1_cvnsp")
@@ -399,5 +405,14 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Money: $0"
+
+[node name="DecayShader" type="CanvasLayer" parent="." unique_id=1771260667]
+
+[node name="DecayRect" type="ColorRect" parent="DecayShader" unique_id=945934881]
+material = SubResource("ShaderMaterial_h17s1")
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("11_je7p5")
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]

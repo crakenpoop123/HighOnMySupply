@@ -21,6 +21,8 @@ var grid_size = 80
 var raw_image
 var texture
 
+var noise_level = 0.01
+
 # Farm variables
 var dry_rate = 5 # Time it takes for a farm plot to dry
 var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a single stage of sugar cane
@@ -29,7 +31,7 @@ var sugar_cane_max_growth = 5
 
 # Timer vaiables
 var boil_time = 5
-
+ 
 var money = 5000
 var gelatin_cost = 5 # This will break the clerk speech when changed, but works, functionally
 var gummy_worm_sell_price = 10 # Same as the above comment

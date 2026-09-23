@@ -18,7 +18,7 @@ texture = ExtResource("1_g2xdh")
 expand_mode = 1
 script = ExtResource("2_mgkgd")
 
-[node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=1651358092]
+[node name="ItemSlot" type="RichTextLabel" parent="." unique_id=1651358092]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 83.0
@@ -26,6 +26,15 @@ offset_top = 83.0
 offset_right = 107.0
 offset_bottom = 107.0
 text = "0"
+
+[node name="ItemQuantity" type="RichTextLabel" parent="." unique_id=855951528]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 78.0
+offset_right = 70.0
+offset_bottom = 102.0
+text = "x0"
 
 [node name="SlotArea" type="Area2D" parent="." unique_id=1972282823]
 

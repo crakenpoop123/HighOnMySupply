@@ -40,7 +40,10 @@ func autoload_buildings():
 		
 		# Tell the slot this item is a building
 		slot.item_type = "building"
-	
+		
+		# Add the correct quantity of the item into the slot
+		slot.quantity =  globals.inventory_buildings[building]["stock"]
+		
 	# Add the dragged item to the slot
 	#slot.item = dragging
 	##print("dragging in slot: ", dragging)

@@ -2,6 +2,7 @@ extends TextureRect
 
 # Variables
 var label = "0"
+var quantity = 0 
 var mouse_touching = false
 var item_icon = null
 var item_type = null
@@ -15,7 +16,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	# Set the text
-	$ItemQuantity.text = label
+	$ItemSlot.text = label
+	
+	# Set the quantity text
+	$ItemQuantity.text = "x" + str(quantity) if item else ""
 	
 	# Show the item icon
 	$SlotItem.visible = item_icon != null

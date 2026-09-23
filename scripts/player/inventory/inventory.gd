@@ -297,10 +297,15 @@ func drag_item():
 			# Add the dragged item to the slot
 			slot.item = dragging
 			#print("dragging in slot: ", dragging)
+			
 			# Show the item's icon in the slot
 			slot.item_icon = dragging_array[dragging]["icon_region"]
+			
 			# Set the slot to te correct type
 			slot.item_type = "building" if dragging_array == globals.inventory_buildings else "ingredients"
+			
+			# Add the correct quantity of the item into the slot
+			slot.quantity = dragging_array[dragging]["stock"]
 			
 			# Stop dragging the item
 			dragging = null
