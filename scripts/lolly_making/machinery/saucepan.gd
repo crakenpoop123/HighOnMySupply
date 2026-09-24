@@ -8,11 +8,9 @@ var readable_name = "Saucepan"
 var build_type = "saucepan"
 
 func player_interact():
-	print("saucepan is cooking: ", cooking)
 	if !cooking: # CHANGE SCENE DEPENDING ON STATE
 		# Update this pot's value
 		cooking = true
-		print("Set cooking to: ", cooking)
 		
 		if (globals.inventory_ingredients["sugar"]["stock"] > 0 # Check you have enough ingredients
 		 and globals.inventory_ingredients["gelatin"]["stock"] > 0):
@@ -29,7 +27,6 @@ func player_interact():
 	else:
 		# Update this pot's value
 		cooking = false
-		print("Set cooking to: ", cooking) 
 		
 		# Give the player gummy worms
 		globals.inventory_ingredients["gummy_worm"]["stock"] += 4
