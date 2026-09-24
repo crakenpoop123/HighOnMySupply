@@ -267,8 +267,8 @@ func _on_economy_price_money_timeout() -> void:
 	change_gummy_value()
 	
 func change_gummy_value():
-	# Use a ternary operator to set the min change to 0, if the current value is below 0
-	var min_val = min_gummy_decrease if globals.gummy_worm_sell_price > 0 else 0
+	# Use a ternary operator to set the min change to 1, if the current value is below 0
+	var min_val = min_gummy_decrease if globals.gummy_worm_sell_price > 0 else 1
 	
 	var change = randi_range(min_val, max_gummy_increase) # Picks a random value to increase or decrease it by
 	var current = globals.gummy_worm_sell_price # Gets the current value
