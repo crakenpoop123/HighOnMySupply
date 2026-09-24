@@ -2,16 +2,15 @@ shader_type canvas_item;
 
 uniform float u_noise_level;
 
+// Pseudorandom algorithm using sin, dot product, and some constants
 float rand(vec2 uv) {
     return fract(sin(dot(uv.xy, vec2(12.9898, 78.233))) * 43758.5453123);
 }
-void vertex() {
-	
-	
-}
 
+// Fragment or pixel shader
 void fragment() {
-	float rnd = rand(UV + TIME);
+//	Gets a random value using uv coords and time
+	float rnd = rand(UV + rand(vec2(TIME, TIME)));
 	
 	if (rnd < u_noise_level)
 	{
