@@ -409,6 +409,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "Money: $0"
 
 [node name="DecayShader" type="CanvasLayer" parent="." unique_id=1771260667]
+visible = false
 
 [node name="DecayRect" type="ColorRect" parent="DecayShader" unique_id=945934881]
 material = SubResource("ShaderMaterial_h17s1")

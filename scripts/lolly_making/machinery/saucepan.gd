@@ -1,15 +1,18 @@
 extends StaticBody2D
 
-var ingredients_in_pot = false
+var cooking = false
 
 # Changed this from a global var to a local one
 var readable_name = "Saucepan"
 
+var build_type = "saucepan"
 
 func player_interact():
-	if !ingredients_in_pot: # CHANGE SCENE DEPENDING ON STATE
+	print("saucepan is cooking: ", cooking)
+	if !cooking: # CHANGE SCENE DEPENDING ON STATE
 		# Update this pot's value
-		ingredients_in_pot = true
+		cooking = true
+		print("Set cooking to: ", cooking)
 		
 		if (globals.inventory_ingredients["sugar"]["stock"] > 0 # Check you have enough ingredients
 		 and globals.inventory_ingredients["gelatin"]["stock"] > 0):
@@ -25,9 +28,30 @@ func player_interact():
 	
 	else:
 		# Update this pot's value
-		ingredients_in_pot = false
+		cooking = false
+		print("Set cooking to: ", cooking) 
 		
 		# Give the player gummy worms
 		globals.inventory_ingredients["gummy_worm"]["stock"] += 4
 		
 		globals.change_scene(true, "res://scenes/minigames/gummy_cooking_minigame.tscn")
+
+func _ready() -> void:
+	# Ensure it loads the state before deleting data
+	if build_type in saved_states.building_data:
+		if self.name in saved_states.building_data[build_type]:
+			#print("lading for farmplot: ", saved_states.building_data[build_type][self.name])
+			await load_prev_state() 
+	
+	# Setup the saved data for this node
+	saved_states.building_data[build_type][self.name] = {}
+
+# Saves variables to the autoload saved_states:
+func save_curr_state():
+	# Save the current state of a few important variables
+	saved_states.building_data[build_type][self.name]["cooking"] = cooking
+
+# Loads the variable saved in the autoload saved_states:
+func load_prev_state():
+	# Loads the state of a few important variables
+	cooking = saved_states.building_data[build_type][self.name]["cooking"]

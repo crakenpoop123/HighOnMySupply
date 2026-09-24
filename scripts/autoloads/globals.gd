@@ -102,6 +102,7 @@ var gummy_worm_choice_dict = { # NPC gummy worm choices
 }
 
 func _ready() -> void:
+	# The ingredients that go in the inventory
 	inventory_ingredients = {
 		"gummy_worm": {
 			"stock": 0,
@@ -168,6 +169,7 @@ func _ready() -> void:
 		}
 	}
 	
+	# The buildinmgs
 	inventory_buildings = {
 		# For the area, they must all end in "Area" (i.e. ConcreteArea or GrassArea)
 		# This is so that I can subtract this from the area to show the user where they have to place something 
@@ -214,14 +216,6 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/boiler.tscn"),
-			"area": "ConcreteArea"
-		},
-		"centrifuge": {
-			"stock": 1,
-			"had_before": false,
-			"name": "Centrifuge", 
-			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
-			"region": Rect2(0, 0, 32, 32), 
 			"area": "ConcreteArea"
 		},
 		"dryer": {
