@@ -11,6 +11,7 @@ var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor",
 var player_loading_point: String = ""
 var see_text = false
 var clerk_bought_from = false
+
 # Scene *wow*
 var scene = null
 var fading = true
@@ -22,23 +23,26 @@ var grid_size = 80
 var raw_image
 var texture
 
+
+# Noise variables for the fragment shader
+
 var noise_level = 0.0
 var noise_rate = 150 # Noise_level scales at f(x)/noise_rate, 
-# where f(x) is some function I haven't fully decided on yet
+# where f(x) is linear for low values and quadratic for high values
 var min_noise_rate = 20 # noise changes by a min of time_change / min_noise_rate
 
 # Farm variables
-var dry_rate = 5 # Time it takes for a farm plot to dry
-var sugar_cane_growth_min = 1 # Minimum time (in seconds) it takes to grow a single stage of sugar cane
-var sugar_cane_growth_max = 2 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
+var dry_rate = 10 # Time it takes for a farm plot to dry
+var sugar_cane_growth_min = 10 # Minimum time (in seconds) it takes to grow a single stage of sugar cane
+var sugar_cane_growth_max = 20 # Maximum time (in seconds) it takes to grow a single stage of sugar cane
 var sugar_cane_max_growth = 5
 
 # Timer vaiables
 var boil_time = 5
  
-var money = 5000
-var gelatin_cost = 5 # This will break the clerk speech when changed, but works, functionally
-var gummy_worm_sell_price = 10 # Same as the above comment
+var money = 0
+var gelatin_cost = 5
+var gummy_worm_sell_price = 10
 
 # Mouse
 var can_drag = true
@@ -98,23 +102,24 @@ var gummy_worm_choice_dict = { # NPC gummy worm choices
 }
 
 func _ready() -> void:
+	# The ingredients that go in the inventory
 	inventory_ingredients = {
 		"gummy_worm": {
-			"stock": 100,
+			"stock": 0,
 			"had_before": false,
 			"name": "Gummy Worms", 
 			"icon": "res://assets/items/gummy-worms.png",
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"sugar": {
-			"stock": 1,
+			"stock": 5,
 			"had_before": false,
 			"name": "Sugar", 
 			"icon": "res://assets/items/sugar-spritesheet.png",
 			"region": Rect2(32, 0, 32, 32)
 		},
 		"gelatin": {
-			"stock": 1,
+			"stock": 5,
 			"had_before": false,
 			"name": "Gelatin", 
 			"icon": "res://assets/items/gelitin-spritesheet.png",
@@ -128,7 +133,7 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"shredded_cane": {
-			"stock": 1,
+			"stock": 0,
 			"had_before": false,
 			"name": "Shredded Cane", 
 			"icon": "res://assets/items/shredded-cane.png",
@@ -142,7 +147,7 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"cane_juice": {
-			"stock": 1,
+			"stock": 0,
 			"had_before": false,
 			"name": "Cane Juice", 
 			"icon": "res://assets/items/liquid-spritesheet.png",
@@ -164,6 +169,7 @@ func _ready() -> void:
 		}
 	}
 	
+	# The buildinmgs
 	inventory_buildings = {
 		# For the area, they must all end in "Area" (i.e. ConcreteArea or GrassArea)
 		# This is so that I can subtract this from the area to show the user where they have to place something 
@@ -177,7 +183,7 @@ func _ready() -> void:
 			"area": "GrassArea"
 		},
 		"saucepan": {
-			"stock": 10,
+			"stock": 1,
 			"had_before": true,
 			"name": "Saucepans", 
 			"icon": "res://assets/items/saucepan.png",
@@ -195,7 +201,7 @@ func _ready() -> void:
 			"area": "TableArea"
 		},
 		"crusher": {
-			"stock": 999,
+			"stock": 1,
 			"had_before": false,
 			"name": "Crusher", 
 			"icon": "res://assets/tilemaps/buildables/hydraulic_press_spritesheet.png",
@@ -210,14 +216,6 @@ func _ready() -> void:
 			"icon": "res://assets/tilemaps/buildables/boiler-tilemap.png",
 			"region": Rect2(0, 0, 32, 32), 
 			"scene": load("res://scenes/buildables/boiler.tscn"),
-			"area": "ConcreteArea"
-		},
-		"centrifuge": {
-			"stock": 0,
-			"had_before": false,
-			"name": "Centrifuge", 
-			"icon": "res://assets/tilemaps/buildables/centrifuge-spritesheet.png",
-			"region": Rect2(0, 0, 32, 32), 
 			"area": "ConcreteArea"
 		},
 		"dryer": {

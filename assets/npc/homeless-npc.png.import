@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://irdm5t514ka0"
-path="res://.godot/imported/homeless-npc.png-7d82b26004d7081184843706e217443d.ctex"
+path="res://.godot/imported/homeless-npc.png-a7a657437512133f3f45e3af6ba301a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://homeless-npc.png"
-dest_files=["res://.godot/imported/homeless-npc.png-7d82b26004d7081184843706e217443d.ctex"]
+source_file="res://assets/npc/homeless-npc.png"
+dest_files=["res://.godot/imported/homeless-npc.png-a7a657437512133f3f45e3af6ba301a2.ctex"]
 
 [params]
 

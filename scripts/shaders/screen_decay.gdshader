@@ -10,6 +10,7 @@ float rand(vec2 uv) {
 // Fragment or pixel shader
 void fragment() {
 //	Gets a random value using uv coords and time
+//	TIME is randomized for extra randomness
 	float rnd = rand(UV + rand(vec2(TIME, TIME)));
 	
 	if (rnd < u_noise_level)
