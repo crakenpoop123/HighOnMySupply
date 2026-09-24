@@ -261,16 +261,17 @@ func check_hotbar_focus():
 	#print($Hotbar.slot_focused)
 
 var min_gummy_decrease = -5
-var max_gummy_increase = 5
+var max_gummy_increase = 7
 
 func _on_economy_price_money_timeout() -> void:
 	change_gummy_value()
-		
+	
 func change_gummy_value():
 	var change = randi_range(min_gummy_decrease, max_gummy_increase) # Picks a random value to increase or decrease it by
 	var current = globals.gummy_worm_sell_price # Gets the current value
 	current += change # Changes the current value by the change
 	if current < 1: # Checks if 0 or negative
-		change_gummy_value() # Redo script if it is
+		print(current, "current is less than 1")
+		#change_gummy_value() # Redo script if it is below 1
 	globals.gummy_worm_sell_price = current # Add the changes
 	print(globals.gummy_worm_sell_price)
