@@ -263,8 +263,12 @@ func check_hotbar_focus():
 var min_gummy_decrease = -5
 var max_gummy_increase = 5
 
+var min_gelatin_decrease = -2
+var max_gelatin_increase = 2
+
 func _on_economy_price_money_timeout() -> void:
 	change_gummy_value()
+	change_gelatin_value()
 	
 func change_gummy_value():
 	# Use a ternary operator to set the min change to 1, if the current value is below 0
@@ -279,3 +283,17 @@ func change_gummy_value():
 	# If the value is sub_zero, redo the script
 	if current < 1: # Checks if 0 or negative
 		change_gummy_value() # Redo script if it is below 1
+		
+func change_gelatin_value():
+	# Use a ternary operator to set the min change to 1, if the current value is below 0
+	var min_val = min_gelatin_decrease if globals.gelatin_cost > 0 else 1
+	
+	var change = randi_range(min_val, max_gelatin_increase) # Picks a random value to increase or decrease it by
+	var current = globals.gelatin_cost # Gets the current value
+	
+	current += change # Changes the current value by the change
+	globals.gelatin_cost = current # Add the changes
+	
+	# If the value is sub_zero, redo the script
+	if current < 1: # Checks if 0 or negative
+		change_gelatin_value() # Redo script if it is below 1
