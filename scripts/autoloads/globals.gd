@@ -48,7 +48,7 @@ var shopkeep_choice_dict = { # Shopkeep gelatin choices
 	"1_text": "Buy Gelatin", 
 	"2_text": "Leave", 
 	"1": {
-		"main_text": "How much gelatin would you like to buy? Each piece costs $5.", 
+		"main_text": "How much gelatin would you like to buy? Each piece costs $" + str(gelatin_cost) + ".", 
 		"1_text": "1 Gelatin", 
 		"2_text": "10 Gelatin", 
 		"3_text": "100 Gelatin", 
@@ -75,7 +75,7 @@ var gummy_worm_choice_dict = { # NPC gummy worm choices
 	"1_text": "Sell Gummy Worms", 
 	"2_text": "Leave", 
 	"1": {
-		"main_text": "Sure! I'll buy some gummy worms! I will buy them for $10 apiece", 
+		"main_text": "Sure! I'll buy some gummy worms! I will buy them for $" + str(gummy_worm_sell_price) + " apiece", 
 		"1_text": "Sell 1 Gummy Worm", 
 		"2_text": "Sell 10 Gummy Worms", 
 		"3_text": "Leave", 
@@ -241,6 +241,10 @@ func _ready() -> void:
 		states_setup = true
 	else:
 		push_error("Setup stopped by states_setup var")
+
+func _process(delta: float) -> void:
+	gummy_worm_choice_dict["1"]["main_text"] = "Sure! I'll buy some gummy worms! I will buy them for $" + str(gummy_worm_sell_price) + " apiece" # Update sell price
+	shopkeep_choice_dict["1"]["main_text"] = "How much gelatin would you like to buy? Each piece costs $" + str(gelatin_cost) + "." # Update buy price
 
 func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
