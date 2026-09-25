@@ -26,13 +26,18 @@ func save_states(node):
 	for child in node.get_children():
 		# This is true when the child has code for saving the current state 
 		if child.has_method("save_curr_state"):
+			
+			# Check the child has a valid build_type. This will either be "ingredient" or "building"
 			if child.build_type in building_data:
+				# Check the child is found in the building data
 				if child.name in building_data[child.build_type]:
-					#print("Saving states for node: ", node)
+					# Save the childs current state
 					child.save_curr_state()
 				else:
+					# Otherwise, create save data for the child
 					create_save_data(child)
 			else:
+				# Otherwise, create save data for the child
 				create_save_data(child)
 		
 		# Recursively call the function
@@ -41,5 +46,6 @@ func save_states(node):
 	return true
 
 
+# Init the building data to empty
 func create_save_data(node):
 	building_data[node.build_type][node.name] = {}

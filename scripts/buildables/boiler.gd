@@ -40,8 +40,6 @@ func player_interact():
 			boiler_state = "dirty"
 			
 			
-			await get_tree().process_frame
-			
 			# Change the scene to the boiling minigame
 			globals.change_scene(true, "res://scenes/minigames/boil_minigame.tscn")
 		else:
