@@ -22,4 +22,5 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_keybind_button_pressed() -> void:
+	globals.player_loading_point = "keybinds"
 	globals.change_scene(true, "res://scenes/gui/menus/keybinds.tscn")

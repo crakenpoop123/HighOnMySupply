@@ -35,4 +35,4 @@ func _on_timer_timeout() -> void:
 	globals.inventory_ingredients["shredded_cane"]["stock"] += 1
 	
 	# Load the saved_scene
-	globals.change_scene(false)
+	globals.load_scene(true)

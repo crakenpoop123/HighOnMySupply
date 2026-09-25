@@ -281,9 +281,12 @@ func change_scene(saving = true, scene = null):
 		await saved_states.save_states(get_tree().current_scene)
 		
 		# Save the scene
+		print(get_tree().current_scene.name)
 		# Check if it is in the basement or any other scnee
 		if get_tree().current_scene.name == "Basement":
+			print("Basement is true")
 			await save_scene(true)
+			await save_scene()
 		else:
 			await save_scene()
 		
@@ -358,6 +361,7 @@ func load_scene(basement = false):
 		saved_scene = ResourceLoader.load("res://scenes/saved_scene.tscn")
 	else:
 		saved_scene = ResourceLoader.load("res://scenes/saved_basement.tscn")
+		print("Loaded basement")
 	
 	# Check the PackedScene exists
 	if saved_scene:

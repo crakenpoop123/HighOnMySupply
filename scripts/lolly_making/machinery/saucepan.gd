@@ -9,11 +9,12 @@ var build_type = "saucepan"
 
 func player_interact():
 	if !cooking: # CHANGE SCENE DEPENDING ON STATE
-		# Update this pot's value
-		cooking = true
 		
 		if (globals.inventory_ingredients["sugar"]["stock"] > 0 # Check you have enough ingredients
 		 and globals.inventory_ingredients["gelatin"]["stock"] > 0):
+			# Update this pot's value
+			cooking = true
+			
 			# Decrease items from inventory
 			globals.inventory_ingredients["sugar"]["stock"] -= 1
 			globals.inventory_ingredients["gelatin"]["stock"] -= 1
