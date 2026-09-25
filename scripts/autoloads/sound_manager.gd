@@ -17,7 +17,7 @@ func _ready() -> void:
 	stream = BACKGROUND_MUSIC_MAIN
 	store_player.stream = BACKGROUND_MUSIC_STORE
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Loop the audio
 	if !playing:
 		play()

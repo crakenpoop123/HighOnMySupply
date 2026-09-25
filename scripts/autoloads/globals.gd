@@ -246,7 +246,7 @@ func _ready() -> void:
 	else:
 		push_error("Setup stopped by states_setup var")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Update the npc and shopkeep dialogue to fit with the dynamic prices
 	gummy_worm_choice_dict["1"]["main_text"] = "Sure! I'll buy some gummy worms! I will buy them for $" + str(gummy_worm_sell_price) + " apiece" # Update sell price
 	shopkeep_choice_dict["1"]["main_text"] = "How much gelatin would you like to buy? Each piece costs $" + str(gelatin_cost) + "." # Update buy price
@@ -308,9 +308,9 @@ func save_scene(basement = false):
 
 # Iteratively set the owner property of all nodes as root
 # This allows them to be saved to a packed scene
-func make_nodes_owner(scene):
+func make_nodes_owner(curr_scene):
 	# Iterate through all children nodes
-	for child in scene.get_children():
+	for child in curr_scene.get_children():
 		# If the child does not already have an owner
 		# This happens for the instantiated scenes
 		if child.owner == null:

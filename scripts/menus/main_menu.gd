@@ -9,7 +9,7 @@ func _on_basement_button_up() -> void: # Change scene
 func _ready() -> void:
 	$Main/Buttons/Basement.global_position = Vector2(494,378)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var basement_button = $Main/Buttons/Basement
 	var tutorial_button = $Main/Buttons/Tutorial
 	
