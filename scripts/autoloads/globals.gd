@@ -101,6 +101,10 @@ var gummy_worm_choice_dict = { # NPC gummy worm choices
 	
 }
 
+var inventory_ingredients: Dictionary
+
+var inventory_buildings: Dictionary
+
 func _ready() -> void:
 	# The ingredients that go in the inventory
 	inventory_ingredients = {
@@ -251,30 +255,29 @@ func change_scene(saving = true, scene = null):
 	# If saving, you need a scene
 	# If loading, you don't
 	if saving:
+		# Save the variables
 		await saved_states.save_states(get_tree().current_scene)
 		
-		await get_tree().process_frame
-		
+		# Save the scene
 		await save_scene()
 		
 		print("change scene")
+		# Change the scene
 		get_tree().call_deferred("change_scene_to_file", scene)
 
 	else:
+		# Load the saved_scene
 		load_scene()
-		
-		# Load the interactables (like FarmPlots and other machinery), along with their states
-		#call_deferred("find_interactables_for_loading", get_tree().current_scene)
 
 # Save the scene using a PackedScene
 func save_scene():
-	print("globals.save_scene")
-	
 	# Save the scene
 	var scene = get_tree().current_scene
 	# Init the PackedScene
 	var packed_scene = PackedScene.new()
 	
+	# Sets the owner property of all nodes as root
+	# Fixes a bug where most nodes don't get saved
 	make_nodes_owner(scene)
 	
 	# Check the scene exists
@@ -321,12 +324,6 @@ func load_scene():
 		print("Loaded saved scene successfully")
 		# Change the scene
 		get_tree().change_scene_to_packed(saved_scene)
-		
-		await get_tree().process_frame
-		await get_tree().process_frame
-		
-		# Load the states for these interactables
-		#call_deferred("load_states")
 
 # Recursively searches the scene tree to find any interactable parents
 func find_interactables_for_loading(node):
@@ -335,29 +332,37 @@ func find_interactables_for_loading(node):
 	#print("building data: ", saved_states.building_data)
 	#print("--------------------------")
 	
+	# If the current passed node is null
 	if node == null:
 		print("node null")
 		
-		await get_tree().process_frame
+		# Re-call the function as the scene root
 		find_interactables_for_loading(get_tree().current_scene)
+		
+		# Stop the code below from happening
 		return
 	
+	# Iter through all node children
 	for child in node.get_children():
+		
+		# Load the saved variables for this child
 		if child.has_method("load_prev_state"):
 			child.call_deferred("load_prev_state")
 		
+		# Recurse to find this child's children
 		find_interactables_for_loading(child)
 
-
-
-var inventory_ingredients: Dictionary
-
-var inventory_buildings: Dictionary
-
-
+# Get the correct region of an image from a tilesheet
 func images(image: String, region):
+	# Load the raw image
 	raw_image = load(image)
+	
+	# Setup an atlas texture
 	var atlas_texture = AtlasTexture.new()
+	# Add the image to the atlas
 	atlas_texture.atlas = raw_image
-	atlas_texture.region = region 
+	# Grab the region we want
+	atlas_texture.region = region
+	
+	# Return this atlas
 	return atlas_texture
