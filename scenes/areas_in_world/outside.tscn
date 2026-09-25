@@ -144,7 +144,7 @@ player = NodePath("Player")
 z_index = 1
 position = Vector2(2199, -562.14)
 scale = Vector2(-0.005115032, -0.000607684)
-scene_to_load = "res://scenes/player/saved_scene.tscn"
+scene_to_load = "res://scenes/areas_in_world/basement.tscn"
 scene_from = "outside"
 
 [node name="DoorToStore" parent="." unique_id=454755511 instance=ExtResource("2_t4hvj")]

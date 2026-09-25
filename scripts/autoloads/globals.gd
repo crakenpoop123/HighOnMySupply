@@ -259,7 +259,11 @@ func change_scene(saving = true, scene = null):
 		await saved_states.save_states(get_tree().current_scene)
 		
 		# Save the scene
-		await save_scene()
+		# Check if it is in the basement or any other scnee
+		if get_tree().current_scene.name == "Basement":
+			await save_scene(true)
+		else:
+			await save_scene()
 		
 		print("change scene")
 		# Change the scene
@@ -270,11 +274,20 @@ func change_scene(saving = true, scene = null):
 		load_scene()
 
 # Save the scene using a PackedScene
-func save_scene():
+func save_scene(basement = false):
 	# Save the scene
 	var scene = get_tree().current_scene
 	# Init the PackedScene
 	var packed_scene = PackedScene.new()
+	
+	
+	# Scene path
+	var scene_path = ""
+	# Update scene path dynamically
+	if basement:
+		scene_path = "res://scenes/saved_basement.tscn"
+	else:
+		scene_path = "res://scenes/saved_scene.tscn"
 	
 	# Sets the owner property of all nodes as root
 	# Fixes a bug where most nodes don't get saved
@@ -287,7 +300,7 @@ func save_scene():
 		
 		# Print an error if something malfunctions
 		if result == OK:
-			var error = ResourceSaver.save(packed_scene, "res://scenes/saved_scene.tscn")
+			var error = ResourceSaver.save(packed_scene, scene_path)
 			if error != OK:
 				push_error("An error occured while saving the scene to disk.")
 			else:
@@ -315,9 +328,14 @@ func make_nodes_owner(scene):
 		make_nodes_owner(child)
 
 # Load the PackedScene
-func load_scene():
+func load_scene(basement = false):
+	# Init PackedScene
+	var saved_scene: PackedScene
 	# Get the PackedScene
-	var saved_scene: PackedScene = ResourceLoader.load("res://scenes/saved_scene.tscn")
+	if !basement:
+		saved_scene = ResourceLoader.load("res://scenes/saved_scene.tscn")
+	else:
+		saved_scene = ResourceLoader.load("res://scenes/saved_basement.tscn")
 	
 	# Check the PackedScene exists
 	if saved_scene:
