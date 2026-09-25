@@ -29,7 +29,7 @@ func check_for_drop(): # Somehow I don't understand my own code so just don't to
 				mouse.holding = true # START DRAGGING # Should't this be stop dragging???
 
 func _on_timer_timeout() -> void: # UNUSED UNUSED UNUSED UNUSED CHANGE SCENE CODE
-	globals.change_scene(false)
+	globals.load_scene(true)
 	
 func move_to_table(): # MOVES THE CAMERA TOWARDS THE TABLE
 	var tween = get_tree().create_tween()

@@ -22,7 +22,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	# Change the scene on hitting the sugar cane
 	if hit_sugarcane == true:
-		globals.change_scene(false)
+		globals.load_scene(true)
 	
 	elif mouse.area_name: # If the mouse is touching an area
 		# Check if the mouse is touching the CaneKnife

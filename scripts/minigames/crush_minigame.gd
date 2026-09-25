@@ -65,4 +65,4 @@ func _on_cane_timer_timeout() -> void:
 	globals.inventory_ingredients["cane_juice"]["stock"] += 1
 	
 	# Change scene
-	globals.change_scene(false)
+	globals.load_scene(true)

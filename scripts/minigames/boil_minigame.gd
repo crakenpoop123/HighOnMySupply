@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		
 		# When the animation has played through
 		if $Boiler/BoilerSprite.frame == 6:
-			globals.change_scene(false)
+			globals.load_scene(true)
 		
 	else:
 		# Stop the boiler animation

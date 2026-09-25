@@ -58,6 +58,7 @@ func _process(_delta: float) -> void:
 		$PlotSprite.animation = "growth_stages_dry"
 	$PlotSprite.frame = growth_stage
 	
+	fully_grown = growth_stage == globals.sugar_cane_max_growth
 
 func player_interact():
 	if fully_grown:

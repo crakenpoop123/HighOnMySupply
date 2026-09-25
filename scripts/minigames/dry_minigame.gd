@@ -40,4 +40,4 @@ func _on_dry_timer_timeout() -> void:
 	globals.inventory_ingredients["sugar"]["stock"] += 1
 
 	# Change scene
-	globals.change_scene(false)
+	globals.load_scene(true)
