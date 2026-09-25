@@ -169,7 +169,7 @@ func _ready() -> void:
 		}
 	}
 	
-	# The buildinmgs
+	# The buildings that go in the inventory
 	inventory_buildings = {
 		# For the area, they must all end in "Area" (i.e. ConcreteArea or GrassArea)
 		# This is so that I can subtract this from the area to show the user where they have to place something 
@@ -229,11 +229,13 @@ func _ready() -> void:
 		}
 	}
 	
+	# Set the icon for each item
 	for item in inventory_ingredients:
 		inventory_ingredients[item]["icon_region"] = images(str(inventory_ingredients[item]["icon"]), inventory_ingredients[item]["region"])
 	for building in inventory_buildings:
 		inventory_buildings[building]["icon_region"] = images(str(inventory_buildings[building]["icon"]), inventory_buildings[building]["region"])
 	
+	# Setup the saved states
 	if !states_setup:
 		saved_states.setup()
 		states_setup = true
@@ -241,6 +243,7 @@ func _ready() -> void:
 		push_error("Setup stopped by states_setup var")
 
 func _process(delta: float) -> void:
+	# Update the npc and shopkeep dialogue to fit with the dynamic prices
 	gummy_worm_choice_dict["1"]["main_text"] = "Sure! I'll buy some gummy worms! I will buy them for $" + str(gummy_worm_sell_price) + " apiece" # Update sell price
 	shopkeep_choice_dict["1"]["main_text"] = "How much gelatin would you like to buy? Each piece costs $" + str(gelatin_cost) + "." # Update buy price
 
@@ -252,8 +255,11 @@ func change_scene(saving = true, scene = null):
 		
 		await get_tree().process_frame
 		
-		call_deferred("save_scene")
+		await save_scene()
+		
+		print("change scene")
 		get_tree().call_deferred("change_scene_to_file", scene)
+
 	else:
 		load_scene()
 		
