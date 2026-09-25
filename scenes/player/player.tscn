@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dvygx20llb4ey" path="res://scenes/gui/talking/text_box.tscn" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://ct0lprtt7h4dh" path="res://scenes/gui/menus/pause_screen.tscn" id="7_5gtgg"]
 [ext_resource type="Script" uid="uid://dopu6ae0ic308" path="res://scripts/shaders/decay_rect.gd" id="11_je7p5"]
-[ext_resource type="Texture2D" uid="uid://7jil555n8jqm" path="res://assets/misc/radiant-rainbow-vortex-stockcake.jpg" id="12_fm80t"]
-[ext_resource type="Script" uid="uid://mialsjhra63r" path="res://scripts/menus/rainbow.gd" id="12_gx1jg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twm3q"]
 atlas = ExtResource("2_yh67s")
@@ -294,67 +292,6 @@ size = Vector2(31.200005, 31.200005)
 shader = ExtResource("2_h17s1")
 shader_parameter/u_noise_level = 0.0
 
-[sub_resource type="Animation" id="Animation_gx1jg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rainbow:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Rainbow:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.38039216)]
-}
-
-[sub_resource type="Animation" id="Animation_ugbui"]
-resource_name = "RainbowSpin"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rainbow:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.2831855, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Rainbow:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6166667, 1.3672973, 2.4367418, 3.0541666, 3.9708333, 4.5208335, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.20392157), Color(1, 1, 1, 0.09803922), Color(1, 1, 1, 0.5019608), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.105882354), Color(1, 1, 1, 0.67058825), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcs02"]
-_data = {
-&"RESET": SubResource("Animation_gx1jg"),
-&"RainbowSpin": SubResource("Animation_ugbui")
-}
-
 [node name="Player" type="CharacterBody2D" unique_id=2037227082]
 y_sort_enabled = true
 script = ExtResource("1_cvnsp")
@@ -509,36 +446,11 @@ vertical_alignment = 1
 [node name="EconomyPriceMoney" type="Timer" parent="." unique_id=1146459091]
 autostart = true
 
-[node name="Control" type="Control" parent="." unique_id=1260133632]
+[node name="Rainbows" type="Control" parent="." unique_id=1651972225]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("12_gx1jg")
-
-[node name="Rainbow" type="TextureRect" parent="Control" unique_id=993002253]
-modulate = Color(1, 1, 1, 0.38039216)
-z_index = 30
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -751.0
-offset_top = -756.0
-offset_right = 717.0
-offset_bottom = 712.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(734, 734)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("12_fm80t")
-
-[node name="RainbowAnimation" type="AnimationPlayer" parent="Control" unique_id=1949301634]
-libraries/ = SubResource("AnimationLibrary_fcs02")
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
 [connection signal="timeout" from="EconomyPriceMoney" to="." method="_on_economy_price_money_timeout"]
