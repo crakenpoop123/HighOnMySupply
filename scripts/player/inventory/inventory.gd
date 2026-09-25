@@ -45,7 +45,6 @@ func _process(_delta: float) -> void:
 			if Input.is_action_just_pressed("interact"): # interact
 				globals.inventory_ingredients["gummy_worm"]["stock"] -= 1 # Make the stock go down
 				globals.noise_level -= 0.1 # decrease the noise level
-				$"../../Control".play_animation()
 	else:
 		$"../../GummyEatNotify".visible = false
 	# Checks for if the mouse clicked something important
@@ -73,6 +72,7 @@ func _process(_delta: float) -> void:
 		$"../../SnapSprite".visible = false
 		placing = false
 		dragging = null
+
 
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():

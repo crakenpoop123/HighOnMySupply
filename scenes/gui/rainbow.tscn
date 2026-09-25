@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dwuoojup67plp"]
+
+[ext_resource type="Script" uid="uid://mialsjhra63r" path="res://scripts/menus/rainbow.gd" id="1_g3rxx"]
+[ext_resource type="Texture2D" uid="uid://7jil555n8jqm" path="res://assets/misc/radiant-rainbow-vortex-stockcake.jpg" id="2_bt2su"]
+
+[sub_resource type="Animation" id="Animation_gx1jg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rainbow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rainbow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.38039216)]
+}
+
+[sub_resource type="Animation" id="Animation_ugbui"]
+resource_name = "RainbowSpin"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rainbow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.2831855, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rainbow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6166667, 1.3672973, 2.4367418, 3.0541666, 3.9708333, 4.5208335, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.20392157), Color(1, 1, 1, 0.09803922), Color(1, 1, 1, 0.5019608), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.105882354), Color(1, 1, 1, 0.67058825), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcs02"]
+_data = {
+&"RESET": SubResource("Animation_gx1jg"),
+&"RainbowSpin": SubResource("Animation_ugbui")
+}
+
+[node name="Rainbow" type="Control" unique_id=1855239729]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_g3rxx")
+
+[node name="Rainbow" type="TextureRect" parent="." unique_id=250098774]
+modulate = Color(1, 1, 1, 0.38039216)
+z_index = 30
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -751.0
+offset_top = -756.0
+offset_right = 717.0
+offset_bottom = 712.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(734, 734)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_bt2su")
+
+[node name="RainbowAnimation" type="AnimationPlayer" parent="." unique_id=1852938273]
+libraries/ = SubResource("AnimationLibrary_fcs02")
+
+[connection signal="animation_finished" from="RainbowAnimation" to="." method="_on_rainbow_animation_animation_finished"]

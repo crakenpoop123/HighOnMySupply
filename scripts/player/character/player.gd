@@ -5,7 +5,8 @@ const INVENTORY_SOUND = preload("res://assets/sfx/InventorySound.mp3")
 const PAUSE_SOUND = preload("res://assets/sfx/PauseSound.mp3")
 const INTERACT_SOUND = preload("res://assets/sfx/InteractSound.mp3")
 const INTERACT_DENIED_SOUND = preload("res://assets/sfx/InteractDeniedSound.mp3")
-var near_pot: bool = false
+
+const RAINBOW_SCENE = preload("res://scenes/gui/rainbow.tscn")
 
 const SPEED = 300.0
 
@@ -297,3 +298,7 @@ func change_gelatin_value():
 	# If the value is sub_zero, redo the script
 	if current < 1: # Checks if 0 or negative
 		change_gelatin_value() # Redo script if it is below 1
+		
+func summon_rainbow():
+	
+	
