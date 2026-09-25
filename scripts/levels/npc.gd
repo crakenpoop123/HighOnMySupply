@@ -65,6 +65,15 @@ func form_response():
 	var response_type: int = randi_range(1, 4)
 	# var response_type: int = 2 # subject to be changed later for different scenarios
 	
+	# Set the correct response type
+	if globals.clerk_bought_from:
+		response_type = 4
+	elif globals.money < 5:
+		response_type = 3
+	elif globals.money >= 25:
+		response_type = 2
+	else: response_type = 1
+	
 	print(response_type)
 	
 	if response_type == 1: # greeting
