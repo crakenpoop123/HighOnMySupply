@@ -25,9 +25,7 @@
 [ext_resource type="Script" path="res://scripts/buildables/boiler.gd" id="23_dpfdj"]
 [ext_resource type="PackedScene" path="res://scenes/buildables/crusher.tscn" id="24_etwfl"]
 [ext_resource type="Script" path="res://scripts/buildables/crusher.gd" id="25_v3fjl"]
-[ext_resource type="PackedScene" path="res://scenes/buildables/saucepan.tscn" id="26_w7hwo"]
 [ext_resource type="PackedScene" path="res://scenes/areas_in_world/doors/door.tscn" id="26_xt01c"]
-[ext_resource type="Script" path="res://scripts/lolly_making/machinery/saucepan.gd" id="27_br3xe"]
 [ext_resource type="Script" path="res://scripts/get_scene_to_load.gd" id="27_mtdgk"]
 [ext_resource type="Texture2D" path="res://assets/tilemaps/buildings/brick-building-tilemap.png" id="28_5hhpf"]
 
@@ -330,8 +328,7 @@ tile_set = ExtResource("15_uktrn")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("16_08ae0")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-457.29803, -12.925262)
-velocity = Vector2(23.695087, 0)
+position = Vector2(-103, -416)
 script = ExtResource("17_lf077")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
@@ -352,60 +349,6 @@ script = ExtResource("23_dpfdj")
 [node name="Crusher" type="StaticBody2D" parent="Buildables" unique_id=1407152380 instance=ExtResource("24_etwfl")]
 position = Vector2(-174, -69)
 script = ExtResource("25_v3fjl")
-
-[node name="@StaticBody2D@207" type="StaticBody2D" parent="Buildables" unique_id=135834035 instance=ExtResource("20_7c3c2")]
-position = Vector2(-654.9999, 570)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@253" type="StaticBody2D" parent="Buildables" unique_id=1637607029 instance=ExtResource("20_7c3c2")]
-position = Vector2(-734.9999, 490)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@298" type="StaticBody2D" parent="Buildables" unique_id=884496706 instance=ExtResource("20_7c3c2")]
-position = Vector2(-654.9999, 490)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@344" type="StaticBody2D" parent="Buildables" unique_id=1024947289 instance=ExtResource("20_7c3c2")]
-position = Vector2(-574.9999, 570)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@389" type="StaticBody2D" parent="Buildables" unique_id=764610531 instance=ExtResource("20_7c3c2")]
-position = Vector2(-494.99988, 570)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@435" type="StaticBody2D" parent="Buildables" unique_id=765069946 instance=ExtResource("20_7c3c2")]
-position = Vector2(-414.99988, 570)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@480" type="StaticBody2D" parent="Buildables" unique_id=370014173 instance=ExtResource("20_7c3c2")]
-position = Vector2(-414.99988, 490)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@526" type="StaticBody2D" parent="Buildables" unique_id=922486681 instance=ExtResource("20_7c3c2")]
-position = Vector2(-494.99988, 490)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@571" type="StaticBody2D" parent="Buildables" unique_id=1436807649 instance=ExtResource("20_7c3c2")]
-position = Vector2(-574.9999, 408.96414)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="@StaticBody2D@617" type="StaticBody2D" parent="Buildables" unique_id=1405794619 instance=ExtResource("20_7c3c2")]
-position = Vector2(-574.9999, 328.96655)
-collision_layer = 2
-script = ExtResource("21_hsttl")
-
-[node name="Saucepan" type="StaticBody2D" parent="Buildables" unique_id=1710325032 instance=ExtResource("26_w7hwo")]
-position = Vector2(-414.99988, -70)
-script = ExtResource("27_br3xe")
 
 [node name="Door" type="Node2D" parent="." unique_id=2056007381 instance=ExtResource("26_xt01c")]
 position = Vector2(-89.00001, -397.00003)

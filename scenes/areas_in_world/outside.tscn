@@ -164,13 +164,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_62oy5")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45pc1"]
-size = Vector2(112, 140)
+size = Vector2(44, 47)
 
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -193,7 +193,7 @@ scene_from = "outside"
 
 [node name="Player" parent="." unique_id=2037227082 instance=ExtResource("3_45pc1")]
 z_index = 1
-position = Vector2(2196, -461)
+position = Vector2(-80, -2594)
 collision_layer = 5
 
 [node name="Tilemaps" type="NavigationRegion2D" parent="." unique_id=1862096508]
@@ -292,6 +292,30 @@ scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAD8//n/AAAAAAEAAAD6//n/AAABAAEAAAD9//n/AAACAAEAAAD+//n/AAACAAEAAAD7//n/AAACAAEAAAACAPn/AQAAAAEAAAAHAPn/AQAAAAEAAAAJAPn/AgABAAEAAAACAPP/AQABAAAAAAAEAPP/AQABAAAAAAAAAPP/AQABAAAAAAADAPn/AQACAAEAAAAEAPn/AQACAAEAAAAAAPn/AQACAAEAAAABAPn/AQACAAEAAAABAPP/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQADAAEAAAACAPL/AQADAAEAAAABAPL/AQADAAEAAAAAAPL/AQADAAEAAAAEAPL/AQADAAEAAAAEAPH/AQADAAAAAAADAPH/AQADAAAAAAACAPH/AQADAAAAAAABAPH/AQADAAAAAAAAAPH/AQADAAAAAAAIAPn/AgACAAEAAAAGAPn/AgACAAEAAAAQAPn/AQAAAAEAAAARAPn/AQACAAEAAAASAPn/AQACAAEAAAAOAPn/AQACAAEAAAAPAPn/AQACAAEAAAAUAPn/AQACAAEAAAAVAPn/AQACAAEAAAAWAPn/AQAAAAEAAAAXAPn/AQACAAEAAAAYAPn/AQACAAEAAAAaAPn/AQACAAEAAAAcAPn/AQACAAEAAAAhAPn/AAACAAEAAAAiAPn/AAACAAEAAAAjAPn/AQAAAAEAAAAkAPn/AAACAAEAAAAmAPn/AgACAAEAAAAnAPn/AgACAAEAAAAoAPn/AgAAAAEAAAApAPn/AgACAAEAAAArAPn/AQABAAEAAAAsAPn/AQAAAAEAAAAtAPn/AAACAAEAAAAuAPn/AQABAAEAAAAwAPn/AAACAAEAAAAxAPn/AQAAAAEAAAAyAPn/AAACAAEAAAAwAPP/AAADAAAAAAAxAPP/AAADAAAAAAAyAPP/AAADAAAAAAAwAPL/AAADAAEAAAAxAPL/AAADAAEAAAAyAPL/AAADAAEAAAD4//n/AgACAAEAAAD3//n/AgAAAAEAAAD2//n/AgACAAEAAAD1//n/AgACAAEAAAD0//n/AgACAAEAAAAbAPn/AwAAAAEAAAA=")
 tile_set = ExtResource("12_t81t5")
 
+[node name="HomelessGuy" type="Node2D" parent="." unique_id=466392394]
+light_mask = 3
+visibility_layer = 3
+z_index = -6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HomelessGuy" unique_id=383185211]
+z_index = 5
+position = Vector2(-88, -2509)
+scale = Vector2(3.9375002, 3.9375002)
+sprite_frames = SubResource("SpriteFrames_53f6w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="HomelessGuy" type="StaticBody2D" parent="HomelessGuy" unique_id=2007093429]
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("16_x7w6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomelessGuy/HomelessGuy" unique_id=1010137386]
+light_mask = 3
+z_index = 5
+position = Vector2(-90, -2469.5)
+shape = SubResource("RectangleShape2D_45pc1")
+
 [node name="NPCs" type="Node2D" parent="." unique_id=1397088088]
 
 [node name="Npc" parent="NPCs" unique_id=1601175420 instance=ExtResource("13_xw64v")]
@@ -344,21 +368,3 @@ position = Vector2(3969, -429)
 
 [node name="Npc17" parent="NPCs" unique_id=1249408717 instance=ExtResource("13_xw64v")]
 position = Vector2(3879, -1329)
-
-[node name="HomelessGuy" type="Node2D" parent="NPCs" unique_id=466392394]
-z_index = -6
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/HomelessGuy" unique_id=383185211]
-z_index = 999
-position = Vector2(-88, -2509)
-scale = Vector2(3.9375002, 3.9375002)
-sprite_frames = SubResource("SpriteFrames_53f6w")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="HomelessGuy" type="StaticBody2D" parent="NPCs/HomelessGuy" unique_id=2007093429]
-script = ExtResource("16_x7w6e")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/HomelessGuy/HomelessGuy" unique_id=1010137386]
-position = Vector2(-89, -2509)
-shape = SubResource("RectangleShape2D_45pc1")
