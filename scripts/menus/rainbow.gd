@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	$Rainbow.visible = true # Make it visible
 	$RainbowAnimation.play("RainbowSpin") # Plays the rainbow spinning animation when its called from elsewhere
 
 

@@ -72,6 +72,7 @@ offset_bottom = 40.0
 script = ExtResource("1_g3rxx")
 
 [node name="Rainbow" type="TextureRect" parent="." unique_id=250098774]
+visible = false
 modulate = Color(1, 1, 1, 0.38039216)
 z_index = 30
 layout_mode = 1

@@ -292,4 +292,3 @@ animation = &"idle_down"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1647791386]
 avoidance_enabled = true
-debug_enabled = true

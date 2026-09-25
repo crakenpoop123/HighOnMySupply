@@ -300,5 +300,6 @@ func change_gelatin_value():
 		change_gelatin_value() # Redo script if it is below 1
 		
 func summon_rainbow():
-	
+	var rainbow_instance = RAINBOW_SCENE.instantiate() # Instantiate it 
+	$Rainbows.add_child(rainbow_instance) # Add it to the scene
 	

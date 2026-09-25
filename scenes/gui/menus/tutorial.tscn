@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_br1nl")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=346889561]
+[node name="TutorialText" type="TextureRect" parent="." unique_id=346889561]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.21800001
@@ -43,7 +43,7 @@ You can also interact with npcs with E
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=498114344]
+[node name="CloseButton" type="Button" parent="." unique_id=498114344]
 layout_mode = 0
 offset_left = 1021.0
 offset_top = 65.0
@@ -54,7 +54,7 @@ theme_override_font_sizes/font_size = 37
 text = "X"
 flat = true
 
-[node name="Button2" type="Button" parent="." unique_id=555461516]
+[node name="NextButton" type="Button" parent="." unique_id=555461516]
 layout_mode = 0
 offset_left = 999.0
 offset_top = 511.0
@@ -66,7 +66,7 @@ text = ">"
 flat = true
 icon_alignment = 1
 
-[node name="Button3" type="Button" parent="." unique_id=1287525528]
+[node name="BackButton" type="Button" parent="." unique_id=1287525528]
 layout_mode = 0
 offset_left = 103.0
 offset_top = 513.0
@@ -77,6 +77,6 @@ theme_override_font_sizes/font_size = 51
 text = "<"
 flat = true
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
-[connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="CloseButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="NextButton" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="BackButton" to="." method="_on_button_3_button_up"]
