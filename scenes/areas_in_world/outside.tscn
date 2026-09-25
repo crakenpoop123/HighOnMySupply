@@ -134,6 +134,39 @@ sources/1 = SubResource("TileSetAtlasSource_x7w6e")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45pc1"]
 atlas = ExtResource("14_t4hvj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7w6e"]
+atlas = ExtResource("14_t4hvj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lehp"]
+atlas = ExtResource("14_t4hvj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62oy5"]
+atlas = ExtResource("14_t4hvj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53f6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45pc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7w6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lehp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62oy5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Outside" type="Node2D" unique_id=858381398 node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -196,6 +229,7 @@ tile_map_data = PackedByteArray("AAALAP3/AAAAAAAAAGAMAP3/AAAAAAAAAGAMAPL/AAAAAAA
 tile_set = SubResource("TileSet_4lehp")
 
 [node name="Fourth Layer" type="Node2D" parent="Tilemaps/Tilemaps" unique_id=21174481]
+visible = false
 
 [node name="Buildings4" type="TileMapLayer" parent="Tilemaps/Tilemaps/Fourth Layer" unique_id=1186327304]
 z_index = 2
@@ -310,9 +344,7 @@ position = Vector2(3879, -1329)
 
 [node name="HomelessGuy" type="Node2D" parent="NPCs" unique_id=466392394]
 
-[node name="homeless guy" type="Sprite2D" parent="NPCs/HomelessGuy" unique_id=2088298724]
-position = Vector2(-19, -2488)
-scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_45pc1")
-hframes = 4
-vframes = 8
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/HomelessGuy" unique_id=383185211]
+sprite_frames = SubResource("SpriteFrames_53f6w")
+animation = &"idle"
+autoplay = "idle"
