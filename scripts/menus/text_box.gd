@@ -49,7 +49,7 @@ var test_choice_dict = { # Shopkeep test choices
 	
 }
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_choices()
 
 func display_choices(text_dict):

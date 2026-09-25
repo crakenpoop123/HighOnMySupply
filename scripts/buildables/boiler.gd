@@ -51,7 +51,7 @@ func player_interact():
 		
 		globals.inventory_ingredients["wet_sugar"]["stock"] += 1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if boiler_state == "empty":
 		# Hide the liquid
 		$LiquidInBoiler.visible = false

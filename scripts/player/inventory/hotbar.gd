@@ -21,7 +21,7 @@ func _ready() -> void:
 	# Place all the buildings into the hotbar by default
 	autoload_buildings()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_slots()
 
 # Places all buildings in the hotbar by default
