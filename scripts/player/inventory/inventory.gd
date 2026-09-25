@@ -74,6 +74,7 @@ func _process(_delta: float) -> void:
 		placing = false
 		dragging = null
 
+
 # This updates the items in the inventory for when you change tabs or smt
 func update_items():
 	clear_items()
