@@ -180,8 +180,9 @@ func homeless_donate_gummy_worms(amount):
 		# Take gummy worms from the user
 		globals.inventory_ingredients["gummy_worm"]["stock"] -= amount
 		
-		# Give the user money
+		# give the user the money the deserve
 		globals.money += amount * globals.homeless_buy_price
+		globals.homeless_buy_price += 1
 		
 		# Exit the text
 		_on_exit_button_button_up()
