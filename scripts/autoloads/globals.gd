@@ -40,7 +40,7 @@ var sugar_cane_max_growth = 5
 # Timer vaiables
 var boil_time = 5
  
-var money = 0
+var money = 5
 var gelatin_cost = 5
 var gummy_worm_sell_price = 10
 
@@ -138,14 +138,14 @@ func _ready() -> void:
 			"region": Rect2(0, 0, 32, 32)
 		},
 		"sugar": {
-			"stock": 5,
+			"stock": 0,
 			"had_before": false,
 			"name": "Sugar", 
 			"icon": "res://assets/items/sugar-spritesheet.png",
 			"region": Rect2(32, 0, 32, 32)
 		},
 		"gelatin": {
-			"stock": 5,
+			"stock": 0,
 			"had_before": false,
 			"name": "Gelatin", 
 			"icon": "res://assets/items/gelitin-spritesheet.png",
