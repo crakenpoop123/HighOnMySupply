@@ -4,3 +4,5 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1192104782]
 script = ExtResource("1_nbeep")
+
+[node name="AudioStreamPlayerStore" type="AudioStreamPlayer" parent="." unique_id=1784560346]
