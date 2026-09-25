@@ -13,12 +13,16 @@ var dir_state = "down"
 var npc_dir = 0
 var see_text = false
 
+enum DialogueTypes {
+	GREETING, INTERESTED, POSITIVE, NEGATIVE
+}
+
 var readable_name = "Customer"
 # greeting / no meaning dialog
 var npc_greeting_responses = ["Can I help you?", "Hm?", "How can I help?", "???", "Hello?"]
 
 # interested dialog
-var npc_interested = ["Could I have X amount of gummy worms please?", "I would like X gummy worms.", "Give me X amount of gummy worms, NOW", "I NEED X amount of gummy worms NOW", "GIVE ME X GUMMY WORMS OR I’M GOING TO DIE, I NEED IT PLEASE PLEASE PLEASE."]
+var npc_interested = ["Could I have some gummy worms please?", "I would like some gummy worms.", "Give me gummy worms, NOW", "I NEED gummy worms NOW", "GIVE ME GUMMY WORMS OR I’M GOING TO DIE, I NEED IT PLEASE PLEASE PLEASE."]
 
 # positive dialog
 var npc_positive = ["Thank you.", "Much appreciated", "Great.", "If you insist!", "Amazing stuff, thanks."]
@@ -64,28 +68,28 @@ func form_response():
 	var response: String = ""
 	var response_type: int = randi_range(1, 4)
 	# var response_type: int = 2 # subject to be changed later for different scenarios
-	
+	var curr_gummy_worms = globals.inventory_ingredients["gummy_worm"]["stock"]
 	# Set the correct response type
-	if globals.clerk_bought_from:
-		response_type = 4
-	elif globals.money < 5:
-		response_type = 3
-	elif globals.money >= 25:
-		response_type = 2
-	else: response_type = 1
+	if globals.npc_bought:
+		response_type = DialogueTypes.POSITIVE
+	elif curr_gummy_worms < 1:
+		response_type = DialogueTypes.NEGATIVE
+	elif curr_gummy_worms >= 1:
+		response_type = DialogueTypes.INTERESTED
+	else: response_type = DialogueTypes.GREETING
 	
-	print(response_type)
+	# print(response_type)
 	
-	if response_type == 1: # greeting
+	if response_type == DialogueTypes.GREETING: # greeting
 		response = npc_greeting_responses[randi_range(1-1, 5-1)]
 		
-	elif response_type == 2: # positive
+	elif response_type == DialogueTypes.POSITIVE: # positive
 		response = npc_positive[randi_range(1-1, 5-1)]
 	
-	elif response_type == 3: # negative
+	elif response_type == DialogueTypes.NEGATIVE: # negative
 		response = npc_negative[randi_range(1-1, 5-1)]
 	
-	elif response_type == 4: # interested
+	elif response_type == DialogueTypes.INTERESTED: # interested
 		response = npc_interested[randi_range(1-1, 5-1)]
 	return response
 

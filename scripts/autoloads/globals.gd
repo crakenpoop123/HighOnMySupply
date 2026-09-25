@@ -11,7 +11,7 @@ var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor",
 var player_loading_point: String = ""
 var see_text = false
 var clerk_bought_from = false
-
+var npc_bought = false
 # Scene *wow*
 var scene = null
 var fading = true
