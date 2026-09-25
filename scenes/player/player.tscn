@@ -155,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5cq8p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tf8qx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -189,7 +189,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fq1sf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -206,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0r5da")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }, {
@@ -223,7 +223,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7yfyf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_down",
 "speed": 5.0
 }, {
@@ -240,7 +240,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuvkg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_left",
 "speed": 5.0
 }, {
@@ -257,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jkbfr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_right",
 "speed": 5.0
 }, {
@@ -274,7 +274,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kr51s")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_up",
 "speed": 5.0
 }]
@@ -444,6 +444,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EconomyPriceMoney" type="Timer" parent="." unique_id=1146459091]
+wait_time = 20.0
 autostart = true
 
 [node name="Rainbows" type="Control" parent="." unique_id=1651972225]

@@ -37,7 +37,12 @@ Once you have gummy worms you need to sell them
 You can do that by walking up to any npc and interacting with them
 Once you've interacted with them you'll have an option to sell them some gummy worms
 The price changes every now and then so make sure to buy low and sell high!
-"
+", 
+"Tutorial - Decay
+Over time, your screen will start to get more and more corrupted
+This is due to the decay and corruption of your eyes
+Luckily, the gummy worms you have been making are some pretty strong stuff
+Eating a gummy worm will lessen the decay by a bit"
 ]
 
 func _process(delta: float) -> void:

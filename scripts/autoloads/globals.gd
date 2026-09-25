@@ -131,7 +131,7 @@ func _ready() -> void:
 	# The ingredients that go in the inventory
 	inventory_ingredients = {
 		"gummy_worm": {
-			"stock": 100,
+			"stock": 0,
 			"had_before": false,
 			"name": "Gummy Worms", 
 			"icon": "res://assets/items/gummy-worms.png",

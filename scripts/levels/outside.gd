@@ -69,10 +69,11 @@ func _process(_delta: float) -> void:
 				
 			if $"Tilemaps/Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a > 0.2:
 				$"Tilemaps/Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a -= 0.03
-				
+			$NPCs/HomelessGuy/AnimatedSprite2D.show()
 		else:
 			if $"Tilemaps/Tilemaps/Fourth Layer/Buildings4".modulate.a < 1:
 				$"Tilemaps/Tilemaps/Fourth Layer/Buildings4".modulate.a += 0.03
 				
 			if $"Tilemaps/Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a < 1:
 				$"Tilemaps/Tilemaps/Fourth Layer/Buildings4 Bottom".modulate.a += 0.03
+			$NPCs/HomelessGuy/AnimatedSprite2D.hide()

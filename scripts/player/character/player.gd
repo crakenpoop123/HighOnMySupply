@@ -275,7 +275,7 @@ var max_gelatin_increase = 2
 func _on_economy_price_money_timeout() -> void:
 	change_gummy_value()
 	change_gelatin_value()
-	
+
 func change_gummy_value():
 	# Use a ternary operator to set the min change to 1, if the current value is below 0
 	var min_val = min_gummy_decrease if globals.gummy_worm_sell_price > 0 else 1
@@ -303,7 +303,8 @@ func change_gelatin_value():
 	# If the value is sub_zero, redo the script
 	if current < 1: # Checks if 0 or negative
 		change_gelatin_value() # Redo script if it is below 1
-		
+
+
 func summon_rainbow():
 	var rainbow_instance = RAINBOW_SCENE.instantiate() # Instantiate it 
 	$Rainbows.add_child(rainbow_instance) # Add it to the scene
