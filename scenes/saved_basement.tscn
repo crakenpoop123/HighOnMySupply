@@ -328,8 +328,7 @@ tile_set = ExtResource("15_uktrn")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("16_08ae0")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-24.799212, -408.41568)
-velocity = Vector2(-32.71761, -18.221909)
+position = Vector2(-109.92515, -415.9253)
 script = ExtResource("17_lf077")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]
@@ -350,11 +349,6 @@ script = ExtResource("23_dpfdj")
 [node name="Crusher" type="StaticBody2D" parent="Buildables" unique_id=1407152380 instance=ExtResource("24_etwfl")]
 position = Vector2(-174, -69)
 script = ExtResource("25_v3fjl")
-
-[node name="@StaticBody2D@1388" type="StaticBody2D" parent="Buildables" unique_id=2007048351 instance=ExtResource("20_7c3c2")]
-position = Vector2(-255.26611, 330.02087)
-collision_layer = 2
-script = ExtResource("21_hsttl")
 
 [node name="Door" type="Node2D" parent="." unique_id=2056007381 instance=ExtResource("26_xt01c")]
 position = Vector2(-89.00001, -397.00003)

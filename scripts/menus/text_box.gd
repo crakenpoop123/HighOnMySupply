@@ -80,6 +80,12 @@ func call_choice_funcs(curr_dict):
 			call_deferred(curr_dict["func"], curr_dict["arg"])
 		else:
 			call_deferred(curr_dict["func"])
+		
+		# Tell the game that the player has chosen the func
+		# This stops the function from triggering multiple times
+		choice_chosen = "func"
+		all_choices.append(choice_chosen)
+		
 
 # Go through the dict to find the current
 func get_curr_level_dict(top_dict):
