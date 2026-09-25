@@ -43,7 +43,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-6.2831855, 0.0]
+"values": [0.0, 6.283185307179586]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,7 +72,6 @@ offset_bottom = 40.0
 script = ExtResource("1_g3rxx")
 
 [node name="Rainbow" type="TextureRect" parent="." unique_id=250098774]
-visible = false
 modulate = Color(1, 1, 1, 0.38039216)
 z_index = 30
 layout_mode = 1

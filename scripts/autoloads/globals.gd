@@ -7,7 +7,7 @@ var in_menu = false
 var in_inventory = false
 var game_paused = false
 var just_in_inventory = false
-var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables", "Clerk", "NPCs"]
+var interactable_parents = ["Farm", "Machinery", "Saucepan", "Door", "ShedDoor", "DairyDoor", "DoorToBasement", "DoorToStore", "MachineryThings", "DoorStoreOutside", "Buildables", "Clerk", "NPCs", "HomelessGuy"]
 var player_loading_point: String = ""
 var see_text = false
 var clerk_bought_from = false
@@ -92,6 +92,28 @@ var gummy_worm_choice_dict = { # NPC gummy worm choices
 			"arg": 10
 		}, 
 		"3": {
+			"func": "_on_exit_button_button_up"
+		}
+	}, 
+	"2": {
+		"func": "_on_exit_button_button_up"
+	}
+	
+}
+
+var homeless_buy_price = 0
+var homeless_choice_dict = {
+	"1_text": "Donate Gummy Worms", 
+	"2_text": "Leave", 
+	"1": {
+		"main_text": "Please, I'll give you all I have", 
+		"1_text": "Donate 1 Gummy Worm", 
+		"2_text": "Leave", 
+		"1": {
+			"func": "homeless_donate_gummy_worms", 
+			"arg": 1
+		},
+		"2": {
 			"func": "_on_exit_button_button_up"
 		}
 	}, 

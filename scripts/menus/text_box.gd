@@ -169,6 +169,24 @@ func sell_gummy_worms(amount):
 		# Exit the text 
 		_on_exit_button_button_up()
 
+func homeless_donate_gummy_worms(amount):
+	if globals.inventory_ingredients["gummy_worm"]["stock"] >= amount:
+		# Take gummy worms from the user
+		globals.inventory_ingredients["gummy_worm"]["stock"] -= amount
+		
+		# Give the user money
+		globals.money += amount * globals.homeless_buy_price
+		
+		# Exit the text
+		_on_exit_button_button_up()
+	
+	# If the player doesn't have enough gumm worms
+	else:
+		# Tell the user they don't have the stock for this
+		$"..".display_gui_error("Sorry, you do not have enough gummy worms for this")
+		# Exit the text 
+		_on_exit_button_button_up()
+
 func _on_exit_button_button_up() -> void:
 	# Hide the textbox
 	globals.see_text = false
