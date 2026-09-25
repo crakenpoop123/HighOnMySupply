@@ -328,7 +328,7 @@ tile_set = ExtResource("15_uktrn")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2037227082 instance=ExtResource("16_08ae0")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-109.99948, -416)
+position = Vector2(-103, -416)
 script = ExtResource("17_lf077")
 
 [node name="Buildables" type="Node2D" parent="." unique_id=1282977936]

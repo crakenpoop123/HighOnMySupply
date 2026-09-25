@@ -166,9 +166,11 @@ func sell_gummy_worms(amount):
 		globals.money += amount * globals.gummy_worm_sell_price
 		
 		# Exit the text
+		#_on_exit_button_button_up()
 		globals.npc_bought = true
-		$"..".talking(curr_npc.form_response(), self)
+		$"..".talking($"../../NPCs/Npc".form_response())
 		globals.npc_bought = false
+		
 	
 	# If the player doesn't have enough gumm worms
 	else:
