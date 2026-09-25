@@ -451,7 +451,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("12_gx1jg")
 
 [node name="Rainbow" type="TextureRect" parent="Control" unique_id=993002253]
 visible = false
@@ -472,10 +471,8 @@ pivot_offset = Vector2(734, 734)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("12_fm80t")
 
 [node name="RainbowAnimation" type="AnimationPlayer" parent="Control" unique_id=1949301634]
-libraries/ = SubResource("AnimationLibrary_fcs02")
 
 [connection signal="timeout" from="GUIError/ErrorTimer" to="." method="_on_error_timer_timeout"]
 [connection signal="timeout" from="EconomyPriceMoney" to="." method="_on_economy_price_money_timeout"]
